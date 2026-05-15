@@ -1,0 +1,921 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Canva · Campaign Creation Workflow Analysis — Email / SMS / WhatsApp</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box}
+:root{
+  --bg:#fafafb; --surface:#ffffff; --surface-2:#f5f6f8; --line:#e6e8ec; --line-2:#d8dbe1;
+  --text:#0f172a; --text-2:#475569; --text-3:#94a3b8;
+  --canva-1:#7C3AED; --canva-2:#2563EB; --canva-3:#EC4899; --canva-4:#06B6D4; --canva-5:#F59E0B;
+  --friction:#2563EB; --friction-bg:#eff6ff;
+  --time:#059669; --time-bg:#ecfdf5;
+  --money:#D97706; --money-bg:#fffbeb;
+  --personal:#7C3AED; --personal-bg:#f5f3ff;
+  --trust:#0891B2; --trust-bg:#ecfeff;
+  --gap:#9CA3AF; --gap-bg:#f3f4f6;
+}
+html,body{margin:0;padding:0;background:var(--bg);color:var(--text);font-family:'Inter',system-ui,-apple-system,sans-serif;font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1480px;margin:0 auto;padding:40px 28px 96px}
+header.hero{padding-bottom:24px;border-bottom:1px solid var(--line);margin-bottom:24px}
+.eyebrow{color:var(--text-3);font-size:11px;letter-spacing:.16em;text-transform:uppercase;margin:0 0 14px;font-weight:600}
+h1{font-size:38px;line-height:1.1;font-weight:800;margin:0 0 12px;letter-spacing:-.02em}
+h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%,var(--canva-4) 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.lede{font-size:16px;color:var(--text-2);max-width:920px;margin:0}
+.tag-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.tag{font-size:11px;color:var(--text-2);background:var(--surface);border:1px solid var(--line);padding:5px 11px;border-radius:999px;font-weight:500}
+.tag.solid{background:var(--text);color:#fff;border-color:var(--text)}
+
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line);margin:8px 0 0;position:sticky;top:0;background:var(--bg);z-index:10;padding-top:8px}
+.tab-btn{background:none;border:none;color:var(--text-2);padding:14px 22px;font:inherit;font-weight:600;cursor:pointer;border-bottom:3px solid transparent;margin-bottom:-1px;font-size:14px;display:inline-flex;align-items:center;gap:8px;letter-spacing:-.005em}
+.tab-btn:hover{color:var(--text)}
+.tab-btn.active{color:var(--text);border-bottom-color:var(--text)}
+.tab-btn .channel-dot{width:8px;height:8px;border-radius:99px;display:inline-block}
+.tab-btn[data-tab="email"] .channel-dot{background:var(--canva-2)}
+.tab-btn[data-tab="sms"] .channel-dot{background:var(--canva-5)}
+.tab-btn[data-tab="whatsapp"] .channel-dot{background:var(--time)}
+.tab-pane{display:none;padding-top:28px}
+.tab-pane.active{display:block}
+
+.channel-intro{display:grid;grid-template-columns:2fr 1fr;gap:24px;margin-bottom:24px;padding:22px 24px;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+@media(max-width:880px){.channel-intro{grid-template-columns:1fr}}
+.channel-intro h2{margin:0 0 8px;font-size:22px;font-weight:700;letter-spacing:-.01em}
+.channel-intro p{margin:0;color:var(--text-2)}
+.channel-meta{display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.meta-pill{display:inline-flex;align-items:center;gap:8px;padding:6px 12px;background:var(--surface-2);border:1px solid var(--line);border-radius:8px;font-size:12px;color:var(--text-2);font-weight:500}
+.meta-pill strong{color:var(--text)}
+.maturity{padding:6px 11px;border-radius:8px;font-size:12px;font-weight:600;display:inline-block}
+.maturity.full{background:var(--time-bg);color:var(--time);border:1px solid rgba(5,150,105,.2)}
+.maturity.partial{background:var(--money-bg);color:var(--money);border:1px solid rgba(217,119,6,.2)}
+.maturity.none{background:var(--gap-bg);color:var(--gap);border:1px solid rgba(156,163,175,.3)}
+
+.legend{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 18px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:12px}
+.legend-item{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-weight:500}
+.legend-item .swatch{width:12px;height:12px;border-radius:3px;display:inline-block}
+.legend-item.friction .swatch{background:var(--friction)}
+.legend-item.time .swatch{background:var(--time)}
+.legend-item.money .swatch{background:var(--money)}
+.legend-item.personal .swatch{background:var(--personal)}
+.legend-item.trust .swatch{background:var(--trust)}
+
+.workflow-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;table-layout:fixed}
+.workflow-table thead th{background:var(--surface-2);border-bottom:1px solid var(--line);padding:14px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);vertical-align:bottom}
+.workflow-table th.col-step{width:160px}
+.workflow-table th.col-features{width:240px}
+.workflow-table th.col-friction,
+.workflow-table th.col-time,
+.workflow-table th.col-money,
+.workflow-table th.col-personal,
+.workflow-table th.col-trust{width:auto}
+.workflow-table th .col-icon{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:6px;vertical-align:middle}
+.workflow-table th.col-friction .col-icon{background:var(--friction)}
+.workflow-table th.col-time .col-icon{background:var(--time)}
+.workflow-table th.col-money .col-icon{background:var(--money)}
+.workflow-table th.col-personal .col-icon{background:var(--personal)}
+.workflow-table th.col-trust .col-icon{background:var(--trust)}
+.workflow-table td{padding:18px 14px;border-bottom:1px solid var(--line);vertical-align:top;font-size:13px;line-height:1.55;color:var(--text)}
+.workflow-table tr:last-child td{border-bottom:none}
+.workflow-table tr.row-band-1 td{background:#fff}
+.workflow-table tr.row-band-2 td{background:#fcfcfd}
+.workflow-table td .step-num{display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:8px;font-weight:700;font-size:13px;color:#fff;margin-bottom:10px;letter-spacing:-.02em}
+.workflow-table td .step-num.s1{background:var(--canva-1)}
+.workflow-table td .step-num.s2{background:var(--canva-2)}
+.workflow-table td .step-num.s3{background:#5B21B6}
+.workflow-table td .step-num.s4{background:var(--canva-3)}
+.workflow-table td .step-num.s5{background:var(--canva-5)}
+.workflow-table td .step-num.s6{background:var(--canva-4)}
+.workflow-table td .step-num.s7{background:#0891B2}
+.workflow-table td .step-title{font-weight:700;font-size:14px;line-height:1.3;margin-bottom:6px;color:var(--text);letter-spacing:-.01em}
+.workflow-table td .step-desc{color:var(--text-2);font-size:12px;line-height:1.5}
+.workflow-table td ul{margin:0;padding-left:16px}
+.workflow-table td ul li{margin-bottom:5px;color:var(--text);font-size:13px;line-height:1.45}
+.workflow-table td ul li strong{font-weight:600;color:var(--text)}
+.workflow-table td .gap-cell{color:var(--gap);font-style:italic;font-size:12px;background:var(--gap-bg);padding:8px 10px;border-radius:6px;border:1px dashed var(--line-2);display:block}
+.workflow-table td.col-friction-cell{background:rgba(37,99,235,.025)}
+.workflow-table td.col-time-cell{background:rgba(5,150,105,.025)}
+.workflow-table td.col-money-cell{background:rgba(217,119,6,.025)}
+.workflow-table td.col-personal-cell{background:rgba(124,58,237,.025)}
+.workflow-table td.col-trust-cell{background:rgba(8,145,178,.025)}
+
+.scroll-x{overflow-x:auto;-webkit-overflow-scrolling:touch}
+
+.value-summary{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;margin:28px 0 0}
+@media(max-width:980px){.value-summary{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.value-summary{grid-template-columns:1fr}}
+.value-card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;border-left:4px solid var(--text-3)}
+.value-card.friction{border-left-color:var(--friction)}
+.value-card.time{border-left-color:var(--time)}
+.value-card.money{border-left-color:var(--money)}
+.value-card.personal{border-left-color:var(--personal)}
+.value-card.trust{border-left-color:var(--trust)}
+.value-card .vc-title{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-3);margin:0 0 10px}
+.value-card .vc-body{font-size:13px;color:var(--text);line-height:1.55;margin:0}
+.value-card .vc-body strong{font-weight:600}
+
+footer{margin-top:64px;padding-top:24px;border-top:1px solid var(--line);color:var(--text-3);font-size:12px}
+footer .sources{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:14px}
+@media(max-width:760px){footer .sources{grid-template-columns:1fr}}
+footer h4{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--text-2);margin:0 0 10px}
+footer ul{margin:0;padding-left:18px;color:var(--text-2)}
+footer ul li{margin-bottom:4px;font-size:12px}
+footer a{color:var(--canva-2);text-decoration:none}
+footer a:hover{text-decoration:underline}
+
+@media(max-width:1100px){
+  .workflow-table{font-size:12px}
+  .workflow-table td{padding:14px 10px;font-size:12px}
+  .workflow-table td ul li{font-size:12px}
+  .workflow-table th.col-step{width:140px}
+  .workflow-table th.col-features{width:200px}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="hero">
+  <p class="eyebrow">Canva · Marketing Campaign Builder · Workflow × Value Analysis</p>
+  <h1>How Canva creates value across the <span class="accent">campaign creation workflow</span></h1>
+  <p class="lede">Seven critical steps in the marketing campaign creation and launch workflow, mapped to Canva's actual shipping product features. Each feature is assessed against five value dimensions: friction, time, revenue, personalization, and trust. Personas covered: small-business marketers, in-house designers, and mid-market marketing teams with developer involvement.</p>
+  <div class="tag-row">
+    <span class="tag solid">Channel: Email + SMS + WhatsApp</span>
+    <span class="tag">Source: Canva Help Center · canva.com/emails · partner ESP docs</span>
+    <span class="tag">Last updated: May 2026</span>
+    <span class="tag">Method: Workflow × value-dimension matrix</span>
+  </div>
+</header>
+
+<nav class="tabs" role="tablist">
+  <button class="tab-btn active" data-tab="email" role="tab"><span class="channel-dot"></span>Email Campaigns</button>
+  <button class="tab-btn" data-tab="sms" role="tab"><span class="channel-dot"></span>SMS Campaigns</button>
+  <button class="tab-btn" data-tab="whatsapp" role="tab"><span class="channel-dot"></span>WhatsApp Campaigns</button>
+</nav>
+
+<!-- =================================== EMAIL TAB =================================== -->
+<section class="tab-pane active" id="tab-email" role="tabpanel">
+
+  <div class="channel-intro">
+    <div>
+      <h2>Email campaign creation in Canva</h2>
+      <p>Canva ships a purpose-built <strong>"Canva Email"</strong> design surface (distinct from the standard canvas), with a structured block-based editor, AI assistance, compliance plumbing, and direct publish into named ESP partners (Mailchimp, Klaviyo, Constant Contact, Flodesk) plus Gmail / Outlook. Canva owns the creation layer end-to-end; list management, sending, and analytics are explicitly handed off to the ESP.</p>
+    </div>
+    <div class="channel-meta">
+      <span class="meta-pill">Native build maturity <span class="maturity full">Full</span></span>
+      <span class="meta-pill">Native send <span class="maturity none">No — ESP handoff</span></span>
+      <span class="meta-pill">Native analytics <span class="maturity none">No — lives in ESP</span></span>
+      <span class="meta-pill"><strong>Plans:</strong> Free, Pro, Teams, Enterprise</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item friction"><span class="swatch"></span>Eliminates friction</span>
+    <span class="legend-item time"><span class="swatch"></span>Saves time</span>
+    <span class="legend-item money"><span class="swatch"></span>Drives revenue</span>
+    <span class="legend-item personal"><span class="swatch"></span>Hyper-personalization</span>
+    <span class="legend-item trust"><span class="swatch"></span>Builds trust &amp; confidence</span>
+  </div>
+
+  <div class="scroll-x">
+  <table class="workflow-table">
+    <thead>
+      <tr>
+        <th class="col-step">Step</th>
+        <th class="col-features">Canva features &amp; functionalities at this step</th>
+        <th class="col-friction"><span class="col-icon"></span>Eliminates friction · how?</th>
+        <th class="col-time"><span class="col-icon"></span>Saves time · how?</th>
+        <th class="col-money"><span class="col-icon"></span>Drives revenue · how?</th>
+        <th class="col-personal"><span class="col-icon"></span>Hyper-personalization · how?</th>
+        <th class="col-trust"><span class="col-icon"></span>Builds trust &amp; confidence · how?</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- STEP 1 EMAIL -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s1">1</div>
+          <div class="step-title">Plan &amp; Start the Campaign</div>
+          <div class="step-desc">Pick the email doctype, choose a template or blank, define intent.</div>
+        </td>
+        <td>
+          <ul>
+            <li>Dedicated <strong>Email doctype</strong> (homepage tile, "Create" search, /emails landing page)</li>
+            <li><strong>Hundreds of templates</strong> tagged by industry (SaaS, retail, real estate, nonprofit, fitness, events, education) and style (modern, minimal, bold, elegant)</li>
+            <li><strong>AI template generator</strong> — describe intent ("Professional healthcare email") and Canva surfaces matching templates</li>
+            <li>Blank canvas option</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">A purpose-built email entry — not the generic Canva canvas — means the user is dropped into an environment with email rules already baked in. Beginners avoid the "what dimensions do I use" paralysis.</td>
+        <td class="col-time-cell">Industry-tagged templates cut the blank-page problem to zero. The AI template prompt replaces 5–10 minutes of browsing with a one-line description.</td>
+        <td class="col-money-cell">Templates encode inbox-tested layouts (header → hero → CTA → footer), so the first email a small-business owner ships already follows conversion best practices.</td>
+        <td class="col-personal-cell">AI template generator returns layouts matched to the user's described vertical and tone — the campaign starts personalized to the business, not the platform.</td>
+        <td class="col-trust-cell">Vertical-specific templates signal "Canva knows email marketing for your industry" — a small-business owner sees a healthcare-specific layout and trusts they won't look amateur.</td>
+      </tr>
+
+      <!-- STEP 2 EMAIL -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s2">2</div>
+          <div class="step-title">Design &amp; Brand the Email</div>
+          <div class="step-desc">Lay out blocks, add content, apply brand identity, ensure mobile responsiveness.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Block-based editor</strong>: headers, footers, icon blocks, columns (basic/styled/pre-designed), buttons, dividers, countdown timers, tables</li>
+            <li><strong>Auto-responsive</strong> — content auto-stacks on mobile, no manual mobile editing</li>
+            <li><strong>Email-safe-font enforcement</strong> with in-editor warning on non-safe fonts</li>
+            <li><strong>Brand Kit</strong> (Pro): logo, brand colors, fonts surfaced as one-click swatches</li>
+            <li><strong>100M+ media assets</strong>; image compression guidance</li>
+            <li><strong>"Set to top / bottom"</strong> snap for headers/footers</li>
+            <li>Video → auto-GIF conversion on export</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No HTML, no merge-tag syntax, no manual mobile-version creation. The editor proactively flags non-email-safe fonts before they break a send — friction is removed <em>before</em> the user makes the mistake.</td>
+        <td class="col-time-cell">Pre-grouped Design Blocks assemble in seconds vs. minutes of element-by-element work. Brand Kit applies identity in one click vs. manually keying hex codes. Magic Resize converts an existing social post into an email format with no rebuild.</td>
+        <td class="col-money-cell">Mobile-responsive, on-brand emails materially outperform fragmented ones — most opens are on mobile, so auto-responsiveness directly protects click-through rate and revenue per send.</td>
+        <td class="col-personal-cell">Brand Kit ensures every email — even one drafted in 10 minutes by a non-designer — reflects the business's exact identity: same logo, same fonts, same palette.</td>
+        <td class="col-trust-cell">The non-safe-font warning is a "Canva has your back" moment: the platform actively prevents a deliverability mistake, which builds the deep operational trust that turns a small-business user into a Canva loyalist.</td>
+      </tr>
+
+      <!-- STEP 3 EMAIL -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s3">3</div>
+          <div class="step-title">Generate Copy with AI</div>
+          <div class="step-desc">Write subject lines, headlines, body, CTAs, and translations using Magic Studio.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Magic Write</strong> (OpenAI-backed): subject ideas, headlines, body copy, CTA microcopy</li>
+            <li><strong>Tone &amp; voice controls</strong>: Continue writing / Rewrite / Shorten / Change voice</li>
+            <li><strong>@Canva AI</strong> tagging in comments — asks for layout suggestions, reorganization, or copy refinement in-place</li>
+            <li><strong>Magic Translate</strong> for multi-language variants</li>
+            <li><strong>AI Email Generator</strong> dedicated entry point (canva.com/ai-email-generator)</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Removes the "what do I say" blank-page paralysis that stops small-business marketers from shipping emails at all. No copywriter required, no separate AI tool, no copy-paste between apps.</td>
+        <td class="col-time-cell">Reduces draft time from 30–60 minutes to under 5. Subject-line and CTA variants are generated instantly instead of brainstormed manually.</td>
+        <td class="col-money-cell">Better subject lines lift open rate; punchier CTAs lift click rate; Magic Translate unlocks new geographies without hiring localization staff — each one moves campaign revenue up directly.</td>
+        <td class="col-personal-cell">Tone/voice controls preserve the brand's actual voice instead of producing generic AI slop; Magic Translate enables per-locale campaign personalization at scale.</td>
+        <td class="col-trust-cell">Named partner (OpenAI) provides a recognizable AI provenance for the suspicious user; in-editor tone controls let the user keep human oversight — they're delegating, not surrendering.</td>
+      </tr>
+
+      <!-- STEP 4 EMAIL -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s4">4</div>
+          <div class="step-title">Personalize at Scale</div>
+          <div class="step-desc">Connect data, generate per-recipient variants, prep for ESP merge tags.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Bulk Create</strong> — upload CSV/XLSX (≤25MB; 300 rows × 60 cols)</li>
+            <li><strong>"Connect Data"</strong> right-click action to map any element to a column</li>
+            <li><strong>Canva Sheets</strong> as a live visual spreadsheet data source</li>
+            <li><strong>Data connectors</strong>: HubSpot, Google Analytics (Business / Enterprise)</li>
+            <li>Output as multi-page design or one file per row, with custom file naming</li>
+            <li>(Note: ESP-specific merge tags like <code>{{first_name}}</code> are still applied in the ESP, not in Canva)</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Right-click "Connect Data" is more intuitive than learning mail-merge syntax or ESP-specific merge-tag conventions. Designers can personalize without coding.</td>
+        <td class="col-time-cell">300 personalized variants generated in a single job — what used to be a half-day of manual recreation is now a 30-second job.</td>
+        <td class="col-money-cell">Personalized email content lifts open and conversion materially over one-size-fits-all sends; multi-variant capability unlocks A/B/n optimization that drives compounding revenue gains.</td>
+        <td class="col-personal-cell">This is Canva's personalization core: any text, image, or button can be bound to any data column. Per-recipient name, product, location, image — all from the same template.</td>
+        <td class="col-trust-cell">Data stays inside Canva (no third-party merge tool); live preview shows the mapping before generation runs — the user sees exactly what each recipient will get before it's locked in.</td>
+      </tr>
+
+      <!-- STEP 5 EMAIL -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s5">5</div>
+          <div class="step-title">Make it Compliance-Ready</div>
+          <div class="step-desc">Add unsubscribe, preference center, view-in-browser, and CTAs — the legally required plumbing.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Email Links menu</strong> with three first-class compliance link types:
+              <ul>
+                <li><code>{{ unsubscribe }}</code></li>
+                <li><code>{{ update_preferences }}</code></li>
+                <li><code>{{ view_in_browser }}</code></li>
+              </ul>
+            </li>
+            <li><strong>Auto-conversion</strong> of these tags to the destination ESP's syntax at publish (Mailchimp, Klaviyo, Constant Contact)</li>
+            <li>Compliance links <strong>pre-placed</strong> in default templates (footer + header)</li>
+            <li>"Link anything" — any text, image, button, icon hyperlinkable</li>
+            <li>In-editor warning if email is sent via Gmail (compliance links won't function)</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No code, no merge-tag syntax memorization, no per-ESP-platform differences for the user to learn — the user just clicks "Unsubscribe" from a menu.</td>
+        <td class="col-time-cell">Compliance plumbing is set up once and re-renders correctly across every supported ESP — no rework per platform, no manual link rewiring.</td>
+        <td class="col-money-cell">Avoids CAN-SPAM/GDPR fines that can be material for SMBs and reputation-damaging for mid-market; the preference center keeps audiences engaged longer, lifting lifetime value.</td>
+        <td class="col-personal-cell">"Update preferences" enables recipient-driven self-segmentation — recipients tell you what they want, which is the highest-quality personalization signal possible.</td>
+        <td class="col-trust-cell"><strong>This is Canva's single biggest trust feature.</strong> A non-technical user can ship a legally compliant marketing email without ever reading a regulation — Canva carries the compliance burden for them, across every ESP.</td>
+      </tr>
+
+      <!-- STEP 6 EMAIL -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s6">6</div>
+          <div class="step-title">Preview, Test &amp; Get Approval</div>
+          <div class="step-desc">Verify rendering, send test mail, collaborate, route for sign-off.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Desktop / mobile preview toggle</strong> inside the editor</li>
+            <li><strong>"Send test email"</strong> — sent from <code>no-reply@preview.canva.email</code> to the user's login address only (security guardrail)</li>
+            <li><strong>Comments</strong> on any element with formatting; filters (For you / Unread / Resolved); @-mentions</li>
+            <li><strong>Approval workflow</strong>: pick reviewer, set due date, attach note; design locks from publish until approved</li>
+            <li><strong>Multiple approvers</strong> (Enterprise tier)</li>
+            <li>Real-time multi-cursor co-editing</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No third-party preview tool, no separate inbox-testing service for the small-business user. Approval lives next to the design — not in an email chain with screenshots.</td>
+        <td class="col-time-cell">In-canvas approval cuts feedback cycles from days to hours; mobile + desktop preview on one screen eliminates device-swap testing.</td>
+        <td class="col-money-cell">Catches broken layouts, dead links, and wrong CTAs before send — directly protects the click-through revenue the campaign was built to generate.</td>
+        <td class="col-personal-cell">Approvers can route per design / per audience variant; comments scope to elements, so feedback is precise to the personalized component.</td>
+        <td class="col-trust-cell">Built-in test sender domain + lock-until-approved governance lets regulated mid-market teams codify legal/brand sign-off — Canva becomes safe to procurement.</td>
+      </tr>
+
+      <!-- STEP 7 EMAIL -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s7">7</div>
+          <div class="step-title">Export &amp; Send via ESP</div>
+          <div class="step-desc">Publish to Mailchimp / Klaviyo / Constant Contact / Flodesk / Gmail / Outlook, or download HTML.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Three export modes</strong>: Copy HTML (clipboard), Download ZIP (HTML + image folder), Direct ESP push</li>
+            <li><strong>Direct integrations</strong> from the Share menu: <strong>Mailchimp, Klaviyo, Constant Contact, Flodesk, Gmail, Outlook</strong></li>
+            <li>In-Canva ESP authentication; one-click publish</li>
+            <li>Compliance merge tags auto-converted per destination ESP</li>
+            <li>Generic HTML export works with HubSpot, Brevo, SendGrid, others</li>
+            <li>100KB single-page Mailchimp publish limit; one page per publish</li>
+            <li>Canva Apps SDK <strong>Content Publisher intent</strong> — any ESP can build a publish target</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No copy-paste-format gymnastics between Canva and the ESP. One click moves the design straight into a draftable campaign in the ESP. For mid-market with devs, the Apps SDK provides a documented extension surface.</td>
+        <td class="col-time-cell">Direct publish replaces 5–10 minutes of ZIP-download → upload → image-relink work; net it allows more campaigns per period at lower production cost per campaign.</td>
+        <td class="col-money-cell">More campaigns shipped per period at lower production cost per send compounds revenue — the SMB that used to send one email a month now ships four.</td>
+        <td class="col-personal-cell">Templates land in the ESP's flows and automations ready for runtime personalization, dynamic blocks, and product feeds (e.g., Klaviyo's product blocks operate on the Canva-designed HTML).</td>
+        <td class="col-trust-cell">Named ESP partnerships (Klaviyo, Mailchimp, Constant Contact, Flodesk) — recognizable, enterprise-grade brands — give procurement and finance the assurance that Canva fits into the existing martech stack, not replaces it.</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div class="value-summary">
+    <div class="value-card friction">
+      <div class="vc-title">Friction · Email summary</div>
+      <p class="vc-body">Canva removes <strong>every technical barrier</strong> between a non-designer and a professionally formatted, legally compliant, mobile-responsive marketing email. No HTML, no merge-tag syntax, no compliance research, no design-to-ESP handoff pain.</p>
+    </div>
+    <div class="value-card time">
+      <div class="vc-title">Time · Email summary</div>
+      <p class="vc-body">End-to-end campaign creation collapses from <strong>half a day to under an hour</strong> via templates + Magic Write + Brand Kit + Bulk Create + direct ESP publish. The biggest time saver is the elimination of cross-tool handoffs.</p>
+    </div>
+    <div class="value-card money">
+      <div class="vc-title">Revenue · Email summary</div>
+      <p class="vc-body">More campaigns shipped per period × better-performing creative (mobile-responsive, AI-optimized copy, A/B-able variants) × no compliance fines = a measurable lift in <strong>campaign throughput and revenue per send</strong>.</p>
+    </div>
+    <div class="value-card personal">
+      <div class="vc-title">Personalization · Email summary</div>
+      <p class="vc-body">Bulk Create + Connect Data + Canva Sheets gives any user <strong>mail-merge-grade per-recipient variants</strong> without coding. Magic Translate adds locale dimension. Real-time personalization (e.g. dynamic product blocks) is still ESP-side.</p>
+    </div>
+    <div class="value-card trust">
+      <div class="vc-title">Trust · Email summary</div>
+      <p class="vc-body"><strong>Compliance auto-handling</strong> across every ESP is Canva's most powerful trust signal — the platform carries the legal burden so a non-technical user can confidently ship a marketing email. Named ESP partners and approval workflows extend the trust upward to mid-market.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== SMS TAB =================================== -->
+<section class="tab-pane" id="tab-sms" role="tabpanel">
+
+  <div class="channel-intro">
+    <div>
+      <h2>SMS campaign creation in Canva</h2>
+      <p>Canva has <strong>no native SMS send capability</strong>. What it ships is the <em>visual creation layer</em> for SMS marketing: list-growth promo creative, MMS visuals, and a Canva Apps SDK pathway plus a Textellent direct integration to push assets into a real SMS platform. SMBs use Canva to design; partners deliver.</p>
+    </div>
+    <div class="channel-meta">
+      <span class="meta-pill">Native build maturity <span class="maturity partial">Partial — visual assets only</span></span>
+      <span class="meta-pill">Native send <span class="maturity none">No — partner SMS provider</span></span>
+      <span class="meta-pill">Native analytics <span class="maturity none">No — lives in SMS partner</span></span>
+      <span class="meta-pill"><strong>Plans:</strong> Free, Pro, Teams, Enterprise</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item friction"><span class="swatch"></span>Eliminates friction</span>
+    <span class="legend-item time"><span class="swatch"></span>Saves time</span>
+    <span class="legend-item money"><span class="swatch"></span>Drives revenue</span>
+    <span class="legend-item personal"><span class="swatch"></span>Hyper-personalization</span>
+    <span class="legend-item trust"><span class="swatch"></span>Builds trust &amp; confidence</span>
+  </div>
+
+  <div class="scroll-x">
+  <table class="workflow-table">
+    <thead>
+      <tr>
+        <th class="col-step">Step</th>
+        <th class="col-features">Canva features &amp; functionalities at this step</th>
+        <th class="col-friction"><span class="col-icon"></span>Eliminates friction · how?</th>
+        <th class="col-time"><span class="col-icon"></span>Saves time · how?</th>
+        <th class="col-money"><span class="col-icon"></span>Drives revenue · how?</th>
+        <th class="col-personal"><span class="col-icon"></span>Hyper-personalization · how?</th>
+        <th class="col-trust"><span class="col-icon"></span>Builds trust &amp; confidence · how?</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- STEP 1 SMS -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s1">1</div>
+          <div class="step-title">Plan the SMS Program</div>
+          <div class="step-desc">Decide goal: grow list, run promo, send order update. Choose visual concept.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>20+ SMS marketing template kits</strong> tagged for text-marketing list growth</li>
+            <li>SMS-style chat-bubble templates (graphics, not real messages)</li>
+            <li>Industry-vertical inspiration libraries</li>
+            <li><span class="gap-cell">No native SMS goal/strategy planner, no list-size estimator, no compliance pre-checks.</span></li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">An SMB owner with no SMS experience sees "what does an SMS promo look like" answered immediately by templates — replaces a blank page and a Google search.</td>
+        <td class="col-time-cell">Pre-built kits cut concept-to-creative time from hours to minutes for the design portion only.</td>
+        <td class="col-money-cell">Better list-growth creatives → bigger subscriber base → more recipients per campaign → bigger campaign revenue downstream.</td>
+        <td class="col-personal-cell">Templates filtered by industry vertical give a small business a starting point already personalized to their context.</td>
+        <td class="col-trust-cell">Templates that reflect SMS-marketing conventions (short, visual, urgency-led) signal that Canva understands the channel — even if it doesn't send it.</td>
+      </tr>
+
+      <!-- STEP 2 SMS -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s2">2</div>
+          <div class="step-title">Design List-Growth Creative</div>
+          <div class="step-desc">Promote the SMS keyword across IG, FB, posters, in-store flyers, web pop-ups.</div>
+        </td>
+        <td>
+          <ul>
+            <li>Templates for IG post / IG Story / Reel / FB / poster / flyer / business card</li>
+            <li><strong>QR code generator</strong> built into Elements</li>
+            <li><strong>Magic Resize</strong> — one design → 8+ placements in one click</li>
+            <li>Brand Kit (Pro) for one-click branding</li>
+            <li>3M+ stock photos &amp; graphics</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No need to redesign the same promo for every channel; QR generator removes the third-party QR step.</td>
+        <td class="col-time-cell">Magic Resize replaces ~6 hours of manual format conversion with one click — net 8–10× speedup on multi-channel rollouts.</td>
+        <td class="col-money-cell">Wider channel exposure of the SMS keyword (in-store flyer + IG Story + FB ad + web pop-up) compounds opt-in volume directly into list growth revenue.</td>
+        <td class="col-personal-cell">Magic Translate produces per-market versions of the same list-growth creative — multi-language SMS programs without re-design.</td>
+        <td class="col-trust-cell">Brand Kit ensures the SMS keyword shows up consistently branded everywhere it appears, which builds prospect confidence enough to opt in.</td>
+      </tr>
+
+      <!-- STEP 3 SMS -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s3">3</div>
+          <div class="step-title">Design the MMS Visual Asset</div>
+          <div class="step-desc">Create the image/GIF that ships inside the actual SMS/MMS message.</div>
+        </td>
+        <td>
+          <ul>
+            <li>Custom canvas dimensions for MMS specs</li>
+            <li><strong>Magic Media</strong> AI image &amp; 8-second video generation (Veo-3 backed)</li>
+            <li><strong>Background Remover</strong> (Pro)</li>
+            <li>Magic Grab, Magic Expand, Magic Morph for image editing</li>
+            <li>Image compression guidance for delivery weight</li>
+            <li>Brand Kit application across visual</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No need for Photoshop, Figma, or a separate AI image tool. Background Remover delivers professional product cutouts to a non-designer in one click.</td>
+        <td class="col-time-cell">Magic Media generates a hero image from a text prompt in seconds; what previously needed a stock-photo search + editing now happens in one prompt.</td>
+        <td class="col-money-cell">MMS with strong visuals lifts conversion materially over plain SMS — visual asset quality is the single biggest in-message lever for revenue per send.</td>
+        <td class="col-personal-cell">AI image generated per persona, per offer, per season — endlessly variable visual content for the same product.</td>
+        <td class="col-trust-cell">Brand Kit ensures every MMS visual looks like the brand — small businesses can ship MMS without the asset looking obviously DIY.</td>
+      </tr>
+
+      <!-- STEP 4 SMS -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s4">4</div>
+          <div class="step-title">Generate Variants at Scale</div>
+          <div class="step-desc">Produce per-segment, per-offer, per-language MMS variants in bulk.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Bulk Create</strong> with CSV/XLSX (300 rows × 60 cols)</li>
+            <li><strong>"Connect Data"</strong> to bind text/image elements to spreadsheet columns</li>
+            <li><strong>Canva Sheets</strong> as live data source</li>
+            <li><strong>Magic Translate</strong> for locale variants</li>
+            <li>Per-variant file naming for downstream upload</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">One-job variant generation replaces hand-recreation of each MMS asset; non-coders get mail-merge for visuals.</td>
+        <td class="col-time-cell">300 variants per job in seconds — replaces what would be days of manual work to support a segmented SMS campaign.</td>
+        <td class="col-money-cell">Per-segment MMS variants (offers tuned to past purchase, geography, life-stage) lift CTR and conversion well above one-size-fits-all sends.</td>
+        <td class="col-personal-cell">Data binding works on any text or image element — recipient name, dynamic product image, location-specific offer can all be bound to spreadsheet columns.</td>
+        <td class="col-trust-cell">Data stays inside Canva — no third-party mail-merge tool needed, which simplifies the privacy story for the user.</td>
+      </tr>
+
+      <!-- STEP 5 SMS -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s5">5</div>
+          <div class="step-title">Preview, Test &amp; Approve</div>
+          <div class="step-desc">Confirm the MMS asset renders well at SMS dimensions; route for sign-off.</div>
+        </td>
+        <td>
+          <ul>
+            <li>Mobile preview inside editor</li>
+            <li>Phone-frame mockup elements for context-of-use preview</li>
+            <li>Comments &amp; @-mentions</li>
+            <li>Approval workflow (lock-until-approved)</li>
+            <li><span class="gap-cell">No native test-MMS send; visual preview only.</span></li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Mobile-first preview matches the only context SMS is consumed in. The reviewer sees the asset as the customer will — no guesswork.</td>
+        <td class="col-time-cell">In-canvas approval cuts feedback cycles vs. email-screenshot loops; phone-frame mockup speeds up stakeholder buy-in.</td>
+        <td class="col-money-cell">Catches a broken MMS visual before the SMS partner sends it to 50,000 recipients — protects unit economics on the campaign.</td>
+        <td class="col-personal-cell">Approval can be routed per variant, per audience segment — governance per personalization branch.</td>
+        <td class="col-trust-cell">Same approval engine as Canva's email and design workflows — one trust story across the whole martech surface.</td>
+      </tr>
+
+      <!-- STEP 6 SMS -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s6">6</div>
+          <div class="step-title">Export &amp; Hand Off to SMS Platform</div>
+          <div class="step-desc">Get the asset out of Canva and into the system that will send it.</div>
+        </td>
+        <td>
+          <ul>
+            <li>PNG / JPG / PDF / MP4 export</li>
+            <li><strong>Bulk download</strong> for variant runs</li>
+            <li><strong>Textellent</strong> direct integration — design in Canva, push to Textellent for personalized SMS send</li>
+            <li><strong>Canva Apps SDK Content Publisher intent</strong> — any SMS provider can build a destination publish action</li>
+            <li><strong>Zapier</strong> connections to ClickSend, Mobile Message, SimpleTexting, Burst</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Textellent integration removes the download-reupload step entirely. Zapier extends Canva to long-tail SMS providers with no code.</td>
+        <td class="col-time-cell">One-click handoff vs. download → log into SMS platform → upload → reattach to send — net 5–10 minutes per send saved.</td>
+        <td class="col-money-cell">Faster send velocity → more SMS campaigns per quarter → directly more revenue from a high-RPM channel.</td>
+        <td class="col-personal-cell">Variant files arrive in the SMS platform already named per row, ready to be paired with the recipient data on the SMS side.</td>
+        <td class="col-trust-cell">Textellent as a named partner gives the SMB a vetted destination; Canva Apps SDK gives mid-market developers a documented, official extension pathway.</td>
+      </tr>
+
+      <!-- STEP 7 SMS -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s7">7</div>
+          <div class="step-title">Send, Track &amp; Iterate</div>
+          <div class="step-desc">Actual SMS delivery, deliverability, opt-out, analytics — all in the partner platform.</div>
+        </td>
+        <td>
+          <ul>
+            <li>No native send — handled in partner (Textellent, Klaviyo, Twilio, SimpleTexting, Brevo, etc.)</li>
+            <li>Magic Resize lets users iterate quickly into next campaign creative once partner analytics come back</li>
+            <li>Canva Code can produce interactive landing pages linked from SMS</li>
+            <li><span class="gap-cell">No native SMS analytics, opt-out management, deliverability dashboards, scheduling, throttling, or A/B framework.</span></li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Iteration loop back into Canva is fast — once a winning variant is identified in the SMS partner, Magic Resize re-spawns it across channels immediately.</td>
+        <td class="col-time-cell">Round-trip from "campaign sent" to "next campaign designed" is shortened by Magic Resize on the next round.</td>
+        <td class="col-money-cell">Faster iteration on what works → compounding revenue gains; but the actual conversion/optimization happens entirely in the SMS partner platform.</td>
+        <td class="col-personal-cell"><span class="gap-cell">Real-time per-recipient personalization is owned by the SMS partner. Canva's role ends at variant generation.</span></td>
+        <td class="col-trust-cell">Canva's "we don't pretend to send" honesty actually builds confidence — users know their creative tool isn't trying to also be their compliance tool, so they trust each layer of the stack.</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div class="value-summary">
+    <div class="value-card friction">
+      <div class="vc-title">Friction · SMS summary</div>
+      <p class="vc-body">Canva removes the visual-asset friction (no Photoshop, no separate AI image tool, no QR generator hunt). It does <strong>not</strong> remove SMS-program friction (opt-in, compliance, deliverability) — those still require an SMS partner.</p>
+    </div>
+    <div class="value-card time">
+      <div class="vc-title">Time · SMS summary</div>
+      <p class="vc-body">Biggest wins: <strong>Magic Resize</strong> across the multi-channel SMS promo, <strong>Bulk Create</strong> for variants, and <strong>direct partner integrations</strong> (Textellent) that eliminate file-handoff steps.</p>
+    </div>
+    <div class="value-card money">
+      <div class="vc-title">Revenue · SMS summary</div>
+      <p class="vc-body">Better MMS visuals materially lift conversion on a high-RPM channel; wider list-growth creative volume grows the subscriber base that <strong>every future SMS campaign monetizes</strong>.</p>
+    </div>
+    <div class="value-card personal">
+      <div class="vc-title">Personalization · SMS summary</div>
+      <p class="vc-body">Visual-asset personalization at scale via Bulk Create + Magic Translate. Real per-recipient personalization (name token, dynamic offer, behavior trigger) <strong>lives in the SMS partner</strong>, not in Canva.</p>
+    </div>
+    <div class="value-card trust">
+      <div class="vc-title">Trust · SMS summary</div>
+      <p class="vc-body">Trust comes from <strong>partner-platform credibility</strong> (Textellent, Klaviyo) plus the Canva Apps SDK — a documented developer pathway — which gives mid-market IT a believable extension surface.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================================== WHATSAPP TAB =================================== -->
+<section class="tab-pane" id="tab-whatsapp" role="tabpanel">
+
+  <div class="channel-intro">
+    <div>
+      <h2>WhatsApp campaign creation in Canva</h2>
+      <p>Canva has <strong>no native WhatsApp Business broadcast capability</strong>, no Meta WABA template authoring, no contact list, and no broadcast send. What it ships is the <em>WhatsApp visual layer</em> — Status posts, Stickers, and chat-mockup creative — plus the assets that go into a broadcast handled by a WhatsApp BSP (AiSensy, Wati, Interakt, Twilio, Klaviyo's WhatsApp channel).</p>
+    </div>
+    <div class="channel-meta">
+      <span class="meta-pill">Native build maturity <span class="maturity partial">Partial — Status &amp; Stickers only</span></span>
+      <span class="meta-pill">Native broadcast send <span class="maturity none">No — partner BSP</span></span>
+      <span class="meta-pill">Meta WABA template submission <span class="maturity none">No — handled in BSP</span></span>
+      <span class="meta-pill"><strong>Plans:</strong> Free, Pro, Teams, Enterprise</span>
+    </div>
+  </div>
+
+  <div class="legend">
+    <span class="legend-item friction"><span class="swatch"></span>Eliminates friction</span>
+    <span class="legend-item time"><span class="swatch"></span>Saves time</span>
+    <span class="legend-item money"><span class="swatch"></span>Drives revenue</span>
+    <span class="legend-item personal"><span class="swatch"></span>Hyper-personalization</span>
+    <span class="legend-item trust"><span class="swatch"></span>Builds trust &amp; confidence</span>
+  </div>
+
+  <div class="scroll-x">
+  <table class="workflow-table">
+    <thead>
+      <tr>
+        <th class="col-step">Step</th>
+        <th class="col-features">Canva features &amp; functionalities at this step</th>
+        <th class="col-friction"><span class="col-icon"></span>Eliminates friction · how?</th>
+        <th class="col-time"><span class="col-icon"></span>Saves time · how?</th>
+        <th class="col-money"><span class="col-icon"></span>Drives revenue · how?</th>
+        <th class="col-personal"><span class="col-icon"></span>Hyper-personalization · how?</th>
+        <th class="col-trust"><span class="col-icon"></span>Builds trust &amp; confidence · how?</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- STEP 1 WA -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s1">1</div>
+          <div class="step-title">Plan the WhatsApp Asset</div>
+          <div class="step-desc">Decide surface: Status, Sticker, or chat-mockup creative for ads/landing pages.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>20,100+ WhatsApp Status templates</strong> by occasion &amp; industry (birthday, sale, promo, travel, food, anniversary, real estate, fitness)</li>
+            <li><strong>WhatsApp Sticker</strong> templates &amp; doctype</li>
+            <li><strong>WhatsApp chat-mockup</strong> templates (via Common Ninja Canva app) for ad creative</li>
+            <li><span class="gap-cell">No Meta WABA template planner, no broadcast-campaign workflow, no recipient targeting UI.</span></li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">A small business owner instantly has 20k+ ready-to-customize ideas for "what do I post on WhatsApp Status today" — replaces the blank-page paralysis.</td>
+        <td class="col-time-cell">Templates by occasion (Diwali, Black Friday, anniversaries, etc.) collapse concept-to-creative for time-sensitive Status posts to under 60 seconds.</td>
+        <td class="col-money-cell">A consistently-active WhatsApp Status presence lifts engagement and repeat-purchase rate — top-of-mind brand recall translates directly to revenue.</td>
+        <td class="col-personal-cell">Templates filtered by industry vertical and occasion give the user a starting point already shaped to their business and the moment in time.</td>
+        <td class="col-trust-cell">Templates match WhatsApp UX conventions (9:16, status-style typography, stickers) — the user trusts the output will look native to the channel.</td>
+      </tr>
+
+      <!-- STEP 2 WA -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s2">2</div>
+          <div class="step-title">Choose the WhatsApp Surface</div>
+          <div class="step-desc">Status (9:16 vertical), Sticker (square transparent), or chat-mockup canvas.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>WhatsApp Status doctype</strong> (correct 9:16 dimensions out of the gate)</li>
+            <li><strong>WhatsApp Sticker doctype</strong> (transparent background, sticker-pack-ready output)</li>
+            <li>Chat-mockup canvas for ad creative</li>
+            <li>One-click doctype switch from homepage / search</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Canva auto-applies the right canvas dimensions — no need to research "what size is a WhatsApp Status" or get the sticker pack format wrong.</td>
+        <td class="col-time-cell">No manual canvas-sizing or aspect-ratio math — saves 1–2 minutes per asset, compounds across high-frequency Status posts.</td>
+        <td class="col-money-cell">Right format = right placement = right engagement. A correctly sized 9:16 Status outperforms a cropped 1:1 asset materially.</td>
+        <td class="col-personal-cell">Pick surface by goal: Status for engagement, Sticker for brand virality (user-distributed), chat-mockup for paid ad creative.</td>
+        <td class="col-trust-cell">Native doctypes guarantee the asset will display correctly inside WhatsApp — user confidence is built before they even start designing.</td>
+      </tr>
+
+      <!-- STEP 3 WA -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s3">3</div>
+          <div class="step-title">Design the Asset</div>
+          <div class="step-desc">Use the familiar Canva editor inside the WhatsApp doctype.</div>
+        </td>
+        <td>
+          <ul>
+            <li>Drag-and-drop editor (same one used for Instagram Story etc.)</li>
+            <li>3M+ free stock photos &amp; graphics</li>
+            <li>Filters: Epic, Festive, ColorMix, Duotone</li>
+            <li>Speech bubbles, doodles, frames, decorative elements</li>
+            <li><strong>Background Remover</strong> (Pro) for sticker creation</li>
+            <li><strong>Magic Media</strong> AI image &amp; video generation</li>
+            <li>Crop / resize / brightness / saturation controls</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Existing Canva users carry zero learning curve into WhatsApp design — same editor, same Elements panel, same hotkeys.</td>
+        <td class="col-time-cell">One-click filters and Background Remover replace 5–10 minutes of manual editing per Status; Magic Media generates a hero asset from a prompt instantly.</td>
+        <td class="col-money-cell">High-quality, native-looking WhatsApp creative outperforms phone-shot photos materially; sticker virality drives organic brand reach with zero ad spend.</td>
+        <td class="col-personal-cell">AI image and filter selection produces per-campaign, per-promo, per-persona variants of the same Status format.</td>
+        <td class="col-trust-cell">The same trusted Canva editing engine — there is no "new app" anxiety for the existing user; brand-new users get a globally recognized creative platform.</td>
+      </tr>
+
+      <!-- STEP 4 WA -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s4">4</div>
+          <div class="step-title">Brand &amp; Localize</div>
+          <div class="step-desc">Apply identity, translate for markets where WhatsApp is the primary channel.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Brand Kit</strong> (Pro) — logo, brand colors, fonts</li>
+            <li><strong>Magic Translate</strong> — up to 25+ languages from one design</li>
+            <li><strong>AI Voice</strong> (40+ languages) for video Status posts</li>
+            <li>Pro custom fonts</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Multi-market WhatsApp marketing (huge in India, Brazil, MENA, SEA) becomes a one-click operation — no agency, no translator, no separate localization tool.</td>
+        <td class="col-time-cell">25 language variants of a WhatsApp Status in seconds vs. days with manual localization workflows.</td>
+        <td class="col-money-cell">Localized WhatsApp content lifts engagement materially in non-English markets; voice variants in AI Voice unlock audio-first audiences.</td>
+        <td class="col-personal-cell">Per-locale Status variants, per-locale voiceover — same brand, market-specific delivery, all generated automatically.</td>
+        <td class="col-trust-cell">Brand Kit ensures the WhatsApp Status looks like the brand even at high posting cadence — consistency over time is what builds prospect trust on WhatsApp.</td>
+      </tr>
+
+      <!-- STEP 5 WA -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s5">5</div>
+          <div class="step-title">Generate Variants &amp; Cross-Channel Spinoffs</div>
+          <div class="step-desc">Produce variants per audience, plus reformat into Instagram Story, Reel, etc.</div>
+        </td>
+        <td>
+          <ul>
+            <li><strong>Bulk Create</strong> with CSV/XLSX for asset variant runs</li>
+            <li><strong>Magic Resize</strong> — WhatsApp Status → IG Story → TikTok → FB Story in one click</li>
+            <li>Canva Sheets as data source</li>
+            <li>Per-variant naming &amp; export</li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">No manual recreation of the same asset for every 9:16 surface (Status / IG Story / Reel / Shorts / TikTok) — one source, all destinations.</td>
+        <td class="col-time-cell">Magic Resize across vertical channels is one of Canva's highest-leverage time savings — 6+ hours of work in one click.</td>
+        <td class="col-money-cell">Cross-platform exposure of the same offer compounds reach and revenue; WhatsApp + IG Story together outperform either alone.</td>
+        <td class="col-personal-cell">Same source → per-audience variants → per-channel resizes = three-dimensional personalization (segment × locale × channel).</td>
+        <td class="col-trust-cell">Consistent variants across channels (same offer, same brand, same visual) build a coherent brand narrative — trust compounds with consistency.</td>
+      </tr>
+
+      <!-- STEP 6 WA -->
+      <tr class="row-band-2">
+        <td>
+          <div class="step-num s6">6</div>
+          <div class="step-title">Preview, Test &amp; Approve</div>
+          <div class="step-desc">Verify mobile rendering (WhatsApp is mobile-first), route through brand sign-off.</div>
+        </td>
+        <td>
+          <ul>
+            <li>Mobile preview inside editor</li>
+            <li>Phone-frame mockups for in-context preview</li>
+            <li>Comments, @-mentions, real-time co-edit</li>
+            <li>Approval workflow with lock-until-approved</li>
+            <li>Multiple approvers (Enterprise)</li>
+            <li><span class="gap-cell">No native WhatsApp test-send; visual preview only.</span></li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Mobile-first preview matches the only context WhatsApp is consumed in. The reviewer sees the asset as the customer will, on a phone-shaped frame.</td>
+        <td class="col-time-cell">Approval in-canvas eliminates screenshot-email-chains; mobile preview cuts device-swap testing.</td>
+        <td class="col-money-cell">Catches broken or off-brand WhatsApp creative before a 24-hour Status post goes live to a public audience — protects brand equity.</td>
+        <td class="col-personal-cell">Per-variant approval routing for segmented WhatsApp campaigns.</td>
+        <td class="col-trust-cell">Regulated industries (finance, healthcare) get a governed sign-off path — Canva fits into enterprise risk controls.</td>
+      </tr>
+
+      <!-- STEP 7 WA -->
+      <tr class="row-band-1">
+        <td>
+          <div class="step-num s7">7</div>
+          <div class="step-title">Share to WhatsApp / Hand to BSP</div>
+          <div class="step-desc">Mobile share-sheet to WhatsApp for Status; export asset for BSP-driven broadcast.</div>
+        </td>
+        <td>
+          <ul>
+            <li>PNG / MP4 / WebP sticker file export</li>
+            <li><strong>Share-to-WhatsApp</strong> via OS share sheet from Canva mobile</li>
+            <li>Sticker pack file output ready for WhatsApp Stickers</li>
+            <li>Common Ninja Canva app for chat-template creative</li>
+            <li><strong>Canva Apps SDK Content Publisher intent</strong> — WhatsApp BSPs (Wati, AiSensy, Twilio) can build destination publish actions</li>
+            <li><span class="gap-cell">No native Meta WABA template submission, no broadcast send, no campaign analytics, no interactive component authoring (list messages, quick-reply buttons).</span></li>
+          </ul>
+        </td>
+        <td class="col-friction-cell">Mobile share-sheet is one tap from Canva mobile into WhatsApp — no file transfer between devices; no exporting and emailing-to-self.</td>
+        <td class="col-time-cell">Status posting becomes a 30-second action; sticker pack handoff is direct to the user's phone.</td>
+        <td class="col-money-cell">Frictionless Status posting enables daily / hourly cadence — always-fresh WhatsApp presence drives repeat-purchase revenue from active customers.</td>
+        <td class="col-personal-cell">For BSP-driven broadcast, Canva assets pair with the BSP's per-recipient WABA template variables ({{1}}, {{2}}, etc.) — Canva handles the visual, BSP handles the recipient binding.</td>
+        <td class="col-trust-cell">Native OS share-sheet leverages WhatsApp's own trust pathway; Canva Apps SDK gives BSPs an official, documented integration path that mid-market IT can vet.</td>
+      </tr>
+
+    </tbody>
+  </table>
+  </div>
+
+  <div class="value-summary">
+    <div class="value-card friction">
+      <div class="vc-title">Friction · WhatsApp summary</div>
+      <p class="vc-body">Canva removes asset-creation friction (right doctype, native dimensions, AI image, 20k+ templates). It does <strong>not</strong> remove WhatsApp Business friction — Meta template approval, broadcast lists, opt-in compliance still live in a BSP.</p>
+    </div>
+    <div class="value-card time">
+      <div class="vc-title">Time · WhatsApp summary</div>
+      <p class="vc-body">Magic Resize across 9:16 surfaces and Magic Translate for multi-language markets are the highest-leverage time savings — daily Status posting becomes a sub-minute operation.</p>
+    </div>
+    <div class="value-card money">
+      <div class="vc-title">Revenue · WhatsApp summary</div>
+      <p class="vc-body">Higher post cadence on Status × native-quality creative × sticker virality drives <strong>top-of-mind brand recall</strong> in markets where WhatsApp is the dominant channel (India, Brazil, MENA, SEA) — repeat-purchase revenue compounds.</p>
+    </div>
+    <div class="value-card personal">
+      <div class="vc-title">Personalization · WhatsApp summary</div>
+      <p class="vc-body">Visual personalization at scale (Bulk Create + Magic Translate + locale-specific imagery). Real per-recipient template personalization (WABA <code>{{1}}</code> variables) <strong>lives in the BSP</strong>.</p>
+    </div>
+    <div class="value-card trust">
+      <div class="vc-title">Trust · WhatsApp summary</div>
+      <p class="vc-body">Native doctypes guarantee correct rendering; Brand Kit enforces consistency; OS share-sheet leverages WhatsApp's own trust pathway; Canva Apps SDK gives BSPs a clean integration path that procurement-vets cleanly.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <h4>Sources &amp; methodology</h4>
+  <p>All Canva micro-features in this analysis are sourced from official Canva product pages, the Canva Help Center, partner ESP/BSP integration documentation, and independent product reviews. No features are inferred or invented; every row maps to a documented capability. Value-dimension assessments are this author's interpretation framed for an executive read.</p>
+  <div class="sources">
+    <div>
+      <h4>Canva primary sources</h4>
+      <ul>
+        <li><a href="https://www.canva.com/emails/" target="_blank">canva.com/emails</a> (product page)</li>
+        <li><a href="https://www.canva.com/help/design-and-use-canva-email/" target="_blank">Help · Get started with Canva Email</a></li>
+        <li><a href="https://www.canva.com/en_au/help/choose-canva-email-layout/" target="_blank">Help · Structure your Canva Email layout</a></li>
+        <li><a href="https://www.canva.com/en_au/help/add-canva-email-elements/" target="_blank">Help · Add content and design elements</a></li>
+        <li><a href="https://www.canva.com/en_au/help/test-and-export-canva-email/" target="_blank">Help · Test and export your Canva Email</a></li>
+        <li><a href="https://www.canva.com/en_au/help/send-emails/" target="_blank">Help · Share and send emails</a></li>
+        <li><a href="https://www.canva.com/en_au/help/email-unsubscribe-preferences-browser/" target="_blank">Help · Compliance links (unsubscribe, preferences, view in browser)</a></li>
+        <li><a href="https://www.canva.com/help/bulk-create/" target="_blank">Help · Bulk Create</a></li>
+        <li><a href="https://www.canva.com/help/bulk-create-from-sheets/" target="_blank">Help · Bulk Create from Canva Sheets</a></li>
+        <li><a href="https://www.canva.com/sheets/" target="_blank">Canva Sheets</a></li>
+        <li><a href="https://www.canva.com/magic-write/" target="_blank">Magic Write</a></li>
+        <li><a href="https://www.canva.com/ai-email-generator/" target="_blank">AI Email Generator</a></li>
+        <li><a href="https://www.canva.com/pro/brand-kit/" target="_blank">Brand Kit (Pro)</a></li>
+        <li><a href="https://www.canva.com/whatsapp-statuses/templates/" target="_blank">WhatsApp Status templates (20,100+)</a></li>
+        <li><a href="https://www.canva.com/create/whatsapp-stickers/" target="_blank">WhatsApp Sticker maker</a></li>
+        <li><a href="https://www.canva.dev/docs/apps/intents/content-publisher/implementation-guide/" target="_blank">Canva Apps SDK · Content Publisher intent</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4>Partner &amp; third-party sources</h4>
+      <ul>
+        <li><a href="https://www.klaviyo.com/blog/canva-klaviyo-email-design-integration" target="_blank">Klaviyo · Canva integration blog</a></li>
+        <li><a href="https://help.klaviyo.com/hc/en-us/articles/48509573327515" target="_blank">Klaviyo Help · Getting started with Canva for email</a></li>
+        <li><a href="https://www.klaviyo.com/newsroom/klaviyo-canva-expanded-integration" target="_blank">Klaviyo Newsroom · Expanded Canva partnership</a></li>
+        <li><a href="https://mailchimp.com/integrations/canva/" target="_blank">Mailchimp · Canva integration</a></li>
+        <li><a href="https://flodesk.com/blog/how-to-send-canva-emails/" target="_blank">Flodesk · Canva integration</a></li>
+        <li><a href="https://textellent.com/product-services/canva/" target="_blank">Textellent · Canva SMS integration</a></li>
+        <li><a href="https://stripo.email/blog/canva-email-design-maker-a-new-player-in-the-email-editor-market/" target="_blank">Stripo · Canva email-maker audit</a></li>
+        <li><a href="https://stewartgauld.com/canva-email-review-2026-design-and-send-emails-for-free-in-canva/" target="_blank">Stewart Gauld · Canva Email review 2026</a></li>
+        <li><a href="https://conv3rt.co.uk/articles/canva-new-email-feature/" target="_blank">Conv3rt · Canva email feature analysis</a></li>
+        <li><a href="https://academy.klaviyo.com/en-us/best-practices/best-practices-for-designing-emails-with-canva" target="_blank">Klaviyo Academy · Designing emails with Canva</a></li>
+      </ul>
+    </div>
+  </div>
+  <p style="margin-top:24px">© 2026 · Workflow × value-dimension analysis · For internal product strategy use.</p>
+</footer>
+
+</div>
+
+<script>
+(function(){
+  var buttons = document.querySelectorAll('.tab-btn');
+  var panes = document.querySelectorAll('.tab-pane');
+  buttons.forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var target = btn.getAttribute('data-tab');
+      buttons.forEach(function(b){ b.classList.remove('active'); });
+      panes.forEach(function(p){ p.classList.remove('active'); });
+      btn.classList.add('active');
+      var pane = document.getElementById('tab-' + target);
+      if(pane) pane.classList.add('active');
+      try { history.replaceState(null, '', '#' + target); } catch(e){}
+    });
+  });
+  // deep-link support
+  var hash = (window.location.hash || '').replace('#','');
+  if(hash){
+    var btn = document.querySelector('.tab-btn[data-tab="'+hash+'"]');
+    if(btn) btn.click();
+  }
+})();
+</script>
+</body>
+</html>
