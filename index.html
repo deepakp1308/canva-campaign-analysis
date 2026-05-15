@@ -52,14 +52,24 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .maturity.partial{background:var(--money-bg);color:var(--money);border:1px solid rgba(217,119,6,.2)}
 .maturity.none{background:var(--gap-bg);color:var(--gap);border:1px solid rgba(156,163,175,.3)}
 
-.legend{display:flex;gap:14px;flex-wrap:wrap;margin:0 0 18px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:12px}
+.legend{display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin:0 0 18px;padding:12px 16px;background:var(--surface);border:1px solid var(--line);border-radius:10px;font-size:12px}
 .legend-item{display:inline-flex;align-items:center;gap:6px;color:var(--text-2);font-weight:500}
-.legend-item .swatch{width:12px;height:12px;border-radius:3px;display:inline-block}
+.legend-item .swatch{width:14px;height:14px;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;color:#fff;font-size:9px;font-weight:800;letter-spacing:0;line-height:1}
 .legend-item.friction .swatch{background:var(--friction)}
 .legend-item.time .swatch{background:var(--time)}
 .legend-item.money .swatch{background:var(--money)}
 .legend-item.personal .swatch{background:var(--personal)}
 .legend-item.trust .swatch{background:var(--trust)}
+.legend-note{flex-basis:100%;color:var(--text-3);font-size:11px;font-style:italic;margin-top:4px}
+
+/* per-feature dimension markers */
+.ms{display:inline-flex;gap:3px;margin-left:6px;vertical-align:1px}
+.m{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:4px;font-size:9px;font-weight:800;color:#fff;letter-spacing:0;line-height:1;cursor:help;font-family:'Inter',sans-serif}
+.m-f{background:var(--friction)}
+.m-t{background:var(--time)}
+.m-r{background:var(--money)}
+.m-p{background:var(--personal)}
+.m-c{background:var(--trust)}
 
 .workflow-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;table-layout:fixed}
 .workflow-table thead th{background:var(--surface-2);border-bottom:1px solid var(--line);padding:14px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);vertical-align:bottom}
@@ -171,11 +181,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="legend">
-    <span class="legend-item friction"><span class="swatch"></span>Eliminates friction</span>
-    <span class="legend-item time"><span class="swatch"></span>Saves time</span>
-    <span class="legend-item money"><span class="swatch"></span>Drives revenue</span>
-    <span class="legend-item personal"><span class="swatch"></span>Hyper-personalization</span>
-    <span class="legend-item trust"><span class="swatch"></span>Builds trust &amp; confidence</span>
+    <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
+    <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
+    <span class="legend-item money"><span class="swatch">R</span>Drives revenue</span>
+    <span class="legend-item personal"><span class="swatch">P</span>Hyper-personalization</span>
+    <span class="legend-item trust"><span class="swatch">C</span>Builds trust &amp; confidence</span>
+    <span class="legend-note">Each feature below is tagged with the dimensions it drives. Hover any tag for the dimension name.</span>
   </div>
 
   <div class="scroll-x">
@@ -202,10 +213,10 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>Dedicated <strong>Email doctype</strong> (homepage tile, "Create" search, /emails landing page)</li>
-            <li><strong>Hundreds of templates</strong> tagged by industry (SaaS, retail, real estate, nonprofit, fitness, events, education) and style (modern, minimal, bold, elegant)</li>
-            <li><strong>AI template generator</strong> — describe intent ("Professional healthcare email") and Canva surfaces matching templates</li>
-            <li>Blank canvas option</li>
+            <li>Dedicated <strong>Email doctype</strong> (homepage tile, "Create" search, /emails landing page) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Hundreds of templates</strong> tagged by industry (SaaS, retail, real estate, nonprofit, fitness, events, education) and style (modern, minimal, bold, elegant) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>AI template generator</strong> — describe intent ("Professional healthcare email") and Canva surfaces matching templates <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li>Blank canvas option <span class="ms"><span class="m m-f" title="Eliminates friction">F</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">A purpose-built email entry — not the generic Canva canvas — means the user is dropped into an environment with email rules already baked in. Beginners avoid the "what dimensions do I use" paralysis.</td>
@@ -224,13 +235,13 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Block-based editor</strong>: headers, footers, icon blocks, columns (basic/styled/pre-designed), buttons, dividers, countdown timers, tables</li>
-            <li><strong>Auto-responsive</strong> — content auto-stacks on mobile, no manual mobile editing</li>
-            <li><strong>Email-safe-font enforcement</strong> with in-editor warning on non-safe fonts</li>
-            <li><strong>Brand Kit</strong> (Pro): logo, brand colors, fonts surfaced as one-click swatches</li>
-            <li><strong>100M+ media assets</strong>; image compression guidance</li>
-            <li><strong>"Set to top / bottom"</strong> snap for headers/footers</li>
-            <li>Video → auto-GIF conversion on export</li>
+            <li><strong>Block-based editor</strong>: headers, footers, icon blocks, columns (basic/styled/pre-designed), buttons, dividers, countdown timers, tables <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Auto-responsive</strong> — content auto-stacks on mobile, no manual mobile editing <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Email-safe-font enforcement</strong> with in-editor warning on non-safe fonts <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Brand Kit</strong> (Pro): logo, brand colors, fonts surfaced as one-click swatches <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>100M+ media assets</strong>; image compression guidance <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>"Set to top / bottom"</strong> snap for headers/footers <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Video → auto-GIF conversion on export <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No HTML, no merge-tag syntax, no manual mobile-version creation. The editor proactively flags non-email-safe fonts before they break a send — friction is removed <em>before</em> the user makes the mistake.</td>
@@ -249,11 +260,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Magic Write</strong> (OpenAI-backed): subject ideas, headlines, body copy, CTA microcopy</li>
-            <li><strong>Tone &amp; voice controls</strong>: Continue writing / Rewrite / Shorten / Change voice</li>
-            <li><strong>@Canva AI</strong> tagging in comments — asks for layout suggestions, reorganization, or copy refinement in-place</li>
-            <li><strong>Magic Translate</strong> for multi-language variants</li>
-            <li><strong>AI Email Generator</strong> dedicated entry point (canva.com/ai-email-generator)</li>
+            <li><strong>Magic Write</strong> (OpenAI-backed): subject ideas, headlines, body copy, CTA microcopy <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>Tone &amp; voice controls</strong>: Continue writing / Rewrite / Shorten / Change voice <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>@Canva AI</strong> tagging in comments — asks for layout suggestions, reorganization, or copy refinement in-place <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Magic Translate</strong> for multi-language variants <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>AI Email Generator</strong> dedicated entry point (canva.com/ai-email-generator) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">Removes the "what do I say" blank-page paralysis that stops small-business marketers from shipping emails at all. No copywriter required, no separate AI tool, no copy-paste between apps.</td>
@@ -272,11 +283,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Bulk Create</strong> — upload CSV/XLSX (≤25MB; 300 rows × 60 cols)</li>
-            <li><strong>"Connect Data"</strong> right-click action to map any element to a column</li>
-            <li><strong>Canva Sheets</strong> as a live visual spreadsheet data source</li>
-            <li><strong>Data connectors</strong>: HubSpot, Google Analytics (Business / Enterprise)</li>
-            <li>Output as multi-page design or one file per row, with custom file naming</li>
+            <li><strong>Bulk Create</strong> — upload CSV/XLSX (≤25MB; 300 rows × 60 cols) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>"Connect Data"</strong> right-click action to map any element to a column <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Canva Sheets</strong> as a live visual spreadsheet data source <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Data connectors</strong>: HubSpot, Google Analytics (Business / Enterprise) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Output as multi-page design or one file per row, with custom file naming <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-f" title="Eliminates friction">F</span></span></li>
             <li>(Note: ESP-specific merge tags like <code>{{first_name}}</code> are still applied in the ESP, not in Canva)</li>
           </ul>
         </td>
@@ -296,17 +307,17 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Email Links menu</strong> with three first-class compliance link types:
+            <li><strong>Email Links menu</strong> with three first-class compliance link types: <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span>
               <ul>
                 <li><code>{{ unsubscribe }}</code></li>
                 <li><code>{{ update_preferences }}</code></li>
                 <li><code>{{ view_in_browser }}</code></li>
               </ul>
             </li>
-            <li><strong>Auto-conversion</strong> of these tags to the destination ESP's syntax at publish (Mailchimp, Klaviyo, Constant Contact)</li>
-            <li>Compliance links <strong>pre-placed</strong> in default templates (footer + header)</li>
-            <li>"Link anything" — any text, image, button, icon hyperlinkable</li>
-            <li>In-editor warning if email is sent via Gmail (compliance links won't function)</li>
+            <li><strong>Auto-conversion</strong> of these tags to the destination ESP's syntax at publish (Mailchimp, Klaviyo, Constant Contact) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Compliance links <strong>pre-placed</strong> in default templates (footer + header) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>"Link anything" — any text, image, button, icon hyperlinkable <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>In-editor warning if email is sent via Gmail (compliance links won't function) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No code, no merge-tag syntax memorization, no per-ESP-platform differences for the user to learn — the user just clicks "Unsubscribe" from a menu.</td>
@@ -325,12 +336,12 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Desktop / mobile preview toggle</strong> inside the editor</li>
-            <li><strong>"Send test email"</strong> — sent from <code>no-reply@preview.canva.email</code> to the user's login address only (security guardrail)</li>
-            <li><strong>Comments</strong> on any element with formatting; filters (For you / Unread / Resolved); @-mentions</li>
-            <li><strong>Approval workflow</strong>: pick reviewer, set due date, attach note; design locks from publish until approved</li>
-            <li><strong>Multiple approvers</strong> (Enterprise tier)</li>
-            <li>Real-time multi-cursor co-editing</li>
+            <li><strong>Desktop / mobile preview toggle</strong> inside the editor <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>"Send test email"</strong> — sent from <code>no-reply@preview.canva.email</code> to the user's login address only (security guardrail) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Comments</strong> on any element with formatting; filters (For you / Unread / Resolved); @-mentions <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Approval workflow</strong>: pick reviewer, set due date, attach note; design locks from publish until approved <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Multiple approvers</strong> (Enterprise tier) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Real-time multi-cursor co-editing <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No third-party preview tool, no separate inbox-testing service for the small-business user. Approval lives next to the design — not in an email chain with screenshots.</td>
@@ -349,13 +360,13 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Three export modes</strong>: Copy HTML (clipboard), Download ZIP (HTML + image folder), Direct ESP push</li>
-            <li><strong>Direct integrations</strong> from the Share menu: <strong>Mailchimp, Klaviyo, Constant Contact, Flodesk, Gmail, Outlook</strong></li>
-            <li>In-Canva ESP authentication; one-click publish</li>
-            <li>Compliance merge tags auto-converted per destination ESP</li>
-            <li>Generic HTML export works with HubSpot, Brevo, SendGrid, others</li>
+            <li><strong>Three export modes</strong>: Copy HTML (clipboard), Download ZIP (HTML + image folder), Direct ESP push <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Direct integrations</strong> from the Share menu: <strong>Mailchimp, Klaviyo, Constant Contact, Flodesk, Gmail, Outlook</strong> <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>In-Canva ESP authentication; one-click publish <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Compliance merge tags auto-converted per destination ESP <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Generic HTML export works with HubSpot, Brevo, SendGrid, others <span class="ms"><span class="m m-f" title="Eliminates friction">F</span></span></li>
             <li>100KB single-page Mailchimp publish limit; one page per publish</li>
-            <li>Canva Apps SDK <strong>Content Publisher intent</strong> — any ESP can build a publish target</li>
+            <li>Canva Apps SDK <strong>Content Publisher intent</strong> — any ESP can build a publish target <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No copy-paste-format gymnastics between Canva and the ESP. One click moves the design straight into a draftable campaign in the ESP. For mid-market with devs, the Apps SDK provides a documented extension surface.</td>
@@ -410,11 +421,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="legend">
-    <span class="legend-item friction"><span class="swatch"></span>Eliminates friction</span>
-    <span class="legend-item time"><span class="swatch"></span>Saves time</span>
-    <span class="legend-item money"><span class="swatch"></span>Drives revenue</span>
-    <span class="legend-item personal"><span class="swatch"></span>Hyper-personalization</span>
-    <span class="legend-item trust"><span class="swatch"></span>Builds trust &amp; confidence</span>
+    <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
+    <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
+    <span class="legend-item money"><span class="swatch">R</span>Drives revenue</span>
+    <span class="legend-item personal"><span class="swatch">P</span>Hyper-personalization</span>
+    <span class="legend-item trust"><span class="swatch">C</span>Builds trust &amp; confidence</span>
+    <span class="legend-note">Each feature below is tagged with the dimensions it drives. Hover any tag for the dimension name.</span>
   </div>
 
   <div class="scroll-x">
@@ -441,9 +453,9 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>20+ SMS marketing template kits</strong> tagged for text-marketing list growth</li>
-            <li>SMS-style chat-bubble templates (graphics, not real messages)</li>
-            <li>Industry-vertical inspiration libraries</li>
+            <li><strong>20+ SMS marketing template kits</strong> tagged for text-marketing list growth <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>SMS-style chat-bubble templates (graphics, not real messages) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Industry-vertical inspiration libraries <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><span class="gap-cell">No native SMS goal/strategy planner, no list-size estimator, no compliance pre-checks.</span></li>
           </ul>
         </td>
@@ -463,11 +475,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>Templates for IG post / IG Story / Reel / FB / poster / flyer / business card</li>
-            <li><strong>QR code generator</strong> built into Elements</li>
-            <li><strong>Magic Resize</strong> — one design → 8+ placements in one click</li>
-            <li>Brand Kit (Pro) for one-click branding</li>
-            <li>3M+ stock photos &amp; graphics</li>
+            <li>Templates for IG post / IG Story / Reel / FB / poster / flyer / business card <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>QR code generator</strong> built into Elements <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Magic Resize</strong> — one design → 8+ placements in one click <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>Brand Kit (Pro) for one-click branding <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>3M+ stock photos &amp; graphics <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No need to redesign the same promo for every channel; QR generator removes the third-party QR step.</td>
@@ -486,12 +498,12 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>Custom canvas dimensions for MMS specs</li>
-            <li><strong>Magic Media</strong> AI image &amp; 8-second video generation (Veo-3 backed)</li>
-            <li><strong>Background Remover</strong> (Pro)</li>
-            <li>Magic Grab, Magic Expand, Magic Morph for image editing</li>
-            <li>Image compression guidance for delivery weight</li>
-            <li>Brand Kit application across visual</li>
+            <li>Custom canvas dimensions for MMS specs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Magic Media</strong> AI image &amp; 8-second video generation (Veo-3 backed) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Background Remover</strong> (Pro) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>Magic Grab, Magic Expand, Magic Morph for image editing <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Image compression guidance for delivery weight <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Brand Kit application across visual <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No need for Photoshop, Figma, or a separate AI image tool. Background Remover delivers professional product cutouts to a non-designer in one click.</td>
@@ -510,11 +522,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Bulk Create</strong> with CSV/XLSX (300 rows × 60 cols)</li>
-            <li><strong>"Connect Data"</strong> to bind text/image elements to spreadsheet columns</li>
-            <li><strong>Canva Sheets</strong> as live data source</li>
-            <li><strong>Magic Translate</strong> for locale variants</li>
-            <li>Per-variant file naming for downstream upload</li>
+            <li><strong>Bulk Create</strong> with CSV/XLSX (300 rows × 60 cols) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>"Connect Data"</strong> to bind text/image elements to spreadsheet columns <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Canva Sheets</strong> as live data source <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Magic Translate</strong> for locale variants <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li>Per-variant file naming for downstream upload <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-f" title="Eliminates friction">F</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">One-job variant generation replaces hand-recreation of each MMS asset; non-coders get mail-merge for visuals.</td>
@@ -533,10 +545,10 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>Mobile preview inside editor</li>
-            <li>Phone-frame mockup elements for context-of-use preview</li>
-            <li>Comments &amp; @-mentions</li>
-            <li>Approval workflow (lock-until-approved)</li>
+            <li>Mobile preview inside editor <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Phone-frame mockup elements for context-of-use preview <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Comments &amp; @-mentions <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Approval workflow (lock-until-approved) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><span class="gap-cell">No native test-MMS send; visual preview only.</span></li>
           </ul>
         </td>
@@ -556,11 +568,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>PNG / JPG / PDF / MP4 export</li>
-            <li><strong>Bulk download</strong> for variant runs</li>
-            <li><strong>Textellent</strong> direct integration — design in Canva, push to Textellent for personalized SMS send</li>
-            <li><strong>Canva Apps SDK Content Publisher intent</strong> — any SMS provider can build a destination publish action</li>
-            <li><strong>Zapier</strong> connections to ClickSend, Mobile Message, SimpleTexting, Burst</li>
+            <li>PNG / JPG / PDF / MP4 export <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Bulk download</strong> for variant runs <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Textellent</strong> direct integration — design in Canva, push to Textellent for personalized SMS send <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Canva Apps SDK Content Publisher intent</strong> — any SMS provider can build a destination publish action <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Zapier</strong> connections to ClickSend, Mobile Message, SimpleTexting, Burst <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">Textellent integration removes the download-reupload step entirely. Zapier extends Canva to long-tail SMS providers with no code.</td>
@@ -579,9 +591,9 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>No native send — handled in partner (Textellent, Klaviyo, Twilio, SimpleTexting, Brevo, etc.)</li>
-            <li>Magic Resize lets users iterate quickly into next campaign creative once partner analytics come back</li>
-            <li>Canva Code can produce interactive landing pages linked from SMS</li>
+            <li>No native send — handled in partner (Textellent, Klaviyo, Twilio, SimpleTexting, Brevo, etc.) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Magic Resize lets users iterate quickly into next campaign creative once partner analytics come back <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Canva Code can produce interactive landing pages linked from SMS <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><span class="gap-cell">No native SMS analytics, opt-out management, deliverability dashboards, scheduling, throttling, or A/B framework.</span></li>
           </ul>
         </td>
@@ -637,11 +649,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="legend">
-    <span class="legend-item friction"><span class="swatch"></span>Eliminates friction</span>
-    <span class="legend-item time"><span class="swatch"></span>Saves time</span>
-    <span class="legend-item money"><span class="swatch"></span>Drives revenue</span>
-    <span class="legend-item personal"><span class="swatch"></span>Hyper-personalization</span>
-    <span class="legend-item trust"><span class="swatch"></span>Builds trust &amp; confidence</span>
+    <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
+    <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
+    <span class="legend-item money"><span class="swatch">R</span>Drives revenue</span>
+    <span class="legend-item personal"><span class="swatch">P</span>Hyper-personalization</span>
+    <span class="legend-item trust"><span class="swatch">C</span>Builds trust &amp; confidence</span>
+    <span class="legend-note">Each feature below is tagged with the dimensions it drives. Hover any tag for the dimension name.</span>
   </div>
 
   <div class="scroll-x">
@@ -668,9 +681,9 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>20,100+ WhatsApp Status templates</strong> by occasion &amp; industry (birthday, sale, promo, travel, food, anniversary, real estate, fitness)</li>
-            <li><strong>WhatsApp Sticker</strong> templates &amp; doctype</li>
-            <li><strong>WhatsApp chat-mockup</strong> templates (via Common Ninja Canva app) for ad creative</li>
+            <li><strong>20,100+ WhatsApp Status templates</strong> by occasion &amp; industry (birthday, sale, promo, travel, food, anniversary, real estate, fitness) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>WhatsApp Sticker</strong> templates &amp; doctype <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>WhatsApp chat-mockup</strong> templates (via Common Ninja Canva app) for ad creative <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li><span class="gap-cell">No Meta WABA template planner, no broadcast-campaign workflow, no recipient targeting UI.</span></li>
           </ul>
         </td>
@@ -690,10 +703,10 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>WhatsApp Status doctype</strong> (correct 9:16 dimensions out of the gate)</li>
-            <li><strong>WhatsApp Sticker doctype</strong> (transparent background, sticker-pack-ready output)</li>
-            <li>Chat-mockup canvas for ad creative</li>
-            <li>One-click doctype switch from homepage / search</li>
+            <li><strong>WhatsApp Status doctype</strong> (correct 9:16 dimensions out of the gate) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>WhatsApp Sticker doctype</strong> (transparent background, sticker-pack-ready output) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Chat-mockup canvas for ad creative <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>One-click doctype switch from homepage / search <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">Canva auto-applies the right canvas dimensions — no need to research "what size is a WhatsApp Status" or get the sticker pack format wrong.</td>
@@ -712,13 +725,13 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>Drag-and-drop editor (same one used for Instagram Story etc.)</li>
-            <li>3M+ free stock photos &amp; graphics</li>
-            <li>Filters: Epic, Festive, ColorMix, Duotone</li>
-            <li>Speech bubbles, doodles, frames, decorative elements</li>
-            <li><strong>Background Remover</strong> (Pro) for sticker creation</li>
-            <li><strong>Magic Media</strong> AI image &amp; video generation</li>
-            <li>Crop / resize / brightness / saturation controls</li>
+            <li>Drag-and-drop editor (same one used for Instagram Story etc.) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>3M+ free stock photos &amp; graphics <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Filters: Epic, Festive, ColorMix, Duotone <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>Speech bubbles, doodles, frames, decorative elements <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Background Remover</strong> (Pro) for sticker creation <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>Magic Media</strong> AI image &amp; video generation <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li>Crop / resize / brightness / saturation controls <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">Existing Canva users carry zero learning curve into WhatsApp design — same editor, same Elements panel, same hotkeys.</td>
@@ -737,10 +750,10 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Brand Kit</strong> (Pro) — logo, brand colors, fonts</li>
-            <li><strong>Magic Translate</strong> — up to 25+ languages from one design</li>
-            <li><strong>AI Voice</strong> (40+ languages) for video Status posts</li>
-            <li>Pro custom fonts</li>
+            <li><strong>Brand Kit</strong> (Pro) — logo, brand colors, fonts <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Magic Translate</strong> — up to 25+ languages from one design <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>AI Voice</strong> (40+ languages) for video Status posts <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li>Pro custom fonts <span class="ms"><span class="m m-p" title="Hyper-personalization">P</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">Multi-market WhatsApp marketing (huge in India, Brazil, MENA, SEA) becomes a one-click operation — no agency, no translator, no separate localization tool.</td>
@@ -759,10 +772,10 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Bulk Create</strong> with CSV/XLSX for asset variant runs</li>
-            <li><strong>Magic Resize</strong> — WhatsApp Status → IG Story → TikTok → FB Story in one click</li>
-            <li>Canva Sheets as data source</li>
-            <li>Per-variant naming &amp; export</li>
+            <li><strong>Bulk Create</strong> with CSV/XLSX for asset variant runs <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Magic Resize</strong> — WhatsApp Status → IG Story → TikTok → FB Story in one click <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>Canva Sheets as data source <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li>Per-variant naming &amp; export <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-f" title="Eliminates friction">F</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No manual recreation of the same asset for every 9:16 surface (Status / IG Story / Reel / Shorts / TikTok) — one source, all destinations.</td>
@@ -781,11 +794,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>Mobile preview inside editor</li>
-            <li>Phone-frame mockups for in-context preview</li>
-            <li>Comments, @-mentions, real-time co-edit</li>
-            <li>Approval workflow with lock-until-approved</li>
-            <li>Multiple approvers (Enterprise)</li>
+            <li>Mobile preview inside editor <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Phone-frame mockups for in-context preview <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Comments, @-mentions, real-time co-edit <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li>Approval workflow with lock-until-approved <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li>Multiple approvers (Enterprise) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><span class="gap-cell">No native WhatsApp test-send; visual preview only.</span></li>
           </ul>
         </td>
@@ -805,11 +818,11 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li>PNG / MP4 / WebP sticker file export</li>
-            <li><strong>Share-to-WhatsApp</strong> via OS share sheet from Canva mobile</li>
-            <li>Sticker pack file output ready for WhatsApp Stickers</li>
-            <li>Common Ninja Canva app for chat-template creative</li>
-            <li><strong>Canva Apps SDK Content Publisher intent</strong> — WhatsApp BSPs (Wati, AiSensy, Twilio) can build destination publish actions</li>
+            <li>PNG / MP4 / WebP sticker file export <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Share-to-WhatsApp</strong> via OS share sheet from Canva mobile <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>Sticker pack file output ready for WhatsApp Stickers <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li>Common Ninja Canva app for chat-template creative <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><strong>Canva Apps SDK Content Publisher intent</strong> — WhatsApp BSPs (Wati, AiSensy, Twilio) can build destination publish actions <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li><span class="gap-cell">No native Meta WABA template submission, no broadcast send, no campaign analytics, no interactive component authoring (list messages, quick-reply buttons).</span></li>
           </ul>
         </td>
