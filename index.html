@@ -71,6 +71,15 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .m-p{background:var(--personal)}
 .m-c{background:var(--trust)}
 
+/* capability-layer badges (Core / Magic Studio AI / AI 2.0) */
+.lyr{display:inline-flex;align-items:center;font-size:9px;font-weight:800;letter-spacing:.05em;padding:2px 6px;border-radius:4px;margin-right:7px;vertical-align:1px;text-transform:uppercase;line-height:1.1;white-space:nowrap}
+.lyr-ai{background:#FDF4FF;color:#86198F;border:1px solid #F5D0FE}
+.lyr-ai2{background:linear-gradient(90deg,#7C3AED 0%,#EC4899 100%);color:#fff;border:1px solid transparent}
+.layer-legend{display:flex;gap:10px;flex-wrap:wrap;align-items:center;font-size:11px;color:var(--text-2);margin-top:6px;width:100%;padding-top:8px;border-top:1px dashed var(--line-2)}
+.layer-legend strong{color:var(--text);font-weight:600}
+.ai-caveat{margin:0 0 18px;padding:11px 14px;background:#fef3c7;border:1px solid #fde68a;border-left:3px solid #d97706;border-radius:8px;font-size:12px;color:#78350f;line-height:1.5}
+.ai-caveat strong{color:#78350f;font-weight:700}
+
 .workflow-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;table-layout:fixed}
 .workflow-table thead th{background:var(--surface-2);border-bottom:1px solid var(--line);padding:14px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);vertical-align:bottom}
 .workflow-table th.col-step{width:160px}
@@ -180,6 +189,8 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
+  <div class="ai-caveat"><strong>AI layer caveat:</strong> Canva AI 2.0 launched at Canva Create 2026 with parts marked "research preview" and "coming soon." Not every Canva account has every AI 2.0 capability today. Magic Layers and other AI-reconstructed assets need human QA before send (a Verge-reported text reconstruction failure in 2025 was patched, but the pattern reinforces designer-in-the-loop review).</div>
+
   <div class="legend">
     <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
     <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
@@ -187,6 +198,7 @@ footer a:hover{text-decoration:underline}
     <span class="legend-item personal"><span class="swatch">P</span>Hyper-personalization</span>
     <span class="legend-item trust"><span class="swatch">C</span>Builds trust &amp; confidence</span>
     <span class="legend-note">Each feature below is tagged with the dimensions it drives. Hover any tag for the dimension name.</span>
+    <span class="layer-legend"><strong>Capability layer:</strong> <span style="color:var(--text-3)">(no badge)</span> Core Canva &nbsp;·&nbsp; <span class="lyr lyr-ai">AI</span> Canva AI / Magic Studio &nbsp;·&nbsp; <span class="lyr lyr-ai2">AI 2.0</span> Canva AI 2.0 (2026 conversational/agentic layer)</span>
   </div>
 
   <div class="scroll-x">
@@ -215,7 +227,11 @@ footer a:hover{text-decoration:underline}
           <ul>
             <li>Dedicated <strong>Email doctype</strong> (homepage tile, "Create" search, /emails landing page) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Hundreds of templates</strong> tagged by industry (SaaS, retail, real estate, nonprofit, fitness, events, education) and style (modern, minimal, bold, elegant) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
-            <li><strong>AI template generator</strong> — describe intent ("Professional healthcare email") and Canva surfaces matching templates <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>AI template generator</strong> — describe intent ("Professional healthcare email") and Canva surfaces matching templates <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Design / Design for Me</strong> — generate a first-draft editable email from a prompt; Canva AI assistant can brainstorm campaign ideas, moodboards, taglines from the homepage <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Conversational campaign start</strong> — prompt like "Create a Memorial Day sale email for lapsed customers"; AI 2.0 generates a multi-channel plan (email + social + WhatsApp + landing) on-brand by default <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Connectors</strong> — Slack, Gmail, Google Drive, Calendar, Notion, Zoom, HubSpot, Microsoft, Atlassian, Linear pull campaign context (e.g., turn a Zoom transcript or Slack thread into a newsletter brief) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Web research</strong> — Canva AI searches the web and brings structured competitive/seasonal/trend insights into the design <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>Blank canvas option <span class="ms"><span class="m m-f" title="Eliminates friction">F</span></span></li>
           </ul>
         </td>
@@ -239,6 +255,13 @@ footer a:hover{text-decoration:underline}
             <li><strong>Auto-responsive</strong> — content auto-stacks on mobile, no manual mobile editing <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Email-safe-font enforcement</strong> with in-editor warning on non-safe fonts <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Brand Kit</strong> (Pro): logo, brand colors, fonts surfaced as one-click swatches <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Brand Voice</strong> — saved brand tone applied to all Magic Write output (distinct from Brand Kit's visual identity) <span class="ms"><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Brand Intelligence</strong> — auto-applies fonts/colors/style/rules to every AI output from the start; can also one-click update old templates to the latest brand <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>AI-Powered Elements</strong> — generate photos, videos, code snippets, icons, shapes, 3D content directly from the Elements tab <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Background</strong> + <strong>Style Match</strong> — AI-fitted hero backgrounds; visual style consistency across elements <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>3D Content Generator</strong> + <strong>Shape Generator</strong> — branded badges, labels, sale stickers, 3D product graphics <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Magic Layers</strong> — convert flat / AI-generated images into editable multi-layered designs (restores text boxes, separates objects) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Layered object intelligence</strong> — change a single headline, image, font, or element via prompt without regenerating the whole design <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li><strong>100M+ media assets</strong>; image compression guidance <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li><strong>"Set to top / bottom"</strong> snap for headers/footers <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Video → auto-GIF conversion on export <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
@@ -260,11 +283,16 @@ footer a:hover{text-decoration:underline}
         </td>
         <td>
           <ul>
-            <li><strong>Magic Write</strong> (OpenAI-backed): subject ideas, headlines, body copy, CTA microcopy <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
-            <li><strong>Tone &amp; voice controls</strong>: Continue writing / Rewrite / Shorten / Change voice <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
-            <li><strong>@Canva AI</strong> tagging in comments — asks for layout suggestions, reorganization, or copy refinement in-place <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
-            <li><strong>Magic Translate</strong> for multi-language variants <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
-            <li><strong>AI Email Generator</strong> dedicated entry point (canva.com/ai-email-generator) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Write</strong> (OpenAI-backed): subject ideas, headlines, body copy, CTA microcopy <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Tone &amp; voice controls</strong>: Continue writing / Rewrite / Shorten / Change voice <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Dream Lab / Create an image</strong> — high-fidelity image generation with style references in various aspect ratios <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Edit</strong> (brush + prompt to replace image areas) + <strong>Magic Grab</strong> (extract subject) + <strong>Magic Expand</strong> (fill outside frame) + <strong>Magic Morph</strong> (prompt-based effects on text/shapes) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Media</strong> — text-to-image, text-to-video (Veo-3-backed 8-second clips), AI hero imagery, 3D images <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>@Canva AI</strong> tagging in comments — asks for layout suggestions, reorganization, or copy refinement in-place <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Translate</strong> for multi-language variants (100+ languages) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Conversational design editing</strong> — chat-driven copy/layout edits across the whole email; "make it more professional," "swap the hero," "shorten the body" — applied with element-level precision <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Memory Library / living memory</strong> — Canva AI learns your team's style and applies it over time across recurring campaigns <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>AI Email Generator</strong> dedicated entry point (canva.com/ai-email-generator) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">Removes the "what do I say" blank-page paralysis that stops small-business marketers from shipping emails at all. No copywriter required, no separate AI tool, no copy-paste between apps.</td>
@@ -286,6 +314,12 @@ footer a:hover{text-decoration:underline}
             <li><strong>Bulk Create</strong> — upload CSV/XLSX (≤25MB; 300 rows × 60 cols) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><strong>"Connect Data"</strong> right-click action to map any element to a column <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li><strong>Canva Sheets</strong> as a live visual spreadsheet data source <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Studio at scale</strong> — bulk-applies Magic Write, Background Remover, Translate, Magic Resize, and Bulk Create across all rows of a Sheet in one job (Canva's own "email series" use case) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Sheets AI</strong> — generate structured campaign sheets from a prompt (calendars, content matrices, localization grids, budget trackers) populated with relevant data <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Fill Empty Cells</strong> — Magic Write generates per-row text at scale (custom subject lines, body copy, CTAs per recipient segment) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Insights</strong> — finds patterns/trends/takeaways from data <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Formulas</strong> — natural-language → spreadsheet formulas for campaign planning <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Charts</strong> — recommends interactive visualizations from live data connections: <strong>Google Analytics, HubSpot, Snowflake</strong> <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Data connectors</strong>: HubSpot, Google Analytics (Business / Enterprise) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Output as multi-page design or one file per row, with custom file naming <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-f" title="Eliminates friction">F</span></span></li>
             <li>(Note: ESP-specific merge tags like <code>{{first_name}}</code> are still applied in the ESP, not in Canva)</li>
@@ -318,6 +352,7 @@ footer a:hover{text-decoration:underline}
             <li>Compliance links <strong>pre-placed</strong> in default templates (footer + header) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>"Link anything" — any text, image, button, icon hyperlinkable <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>In-editor warning if email is sent via Gmail (compliance links won't function) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Canva Shield</strong> — enterprise AI governance: permissions, safety/privacy controls, indemnification claims for AI-generated content in regulated contexts <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No code, no merge-tag syntax memorization, no per-ESP-platform differences for the user to learn — the user just clicks "Unsubscribe" from a menu.</td>
@@ -342,6 +377,9 @@ footer a:hover{text-decoration:underline}
             <li><strong>Approval workflow</strong>: pick reviewer, set due date, attach note; design locks from publish until approved <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Multiple approvers</strong> (Enterprise tier) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Real-time multi-cursor co-editing <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>@Canva AI in comments</strong> — reviewer can request fixes ("tighten this CTA," "regenerate hero in dark mode") and AI applies in-place <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Design-aware AI chat</strong> — refine email by conversation; element-level edits preserve the rest of the design <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span style="color:var(--gap);font-style:italic;font-size:12px">Caveat: no spam-rendering/inbox-matrix test; final ESP-side preview still required.</span></li>
           </ul>
         </td>
         <td class="col-friction-cell">No third-party preview tool, no separate inbox-testing service for the small-business user. Approval lives next to the design — not in an email chain with screenshots.</td>
@@ -367,9 +405,15 @@ footer a:hover{text-decoration:underline}
             <li>Generic HTML export works with HubSpot, Brevo, SendGrid, others <span class="ms"><span class="m m-f" title="Eliminates friction">F</span></span></li>
             <li>100KB single-page Mailchimp publish limit; one page per publish</li>
             <li>Canva Apps SDK <strong>Content Publisher intent</strong> — any ESP can build a publish target <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Connect APIs</strong> for developers — create/sync assets, designs, comments; export formats include <code>html_bundle</code> and <code>html_standalone</code> specifically for email designs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Canva Code</strong> — prompt-built calculators, quizzes, mini-games, widgets linkable from email CTAs (Anthropic Claude 3.5 Sonnet-backed) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Canva Code 2.0</strong> with <strong>HTML import</strong> — bring in external HTML or AI-generated HTML and edit responsively in Canva; publish as standalone websites with unique URLs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>Canva Forms</strong> — drag-and-drop forms inside designs/websites; responses flow directly into Canva Sheets for lead capture downstream of email CTAs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>ChatGPT &amp; Claude integration (MCP)</strong> — design creation/editing from inside ChatGPT or Claude workflows; on-brand design generation kicks off in chat, refined in Canva <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Canva Grow</strong> — AI ad creative engine that scans website for brand, generates ad variants, publishes to Meta, tracks insights (cross-channel companion to email) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
           </ul>
         </td>
-        <td class="col-friction-cell">No copy-paste-format gymnastics between Canva and the ESP. One click moves the design straight into a draftable campaign in the ESP. For mid-market with devs, the Apps SDK provides a documented extension surface.</td>
+        <td class="col-friction-cell">No copy-paste-format gymnastics between Canva and the ESP. One click moves the design straight into a draftable campaign in the ESP. For mid-market with devs, the Apps SDK + Connect APIs (with email-specific <code>html_bundle</code> / <code>html_standalone</code> exports) provide a documented extension surface. ChatGPT/Claude MCP integration lets developers route campaign work via external AI tools.</td>
         <td class="col-time-cell">Direct publish replaces 5–10 minutes of ZIP-download → upload → image-relink work; net it allows more campaigns per period at lower production cost per campaign.</td>
         <td class="col-money-cell">More campaigns shipped per period at lower production cost per send compounds revenue — the SMB that used to send one email a month now ships four.</td>
         <td class="col-personal-cell">Templates land in the ESP's flows and automations ready for runtime personalization, dynamic blocks, and product feeds (e.g., Klaviyo's product blocks operate on the Canva-designed HTML).</td>
@@ -420,6 +464,8 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
+  <div class="ai-caveat"><strong>AI layer caveat:</strong> Canva still doesn't send SMS — the partner platform (Textellent, Klaviyo SMS, Twilio, Attentive) owns delivery, opt-in, STOP/HELP, carrier compliance, and analytics. AI 2.0 features below are partially "research preview" / "coming soon" per Canva's own messaging.</div>
+
   <div class="legend">
     <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
     <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
@@ -427,6 +473,7 @@ footer a:hover{text-decoration:underline}
     <span class="legend-item personal"><span class="swatch">P</span>Hyper-personalization</span>
     <span class="legend-item trust"><span class="swatch">C</span>Builds trust &amp; confidence</span>
     <span class="legend-note">Each feature below is tagged with the dimensions it drives. Hover any tag for the dimension name.</span>
+    <span class="layer-legend"><strong>Capability layer:</strong> <span style="color:var(--text-3)">(no badge)</span> Core Canva &nbsp;·&nbsp; <span class="lyr lyr-ai">AI</span> Canva AI / Magic Studio &nbsp;·&nbsp; <span class="lyr lyr-ai2">AI 2.0</span> Canva AI 2.0 (2026 conversational/agentic layer)</span>
   </div>
 
   <div class="scroll-x">
@@ -456,6 +503,8 @@ footer a:hover{text-decoration:underline}
             <li><strong>20+ SMS marketing template kits</strong> tagged for text-marketing list growth <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>SMS-style chat-bubble templates (graphics, not real messages) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Industry-vertical inspiration libraries <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Conversational SMS campaign planning</strong> — prompt like "create an SMS keyword promo with matching landing page and IG story" generates the full creative bundle <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Connectors</strong> — HubSpot, Gmail, Slack, Sheets pull customer-segment context into the SMS creative brief <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li><span class="gap-cell">No native SMS goal/strategy planner, no list-size estimator, no compliance pre-checks.</span></li>
           </ul>
         </td>
@@ -477,8 +526,10 @@ footer a:hover{text-decoration:underline}
           <ul>
             <li>Templates for IG post / IG Story / Reel / FB / poster / flyer / business card <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><strong>QR code generator</strong> built into Elements <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
-            <li><strong>Magic Resize</strong> — one design → 8+ placements in one click <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Resize / Magic Switch</strong> — one design → 8+ placements in one click; reflows and translates copy <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Design / AI-Powered Templates</strong> — generate full promo creative variants from a single prompt <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>Brand Kit (Pro) for one-click branding <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Brand Intelligence</strong> auto-applies brand across every list-growth variant <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>3M+ stock photos &amp; graphics <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
@@ -499,9 +550,13 @@ footer a:hover{text-decoration:underline}
         <td>
           <ul>
             <li>Custom canvas dimensions for MMS specs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
-            <li><strong>Magic Media</strong> AI image &amp; 8-second video generation (Veo-3 backed) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
-            <li><strong>Background Remover</strong> (Pro) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
-            <li>Magic Grab, Magic Expand, Magic Morph for image editing <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Media</strong> — text-to-image and 8-second text-to-video (Veo-3 backed); professional photos, 3D images, artwork <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Dream Lab</strong> — high-fidelity image generation with style references and aspect-ratio control <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Edit</strong> (brush + prompt) + <strong>Magic Grab</strong> (extract product / subject from any photo) + <strong>Magic Expand</strong> (extend image beyond original frame) + <strong>Magic Morph</strong> (themed effects on text/shapes) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Background Remover</strong> (Pro) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Background</strong> + <strong>Style Match</strong> + <strong>AI Photo Editor upgrades</strong> (recolor, replace, object recognition, lighting/mood blending) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>AI Sticker Generator</strong> — graphic stickers usable in MMS / chat-style visuals <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Magic Layers</strong> — turn a flat product photo / AI image into editable layered design <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Image compression guidance for delivery weight <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Brand Kit application across visual <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
           </ul>
@@ -525,7 +580,10 @@ footer a:hover{text-decoration:underline}
             <li><strong>Bulk Create</strong> with CSV/XLSX (300 rows × 60 cols) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><strong>"Connect Data"</strong> to bind text/image elements to spreadsheet columns <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li><strong>Canva Sheets</strong> as live data source <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
-            <li><strong>Magic Translate</strong> for locale variants <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Studio at scale</strong> — bulk-applies Magic Write, Background Remover, Translate, Magic Resize, Bulk Create across hundreds of MMS variants per Sheet row (Canva's own "product catalog / location offers" use case) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Sheets AI</strong> — generate structured MMS variant matrices from a prompt (segment × offer × locale) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Insights / Magic Charts</strong> — segment-performance views from connected data (HubSpot, Google Analytics) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Translate</strong> for locale variants (100+ languages) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li>Per-variant file naming for downstream upload <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-f" title="Eliminates friction">F</span></span></li>
           </ul>
         </td>
@@ -548,6 +606,8 @@ footer a:hover{text-decoration:underline}
             <li>Mobile preview inside editor <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Phone-frame mockup elements for context-of-use preview <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Comments &amp; @-mentions <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>@Canva AI in comments</strong> — reviewer can request fixes ("regenerate hero in dark mode," "rewrite CTA shorter") <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Design-aware AI chat</strong> for per-variant refinement <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Approval workflow (lock-until-approved) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><span class="gap-cell">No native test-MMS send; visual preview only.</span></li>
           </ul>
@@ -572,6 +632,11 @@ footer a:hover{text-decoration:underline}
             <li><strong>Bulk download</strong> for variant runs <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
             <li><strong>Textellent</strong> direct integration — design in Canva, push to Textellent for personalized SMS send <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Canva Apps SDK Content Publisher intent</strong> — any SMS provider can build a destination publish action <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><strong>Connect APIs</strong> for developers — export PNG/JPG/PDF/MP4 + asset/design sync into the SMS partner workflow <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Canva Code</strong> — landing pages, quizzes, calculators for SMS click-throughs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Canva Code 2.0</strong> + HTML import — fully responsive interactive landing pages from a prompt <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>Canva Forms</strong> — SMS-CTA-driven lead capture; responses flow into Canva Sheets <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>ChatGPT &amp; Claude integration (MCP)</strong> — design SMS creative from external AI workflows; Claude for Small Business can stage campaign work in HubSpot <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><strong>Zapier</strong> connections to ClickSend, Mobile Message, SimpleTexting, Burst <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
@@ -592,8 +657,9 @@ footer a:hover{text-decoration:underline}
         <td>
           <ul>
             <li>No native send — handled in partner (Textellent, Klaviyo, Twilio, SimpleTexting, Brevo, etc.) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
-            <li>Magic Resize lets users iterate quickly into next campaign creative once partner analytics come back <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
-            <li>Canva Code can produce interactive landing pages linked from SMS <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Resize</strong> lets users iterate quickly into next campaign creative once partner analytics come back <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Scheduling</strong> — recurring Canva AI creative tasks (e.g., weekly SMS promo asset batches) <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Canva Grow</strong> — AI ad creative engine for Meta — recycles best-performing SMS creative into paid social <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><span class="gap-cell">No native SMS analytics, opt-out management, deliverability dashboards, scheduling, throttling, or A/B framework.</span></li>
           </ul>
         </td>
@@ -648,6 +714,8 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
+  <div class="ai-caveat"><strong>AI layer caveat:</strong> Canva still has no native WhatsApp Business broadcast, Meta WABA template authoring, or list management — all delivery happens in a BSP (Wati, AiSensy, Interakt, Twilio, Klaviyo's WhatsApp channel). AI 2.0 features below are partially "research preview" / "coming soon" per Canva's own messaging.</div>
+
   <div class="legend">
     <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
     <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
@@ -655,6 +723,7 @@ footer a:hover{text-decoration:underline}
     <span class="legend-item personal"><span class="swatch">P</span>Hyper-personalization</span>
     <span class="legend-item trust"><span class="swatch">C</span>Builds trust &amp; confidence</span>
     <span class="legend-note">Each feature below is tagged with the dimensions it drives. Hover any tag for the dimension name.</span>
+    <span class="layer-legend"><strong>Capability layer:</strong> <span style="color:var(--text-3)">(no badge)</span> Core Canva &nbsp;·&nbsp; <span class="lyr lyr-ai">AI</span> Canva AI / Magic Studio &nbsp;·&nbsp; <span class="lyr lyr-ai2">AI 2.0</span> Canva AI 2.0 (2026 conversational/agentic layer)</span>
   </div>
 
   <div class="scroll-x">
@@ -684,6 +753,8 @@ footer a:hover{text-decoration:underline}
             <li><strong>20,100+ WhatsApp Status templates</strong> by occasion &amp; industry (birthday, sale, promo, travel, food, anniversary, real estate, fitness) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><strong>WhatsApp Sticker</strong> templates &amp; doctype <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li><strong>WhatsApp chat-mockup</strong> templates (via Common Ninja Canva app) for ad creative <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Conversational WhatsApp campaign planning</strong> — prompt like "Diwali campaign: 5 Status posts, 1 sticker pack, 1 chat-mockup ad creative" generates the full bundle <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Connectors</strong> — pull product/offer/customer context from HubSpot, Sheets, Gmail, Drive into the WhatsApp brief <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li><span class="gap-cell">No Meta WABA template planner, no broadcast-campaign workflow, no recipient targeting UI.</span></li>
           </ul>
         </td>
@@ -729,8 +800,14 @@ footer a:hover{text-decoration:underline}
             <li>3M+ free stock photos &amp; graphics <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Filters: Epic, Festive, ColorMix, Duotone <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>Speech bubbles, doodles, frames, decorative elements <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
-            <li><strong>Background Remover</strong> (Pro) for sticker creation <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
-            <li><strong>Magic Media</strong> AI image &amp; video generation <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Background Remover</strong> (Pro) for sticker creation <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>AI Sticker Generator</strong> — generate unique branded stickers from a prompt (huge for WhatsApp sticker-pack virality) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Media</strong> — text-to-image, 8-second text-to-video (Veo-3 backed), 3D imagery for Status posts <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Dream Lab</strong> — high-fidelity image generation with style references for Status hero visuals <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Edit</strong> + <strong>Magic Grab</strong> + <strong>Magic Expand</strong> + <strong>Magic Morph</strong> + <strong>Magic Animate</strong> — full AI photo/text manipulation toolkit; Animate is especially useful for video Status <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Background</strong> + <strong>Style Match</strong> + <strong>AI Photo Editor upgrades</strong> (recolor/replace/object recognition) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>3D Content Generator</strong> + <strong>Shape Generator</strong> — branded badges, sticker frames, hero 3D visuals <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Magic Layers</strong> — restore layers/text boxes from a flat AI image to remix sticker designs <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Crop / resize / brightness / saturation controls <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
           </ul>
         </td>
@@ -751,8 +828,11 @@ footer a:hover{text-decoration:underline}
         <td>
           <ul>
             <li><strong>Brand Kit</strong> (Pro) — logo, brand colors, fonts <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
-            <li><strong>Magic Translate</strong> — up to 25+ languages from one design <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
-            <li><strong>AI Voice</strong> (40+ languages) for video Status posts <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Brand Voice</strong> — saved brand tone applied to all AI copy (Magic Write) for WhatsApp captions/Status copy <span class="ms"><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Brand Intelligence</strong> — auto-applies fonts/colors/rules to every WhatsApp asset; one-click update old Status designs to latest brand <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Memory Library</strong> — Canva AI learns recurring WhatsApp campaign style (e.g. weekly Status cadence) and applies it automatically <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Translate</strong> — up to 25+ languages from one design (critical for India / Brazil / MENA / SEA WhatsApp markets) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>AI Voice</strong> (40+ languages) for video Status posts <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li>Pro custom fonts <span class="ms"><span class="m m-p" title="Hyper-personalization">P</span></span></li>
           </ul>
         </td>
@@ -773,8 +853,11 @@ footer a:hover{text-decoration:underline}
         <td>
           <ul>
             <li><strong>Bulk Create</strong> with CSV/XLSX for asset variant runs <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
-            <li><strong>Magic Resize</strong> — WhatsApp Status → IG Story → TikTok → FB Story in one click <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Resize / Magic Switch</strong> — WhatsApp Status → IG Story → TikTok → FB Story / Shorts in one click; reflows + translates copy <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
             <li>Canva Sheets as data source <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Studio at scale</strong> — bulk Magic Write + BG Remover + Translate + Resize + Bulk Create from Sheets (e.g., 50 region-specific Diwali Status posts in one job) <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Sheets AI</strong> — generate localization/segment/offer matrix sheets from a prompt <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>Magic Insights / Magic Charts</strong> — WhatsApp Status performance visualization with live data from HubSpot / Google Analytics <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>Per-variant naming &amp; export <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-f" title="Eliminates friction">F</span></span></li>
           </ul>
         </td>
@@ -797,6 +880,8 @@ footer a:hover{text-decoration:underline}
             <li>Mobile preview inside editor <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Phone-frame mockups for in-context preview <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Comments, @-mentions, real-time co-edit <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai">AI</span><strong>@Canva AI in comments</strong> — reviewer requests changes via comment ("brighter colors," "regenerate sticker in cartoon style") <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Design-aware AI chat</strong> — refine the WhatsApp asset by conversation; element-level edits keep the rest of the asset intact <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li>Approval workflow with lock-until-approved <span class="ms"><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li>Multiple approvers (Enterprise) <span class="ms"><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
             <li><span class="gap-cell">No native WhatsApp test-send; visual preview only.</span></li>
@@ -823,6 +908,11 @@ footer a:hover{text-decoration:underline}
             <li>Sticker pack file output ready for WhatsApp Stickers <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
             <li>Common Ninja Canva app for chat-template creative <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span></span></li>
             <li><strong>Canva Apps SDK Content Publisher intent</strong> — WhatsApp BSPs (Wati, AiSensy, Twilio) can build destination publish actions <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-c" title="Builds trust &amp; confidence">C</span><span class="m m-p" title="Hyper-personalization">P</span></span></li>
+            <li><strong>Connect APIs</strong> — sync WhatsApp assets/exports programmatically into BSP workflows <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Canva Code 2.0</strong> + HTML import — landing pages linked from WhatsApp chat / Status link-stickers (responsive, prompt-built, AI-editable) <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><strong>Canva Forms</strong> — lead-capture from WhatsApp click-throughs; data into Canva Sheets <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-r" title="Drives revenue">R</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>ChatGPT &amp; Claude integration (MCP)</strong> — generate / edit WhatsApp creative inside external AI tool workflows; Claude for Small Business stages campaign in HubSpot <span class="ms"><span class="m m-f" title="Eliminates friction">F</span><span class="m m-t" title="Saves time">T</span><span class="m m-c" title="Builds trust &amp; confidence">C</span></span></li>
+            <li><span class="lyr lyr-ai2">AI 2.0</span><strong>Scheduling</strong> — recurring AI tasks generate fresh Status creative on a cadence <span class="ms"><span class="m m-t" title="Saves time">T</span></span></li>
             <li><span class="gap-cell">No native Meta WABA template submission, no broadcast send, no campaign analytics, no interactive component authoring (list messages, quick-reply buttons).</span></li>
           </ul>
         </td>
