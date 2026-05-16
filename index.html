@@ -318,6 +318,71 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 
 .wf-arrow{position:relative;text-align:center;padding:8px 0;color:#cbd5e1;font-size:18px}
 
+/* Phase 2 wireframes — purple/pink accent overrides */
+.wf-phase2 .wf-hero{background:linear-gradient(135deg,#faf5ff 0%,#fce7f3 100%);border-color:#e9d5ff}
+.wf-phase2 .wf-hero h2{color:#581c87}
+.wf-phase2 .wf-hero p{color:#6b21a8}
+.wf-phase2 .wf-hero .wf-feat-pill{border-color:#e9d5ff;color:#7c3aed}
+.wf-phase2 .wf-stage-num{background:linear-gradient(135deg,#7C3AED 0%,#EC4899 100%)}
+.wf-phase2 .wf-active-pill{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe}
+.wf-phase2 .wf-callout{background:#f5f3ff;border-color:#ddd6fe;border-left-color:#7C3AED;color:#5b21b6}
+.wf-phase2 .wf-callout strong{color:#5b21b6}
+.wf-phase2 .wf-callout .wf-ico{background:#7C3AED}
+.wf-phase2 .wf-anno{border-left-color:#EC4899}
+.wf-phase2 .wf-anno .wf-anno-tag{color:#EC4899}
+.wf-phase2 .kl-bottom-line{background:linear-gradient(135deg,#581c87 0%,#831843 100%)}
+
+/* Phase 2 specific UI primitives */
+.wf-plan-card{padding:12px 14px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;display:flex;flex-direction:column;gap:6px}
+.wf-plan-card.recommended{border-color:#7C3AED;background:linear-gradient(180deg,#fff,#faf5ff)}
+.wf-plan-card .wf-plan-label{font-size:9.5px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em}
+.wf-plan-card .wf-plan-title{font-size:13px;font-weight:700;color:#1e293b}
+.wf-plan-card .wf-plan-meta{font-size:10.5px;color:#64748b;display:flex;gap:10px;flex-wrap:wrap}
+.wf-plan-card .wf-plan-meta strong{color:#1e293b}
+
+.wf-matrix{display:grid;grid-template-columns:130px repeat(5,1fr);gap:4px;font-size:9.5px}
+.wf-matrix .wf-matrix-cell{padding:6px 4px;background:#fff;border:1px solid #e2e8f0;border-radius:4px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:3px;color:#475569}
+.wf-matrix .wf-matrix-thumb{width:100%;aspect-ratio:1.4;background:linear-gradient(135deg,#fce7f3,#e9d5ff);border-radius:3px;display:flex;align-items:center;justify-content:center;color:#7c3aed;font-weight:600;font-size:9px}
+.wf-matrix .wf-matrix-header{background:transparent;border:none;font-weight:700;color:#1e293b;font-size:10px;text-align:left;padding:4px 0;display:flex;align-items:center}
+.wf-matrix .wf-matrix-row-label{background:#f8fafc;border:1px solid #e2e8f0;font-weight:600;color:#1e293b;font-size:10px;text-align:left;padding:6px 8px;display:flex;align-items:center}
+
+.wf-region-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:6px}
+.wf-region{padding:8px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;display:flex;flex-direction:column;gap:3px;font-size:10px}
+.wf-region.active{border-color:#7C3AED;background:#faf5ff}
+.wf-region .wf-region-name{font-weight:700;color:#1e293b;font-size:11px}
+.wf-region .wf-region-meta{color:#64748b;font-size:9.5px}
+.wf-region .wf-region-compliance{display:inline-flex;align-items:center;gap:3px;padding:1px 6px;background:#dcfce7;color:#166534;border-radius:99px;font-size:9px;font-weight:700;align-self:flex-start;line-height:1.4;border:1px solid #86efac}
+
+.wf-approval-flow{display:flex;align-items:center;gap:4px;flex-wrap:wrap;font-size:10.5px}
+.wf-approver{padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:7px;display:flex;flex-direction:column;gap:2px;min-width:90px}
+.wf-approver.done{background:#dcfce7;border-color:#86efac}
+.wf-approver.current{background:#faf5ff;border-color:#7C3AED}
+.wf-approver.pending{background:#f8fafc}
+.wf-approver .wf-approver-role{font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em}
+.wf-approver .wf-approver-name{font-size:11px;font-weight:600;color:#1e293b}
+.wf-approver .wf-approver-status{font-size:9.5px;color:#64748b}
+.wf-approver.done .wf-approver-status{color:#166534;font-weight:600}
+.wf-approver.current .wf-approver-status{color:#7C3AED;font-weight:600}
+.wf-approval-arrow{color:#cbd5e1;font-size:14px;flex-shrink:0}
+
+.wf-provenance{padding:10px 12px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:6px;font-size:10.5px;display:flex;flex-direction:column;gap:5px}
+.wf-provenance-row{display:flex;justify-content:space-between;align-items:center;color:#475569}
+.wf-provenance-row strong{color:#1e293b;font-weight:600}
+.wf-provenance-row .wf-prov-tag{background:#f5f3ff;color:#7C3AED;font-size:9px;font-weight:700;padding:2px 6px;border-radius:4px;letter-spacing:.04em}
+
+.wf-live-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:10px;background:#0f172a;border-radius:8px;color:#fff}
+.wf-live-stat{display:flex;flex-direction:column;gap:2px;padding:6px 10px;background:rgba(255,255,255,.05);border-radius:5px}
+.wf-live-stat .wf-stat-label{font-size:8.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.06em}
+.wf-live-stat .wf-stat-value{font-size:14px;font-weight:800;color:#fff}
+.wf-live-stat .wf-stat-delta{font-size:9px;color:#86efac;font-weight:700}
+.wf-live-stat .wf-stat-delta.warn{color:#fcd34d}
+
+.wf-decision-log{padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:7px;font-size:10.5px;color:#475569;display:flex;flex-direction:column;gap:6px}
+.wf-decision{padding:6px 8px;border-left:2px solid #7C3AED;background:#faf5ff;border-radius:0 4px 4px 0;display:flex;flex-direction:column;gap:2px}
+.wf-decision .wf-decision-time{font-size:9px;color:#7C3AED;font-weight:700;letter-spacing:.04em}
+.wf-decision .wf-decision-text{font-size:10.5px;color:#1e293b}
+.wf-decision .wf-decision-text strong{color:#7C3AED}
+
 /* New step-section + feature-row layout (replaces wide table) */
 .step-section{margin-bottom:40px}
 .step-section-header{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--canva-1);border-radius:12px;margin-bottom:14px}
@@ -478,6 +543,7 @@ footer a:hover{text-decoration:underline}
   <button class="tab-btn" data-tab="roadmap" role="tab" style="margin-left:auto"><span class="channel-dot" style="background:linear-gradient(90deg,#D97706,#7C3AED)"></span>Mailchimp Roadmap</button>
   <button class="tab-btn" data-tab="klaviyo" role="tab"><span class="channel-dot" style="background:#ef4444"></span>vs. Klaviyo</button>
   <button class="tab-btn" data-tab="wireframes" role="tab"><span class="channel-dot" style="background:#D97706"></span>Phase 1 UX Flow</button>
+  <button class="tab-btn" data-tab="wireframes2" role="tab"><span class="channel-dot" style="background:linear-gradient(90deg,#7C3AED,#EC4899)"></span>Phase 2 UX Flow</button>
 </nav>
 
 <!-- =================================== EMAIL TAB =================================== -->
@@ -4634,6 +4700,400 @@ footer a:hover{text-decoration:underline}
     <h3>What the 7-stage flow accomplishes</h3>
     <p>By the end of Phase 1, a Mailchimp customer can go from <strong>"I have a campaign idea in my head"</strong> to <strong>"send-ready, on-brand, personalized, omnichannel campaign"</strong> in under 3 minutes — without ever leaving Mailchimp for Canva or another AI tool. Every step removes a friction that today drives users to external tools. The 10 Phase 1 features map cleanly across the 7 stages, with several features active concurrently (e.g., Living Memory is felt at Stages 1, 2, and 5; Conversational Editing at Stages 4 and 6).</p>
     <p><strong>What still needs Phase 2 (and Klaviyo additions):</strong> the Send stage (Stage 7+) is shown as "approve &amp; schedule." Phase 2 layers on real-time mid-send AI optimization, per-recipient multi-variate selection, predictive inventory, and the Customer Agent for post-send support — bringing the loop from "create" to "create + send + learn + adjust + serve."</p>
+  </div>
+
+</section>
+
+<!-- =================================== PHASE 2 WIREFRAMES TAB =================================== -->
+<section class="tab-pane wf-phase2" id="tab-wireframes2" role="tabpanel">
+
+  <div class="wf-hero">
+    <h2>Phase 2 UX Flow — wireframes of the agentic, moat-leveraging builder</h2>
+    <p>Phase 2 is qualitatively different from Phase 1. The AI no longer reacts to a creative prompt — it <strong>proactively orchestrates the whole campaign from a business outcome</strong>. Customer states a goal; AI proposes audience segments + matching creative + per-region compliance + interactive inbox + real-time optimization. The 10 Phase 2 features unlock capabilities only Mailchimp can deliver because of its audience + send + analytics + data moat.</p>
+    <div class="wf-legend">
+      <span class="wf-feat-pill">Agentic Campaign Orchestrator</span>
+      <span class="wf-feat-pill">Agentic Audience + Creative Bundle</span>
+      <span class="wf-feat-pill">Cross-Channel Asset Studio (audience-aware)</span>
+      <span class="wf-feat-pill">Compliance-Aware AI Localization</span>
+      <span class="wf-feat-pill">AI Code 2.0 — Interactive Inbox</span>
+      <span class="wf-feat-pill">Mailchimp Shield (AI Governance)</span>
+      <span class="wf-feat-pill">Real-Time Campaign Performance Loop</span>
+      <span class="wf-feat-pill">Send-Time AI Personalization (1:1)</span>
+      <span class="wf-feat-pill">Mailchimp as MCP Server</span>
+      <span class="wf-feat-pill">Cross-Domain Conversational Agent</span>
+    </div>
+  </div>
+
+  <!-- STAGE 1: GOAL-FIRST ENTRY -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">1</span><span class="wf-stage-title">Goal-First Entry — outcome-driven, not prompt-driven</span>
+      <p class="wf-stage-desc">The user enters a <em>business outcome</em>, not a creative brief. AI parses the goal, identifies relevant audience signals, surfaces past campaigns that addressed similar goals, and proposes a full plan. The Cross-Domain Agent draws from audiences + campaigns + journeys + reports simultaneously.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Agentic Campaign Orchestrator</span><span class="wf-active-pill">Cross-Domain Conversational Agent</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span class="active">Goals</span><span>Plans</span><span>Live</span><span>Reports</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h1">What outcome are you driving?</h2>
+          <p class="wf-p">Describe your goal in business terms. The agent will plan the campaign, audiences, channels, and timing.</p>
+          <div class="wf-input tall"><span><strong>"Increase repeat purchase from Bronze tier by 15% this quarter"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Plan campaign ⚡</span></div>
+          <div class="wf-btn-row">
+            <span class="wf-btn">Recent goals</span>
+            <span class="wf-btn">Suggested goals (from your analytics)</span>
+            <span class="wf-btn">Templates by industry</span>
+          </div>
+          <h3 class="wf-h3">Cross-domain context pulled automatically</h3>
+          <ul class="wf-progress-list">
+            <li class="done">Audiences · Bronze tier = 12,408 contacts (avg LTV $84)</li>
+            <li class="done">Campaigns · 4 prior win-back campaigns analyzed (avg 9% lift)</li>
+            <li class="done">Journeys · 3 existing flows touch Bronze tier (none re-engaged in 60d)</li>
+            <li class="done">Reports · Bronze conversion correlates with offers above 25%</li>
+            <li class="done">Predictive · 1,847 Bronze contacts predicted to churn in 30d</li>
+          </ul>
+          <div class="wf-callout">
+            <strong><span class="wf-ico">A</span>Agent recommends</strong>
+            "I can build a multi-stage Bronze re-engagement: 5 segments × 3 channels × 60 days. Estimated lift: <strong>+18% repeat purchase</strong> based on historical performance + cross-tenant benchmarks. Want me to plan it?" &nbsp;<span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Yes, plan it</span>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Agentic Campaign Orchestrator</span><strong>Goal in, plan out</strong>Business outcomes (not creative briefs) drive the conversation. AI translates "+15% Bronze repeat purchase" into a concrete multi-segment, multi-channel plan with predicted lift.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Cross-Domain Agent</span><strong>Pulls from everywhere</strong>Audiences + campaigns + journeys + reports + predictive analytics, all live, all in one query. Klaviyo's K:AI agents are creative-focused; this one operates across the whole martech surface.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2: AGENTIC AUDIENCE + CREATIVE PLAN -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">2</span><span class="wf-stage-title">AI proposes audience + creative together</span>
+      <p class="wf-stage-desc">Rather than asking the user to define segments and then create creative, the AI proposes <strong>segment + creative bundles</strong> together. Each bundle includes audience definition, creative angle, recommended channels, and predicted impact. User approves or refines individual bundles.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Agentic Audience + Creative Bundle</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span class="active">Plans</span><span>Live</span><span>Reports</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">5 segment + creative bundles proposed</h2>
+          <p class="wf-p">Each bundle pairs an audience segment with a creative angle proven for that profile. Total reach: 12,408 contacts. Estimated combined lift: +18.4%.</p>
+          <div style="display:flex;flex-direction:column;gap:8px">
+            <div class="wf-plan-card recommended">
+              <span class="wf-plan-label">Recommended · highest predicted impact</span>
+              <span class="wf-plan-title">High-LTV Bronze who lapsed 60-90 days</span>
+              <span class="wf-plan-meta"><span><strong>2,341</strong> contacts</span><span>Creative angle: <strong>premium win-back</strong></span><span>Channels: <strong>Email + SMS</strong></span><span>Est. lift: <strong>+24%</strong></span></span>
+            </div>
+            <div class="wf-plan-card">
+              <span class="wf-plan-label">Recommended</span>
+              <span class="wf-plan-title">Bronze with abandoned cart in last 14 days</span>
+              <span class="wf-plan-meta"><span><strong>1,847</strong> contacts</span><span>Angle: <strong>cart recovery + scarcity</strong></span><span>Channels: <strong>Email + WhatsApp</strong></span><span>Est. lift: <strong>+19%</strong></span></span>
+            </div>
+            <div class="wf-plan-card">
+              <span class="wf-plan-label">Recommended</span>
+              <span class="wf-plan-title">Bronze recently viewed but did not purchase</span>
+              <span class="wf-plan-meta"><span><strong>3,102</strong> contacts</span><span>Angle: <strong>product reminder + reviews</strong></span><span>Channels: <strong>Email + Meta Ad</strong></span><span>Est. lift: <strong>+15%</strong></span></span>
+            </div>
+            <div class="wf-plan-card">
+              <span class="wf-plan-label">Worth testing</span>
+              <span class="wf-plan-title">Bronze price-sensitive (responded to past discounts)</span>
+              <span class="wf-plan-meta"><span><strong>2,891</strong> contacts</span><span>Angle: <strong>limited-time discount</strong></span><span>Channels: <strong>Email + SMS</strong></span><span>Est. lift: <strong>+14%</strong></span></span>
+            </div>
+            <div class="wf-plan-card">
+              <span class="wf-plan-label">Worth testing</span>
+              <span class="wf-plan-title">Bronze with high engagement but no purchase ever</span>
+              <span class="wf-plan-meta"><span><strong>2,227</strong> contacts</span><span>Angle: <strong>first-purchase incentive</strong></span><span>Channels: <strong>Email + landing page</strong></span><span>Est. lift: <strong>+11%</strong></span></span>
+            </div>
+          </div>
+          <div class="wf-btn-row"><span class="wf-btn">Approve all 5</span><span class="wf-btn">Edit a bundle</span><span class="wf-btn primary">Approve top 3 + generate creative →</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Agentic Audience + Creative Bundle</span><strong>Segments + creative together</strong>The same agent that picks the segment knows what creative angle works for that profile. Canva can only generate creative; this is audience-aware generation from the start.</div>
+        <div class="wf-anno"><strong>Predicted lift per bundle</strong>Every bundle includes a predicted-lift estimate sourced from your historical performance + cross-tenant benchmarks (anonymized across Mailchimp's 12M+ users). The numbers are concrete, not generic.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3: CROSS-CHANNEL ASSET STUDIO -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">3</span><span class="wf-stage-title">Cross-Channel Asset Studio — audience-aware variants</span>
+      <p class="wf-stage-desc">For each approved bundle, AI generates the full multi-channel creative matrix: email + SMS + WhatsApp + Meta ad + landing page — each one tuned to the <em>audience</em>, not just the channel format. The premium win-back email and the price-sensitive discount email are visually + tonally different despite both being "Bronze re-engagement."</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Cross-Channel Asset Studio (audience-aware)</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span class="active">Assets</span><span>Live</span><span>Reports</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">5 segments × 5 channels · 25 audience-tuned assets</h2>
+          <p class="wf-p">Each row is a segment, each column a channel. Hover any asset to refine. AI tuned tone, imagery, offer framing, and visual style per segment.</p>
+          <div class="wf-matrix">
+            <div class="wf-matrix-header"></div>
+            <div class="wf-matrix-header">Email</div>
+            <div class="wf-matrix-header">SMS</div>
+            <div class="wf-matrix-header">WhatsApp</div>
+            <div class="wf-matrix-header">Meta Ad</div>
+            <div class="wf-matrix-header">Landing</div>
+
+            <div class="wf-matrix-row-label">High-LTV<br>premium win-back</div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">elegant</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">personal</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">curated</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">aspirational</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">premium</div></div>
+
+            <div class="wf-matrix-row-label">Abandoned cart<br>scarcity</div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">urgent</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">timer</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">cart preview</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">re-target</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">checkout</div></div>
+
+            <div class="wf-matrix-row-label">Viewed but<br>did not buy</div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">reminder</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">reviews</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">social proof</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">testimonial</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">product page</div></div>
+
+            <div class="wf-matrix-row-label">Price-sensitive<br>discount</div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">% off</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">deal</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">flash</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">value</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">savings</div></div>
+
+            <div class="wf-matrix-row-label">First-time<br>buyer incentive</div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">welcome</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">starter</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">explainer</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">intro</div></div>
+            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">how-to</div></div>
+          </div>
+          <div class="wf-btn-row" style="margin-top:6px"><span class="wf-btn">Regenerate row</span><span class="wf-btn">Refine a cell</span><span class="wf-btn primary">Approve all 25 →</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Cross-Channel Asset Studio</span><strong>Audience-tuned, not channel-only</strong>Same campaign goal, 25 different assets — each tuned for the audience segment + channel combination. Premium win-back looks elegant; price-sensitive looks deal-driven; same source brief.</div>
+        <div class="wf-anno"><strong>Canva can't do this</strong>Canva's Magic Resize is channel-aware but audience-blind. This stage requires knowing the audience — only an ESP with audience data can do it.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 4: COMPLIANCE-AWARE LOCALIZATION -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">4</span><span class="wf-stage-title">Compliance-Aware Localization — per-region regulatory plumbing</span>
+      <p class="wf-stage-desc">User selects target regions. AI applies translation (60+ languages) <strong>plus the per-region regulatory compliance</strong> (CASL, GDPR, DPDP, LGPD, CCPA, PIPEDA, etc.) automatically — unsubscribe link format, required disclosures, opt-in conventions, physical address rules. Klaviyo can translate; Mailchimp can <em>comply</em>.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Compliance-Aware AI Localization</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Assets</span><span class="active">Localize</span><span>Live</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">7 regions selected · compliance applied automatically</h2>
+          <div class="wf-region-grid">
+            <div class="wf-region active"><span class="wf-region-name">US</span><span class="wf-region-meta">English · 4,217 contacts</span><span class="wf-region-compliance">✓ CAN-SPAM</span></div>
+            <div class="wf-region active"><span class="wf-region-name">Canada</span><span class="wf-region-meta">EN+FR · 891 contacts</span><span class="wf-region-compliance">✓ CASL</span></div>
+            <div class="wf-region active"><span class="wf-region-name">UK</span><span class="wf-region-meta">English · 1,204 contacts</span><span class="wf-region-compliance">✓ PECR + UK GDPR</span></div>
+            <div class="wf-region active"><span class="wf-region-name">EU (DE/FR/ES)</span><span class="wf-region-meta">3 langs · 2,108 contacts</span><span class="wf-region-compliance">✓ GDPR</span></div>
+            <div class="wf-region active"><span class="wf-region-name">India</span><span class="wf-region-meta">EN+HI · 1,847 contacts</span><span class="wf-region-compliance">✓ DPDP 2023</span></div>
+            <div class="wf-region active"><span class="wf-region-name">Brazil</span><span class="wf-region-meta">PT-BR · 743 contacts</span><span class="wf-region-compliance">✓ LGPD</span></div>
+            <div class="wf-region active"><span class="wf-region-name">California, US</span><span class="wf-region-meta">English · 1,398 contacts</span><span class="wf-region-compliance">✓ CCPA / CPRA</span></div>
+          </div>
+          <h3 class="wf-h3" style="margin-top:6px">Per-region adjustments applied</h3>
+          <div class="wf-checklist">
+            <div class="wf-ck checked">EU + UK · added GDPR-compliant unsubscribe in single click + lawful-basis disclosure</div>
+            <div class="wf-ck checked">Canada · CASL-required identification + explicit consent reference</div>
+            <div class="wf-ck checked">India · DPDP-required nominated grievance officer link</div>
+            <div class="wf-ck checked">Brazil · LGPD-required data-controller contact</div>
+            <div class="wf-ck checked">California · CCPA "Do Not Sell My Info" link in footer</div>
+            <div class="wf-ck checked">All regions · physical address formatted per local convention</div>
+          </div>
+          <div class="wf-callout"><strong><span class="wf-ico">L</span>Localization summary</strong>5 languages × 7 regulatory frameworks · all applied automatically. Review per-region preview before approval. Mailchimp's ESP-side knowledge of compliance is what makes this possible.</div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Compliance-Aware Localization</span><strong>Translation + regulation in one step</strong>Klaviyo Smart Translations handles 60+ languages but not per-region compliance plumbing. This stage adds the regulatory layer — only possible because Mailchimp is the ESP that sends.</div>
+        <div class="wf-anno"><strong>Canva structurally can't do this</strong>Canva translates copy; it doesn't know GDPR vs CASL vs DPDP. Mailchimp does because it has to comply on the send side anyway.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 5: INTERACTIVE INBOX (AI CODE 2.0) -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">5</span><span class="wf-stage-title">AI Code 2.0 — Interactive Inbox (AMP-for-Email)</span>
+      <p class="wf-stage-desc">User prompts the AI to add interactive surfaces inside the email itself — AMP-for-Email forms, surveys, product carousels, calculators. Each interactive widget is wired to Customer Journey Builder triggers, so responses fire flows automatically. Canva Code 2.0 builds landing pages; this puts interactivity <em>in the inbox</em>.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">AI Code 2.0 — Interactive Inbox</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Assets</span><span class="active">Interactive</span><span>Live</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-grid-2col">
+            <div class="wf-sidebar">
+              <h4>Interactive widgets</h4>
+              <div class="wf-sb-item active">⚡ Product carousel</div>
+              <div class="wf-sb-item">⚡ Quick survey</div>
+              <div class="wf-sb-item">⚡ Quiz / qualifier</div>
+              <div class="wf-sb-item">⚡ Price calculator</div>
+              <div class="wf-sb-item">⚡ Appointment booker</div>
+              <div class="wf-sb-item">⚡ In-email form</div>
+              <h4 style="margin-top:8px">Wire to journey</h4>
+              <div class="wf-sb-item">Cart recovery</div>
+              <div class="wf-sb-item">Welcome series</div>
+              <div class="wf-sb-item">Win-back</div>
+            </div>
+            <div class="wf-email-preview">
+              <div class="wf-hero-img" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">Hero image</div>
+              <h2 class="wf-h2" style="margin-top:6px">Your top picks, right here</h2>
+              <p class="wf-p">Browse, swipe, and add to cart — without leaving your inbox.</p>
+              <div class="wf-card-grid" style="grid-template-columns:repeat(3,1fr)">
+                <div class="wf-card"><div class="wf-thumb">Product 1</div><span class="wf-label">Linen shirt</span><span class="wf-meta-line"><span>$89</span><span style="color:#7C3AED;font-weight:700;font-size:9px">+ Add</span></span></div>
+                <div class="wf-card"><div class="wf-thumb">Product 2</div><span class="wf-label">Wool blazer</span><span class="wf-meta-line"><span>$245</span><span style="color:#7C3AED;font-weight:700;font-size:9px">+ Add</span></span></div>
+                <div class="wf-card"><div class="wf-thumb">Product 3</div><span class="wf-label">Suede loafers</span><span class="wf-meta-line"><span>$180</span><span style="color:#7C3AED;font-weight:700;font-size:9px">+ Add</span></span></div>
+              </div>
+              <div style="display:flex;justify-content:space-between;align-items:center;margin-top:6px;font-size:10px;color:#94a3b8"><span>Tap ▶ to browse 12 more</span><span class="wf-chip ai-chip" style="font-size:9px">AMP for Email · live</span></div>
+            </div>
+          </div>
+          <h3 class="wf-h3">AI Code 2.0 prompt</h3>
+          <div class="wf-input"><span><strong>"Add a 3-product carousel showing items from their browse history; on Add → trigger 'Cart recovery' journey"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Generate ⚡</span></div>
+          <div class="wf-callout"><strong><span class="wf-ico">J</span>Wired to journey</strong>"Add to cart" actions inside this email automatically trigger the <strong>Cart Recovery</strong> flow with the selected product as context. No separate landing page required.</div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">AI Code 2.0 — Interactive Inbox</span><strong>Interactivity inside the inbox</strong>AMP-for-Email lets users browse, add to cart, fill forms — without clicking through. Canva Code builds landing pages; this is one click closer to conversion.</div>
+        <div class="wf-anno"><strong>Tied to Customer Journey Builder</strong>Interactive actions inside the email become journey triggers. This is the wire between create + send + automate that Canva structurally can't build.</div>
+        <div class="wf-anno"><strong>Klaviyo doesn't ship this</strong>No AMP-for-Email + AI generation + journey wiring in Klaviyo today. This is genuine new ground.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 6: GOVERNED APPROVAL (MAILCHIMP SHIELD) -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">6</span><span class="wf-stage-title">Mailchimp Shield — governed approval with AI provenance</span>
+      <p class="wf-stage-desc">Enterprise governance for AI-generated campaigns. Every AI generation carries provenance: model used, prompt, source data, training boundaries. Multi-stakeholder approval workflow with role-based routing. Audit log persists everything. Unblocks regulated industries (finance, healthcare, insurance) where "show me the receipts" is mandatory.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Mailchimp Shield (AI Governance)</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Assets</span><span class="active">Approval</span><span>Live</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">⚐ Mailchimp Shield · governed approval flow</h2>
+          <div class="wf-approval-flow">
+            <div class="wf-approver done"><span class="wf-approver-role">Marketing</span><span class="wf-approver-name">Sarah K.</span><span class="wf-approver-status">✓ Approved · 2h ago</span></div>
+            <span class="wf-approval-arrow">→</span>
+            <div class="wf-approver done"><span class="wf-approver-role">Brand</span><span class="wf-approver-name">Jay M.</span><span class="wf-approver-status">✓ Approved · 1h ago</span></div>
+            <span class="wf-approval-arrow">→</span>
+            <div class="wf-approver current"><span class="wf-approver-role">Legal</span><span class="wf-approver-name">Priya N.</span><span class="wf-approver-status">Reviewing now</span></div>
+            <span class="wf-approval-arrow">→</span>
+            <div class="wf-approver pending"><span class="wf-approver-role">Send Lead</span><span class="wf-approver-name">Alex T.</span><span class="wf-approver-status">Pending</span></div>
+          </div>
+          <h3 class="wf-h3" style="margin-top:6px">AI provenance · per generated asset</h3>
+          <div class="wf-provenance">
+            <div class="wf-provenance-row"><span>Email hero copy</span><span class="wf-prov-tag">GPT-5 · brand voice profile v3.2</span></div>
+            <div class="wf-provenance-row"><span>Hero image</span><span class="wf-prov-tag">Dream Lab · style ref: brand_2025_q4.png</span></div>
+            <div class="wf-provenance-row"><span>Segment definition</span><span class="wf-prov-tag">Mailchimp predictive models · CLV + churn risk</span></div>
+            <div class="wf-provenance-row"><span>Compliance plumbing</span><span class="wf-prov-tag">Mailchimp Shield · CASL/GDPR/DPDP rule set</span></div>
+            <div class="wf-provenance-row"><span>Industry benchmarks used</span><span class="wf-prov-tag">Cross-tenant · anonymized · 12M+ tenants</span></div>
+          </div>
+          <h3 class="wf-h3">Compliance checks</h3>
+          <div class="wf-checklist">
+            <div class="wf-ck checked">CAN-SPAM / GDPR / CASL / DPDP / LGPD / CCPA · all green</div>
+            <div class="wf-ck checked">Brand guideline compliance · 100%</div>
+            <div class="wf-ck checked">Claims substantiation · "+15% lift" linked to internal data source</div>
+            <div class="wf-ck checked">Accessibility · WCAG AA verified</div>
+            <div class="wf-ck checked">AI content disclosure · footer flag enabled (EU AI Act ready)</div>
+          </div>
+          <div class="wf-callout"><strong><span class="wf-ico">S</span>Indemnification</strong>All AI-generated content covered under Mailchimp's enterprise indemnification policy. Full audit trail exported on demand.</div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Mailchimp Shield</span><strong>Procurement-grade AI governance</strong>Mid-market + enterprise customers can't adopt AI without this. Mailchimp's compliance posture extends naturally into AI; Klaviyo's enterprise tier is less mature here.</div>
+        <div class="wf-anno"><strong>Provenance per generation</strong>Every AI output carries model + prompt + sources + training boundaries. "Show me the receipts" is mandatory in regulated industries — this stage delivers them.</div>
+        <div class="wf-anno"><strong>Multi-stakeholder routing</strong>Marketing → Brand → Legal → Send. Each role sees what's relevant + can approve or kick back. Audit log persists everything.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 7: LIVE SEND + REAL-TIME AI + MCP -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">7</span><span class="wf-stage-title">Live Send — real-time AI optimization + MCP for external agents</span>
+      <p class="wf-stage-desc">Campaign in flight. AI watches performance continuously and auto-deploys winning variants mid-send. Per-recipient AI picks best subject + image + CTA at the moment of send. Simultaneously, Mailchimp's MCP server exposes the live campaign state so external AI agents (Claude, ChatGPT, Cursor) can query and act.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Real-Time Campaign Performance Loop</span><span class="wf-active-pill">Send-Time AI Personalization (1:1)</span><span class="wf-active-pill">Mailchimp as MCP Server</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Assets</span><span>Approval</span><span class="active">Live · 47 min in</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-live-stats">
+            <div class="wf-live-stat"><span class="wf-stat-label">Sent</span><span class="wf-stat-value">4,217</span><span class="wf-stat-delta">of 12,408</span></div>
+            <div class="wf-live-stat"><span class="wf-stat-label">Opens</span><span class="wf-stat-value">38.2%</span><span class="wf-stat-delta">▲ +6.4 vs avg</span></div>
+            <div class="wf-live-stat"><span class="wf-stat-label">Clicks</span><span class="wf-stat-value">9.1%</span><span class="wf-stat-delta">▲ +2.1 vs avg</span></div>
+            <div class="wf-live-stat"><span class="wf-stat-label">Revenue</span><span class="wf-stat-value">$18.4k</span><span class="wf-stat-delta">▲ pacing 22% over target</span></div>
+          </div>
+          <h3 class="wf-h3" style="margin-top:6px">Real-time AI decision log</h3>
+          <div class="wf-decision-log">
+            <div class="wf-decision"><span class="wf-decision-time">47 min ago · t+0</span><span class="wf-decision-text">Campaign started. AI began per-recipient subject/image/CTA selection from <strong>6 variant pool</strong>.</span></div>
+            <div class="wf-decision"><span class="wf-decision-time">35 min ago · t+12</span><span class="wf-decision-text">AI detected <strong>subject variant B underperforming</strong> (8.2% open vs 14.1% on variant A). <strong>Auto-switched 68% of remaining sends to variant A pattern.</strong></span></div>
+            <div class="wf-decision"><span class="wf-decision-time">22 min ago · t+25</span><span class="wf-decision-text">For premium-win-back segment, AI substituted <strong>hero image C → image E</strong> based on early CTR data (image E +18%).</span></div>
+            <div class="wf-decision"><span class="wf-decision-time">8 min ago · t+39</span><span class="wf-decision-text">Per-recipient AI selected <strong>SMS as best channel</strong> for 312 contacts who didn't open the email (based on channel affinity model).</span></div>
+            <div class="wf-decision"><span class="wf-decision-time">2 min ago · t+45</span><span class="wf-decision-text">High-LTV segment outperforming forecast by 24%. <strong>AI proposes shifting send budget</strong> from "first-time buyer" segment to "high-LTV" segment for remaining cycle. <span style="color:#7C3AED;font-weight:700">[Auto-apply] [Review]</span></span></div>
+          </div>
+          <h3 class="wf-h3" style="margin-top:6px">Mailchimp as MCP Server · external agents reading live data</h3>
+          <div class="wf-card-grid">
+            <div class="wf-bridge-card"><div class="wf-bridge-logo" style="background:#cc7a47">A</div><span class="wf-bridge-name">Claude</span><span class="wf-bridge-cta">Querying revenue per segment</span></div>
+            <div class="wf-bridge-card"><div class="wf-bridge-logo" style="background:#19c37d">C</div><span class="wf-bridge-name">ChatGPT</span><span class="wf-bridge-cta">Building exec summary</span></div>
+            <div class="wf-bridge-card"><div class="wf-bridge-logo" style="background:#0a0a0a">⌘</div><span class="wf-bridge-name">Cursor</span><span class="wf-bridge-cta">Connected to MCP server</span></div>
+            <div class="wf-bridge-card"><div class="wf-bridge-logo" style="background:#1e293b">+</div><span class="wf-bridge-name">Custom dashboard</span><span class="wf-bridge-cta">Pulling live KPIs</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Real-Time Performance Loop</span><strong>Mid-send variant switching</strong>AI watches performance continuously and auto-deploys winners <em>during</em> the live campaign — not after. Klaviyo alerts humans; this auto-acts. Canva ends at "design done."</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Send-Time 1:1 Personalization</span><strong>Per-recipient multi-variate selection</strong>For each individual recipient, AI picks best subject + image + CTA + send-time + channel from a pool of variants — at the moment of send, based on behavioral history.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Mailchimp as MCP Server</span><strong>External agents query live data</strong>Live campaign state, audiences, analytics, journeys — all exposed to ChatGPT, Claude, Cursor via MCP. Marketers don't need to be in Mailchimp to act on Mailchimp data.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="kl-bottom-line">
+    <h3>What the Phase 2 flow accomplishes</h3>
+    <p>By the end of Phase 2, Mailchimp shifts from <strong>"react to a creative prompt"</strong> (Phase 1) to <strong>"plan from a business outcome"</strong> (Phase 2). The marketer enters a goal; AI orchestrates audiences + creative + compliance + interactive surfaces + governance + send + optimization continuously. The loop becomes <strong>create + send + learn + adjust + extend</strong> — all in one platform, with external AI agents able to plug in via MCP.</p>
+    <p>Every Phase 2 stage requires capabilities <strong>Canva structurally cannot build</strong>: audience data (Stage 2-3), send infrastructure (Stage 7), regulatory compliance knowledge (Stage 4), enterprise governance (Stage 6), customer-journey wiring (Stage 5). This is where Mailchimp's moat shows — the integrated platform delivers what point-creative tools cannot.</p>
+    <p><strong>Bottom line:</strong> Phase 1 stops the Canva bleed. Phase 2 builds the moat. Combined, Mailchimp moves from "email tool with AI features" to "<strong>the AI-powered marketing platform</strong>" — outcomes-first, audience-aware, compliance-built-in, governance-ready, optimization-native.</p>
   </div>
 
 </section>
