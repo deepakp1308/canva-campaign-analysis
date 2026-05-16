@@ -105,22 +105,29 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 @media(max-width:1100px){.feature-row.with-mc{grid-template-columns:240px 1fr}}
 @media(max-width:1100px){.feature-row.with-mc .fr-mc{grid-column:1 / -1;border-left:none;border-top:1px solid var(--line)}}
 @media(max-width:880px){.feature-row,.feature-row.with-mc{grid-template-columns:1fr}}
-.feature-row .fr-name{padding:18px 18px;background:var(--surface-2);border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-start;gap:8px}
+.feature-row .fr-name{padding:16px 16px;background:var(--surface-2);border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-start;gap:6px}
 @media(max-width:880px){.feature-row .fr-name{border-right:none;border-bottom:1px solid var(--line)}}
-.feature-row .fr-name .fr-name-text{font-weight:700;font-size:14px;color:var(--text);line-height:1.4}
+.feature-row .fr-name .fr-name-text{font-weight:700;font-size:14px;color:var(--text);line-height:1.35}
 .feature-row .fr-name .lyr{align-self:flex-start;margin-right:0}
-.feature-row .fr-values{padding:8px 18px}
-.fv-line{display:grid;grid-template-columns:110px 1fr;gap:14px;padding:9px 0;font-size:13px;line-height:1.5;border-bottom:1px dashed var(--line)}
+/* New: What / Problem / Benefit description block inside fr-name */
+.fr-meta{display:flex;flex-direction:column;gap:6px;margin-top:8px;padding-top:8px;border-top:1px dashed var(--line)}
+.fr-meta-row{display:grid;grid-template-columns:54px 1fr;gap:6px;align-items:start}
+.fr-meta-label{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--text-3);padding-top:2px;line-height:1.2}
+.fr-meta-text{font-size:11.5px;line-height:1.45;color:var(--text-2)}
+.fr-meta-text strong{color:var(--text)}
+/* Compact middle column — hide text labels, keep colored chip with tooltip */
+.feature-row .fr-values{padding:6px 14px}
+.fv-line{display:grid;grid-template-columns:24px 1fr;gap:10px;padding:5px 0;font-size:12px;line-height:1.45;border-bottom:1px dotted #eef0f3}
 .fv-line:last-child{border-bottom:none}
-.fv-label{font-size:10px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;display:inline-flex;align-items:center;gap:7px;padding-top:1px}
-.fv-label .swatch{width:16px;height:16px;border-radius:4px;color:#fff;font-weight:800;font-size:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1}
+.fv-label{font-size:0;gap:0;padding:0;display:inline-flex;align-items:center;line-height:1}
+.fv-label .swatch{width:18px;height:18px;border-radius:4px;color:#fff;font-weight:800;font-size:10px;display:inline-flex;align-items:center;justify-content:center;flex-shrink:0;line-height:1;cursor:help}
 .fv-label.f .swatch{background:var(--friction)}
 .fv-label.t .swatch{background:var(--time)}
 .fv-label.r .swatch{background:var(--money)}
 .fv-label.p .swatch{background:var(--personal)}
 .fv-label.c .swatch{background:var(--trust)}
-.fv-text{color:var(--text)}
-.fv-text.na{color:var(--text-3);font-style:italic;font-size:12px}
+.fv-text{color:var(--text);font-size:12px}
+.fv-text.na{color:var(--text-3);font-style:italic;font-size:11px}
 
 /* Mailchimp comparison column with Harvey ball */
 .fr-mc{padding:14px 16px;background:#fafafb;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
@@ -273,7 +280,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Dedicated Email doctype</span></div>
+    <div class="fr-name"><span class="fr-name-text">Dedicated Email doctype</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">A purpose-built email design surface, distinct from the standard Canva canvas.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Generic design tools don't enforce email-client constraints (responsive, fonts, file size).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click entry to a professional email environment with all the right guardrails baked in.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">A purpose-built email environment loads with email rules already baked in — no canvas-size or format decisions.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Three homepage entry points cut campaign-start latency to under 5 seconds.</span></div>
@@ -294,7 +306,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Hundreds of templates tagged by industry &amp; style</span></div>
+    <div class="fr-name"><span class="fr-name-text">Hundreds of templates tagged by industry &amp; style</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">A library of email templates filtered by vertical (SaaS, retail, real estate, nonprofit) and aesthetic.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Non-designers face blank-page paralysis and don't know layout best practices.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">First polished draft in under 60 seconds, structured to convert.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Removes the blank-page problem with vertical-specific layouts (SaaS, retail, real estate, nonprofit, fitness, events, education).</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">First polished draft in under 60 seconds vs. building structure manually.</span></div>
@@ -316,7 +333,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI template generator</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI template generator</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Natural-language prompt that surfaces best-fit templates ('Professional healthcare email').</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Users waste 5–10 minutes scrolling hundreds of templates.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-line description → matching template options in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Describe intent in natural language ("Professional healthcare email") instead of scrolling pages of templates.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Surfaces best-fit templates in seconds, replacing 5–10 minutes of browsing.</span></div>
@@ -337,7 +359,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Design / Design for Me</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Design / Design for Me</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI generates a complete editable first-draft email from a prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Users start from blank page or fight a stiff template.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Functional draft in 30–60 seconds instead of 15+ minutes of layout work.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generates a complete editable first-draft from a prompt — user never starts from a blank canvas.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Functional draft email in 30–60 seconds vs. 15+ minutes of manual layout work.</span></div>
@@ -358,7 +385,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational campaign start</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational campaign start</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">A single chat prompt generates a full multi-channel campaign (email + social + WA + landing).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Marketers write separate briefs per channel, losing days to coordination.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Concept-to-bundle in 60 seconds; multi-channel coverage from one ask.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One natural-language prompt produces a full multi-channel campaign — no separate brief for each channel.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">60-second campaign-kickoff replaces hours of asset-by-asset brief writing.</span></div>
@@ -379,7 +411,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (Slack, Gmail, Drive, Calendar, Notion, Zoom, HubSpot, Microsoft, Atlassian, Linear)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (Slack, Gmail, Drive, Calendar, Notion, Zoom, HubSpot, Microsoft, Atlassian, Linear)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Live pulls from 10+ enterprise apps into Canva AI's design context.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Campaign briefs require manual context gathering from 5+ tools.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Customer signals flow into the design automatically (Zoom transcript → newsletter brief).</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Removes the manual "go gather information from 5 other tools" step before designing.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Context flows in automatically from existing tools — Zoom transcripts and Slack threads become campaign briefs.</span></div>
@@ -400,7 +437,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Web research</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Web research</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Canva AI searches the web and brings structured insights into the design.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Competitive and seasonal research happens in 8 disconnected browser tabs.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Timely market insights inform the campaign brief without leaving Canva.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Competitive/seasonal research happens inside Canva instead of in 8 browser tabs.</span></div>
@@ -432,7 +474,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Block-based editor (headers, footers, icon blocks, columns, buttons, dividers, countdown timers, tables)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Block-based editor (headers, footers, icon blocks, columns, buttons, dividers, countdown timers, tables)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Drag-and-drop content blocks for every email section.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Building email layout in HTML/code requires developer time.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Pre-grouped blocks assemble in minutes vs. hours of element-by-element work.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Drag-and-drop pre-grouped sections; no HTML, no merge-tag syntax, no layout coding.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Blocks assemble in minutes vs. hours of element-by-element building.</span></div>
@@ -453,7 +500,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Auto-responsive design</span></div>
+    <div class="fr-name"><span class="fr-name-text">Auto-responsive design</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Content auto-stacks on mobile; one design works on every device.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Mobile-broken emails lose the majority of opens (mobile is dominant).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">No per-device rebuilding; mobile rendering protected automatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Content auto-stacks on mobile — no manual mobile-version creation required.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One design renders correctly on every device; no per-device rebuilding.</span></div>
@@ -474,7 +526,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Email-safe-font enforcement (with non-safe-font warning)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Email-safe-font enforcement (with non-safe-font warning)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-editor warning when non-email-safe fonts are used.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Fancy fonts break in email clients and damage send reputation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Catches the mistake before send — Canva protects deliverability.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">In-editor warning flags non-safe fonts before they break a real send.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -495,7 +552,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro) — logo, brand colors, fonts</span></div>
+    <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro) — logo, brand colors, fonts</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Stored logos, colors, fonts surface as one-click swatches across designs.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Inconsistent branding across emails dilutes audience recognition.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Every email reflects exact brand identity, even from non-designers.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Brand identity surfaces as one-click swatches — no hex-code memorization or font hunting.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Brand applied across an email in one click vs. minutes of manual keying.</span></div>
@@ -517,7 +579,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Brand Voice</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Brand Voice</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Saved brand tone profile applied to all Magic Write output.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI copy reads generic, not like the brand.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Magic Write generates copy that sounds like you, not like OpenAI.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Magic Write produces brand-tone-correct copy on first try — no rewriting for voice.</span></div>
@@ -538,7 +605,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Auto-applies brand identity to every AI-generated asset and existing templates.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI outputs drift from brand; updating brand across past work is tedious.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click 'update to latest brand' refreshes everything en masse.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Auto-applies fonts/colors/style/rules to every AI output — no manual brand-policing.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One-click "update to latest brand" refreshes old templates en masse.</span></div>
@@ -559,7 +631,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI-Powered Elements (photos, videos, code, icons, shapes, 3D from Elements tab)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI-Powered Elements (photos, videos, code, icons, shapes, 3D from Elements tab)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate photos, videos, icons, shapes, 3D from a prompt in the Elements tab.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Stock-hunting and asset sourcing eats minutes of every design session.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-prompt generation replaces library hunting; assets created on-demand.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate any element from a prompt right where you'd browse stock — no external sourcing.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One-prompt generation replaces minutes of stock-library hunting.</span></div>
@@ -580,7 +657,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor upgrades</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor upgrades</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI-fitted backgrounds, cross-element style sync, photo editor with object recognition.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manual color-balancing and background work consumes design time.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Cohesive premium visuals in one click; no manual element tuning.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">AI-fitted backgrounds and cross-element style sync — no manual color-balancing.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One-click visual cohesion vs. tweaking each element individually.</span></div>
@@ -601,7 +683,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">3D Content Generator + Shape Generator</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">3D Content Generator + Shape Generator</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI generates 3D objects and custom shapes from a prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">3D product graphics require external 3D tools and illustration skills.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Branded badges, sale stickers, 3D product graphics in minutes.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Branded badges, sale stickers, and 3D product graphics from a prompt — no illustration skills needed.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Minutes-to-asset, replacing hours of vector work.</span></div>
@@ -622,7 +709,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat / AI image → editable layered design)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat / AI image → editable layered design)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Converts flat or AI-generated images into editable multi-layered designs (restores text boxes, separates objects).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI-generated images are locked — can't tweak headlines or swap individual elements.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Remix any flat asset without redesigning from scratch.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Restore text boxes, separate objects — turn a flat asset into something editable without re-creating it.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip "redesign from scratch" when remixing a static or AI-generated asset.</span></div>
@@ -643,7 +735,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Layered object intelligence</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Layered object intelligence</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Change a single headline, image, or font via prompt without regenerating the whole design.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI image gen is wasteful — regenerating the whole design to change one element.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Surgical AI edits in seconds, preserving everything else.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Change a single headline, image, or font via prompt — without regenerating the whole design.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Surgical AI edits in seconds vs. multiple full-regeneration cycles.</span></div>
@@ -664,7 +761,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">100M+ media assets + image compression guidance</span></div>
+    <div class="fr-name"><span class="fr-name-text">100M+ media assets + image compression guidance</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-editor library of stock photos, videos, GIFs, illustrations.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Sourcing licensed visuals from Unsplash/Pexels/Giphy means leaving the editor.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Search and drop in seconds; all rights handled.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Stock library lives inside the editor — no separate stock site or asset hunt.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Search and drop in seconds.</span></div>
@@ -685,7 +787,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Video → auto-GIF conversion on export</span></div>
+    <div class="fr-name"><span class="fr-name-text">Video → auto-GIF conversion on export</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Canva auto-converts embedded videos to GIFs on email export.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Email clients don't render video; raw videos break the send.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Users don't have to know email-client video limits — Canva handles it.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">User doesn't need to understand email-client video-support limits — Canva handles the conversion.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -722,7 +829,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Write (OpenAI-backed)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Write (OpenAI-backed)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI writes email subject lines, headlines, body copy, CTAs from prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Blank-page paralysis stops small-biz marketers from shipping emails.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Draft copy in under 5 minutes vs. 30–60 minutes manually.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Removes blank-page paralysis for subject lines, headlines, body copy, and CTAs.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Draft email copy in under 5 minutes vs. 30–60 minutes manually.</span></div>
@@ -743,7 +855,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Tone &amp; voice controls (Continue/Rewrite/Shorten/Change voice)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Tone &amp; voice controls (Continue/Rewrite/Shorten/Change voice)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Continue / Rewrite / Shorten / Change voice transformations on AI copy.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">First-draft AI output rarely matches brand tone or length.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click polish replaces redrafting; copy variants in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One-click polish on existing copy replaces re-drafting from scratch.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Per-variant copy in seconds, not minutes.</span></div>
@@ -765,7 +882,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Dream Lab / Create an image (high-fidelity gen with style references)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Dream Lab / Create an image (high-fidelity gen with style references)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">High-fidelity AI image generation with style references and aspect-ratio control.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Generic AI images lack brand aesthetic and the right dimensions.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Hero imagery matched to brand style, generated in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">High-fidelity images from a prompt — no design background or stock-licensing hunt needed.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Hero imagery in seconds vs. hours of stock searching or photoshoots.</span></div>
@@ -786,7 +908,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Edit + Magic Grab + Magic Expand + Magic Morph</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Edit + Magic Grab + Magic Expand + Magic Morph</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Brush-replace image areas, extract subjects, fill outside frame, apply themed effects.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Image manipulation requires Photoshop skill and time.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Photoshop-grade edits in seconds, no skill required.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Brush-replace, subject-extract, frame-fill, themed text/shape effects — image manipulation without Photoshop.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Image edits that took minutes-to-hours now take seconds.</span></div>
@@ -807,7 +934,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media (text-to-image + 8s text-to-video, Veo-3 backed)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media (text-to-image + 8s text-to-video, Veo-3 backed)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Text-to-image and 8-second text-to-video generation (Veo-3 backed).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Photoshoots are expensive; stock photos look generic.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Premium AI hero asset on demand, tuned per campaign.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Full asset generation toolkit — images, video, 3D from a prompt.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Hero asset in seconds vs. waiting on a photoshoot or designer.</span></div>
@@ -828,7 +960,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI tagging in comments</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI tagging in comments</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Tag @Canva in a comment to request layout/copy refinements; AI applies in-place.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Iteration cycles bounce between reviewer comments and designer edits.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Refinement happens in-design, in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Refinement requests happen via comment — no leaving the design.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Iteration cycles compressed to minutes.</span></div>
@@ -849,7 +986,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Translate entire designs into 100+ languages with one click.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Multi-language email campaigns require translator agencies and re-design.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Locale-tuned variants in seconds; global markets unlocked.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">100+ language versions in seconds vs. days of translation work.</span></div>
@@ -871,7 +1013,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational design editing</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational design editing</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Edit by chat ('make it more professional,' 'swap the hero') across the whole design.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Multi-element edits require clicking through every panel manually.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Many edits in one conversational turn.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Edit by chat ("make it more professional," "swap the hero") — no clicking through panels.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Multi-element edits in one conversational turn vs. many manual clicks.</span></div>
@@ -892,7 +1039,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Memory Library / living memory</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Memory Library / living memory</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Canva AI learns your team's style and applies it over time on recurring campaigns.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Seasonal/recurring campaigns start from zero each cycle.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Each cycle gets smarter; AI inherits prior preferences automatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Recurring campaigns inherit prior preferences automatically — no re-explaining brand each cycle.</span></div>
@@ -913,7 +1065,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Email Generator (dedicated entry point)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Email Generator (dedicated entry point)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">A dedicated funnel from canva.com/ai-email-generator into AI email creation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">New users don't know where to start with AI in Canva.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Direct entry skips the 'where do I begin' exploration.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">A focused funnel from outside Canva straight into AI email creation.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip the "where do I start" exploration.</span></div>
@@ -946,7 +1103,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Bulk Create (CSV/XLSX, ≤25MB, 300 rows × 60 cols)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Bulk Create (CSV/XLSX, ≤25MB, 300 rows × 60 cols)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Upload CSV/XLSX and generate one design per row (up to 300 rows × 60 columns).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manually creating dozens of personalized design variants is half-a-day work.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">300 personalized variants in one job.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">300 personalized variants in one job vs. half a day of manual recreation.</span></div>
@@ -967,7 +1129,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">"Connect Data" right-click element-to-column mapping</span></div>
+    <div class="fr-name"><span class="fr-name-text">"Connect Data" right-click element-to-column mapping</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Right-click any element to bind it to a spreadsheet column.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Mail-merge syntax is technical; non-coders struggle to personalize.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Visual data binding without syntax — any element to any column.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Right-click data binding is more intuitive than learning mail-merge syntax.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -988,7 +1155,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Canva Sheets live data source</span></div>
+    <div class="fr-name"><span class="fr-name-text">Canva Sheets live data source</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Visual spreadsheet built into Canva that feeds Bulk Create directly.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Data lives in Excel/Sheets; export/import to a design tool is friction.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Data and design live together; edit once, variants regenerate.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Visual spreadsheet built into Canva — no Excel round-trip.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Edit data and generate variants without leaving Canva.</span></div>
@@ -1009,7 +1181,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Bulk-applies Magic Write, BG Remover, Translate, Resize, Bulk Create from a Sheet.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Generating per-segment personalized creative manually takes days.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Hundreds of personalized variants in one job (Canva's 'email series' use case).</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Bulk-applies Magic Write, BG Remover, Translate, Resize, and Bulk Create from Sheets in one job.</span></div>
@@ -1030,7 +1207,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → structured campaign sheet)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → structured campaign sheet)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate a structured campaign calendar/content matrix from a prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Building campaign planning spreadsheets requires spreadsheet expertise.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">AI generates the campaign calendar; no manual sheet-building.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate a campaign calendar / content matrix from a prompt — no spreadsheet expertise.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip the manual sheet-building step entirely.</span></div>
@@ -1051,7 +1233,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Fill Empty Cells (Magic Write at scale)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Fill Empty Cells (Magic Write at scale)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Magic Write generates per-row text across spreadsheet rows.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Custom per-segment subject lines/CTAs require manual per-row writing.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Per-row personalized copy generated programmatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Magic Write fills hundreds of rows at once — bulk per-row content generation.</span></div>
@@ -1072,7 +1259,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights (patterns/trends/takeaways)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights (patterns/trends/takeaways)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI surfaces patterns/trends/takeaways from connected data.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Marketers don't have data science skills to mine campaign data.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Insights surfaced automatically; data-driven decisions over gut-feel.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Patterns and takeaways surfaced automatically vs. manual data exploration.</span></div>
@@ -1093,7 +1285,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Formulas (natural-language → spreadsheet formulas)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Formulas (natural-language → spreadsheet formulas)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Describe what you want; AI writes the Excel formula.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Excel formula syntax is a learning barrier for many users.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Campaign planning sheets that would take an hour now take a prompt.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">No Excel skills needed; describe what you want and Canva writes the formula.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Campaign planning sheets that would take an hour now take a prompt.</span></div>
@@ -1113,7 +1310,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Charts (live data from GA, HubSpot, Snowflake)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Charts (live data from GA, HubSpot, Snowflake)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI-recommended visualizations from live data (Google Analytics, HubSpot, Snowflake).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Building campaign dashboards in chart tools is slow and skill-gated.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Live charts on demand, no chart-building skills required.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Recommends and creates visualizations automatically — no chart-building skills required.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Live charts from connected data sources without manual building.</span></div>
@@ -1134,7 +1336,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Data connectors (HubSpot, Google Analytics — Business / Enterprise)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Data connectors (HubSpot, Google Analytics — Business / Enterprise)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Native CRM/analytics data connectors (Business/Enterprise plans).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Customer data sits in CRM; manual export/import to creative tools breaks flow.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Real customer segments feed per-recipient design variants.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Customer data flows into designs without manual export/import.</span></div>
@@ -1167,7 +1374,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Email Links menu with <code>{{unsubscribe}}</code> / <code>{{update_preferences}}</code> / <code>{{view_in_browser}}</code></span></div>
+    <div class="fr-name"><span class="fr-name-text">Email Links menu with <code>{{unsubscribe}}</code> / <code>{{update_preferences}}</code> / <code>{{view_in_browser}}</code></span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">First-class compliance link types in the editor menu (unsubscribe, preferences, view-in-browser).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Compliance links require knowing merge-tag syntax per ESP.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click compliance — no code, no syntax to learn.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">First-class compliance link types in a menu — no code, no merge-tag syntax to learn.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1188,7 +1400,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Auto-conversion of compliance tags to destination ESP syntax</span></div>
+    <div class="fr-name"><span class="fr-name-text">Auto-conversion of compliance tags to destination ESP syntax</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Compliance tags auto-converted to the target ESP's syntax at publish.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Switching ESPs requires re-keying compliance plumbing.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One design works across Mailchimp/Klaviyo/Constant Contact without rework.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Same tags work across Mailchimp, Klaviyo, Constant Contact — no per-platform syntax to learn.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Setup-once works-everywhere — no rework across ESPs.</span></div>
@@ -1209,7 +1426,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Compliance links pre-placed in default templates</span></div>
+    <div class="fr-name"><span class="fr-name-text">Compliance links pre-placed in default templates</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Default templates ship with unsubscribe + preferences + physical address in header/footer.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">New users forget to add legally-required compliance content.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">A non-technical user ships a CAN-SPAM / GDPR-compliant email by default.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Default templates ship with compliance links already in header + footer — no manual additions.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Saves the "did I remember to add unsubscribe?" check.</span></div>
@@ -1230,7 +1452,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">"Link anything" (any element hyperlinkable)</span></div>
+    <div class="fr-name"><span class="fr-name-text">"Link anything" (any element hyperlinkable)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Any text, image, button, or icon can be hyperlinked.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Some design tools restrict where links can go (e.g., only buttons).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Every clickable element becomes a tracked CTA opportunity.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Any text, image, button, or icon can be hyperlinked — no special-element rules.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1251,7 +1478,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">In-editor Gmail warning (compliance won't function if sent via Gmail)</span></div>
+    <div class="fr-name"><span class="fr-name-text">In-editor Gmail warning (compliance won't function if sent via Gmail)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-editor warning if email is sent via Gmail (compliance links won't function).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Users don't realize Gmail isn't a real bulk-send platform for compliance.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Canva prevents the non-compliant send before it happens.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1272,7 +1504,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Shield (enterprise AI governance)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Shield (enterprise AI governance)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Enterprise AI governance — permissions, safety/privacy controls, indemnification.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Regulated industries can't adopt AI without governance guardrails.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Procurement-grade trust layer that unblocks enterprise AI adoption.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1305,7 +1542,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Desktop / mobile preview toggle</span></div>
+    <div class="fr-name"><span class="fr-name-text">Desktop / mobile preview toggle</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Toggle between desktop and mobile views inside the editor.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Designers ship emails without checking mobile rendering.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-screen verification eliminates device-swap testing.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Mobile + desktop check on one screen — no device swap.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Per-design verification step cut from minutes to seconds.</span></div>
@@ -1327,7 +1569,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">"Send test email" (from no-reply@preview.canva.email, to login address only)</span></div>
+    <div class="fr-name"><span class="fr-name-text">"Send test email" (from no-reply@preview.canva.email, to login address only)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Send a real-rendered preview to the user's Canva login address with one click.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Layout bugs only surface when actually delivered to an inbox.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Catch broken layouts, dead links, formatting errors before public send.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Test inbox-render with one click — no separate testing tool.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1348,7 +1595,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Comments with formatting + filters + @-mentions</span></div>
+    <div class="fr-name"><span class="fr-name-text">Comments with formatting + filters + @-mentions</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Element-level structured comments with formatting and threads.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Email review via screenshot-and-Slack-comment is messy.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Threaded review replaces email round-trips; element-precise feedback.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Element-level structured feedback inline — no screenshot-email chains.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Threaded review replaces email round-trips.</span></div>
@@ -1369,7 +1621,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Approval workflow (reviewer + due date + lock-until-approved)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Approval workflow (reviewer + due date + lock-until-approved)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Pick reviewer, set due date, lock design from publish until approved.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Legal/brand sign-off happens informally and is hard to audit.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">In-canvas approval cuts feedback cycles from days to hours.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">In-canvas approval cuts feedback cycles from days to hours.</span></div>
@@ -1390,7 +1647,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Multiple approvers (Enterprise)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Multiple approvers (Enterprise)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Multi-user approval routing with role-based permissions.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Regulated industries require multi-level sign-off (legal + brand + executive).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Multi-approver routing fits enterprise governance models out of the box.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1411,7 +1673,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments (AI-applied fix from a comment)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments (AI-applied fix from a comment)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Reviewer requests fix via comment ('tighten this CTA'); AI applies in-place.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Comments require designer to manually action each one.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Refinement cycles compressed to minutes — reviewer + AI loop.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Reviewer requests fixes ("tighten CTA") and AI applies in-place — no manual edit handoff.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Refinement cycles compressed to minutes.</span></div>
@@ -1431,7 +1698,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Design-aware AI chat (refine by conversation, element-level)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Design-aware AI chat (refine by conversation, element-level)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Refine the email by conversation; element-level edits preserve the rest.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI typically regenerates everything; surgical edits aren't possible.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Edit specific elements via chat without losing the rest of the design.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Iterate by conversation — element-level edits preserve the rest of the design.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Element-level changes happen surgically vs. starting over.</span></div>
@@ -1464,7 +1736,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Direct integrations: Mailchimp, Klaviyo, Constant Contact, Flodesk, Gmail, Outlook</span></div>
+    <div class="fr-name"><span class="fr-name-text">Direct integrations: Mailchimp, Klaviyo, Constant Contact, Flodesk, Gmail, Outlook</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">One-click publish from Share menu to all major ESPs and inbox providers.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">HTML export → ESP upload → fix images is 5-10 minutes friction per send.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Design → draftable ESP campaign in one click.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">All major ESPs and inbox providers built into the Share menu — no copy-paste-format gymnastics.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One click moves the design straight into a draftable campaign in the ESP.</span></div>
@@ -1485,7 +1762,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Compliance merge tags auto-converted per destination ESP</span></div>
+    <div class="fr-name"><span class="fr-name-text">Compliance merge tags auto-converted per destination ESP</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Same compliance tags work across every supported ESP via auto-conversion.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cross-ESP migrations require re-keying compliance plumbing per platform.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Build once, send anywhere — compliance just works.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Same Canva design works across every supported ESP without manual rework.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Setup-once, render-everywhere.</span></div>
@@ -1505,7 +1787,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher intent (any ESP can build a publish target)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher intent (any ESP can build a publish target)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Documented Canva Apps SDK pathway for any ESP to build a publish target.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Long-tail ESPs without native Canva integration require manual HTML handoff.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Any ESP can ship a Canva integration — extension surface for developers.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Documented extension surface lets any ESP build a destination — long-tail partner ecosystem.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1526,7 +1813,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Connect APIs (<code>html_bundle</code> + <code>html_standalone</code> email-specific exports)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Connect APIs (<code>html_bundle</code> + <code>html_standalone</code> email-specific exports)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">REST API for programmatic asset/design/comment management with email-specific exports.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Mid-market dev teams need to automate creative-into-campaign workflows.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Email-specific html_bundle / html_standalone exports automate the handoff.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Developers can create/sync assets, designs, and comments programmatically.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Developer automation replaces manual export workflows.</span></div>
@@ -1548,7 +1840,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Code (prompt-built interactive landing experiences)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Code (prompt-built interactive landing experiences)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Prompt-built calculators, quizzes, mini-games linkable from email CTAs (Claude-backed).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Interactive landing experiences need developers; static links underperform.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Interactive landing pages from a prompt drive higher email conversion.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Prompt-built calculators, quizzes, mini-games linkable from email CTAs — no coding.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1569,7 +1866,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Canva Code 2.0 + HTML import</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Canva Code 2.0 + HTML import</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Bring external HTML or AI-generated HTML and edit responsively in Canva; publish as websites.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Existing landing pages can't be remixed in design tools.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Any HTML becomes responsive, editable, AI-refineable in Canva.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">External HTML or AI-generated HTML can be brought in and edited in Canva.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One-click responsive interactive experiences from a prompt.</span></div>
@@ -1590,7 +1892,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="fr-name-text">Canva Forms (responses → Canva Sheets)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Canva Forms (responses → Canva Sheets)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Drag-and-drop forms inside designs/websites; responses flow to Canva Sheets.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Lead capture downstream of email CTAs requires a separate form tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Forms native to Canva; data lands in Sheets for downstream automation.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Drag-and-drop forms inside designs/websites — no third-party form tool.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Lead-capture deployed without coding; data lands in Sheets automatically.</span></div>
@@ -1611,7 +1918,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Design creation/editing from inside ChatGPT or Claude workflows.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cross-AI workflows require file export and manual handoff.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Kick off in chat, refine in Canva — no file gymnastics.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Design creation/editing from inside ChatGPT or Claude — start in chat, refine in Canva.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Cross-tool handoff between AI assistants is automatic, not a file-export step.</span></div>
@@ -1632,7 +1944,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row with-mc">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Grow (AI ad creative engine, publishes to Meta)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Grow (AI ad creative engine, publishes to Meta)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI ad creative engine that publishes Meta variants and tracks insights.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Paid social variants of the same campaign require a separate ad-creative tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Cross-channel amplification (email + Meta) from one creative base.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">AI ad creative engine generates Meta-ad variants automatically — no separate ad-creative workflow.</span></div>
@@ -1717,7 +2034,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">20+ SMS marketing template kits</span></div>
+    <div class="fr-name"><span class="fr-name-text">20+ SMS marketing template kits</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Templates designed for SMS keyword promotion (social posts, stories, posters, flyers).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">SMB owners don't know what an SMS list-growth promo should look like.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Pre-built promo creative kits; concept-to-creative in minutes.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">SMB owner sees "what does an SMS promo look like" answered immediately — replaces blank page + Google search.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Pre-built kits cut concept-to-creative time from hours to minutes.</span></div>
@@ -1728,7 +2050,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">SMS-style chat-bubble templates (visual mockups)</span></div>
+    <div class="fr-name"><span class="fr-name-text">SMS-style chat-bubble templates (visual mockups)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Mockup chat-bubble graphics styled like real SMS messages.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Showing an SMS-style ad requires a separate phone-mockup tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Drop-in SMS-style mockups for ad creative and landing pages.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Designers can mock up SMS-style ad creative without a phone mockup app.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Drop-in ready chat bubbles in seconds.</span></div>
@@ -1739,7 +2066,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Industry-vertical inspiration libraries</span></div>
+    <div class="fr-name"><span class="fr-name-text">Industry-vertical inspiration libraries</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Templates filtered by business vertical (retail, restaurant, services, etc.).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Generic templates feel wrong; users need vertical-specific framing.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Templates already shaped to the user's industry context.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Vertical filtering removes the "where do I start" problem for new SMS programs.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1750,7 +2082,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational SMS campaign planning</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational SMS campaign planning</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Prompt like 'SMS keyword promo + landing page + IG story' generates the full bundle.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cross-channel SMS campaigns require separate per-channel design work.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Multi-asset bundle generated from one ask.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One prompt ("SMS keyword promo + landing page + IG story") generates the full creative bundle.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">60-second concept-to-bundle replaces hours of asset-by-asset briefing.</span></div>
@@ -1761,7 +2098,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (HubSpot, Sheets, Gmail, Slack)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (HubSpot, Sheets, Gmail, Slack)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">HubSpot/Sheets/Gmail/Slack pull customer-segment context into the SMS brief.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">SMS campaign briefs require manual customer data lookup.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Customer signals flow into the SMS creative automatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Customer-segment context flows in automatically from existing tools.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">No manual "go gather information" step before designing.</span></div>
@@ -1787,7 +2129,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Multi-channel promo templates (IG / Story / Reel / FB / poster / flyer / business card)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Multi-channel promo templates (IG / Story / Reel / FB / poster / flyer / business card)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Templates for every list-growth surface: IG / Story / Reel / FB / poster / flyer / business card.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Each channel needs format-specific creative; per-channel redesign is slow.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Every list-growth surface covered with drop-in templates.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Every list-growth surface covered by templates — no separate tool per channel.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Drop-in templates per channel vs. building from scratch each time.</span></div>
@@ -1798,7 +2145,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">QR code generator (built into Elements)</span></div>
+    <div class="fr-name"><span class="fr-name-text">QR code generator (built into Elements)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">QR code generator built into the Elements panel.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Generating a QR with a tracking URL requires a separate QR tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Generate and embed a QR in one drop — no third-party tool.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">No third-party QR tool needed — built right into the editor.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Generate and embed a QR in one drop.</span></div>
@@ -1809,7 +2161,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Resize / Magic Switch (one design → 8+ placements)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Resize / Magic Switch (one design → 8+ placements)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">One design → 8+ placements in one click; AI reflows and translates copy.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Re-creating the same promo per channel is hours of work.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">8–10× speedup on multi-channel rollouts.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Replaces ~6 hours of manual format conversion with one click — 8–10× multi-channel rollout speedup.</span></div>
@@ -1820,7 +2177,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Design / AI-Powered Templates</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Design / AI-Powered Templates</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate full promo creative variants from a single prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">A/B testing list-growth creative requires manual variant creation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Variant batches in seconds; more variants → better-performing creative.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Full promo creative variants from a single prompt — no per-variant manual design.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Variant batches in seconds instead of hours.</span></div>
@@ -1831,7 +2193,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Stored brand identity surfaces as one-click swatches across SMS list-growth creatives.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Off-brand SMS-keyword promotions don't earn opt-in trust.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Every promo looks like the brand — recognition drives opt-in.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One-click branding across every list-growth touchpoint.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1842,7 +2209,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence (auto-applies brand across variants)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence (auto-applies brand across variants)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Auto-applies brand to every AI-generated list-growth variant.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI variants drift from brand without manual policing.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Brand-perfect variants without checking each one manually.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Auto-applies brand across every list-growth variant — no manual policing.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Variant generation stays on-brand without extra checks.</span></div>
@@ -1853,7 +2225,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">3M+ stock photos &amp; graphics</span></div>
+    <div class="fr-name"><span class="fr-name-text">3M+ stock photos &amp; graphics</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-editor stock library for promo creative.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">External stock licensing is slow and expensive.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Search and drop — comprehensive stock without leaving Canva.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Stock library inside the editor.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Search and drop in seconds.</span></div>
@@ -1876,7 +2253,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Custom canvas dimensions for MMS specs</span></div>
+    <div class="fr-name"><span class="fr-name-text">Custom canvas dimensions for MMS specs</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Set the exact dimensions your SMS partner expects.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">MMS specs vary by carrier and partner; wrong dimensions break the send.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Set the dimensions, start designing — no aspect-ratio research.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Set the exact dimension your SMS partner expects — no aspect-ratio research.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Type the dimensions and start designing.</span></div>
@@ -1887,7 +2269,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media (text-to-image + 8s text-to-video, Veo-3)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media (text-to-image + 8s text-to-video, Veo-3)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Text-to-image and 8-second text-to-video generation for MMS visuals.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">MMS visuals need to be eye-catching but photoshoots are expensive.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Hero asset from a prompt in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate the MMS hero from a prompt — no photoshoot, no stock hunt.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Hero image in seconds vs. a stock-photo search + editing.</span></div>
@@ -1898,7 +2285,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Dream Lab + Magic Edit + Magic Grab + Magic Expand + Magic Morph</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Dream Lab + Magic Edit + Magic Grab + Magic Expand + Magic Morph</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Full AI image-manipulation toolkit: brush-replace, subject-extract, frame-fill, themed effects.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Image edits require Photoshop expertise.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Photoshop-grade edits in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Full image-manipulation toolkit (brush-replace, subject-extract, frame-fill, themed effects) — no Photoshop.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Image edits that took minutes-to-hours now take seconds.</span></div>
@@ -1909,7 +2301,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Background Remover (Pro)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Background Remover (Pro)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">One-click subject cutouts with transparent background.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manual masking is slow and not non-designer accessible.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Clean product cutouts ready for any MMS layout.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Professional product cutouts in one click — no Photoshop skills.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Seconds vs. minutes of manual masking.</span></div>
@@ -1920,7 +2317,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor upgrades</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor upgrades</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI-fitted backgrounds, cross-element style sync, AI photo enhancement.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cohesive visual style across MMS variants requires manual tuning.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click cohesion; on-brand premium MMS at scale.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">AI-fitted backgrounds + recolor/replace/object recognition in one editor.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One-click visual cohesion vs. per-element tweaking.</span></div>
@@ -1931,7 +2333,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Sticker Generator</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Sticker Generator</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate unique branded stickers from a prompt for MMS / chat creative.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Generic stickers don't represent the brand.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Branded stickers usable in MMS / chat creative for higher engagement.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate unique branded stickers from a prompt for MMS / chat creative.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Sticker assets in seconds, not hours.</span></div>
@@ -1942,7 +2349,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat MMS image → editable layered design)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat MMS image → editable layered design)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Turn flat product photos or AI images into editable layered designs.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">A static product photo can't be remixed for different MMS variants.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Remix flat assets without redesigning from scratch.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Turn a flat product photo or AI image into editable layered design.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip "redesign from scratch" when remixing an existing asset.</span></div>
@@ -1953,7 +2365,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Image compression guidance + Brand Kit on MMS visual</span></div>
+    <div class="fr-name"><span class="fr-name-text">Image compression guidance + Brand Kit on MMS visual</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-editor file-size guidance + one-click brand application.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Over-weight MMS assets fail to deliver; MMS visuals drift off-brand.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Canva prevents the delivery-fail before send + every MMS reflects the brand.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Brand identity applied to every MMS in one click.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -1976,7 +2393,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Bulk Create + Connect Data + Canva Sheets</span></div>
+    <div class="fr-name"><span class="fr-name-text">Bulk Create + Connect Data + Canva Sheets</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Spreadsheet-driven MMS variant generation with right-click data binding.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Per-segment MMS variants require manual per-row recreation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">300 personalized MMS variants in seconds vs. days of manual work.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Right-click data binding — no mail-merge syntax to learn.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">300 variants in seconds vs. days of manual recreation.</span></div>
@@ -1987,7 +2409,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Bulk-apply AI tools (Write + BG Remover + Translate + Resize) across all variant rows.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Hundreds of MMS variants × multiple AI passes manually is impractical.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Canva's 'product catalog / location offers' use case — at-scale personalization.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Bulk-applies Write + BG Remover + Translate + Resize + Bulk Create from Sheets in one job.</span></div>
@@ -1998,7 +2425,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → MMS variant matrix)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → MMS variant matrix)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate the segment × offer × locale variant matrix from a prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Designing the variant matrix manually is the bottleneck.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">AI generates the matrix; user just generates assets from it.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate the segment × offer × locale matrix from a prompt — no manual sheet building.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip spreadsheet construction entirely.</span></div>
@@ -2009,7 +2441,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights + Magic Charts (live HubSpot / GA data)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights + Magic Charts (live HubSpot / GA data)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Segment-performance visualization from live data sources.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Marketers can't easily compare segment performance for the next round.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Data-driven decisions for the next SMS campaign cycle.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Segment-performance views from connected data without manual chart-building.</span></div>
@@ -2020,7 +2457,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Translate MMS visual copy into 100+ languages with one click.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Localized SMS performs significantly better but localization is expensive.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Locale-tuned MMS variants from one source design.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">100+ language versions of an MMS visual in seconds.</span></div>
@@ -2042,7 +2484,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Mobile preview + phone-frame mockups</span></div>
+    <div class="fr-name"><span class="fr-name-text">Mobile preview + phone-frame mockups</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Mobile preview inside the editor; phone-frame mockup elements for in-context preview.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">SMS is mobile-only; desktop preview doesn't reflect real consumption.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Reviewer sees the asset as the customer will, on a phone-shaped frame.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Reviewer sees the MMS as the customer will, on a phone-shaped frame.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">No third-party preview tool needed; faster stakeholder buy-in.</span></div>
@@ -2053,7 +2500,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Comments + Approval workflow (lock-until-approved)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Comments + Approval workflow (lock-until-approved)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-canvas comments + lock-until-approved governance.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Approval via screenshot-Slack-comments is messy and slow.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Feedback cycles cut from days to hours.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">In-canvas review and lock; no screenshot-email chains.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Feedback cycles cut from days to hours.</span></div>
@@ -2064,7 +2516,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments + AI 2.0 design-aware chat</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments + AI 2.0 design-aware chat</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Reviewer requests fixes via comment; AI applies in-place + element-level conversational chat.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Comments require designer to manually action each one.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Refinement cycles compressed to minutes.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Reviewer can request fixes ("regenerate hero in dark mode") and AI applies in-place.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Refinement cycles compressed to minutes.</span></div>
@@ -2086,7 +2543,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Textellent direct integration</span></div>
+    <div class="fr-name"><span class="fr-name-text">Textellent direct integration</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">One-click push from Canva to Textellent for personalized SMS send.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Download-then-reupload friction adds 5–10 minutes per send.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click handoff to SMS partner; faster send velocity.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One-click push from Canva to Textellent — removes download-reupload entirely.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">5–10 minutes saved per send vs. manual export-then-upload.</span></div>
@@ -2097,7 +2559,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher + Connect APIs + Zapier</span></div>
+    <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher + Connect APIs + Zapier</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Multiple developer pathways to push Canva assets into any SMS provider.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Long-tail SMS providers need custom integration.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Pre-built integrations save the dev time of a custom build.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Any SMS provider can build a destination; Zapier extends to long-tail providers without code.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Pre-built integrations save the dev time of a custom build.</span></div>
@@ -2108,7 +2575,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Code + AI 2.0 Code 2.0 (HTML import)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Code + AI 2.0 Code 2.0 (HTML import)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Prompt-built landing pages, quizzes, calculators for SMS click-throughs.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Interactive landing experiences need developers.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Interactive landings drive higher conversion than static URLs.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Prompt-built landing pages, quizzes, calculators for SMS click-throughs — no coding.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Responsive interactive experiences from a single prompt.</span></div>
@@ -2119,7 +2591,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Canva Forms (lead capture → Sheets)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Canva Forms (lead capture → Sheets)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Drag-and-drop lead-capture forms with responses flowing to Sheets.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Lead capture downstream of SMS CTAs requires a separate form tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Captured leads convert to revenue with no third-party tool.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Drag-and-drop forms; no separate form tool.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Lead-capture deployed without coding; data lands in Sheets automatically.</span></div>
@@ -2130,7 +2607,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Design SMS creative from inside ChatGPT or Claude workflows.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cross-tool AI workflows require manual file handoff.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Kick off in chat, refine in Canva — automatic handoff.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Design SMS creative from external AI workflows; cross-tool handoff is automatic.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Claude for Small Business can stage campaign work in HubSpot from chat.</span></div>
@@ -2152,7 +2634,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">No native send — handled in partner (Textellent, Klaviyo SMS, Twilio, SimpleTexting, Brevo)</span></div>
+    <div class="fr-name"><span class="fr-name-text">No native send — handled in partner (Textellent, Klaviyo SMS, Twilio, SimpleTexting, Brevo)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">SMS delivery, opt-in, STOP/HELP all handled by the SMS partner.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">SMS infrastructure (carrier compliance, throttling) is a regulated specialty.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Honest stack split — Canva designs, partners send.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -2163,7 +2650,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Resize for iteration loop</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Resize for iteration loop</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Once a winning variant is identified, Magic Resize re-spawns it across channels.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Iteration loops between SMS partner and creative tool are slow.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Next-campaign-design round-trip dramatically shortened.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Winning variant from the SMS partner re-spawns across channels immediately.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Next-campaign-design round-trip is dramatically shortened.</span></div>
@@ -2174,7 +2666,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Scheduling (recurring AI creative tasks)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Scheduling (recurring AI creative tasks)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Recurring Canva AI creative tasks (e.g., weekly SMS promo asset batches).</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manual weekly creative generation is repetitive work.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Set-and-forget recurring AI generation.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Recurring AI creative tasks (weekly SMS promo asset batches) run automatically.</span></div>
@@ -2185,7 +2682,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Grow (recycles SMS creative into Meta ads)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Grow (recycles SMS creative into Meta ads)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI ad creative engine that recycles best-performing SMS creative into Meta ads.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cross-channel amplification requires separate creative work per channel.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Winning creative amplifies to paid social automatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Best-performing SMS creative recycles to paid social automatically.</span></div>
@@ -2259,7 +2761,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">20,100+ WhatsApp Status templates by occasion &amp; industry</span></div>
+    <div class="fr-name"><span class="fr-name-text">20,100+ WhatsApp Status templates by occasion &amp; industry</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Massive template library by occasion (birthday, sale, promo, anniversary) and industry.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp Status posting is hard to do consistently — what to post each day?</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">20k+ ready ideas; concept-to-creative in under 60 seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">A small-business owner instantly has 20k+ ideas for "what do I post on WhatsApp Status today."</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Occasion-tagged templates collapse concept-to-creative to under 60 seconds for time-sensitive posts.</span></div>
@@ -2270,7 +2777,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">WhatsApp Sticker templates + chat-mockup templates</span></div>
+    <div class="fr-name"><span class="fr-name-text">WhatsApp Sticker templates + chat-mockup templates</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Sticker maker doctype + chat-mockup creative templates.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp stickers require sticker-pack-format files; chat mockups for ads need a phone tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Pre-built sticker and chat creative ready to use.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Sticker maker + chat-mockup creative both built-in.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Pre-built sticker and chat creative in seconds.</span></div>
@@ -2281,7 +2793,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational WhatsApp campaign planning</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational WhatsApp campaign planning</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Prompt-driven multi-asset WhatsApp campaign generation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Seasonal campaigns (Diwali, Black Friday) require coordinated multi-asset work.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Concept-to-campaign-bundle in 60 seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Prompt like "Diwali campaign: 5 Status posts + 1 sticker pack + 1 chat-mockup ad" generates the bundle.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Concept-to-bundle in 60 seconds vs. hours of per-asset planning.</span></div>
@@ -2292,7 +2809,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (HubSpot / Sheets / Gmail / Drive)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (HubSpot / Sheets / Gmail / Drive)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">HubSpot, Sheets, Gmail, Drive pull product/offer/customer context into the WA brief.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp campaign briefs require manual context gathering across tools.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Customer signals shape the WhatsApp brief automatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Product/offer/customer context flows in from existing tools.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -2318,7 +2840,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">WhatsApp Status doctype (9:16 native dimensions)</span></div>
+    <div class="fr-name"><span class="fr-name-text">WhatsApp Status doctype (9:16 native dimensions)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Native 9:16 doctype with correct WhatsApp Status dimensions.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Wrong dimensions break Status display; researching specs is annoying.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Correct dimensions auto-applied; user starts designing immediately.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Correct dimensions auto-applied — no "what size is a WhatsApp Status" research.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Saves 1–2 minutes per asset; compounds across high-frequency Status posts.</span></div>
@@ -2329,7 +2856,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">WhatsApp Sticker doctype (transparent BG, sticker-pack-ready)</span></div>
+    <div class="fr-name"><span class="fr-name-text">WhatsApp Sticker doctype (transparent BG, sticker-pack-ready)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Transparent-background sticker doctype with sticker-pack-ready output.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Sticker-pack file specs are a niche knowledge.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Drop into the doctype, create, export — pack ready.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Sticker-pack format pre-configured — no manual research on file specs.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Drop into the doctype and start creating.</span></div>
@@ -2340,7 +2872,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Chat-mockup canvas for ad creative</span></div>
+    <div class="fr-name"><span class="fr-name-text">Chat-mockup canvas for ad creative</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Fake-chat creative for ads and landing pages.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Chat-style ad creative requires a phone-mockup tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Drop-in chat frames in seconds.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Fake-chat creative for ads/landing pages with no separate mockup tool.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Drop-in chat-style frames in seconds.</span></div>
@@ -2362,7 +2899,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Drag-and-drop editor + 3M+ stock + filters + speech bubbles / doodles / frames</span></div>
+    <div class="fr-name"><span class="fr-name-text">Drag-and-drop editor + 3M+ stock + filters + speech bubbles / doodles / frames</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">The familiar Canva editor inside the WhatsApp doctype.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">New tools have learning curves; existing Canva users don't want to learn another editor.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Zero learning curve for existing users; instant productivity.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Existing Canva users carry zero learning curve — same editor, same Elements, same hotkeys.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One-click filters and decorative elements replace minutes of manual editing per Status.</span></div>
@@ -2373,7 +2915,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Sticker Generator (the killer feature for WhatsApp)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Sticker Generator (the killer feature for WhatsApp)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate unique branded stickers from a prompt — purpose-built for WhatsApp.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Sticker design requires illustration skills; generic stickers don't represent the brand.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Branded sticker assets in seconds; sticker virality drives organic reach.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate unique branded stickers from a prompt — no illustration skills required.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Sticker assets in seconds, not days of design work.</span></div>
@@ -2384,7 +2931,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Background Remover (Pro) for sticker creation</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Background Remover (Pro) for sticker creation</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI subject cutouts for transparent-background sticker creation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manual masking is slow and not non-designer accessible.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Clean product cutouts for sticker creation in one click.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Cut subjects from any photo for transparent-BG sticker creation.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Replaces 5–10 minutes of manual masking with one click.</span></div>
@@ -2395,7 +2947,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media + Dream Lab (image + 8s video, Veo-3)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media + Dream Lab (image + 8s video, Veo-3)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI-generated images and 8-second video for Status hero visuals.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Daily Status content requires constant new creative.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Hero visuals on demand without photoshoots.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate Status hero imagery and video from a prompt — no photoshoot.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Hero visuals in seconds vs. hours of stock searching.</span></div>
@@ -2406,7 +2963,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Edit + Grab + Expand + Morph + Animate</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Edit + Grab + Expand + Morph + Animate</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Full AI image and motion-manipulation toolkit including one-click animation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Animated Status outperforms static, but motion design requires expertise.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Animated Status content from a few clicks.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Full AI image/text manipulation toolkit — no Photoshop required.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Magic Animate adds one-click motion to Status content; other tools cut hours of editing.</span></div>
@@ -2417,7 +2979,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor + 3D + Shape Generator</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor + 3D + Shape Generator</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Comprehensive AI design toolkit: backgrounds, style sync, 3D objects, custom shapes.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Premium-quality WhatsApp creative requires designer skill and time.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Designer-grade output without the designer; cohesive Status creative at scale.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">AI-fitted backgrounds, style sync, 3D objects, shapes — all from prompts.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Cohesive visual asset in a few prompts.</span></div>
@@ -2428,7 +2995,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat sticker → editable layered design)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat sticker → editable layered design)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Convert flat AI images into editable layered sticker designs.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">AI-generated sticker images are locked; can't remix elements.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Remix flat AI output without redesigning from scratch.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Restore layers/text boxes from a flat AI image — remix sticker designs without starting over.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip "redesign from scratch" when remixing.</span></div>
@@ -2450,7 +3022,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Stored brand identity surfaces as one-click swatches across WhatsApp assets.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp Status posted daily can drift off-brand without governance.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Every WhatsApp asset reflects the brand identity.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One-click identity application across every Status / Sticker / Mockup.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -2461,7 +3038,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Brand Voice (saved tone for AI copy)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Brand Voice (saved tone for AI copy)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Saved brand tone applied to all AI copy for WhatsApp captions and Status.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp copy gets sloppy at daily posting cadence.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Magic Write produces brand-tone-correct WhatsApp copy.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Magic Write produces brand-tone-correct WhatsApp copy on first try.</span></div>
@@ -2472,7 +3054,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence + Memory Library</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence + Memory Library</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Auto-applies brand to every AI output; AI learns recurring campaign style over time.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Updating brand across all past WhatsApp content is tedious.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">One-click brand refresh + AI inherits prior preferences automatically.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Auto-applies brand to every AI-generated WA asset; one-click "update to latest brand" refreshes old Status designs.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Recurring weekly Status posts inherit prior preferences automatically.</span></div>
@@ -2483,7 +3070,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages, critical for India / Brazil / MENA / SEA)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages, critical for India / Brazil / MENA / SEA)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Translate the design into 100+ languages with one click.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp dominates in India/Brazil/MENA/SEA — multilingual is non-optional.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Locale-tuned WhatsApp variants in seconds — global markets unlocked.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Multi-market WhatsApp marketing becomes one-click — no agency, translator, or separate localization tool.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">25+ language variants in seconds vs. days of manual localization.</span></div>
@@ -2494,7 +3086,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Voice (40+ languages for video Status)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Voice (40+ languages for video Status)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI-generated voiceover in 40+ languages for video Status posts.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Localized voiceover requires voice actors per language.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Audio-first WhatsApp Status in any language without voice talent.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Voiceover Status posts in any language without a voice actor.</span></div>
@@ -2516,7 +3113,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Bulk Create + Canva Sheets data source</span></div>
+    <div class="fr-name"><span class="fr-name-text">Bulk Create + Canva Sheets data source</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Spreadsheet-driven WhatsApp asset variant generation.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Per-segment WhatsApp variants require manual per-row design work.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Variant batches in one job; per-row asset generation from data.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Right-click data binding — no merge syntax to learn.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Variant batches in one job vs. asset-by-asset re-creation.</span></div>
@@ -2527,7 +3129,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Resize / Magic Switch (WA Status → IG Story → TikTok → FB Story / Shorts)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Resize / Magic Switch (WA Status → IG Story → TikTok → FB Story / Shorts)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">WhatsApp Status → IG Story → TikTok → FB Story in one click; reflows + translates copy.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">9:16 content needs to span multiple vertical channels; per-channel redesign is hours.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">6+ hours of work compressed to one click.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">No manual recreation for every 9:16 surface — one source, all destinations.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">One of Canva's highest-leverage time savings — 6+ hours of work in one click.</span></div>
@@ -2538,7 +3145,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale (bulk regionalized variants)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale (bulk regionalized variants)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Bulk-apply AI tools across hundreds of WhatsApp variants from Sheets.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Regional/segmented WhatsApp campaigns (e.g., 50 region-specific Diwali posts) is impractical manually.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Hundreds of personalized variants in one job.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">50 region-specific Diwali Status posts in one job from a Sheet.</span></div>
@@ -2549,7 +3161,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → localization/segment/offer matrix)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → localization/segment/offer matrix)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate the localization/segment/offer matrix from a prompt.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Designing the variant matrix manually is the bottleneck.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">AI generates the matrix; user just generates assets from it.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate the WA variant matrix from a prompt — no manual sheet-building.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Skip the matrix construction step.</span></div>
@@ -2560,7 +3177,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights + Magic Charts (Status performance from live data)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights + Magic Charts (Status performance from live data)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Status performance visualization from live HubSpot / GA data.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp Status engagement data lives outside the design tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Data-driven WhatsApp cadence decisions for the next cycle.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Status performance visualization from HubSpot / GA without manual chart-building.</span></div>
@@ -2582,7 +3204,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Mobile preview + phone-frame mockups</span></div>
+    <div class="fr-name"><span class="fr-name-text">Mobile preview + phone-frame mockups</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Mobile preview inside the editor with phone-frame mockup elements.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">WhatsApp is mobile-only; desktop preview doesn't reflect real consumption.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Reviewer sees the asset as the customer will, on a phone-shaped frame.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Mobile-first preview matches WhatsApp's only consumption context.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">No device-swap testing; in-canvas verification.</span></div>
@@ -2593,7 +3220,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Comments + Approval workflow (lock-until-approved + multi-approver)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Comments + Approval workflow (lock-until-approved + multi-approver)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">In-canvas review with lock-until-approved + multi-user sign-off.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Approval via screenshots-and-Slack-comments is messy; regulated industries need governance.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Feedback cycles cut from days to hours; governance fits enterprise risk controls.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">In-canvas review eliminates screenshot-email chains.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Feedback cycles cut from days to hours.</span></div>
@@ -2604,7 +3236,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments + AI 2.0 design-aware chat</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments + AI 2.0 design-aware chat</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">AI fixes via comment + element-level conversational refinement.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manual edit handoffs between reviewer and designer are slow.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Reviewer requests changes; AI applies in-place.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Reviewer requests "brighter colors" or "regenerate sticker in cartoon style" — AI applies in-place.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Element-level refinements happen surgically vs. starting over.</span></div>
@@ -2626,7 +3263,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Share-to-WhatsApp via OS share sheet (Canva mobile)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Share-to-WhatsApp via OS share sheet (Canva mobile)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">One-tap mobile share from Canva mobile into WhatsApp.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">File transfer between devices for Status posting is friction.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Status posting becomes a 30-second action.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One tap from Canva mobile into WhatsApp — no file transfer between devices.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Status posting becomes a 30-second action.</span></div>
@@ -2637,7 +3279,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Sticker pack file output (WebP sticker-pack ready)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Sticker pack file output (WebP sticker-pack ready)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">WebP sticker-pack-ready file output.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Sticker-pack file specs require conversion tools.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Output is sticker-pack-ready out of the box.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Output is sticker-pack-ready out of the box.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Direct handoff to user's phone — no conversion step.</span></div>
@@ -2648,7 +3295,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher + Connect APIs (for BSPs)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher + Connect APIs (for BSPs)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Developer pathways for WhatsApp BSPs (Wati, AiSensy, Twilio) to integrate.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Long-tail BSPs need custom integration to publish into.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Pre-built developer surface; BSPs can build a Canva destination.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">WA BSPs (Wati, AiSensy, Twilio) can build a publish destination.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Programmatic sync from Canva into BSP workflows.</span></div>
@@ -2659,7 +3311,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Canva Code 2.0 + HTML import (landing pages from WA chat link)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Canva Code 2.0 + HTML import (landing pages from WA chat link)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Responsive interactive landing pages from a prompt, linked from WhatsApp chat or Status.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Interactive landing experiences need developers.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Interactive landings from WhatsApp click-throughs drive higher conversion.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Responsive interactive landing pages from a prompt — no coding.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">External HTML or AI-generated HTML editable inside Canva.</span></div>
@@ -2670,7 +3327,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="fr-name-text">Canva Forms (lead-capture from WA click-throughs → Sheets)</span></div>
+    <div class="fr-name"><span class="fr-name-text">Canva Forms (lead-capture from WA click-throughs → Sheets)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Lead-capture forms with responses flowing to Sheets.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Lead capture downstream of WhatsApp clicks requires a separate form tool.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Native forms; captured leads convert to revenue.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Drag-and-drop forms; responses to Sheets automatically.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text na">N/A</span></div>
@@ -2681,7 +3343,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Generate / edit WhatsApp creative from inside ChatGPT or Claude workflows.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Cross-tool AI workflows require manual file handoff.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Kick off in chat, refine in Canva — automatic handoff.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate / edit WhatsApp creative inside external AI tools.</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Claude for Small Business can stage WA campaign work in HubSpot.</span></div>
@@ -2692,7 +3359,12 @@ footer a:hover{text-decoration:underline}
   </div>
 
   <div class="feature-row">
-    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Scheduling (recurring AI tasks for fresh Status creative)</span></div>
+    <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Scheduling (recurring AI tasks for fresh Status creative)</span>
+      <div class="fr-meta">
+        <div class="fr-meta-row"><span class="fr-meta-label">What</span><span class="fr-meta-text">Recurring AI tasks generate fresh Status creative on a cadence.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Problem</span><span class="fr-meta-text">Manual daily/weekly Status creative is repetitive.</span></div>
+        <div class="fr-meta-row"><span class="fr-meta-label">Benefit</span><span class="fr-meta-text">Set-and-forget recurring AI generation.</span></div>
+      </div></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label t"><span class="swatch">T</span>Time</span><span class="fv-text">Recurring AI tasks generate fresh Status creative on a cadence — set and forget.</span></div>
