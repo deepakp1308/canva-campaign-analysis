@@ -250,6 +250,8 @@ footer a:hover{text-decoration:underline}
 
   <div class="ai-caveat"><strong>AI layer caveat:</strong> Canva AI 2.0 launched at Canva Create 2026 with parts marked "research preview" and "coming soon." Not every Canva account has every AI 2.0 capability today. Magic Layers and other AI-reconstructed assets need human QA before send (a Verge-reported text reconstruction failure in 2025 was patched, but the pattern reinforces designer-in-the-loop review).</div>
 
+  <div class="ai-caveat" style="background:#eff6ff;border-color:#bfdbfe;border-left-color:#2563EB;color:#1e3a8a"><strong>Mailchimp comparison (third column):</strong> Each feature below is rated against Mailchimp's New Email Builder + adjacent campaign builder using Harvey balls — <span style="display:inline-flex;align-items:center;gap:4px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:#0f172a;border:1.5px solid #0f172a"></span>Full</span> · <span style="display:inline-flex;align-items:center;gap:4px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:conic-gradient(#0f172a 0deg 270deg,#fff 270deg 360deg);border:1.5px solid #0f172a"></span>Mostly</span> · <span style="display:inline-flex;align-items:center;gap:4px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:conic-gradient(#0f172a 0deg 180deg,#fff 180deg 360deg);border:1.5px solid #0f172a"></span>Half</span> · <span style="display:inline-flex;align-items:center;gap:4px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:conic-gradient(#0f172a 0deg 90deg,#fff 90deg 360deg);border:1.5px solid #0f172a"></span>Partial</span> · <span style="display:inline-flex;align-items:center;gap:4px"><span style="display:inline-block;width:11px;height:11px;border-radius:50%;background:#fff;border:1.5px solid #0f172a"></span>None</span>. Pattern: Mailchimp dominates the <em>send infrastructure, audience data, compliance, and analytics</em> layers; Canva dominates the <em>creative AI and agentic</em> layers.</div>
+
   <div class="legend">
     <span class="legend-item friction"><span class="swatch">F</span>Eliminates friction</span>
     <span class="legend-item time"><span class="swatch">T</span>Saves time</span>
@@ -270,7 +272,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Dedicated Email doctype</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">A purpose-built email environment loads with email rules already baked in — no canvas-size or format decisions.</span></div>
@@ -279,9 +281,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Treating email as a first-class doctype signals Canva-grade professionalism and reassures non-designers their output will look credible.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Mailchimp IS email — it's the core product, not a doctype switch.</li>
+        <li>Compliance and deliverability guardrails are baked in by default.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Hundreds of templates tagged by industry &amp; style</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Removes the blank-page problem with vertical-specific layouts (SaaS, retail, real estate, nonprofit, fitness, events, education).</span></div>
@@ -290,9 +302,20 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Vertical + style filters surface templates already shaped to the user's business context and aesthetic.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Pre-vetted templates assure even a first-time email designer that the output won't look amateur.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>250+ templates in the New Builder, industry/use-case tagged.</li>
+        <li>Every template is compliance-wired (auto-footer, merge tags) and email-client-tested.</li>
+        <li>Includes saved templates, recently-sent emails, and draft reuse as starting points.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI template generator</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Describe intent in natural language ("Professional healthcare email") instead of scrolling pages of templates.</span></div>
@@ -301,9 +324,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Tailors template surfacing to the user's described vertical, tone, and audience.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>AI Generated Columns / Content Generation modal generates email sections — not just copy — from a URL or text prompt.</li>
+        <li>Returns layout + content options with regenerate-and-insert workflow.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Design / Design for Me</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generates a complete editable first-draft from a prompt — user never starts from a blank canvas.</span></div>
@@ -312,9 +345,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Intuit Assist generates fully-designed on-brand emails from connected ecommerce data (subject + CTA + product imagery).</li>
+        <li>Branded Templates auto-applies Brand Kit at template selection.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational campaign start</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One natural-language prompt produces a full multi-channel campaign — no separate brief for each channel.</span></div>
@@ -323,9 +366,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">AI tailors output to the described persona, audience, and offer in the prompt.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Intuit Assist generates email campaigns and can spin into SMS / social posts from the same email.</li>
+        <li>Not truly conversational/agentic — block-level rather than whole-campaign chat.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Connectors (Slack, Gmail, Drive, Calendar, Notion, Zoom, HubSpot, Microsoft, Atlassian, Linear)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Removes the manual "go gather information from 5 other tools" step before designing.</span></div>
@@ -334,9 +387,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Real customer signals from HubSpot/Gmail enable campaigns shaped to actual customer state.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Named enterprise connectors (Microsoft, Atlassian, HubSpot) signal procurement-grade integration depth.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>300+ app integrations + the Apps content block pull external service data.</li>
+        <li>Not the AI 2.0 agentic "AI uses connectors for live design context" pattern — these are data flows, not context for an agent.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Web research</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -344,6 +407,16 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text">Timely market insights flow into the campaign brief, improving message-to-moment fit and conversion.</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No live web-search-to-design capability in Mailchimp AI.</li>
+        <li>Intuit Assist accepts a URL as input but doesn't do open-ended web research.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -358,7 +431,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Block-based editor (headers, footers, icon blocks, columns, buttons, dividers, countdown timers, tables)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Drag-and-drop pre-grouped sections; no HTML, no merge-tag syntax, no layout coding.</span></div>
@@ -367,9 +440,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>18+ block types in the New Builder including ecommerce blocks (Product, Discount, Abandoned Cart, Review) that Canva doesn't have.</li>
+        <li>Apps and Survey blocks pull external content directly into email.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Auto-responsive design</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Content auto-stacks on mobile — no manual mobile-version creation required.</span></div>
@@ -378,9 +461,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Reliable mobile rendering builds the operational trust that makes users send more emails.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Auto-responsive by default with the option to <em>unlink</em> desktop/mobile per block for more control than Canva.</li>
+        <li>Dark-mode guidance + alt text support (no dedicated dark-mode design feature — client support is inconsistent).</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Email-safe-font enforcement (with non-safe-font warning)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">In-editor warning flags non-safe fonts before they break a real send.</span></div>
@@ -389,9 +482,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Canva actively preventing a deliverability mistake is a "Canva has your back" moment that builds deep loyalty.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Email-safe fonts by default; the picker only shows safe options.</li>
+        <li>Brand Kit accepts custom TTF/OTF/WOFF font uploads + auto-detects fonts from your website.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Brand Kit (Pro) — logo, brand colors, fonts</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Brand identity surfaces as one-click swatches — no hex-code memorization or font hunting.</span></div>
@@ -400,9 +503,20 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Every email reflects the user's exact brand identity, even when drafted by a non-designer.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Brand consistency across every send builds long-term brand equity and audience recognition.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Full parity: logos (multi, BG variants), fonts (auto-detect + custom upload), colors, brand personality (sliders), button styles.</li>
+        <li>Branded Templates auto-applies Brand Kit at template-pick time.</li>
+        <li>Caveat: less mature multi-brand-kit story than Canva for very large teams.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Brand Voice</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -411,9 +525,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Saved brand voice means AI-generated copy reads like the user's brand, not generic AI.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Consistent voice across campaigns builds audience familiarity and trust.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Intuit Assist learns brand voice from past content; brand personality sliders tune AI tone.</li>
+        <li>Less explicit "save voice profile" UI than Canva but functional.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Brand Intelligence</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Auto-applies fonts/colors/style/rules to every AI output — no manual brand-policing.</span></div>
@@ -422,9 +546,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Brand identity baked into every AI-generated asset.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">A persistent brand-enforcement layer is the trust signal mid-market design ops need.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-half"></div>
+        <div><div class="mc-status">Half</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Branded Templates auto-applies Brand Kit to template previews.</li>
+        <li>No "one-click update all existing campaigns to latest brand" capability.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI-Powered Elements (photos, videos, code, icons, shapes, 3D from Elements tab)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate any element from a prompt right where you'd browse stock — no external sourcing.</span></div>
@@ -433,9 +567,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Intuit Assist generates campaign visuals (product imagery for ecommerce campaigns).</li>
+        <li>No 3D, shapes, videos, or icons from prompts in the Elements panel.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Background + Style Match + AI Photo Editor upgrades</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">AI-fitted backgrounds and cross-element style sync — no manual color-balancing.</span></div>
@@ -444,9 +588,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Consistent visual language reinforces brand quality perception.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Photo Editor has crop/resize, 60+ filters, brightness/contrast/saturation, focus, brush, frame, overlay.</li>
+        <li>No native background remover (Zapier remove.bg only); no AI background gen / style match.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">3D Content Generator + Shape Generator</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Branded badges, sale stickers, and 3D product graphics from a prompt — no illustration skills needed.</span></div>
@@ -455,9 +609,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No 3D content or shape generators in the Mailchimp editor.</li>
+        <li>Users would source from external tools (e.g., Canva) and import as images.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Magic Layers (flat / AI image → editable layered design)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Restore text boxes, separate objects — turn a flat asset into something editable without re-creating it.</span></div>
@@ -466,9 +630,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A — caveat: AI-reconstructed text has had documented errors; human QA required.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No flat-to-layered AI conversion.</li>
+        <li>Mailchimp is inherently block-based so the need is lower — but the capability doesn't exist.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Layered object intelligence</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Change a single headline, image, or font via prompt — without regenerating the whole design.</span></div>
@@ -477,9 +651,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Write with AI does block-level edits (lengthen, shorten, change tone, fix grammar).</li>
+        <li>Not element-level surgical edits across the whole design.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">100M+ media assets + image compression guidance</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Stock library lives inside the editor — no separate stock site or asset hunt.</span></div>
@@ -488,9 +672,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Compression guidance protects deliverability — Canva keeps users from over-weight emails that trigger spam filters.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Content Studio: uploads, Giphy, Instagram, <strong>Canva sync</strong>, Adobe Photoshop sync.</li>
+        <li>Comparable volume across stock + uploaded + integrated sources.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Video → auto-GIF conversion on export</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">User doesn't need to understand email-client video-support limits — Canva handles the conversion.</span></div>
@@ -498,6 +692,16 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Prevents a broken-render mistake that would damage send reputation.</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Different pattern: Video content block uses a linked poster image + play icon, not GIF conversion.</li>
+        <li>Arguably more accessible than the GIF approach but not the same UX.</li>
+      </ul>
     </div>
   </div>
 </div>
@@ -517,7 +721,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Write (OpenAI-backed)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Removes blank-page paralysis for subject lines, headlines, body copy, and CTAs.</span></div>
@@ -526,9 +730,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Email Content Generator covers paragraph, heading, subheading, subject line, preview text.</li>
+        <li>OpenAI/GPT backed; 3 options per generation.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Tone &amp; voice controls (Continue/Rewrite/Shorten/Change voice)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">One-click polish on existing copy replaces re-drafting from scratch.</span></div>
@@ -537,9 +751,20 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Tone matches brand voice instead of producing generic AI output.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">User keeps human oversight on voice — delegating, not surrendering, to AI.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Up to 3 tones + marketing goal + key points in Email Content Generator.</li>
+        <li>Write with AI: lengthen, shorten, change tone, fix grammar, creativity, custom prompts.</li>
+        <li>Button-specific prompts (Shop, Learn more, Sign up, RSVP).</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Dream Lab / Create an image (high-fidelity gen with style references)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">High-fidelity images from a prompt — no design background or stock-licensing hunt needed.</span></div>
@@ -548,9 +773,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Style references generate images matched to the brand's existing aesthetic.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>AI image generation exists but is mostly tied to ecommerce campaigns (product imagery).</li>
+        <li>No style-reference uploads or aspect-ratio control on par with Dream Lab.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Edit + Magic Grab + Magic Expand + Magic Morph</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Brush-replace, subject-extract, frame-fill, themed text/shape effects — image manipulation without Photoshop.</span></div>
@@ -559,9 +794,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No AI image manipulation tools in Mailchimp's Photo Editor.</li>
+        <li>Users edit images externally (often in Canva) and import.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Media (text-to-image + 8s text-to-video, Veo-3 backed)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Full asset generation toolkit — images, video, 3D from a prompt.</span></div>
@@ -570,9 +815,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Generated visuals tuned to specific personas, offers, seasons.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>AI image generation present in Intuit Assist.</li>
+        <li>No text-to-video — video must be created externally and linked.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI tagging in comments</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Refinement requests happen via comment — no leaving the design.</span></div>
@@ -581,9 +836,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Comments exist on collaboration (Premium) but no @AI tag for in-place fixes.</li>
+        <li>Intuit Assist is invoked from the editor toolbar, not from a comment thread.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Translate (100+ languages)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -592,9 +857,20 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Per-locale variants — culturally tuned content at scale.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li><code>*|TRANSLATE:XX|*</code> Google Translate merge tag for 50+ languages + conditional merge tags for multilingual emails.</li>
+        <li>Auto-detects contact's browser language for routing.</li>
+        <li>Less seamless than Canva's one-click translate-the-whole-design.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Conversational design editing</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Edit by chat ("make it more professional," "swap the hero") — no clicking through panels.</span></div>
@@ -603,9 +879,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Write with AI does block-level conversational edits.</li>
+        <li>Not whole-design conversational refinement across multiple elements.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Memory Library / living memory</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -614,9 +900,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Canva AI learns the team's style and applies it as the brand evolves.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Persistent style memory means seasonal campaigns get better each cycle, not start from zero.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Brand Kit persists across campaigns; Intuit Assist references past content for brand voice.</li>
+        <li>No explicit "living memory" model — less persistent than Canva AI 2.0's design memory.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">AI Email Generator (dedicated entry point)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">A focused funnel from outside Canva straight into AI email creation.</span></div>
@@ -624,6 +920,16 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Intuit Assist is the primary AI entry point inside the builder.</li>
+        <li>More deeply integrated since email is Mailchimp's core surface.</li>
+      </ul>
     </div>
   </div>
 
@@ -639,7 +945,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Bulk Create (CSV/XLSX, ≤25MB, 300 rows × 60 cols)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -648,9 +954,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Name, product, location, image — any field per recipient, all from one template.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Different model: Mailchimp does <em>send-time</em> personalization via merge tags + dynamic content, not design-time variant generation.</li>
+        <li>More efficient at scale (one campaign, N variations at send) but less visual.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">"Connect Data" right-click element-to-column mapping</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Right-click data binding is more intuitive than learning mail-merge syntax.</span></div>
@@ -659,9 +975,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Any text or image element can be bound to any spreadsheet column.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-half"></div>
+        <div><div class="mc-status">Half</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Merge tag insertion via <code>*|FNAME|*</code> syntax or drop-down picker.</li>
+        <li>Less visual than right-click but functional for the personalization outcome.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Canva Sheets live data source</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Visual spreadsheet built into Canva — no Excel round-trip.</span></div>
@@ -670,9 +996,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Data and design live together — variant generation per row of customer data.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Audiences are richer than static sheets: tags, custom fields, behavioral data, predicted attributes, real-time updates.</li>
+        <li>Audience data feeds dynamic content, segments, and journeys directly.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Studio at scale</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -681,9 +1017,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Hundreds of personalized variants against any Sheet — Canva's own "email series" use case.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable (reframed)</div></div>
+      </div>
+      <ul>
+        <li>Dynamic Content supports <strong>up to 10 logic rules</strong> with audience fields, groups, tags, behavioral data + AND/OR.</li>
+        <li>More powerful at <em>runtime</em> than Canva's design-time variant generation — one campaign personalizes per recipient.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Sheets AI (prompt → structured campaign sheet)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Generate a campaign calendar / content matrix from a prompt — no spreadsheet expertise.</span></div>
@@ -692,9 +1038,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">AI-generated localization and offer matrices feed personalized creative downstream.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No spreadsheet primitive in Mailchimp.</li>
+        <li>Campaign calendars/matrices handled in Customer Journey Builder or external tools.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Fill Empty Cells (Magic Write at scale)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -703,9 +1059,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Per-row custom subject lines, body copy, CTAs generated programmatically.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No bulk per-row AI text generation primitive.</li>
+        <li>Per-recipient text handled via merge tags + dynamic content at send time instead.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Insights (patterns/trends/takeaways)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -714,9 +1080,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Smart Recommendations in reports + Predicted Demographics + Send Time Optimization.</li>
+        <li>Data-science-driven recommendations on send time, audience, content — exceeds Canva for email-specific insights.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Formulas (natural-language → spreadsheet formulas)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">No Excel skills needed; describe what you want and Canva writes the formula.</span></div>
@@ -725,9 +1101,18 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No spreadsheet primitive in Mailchimp.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Magic Charts (live data from GA, HubSpot, Snowflake)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Recommends and creates visualizations automatically — no chart-building skills required.</span></div>
@@ -736,9 +1121,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Live connections to named partners (Google Analytics, HubSpot, Snowflake) signal enterprise data-fluency.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Marketing Dashboard with cross-channel metrics + custom reports + e-commerce attribution.</li>
+        <li>Built-in analytics deeper than Canva's chart-from-prompt — but not prompt-driven.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Data connectors (HubSpot, Google Analytics — Business / Enterprise)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -746,6 +1141,16 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">HubSpot/GA customer segments feed per-recipient variant generation.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Named-partner integrations signal procurement-grade integration depth.</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>300+ integrations including Shopify, HubSpot, Salesforce, Google Analytics, Yotpo, Judge.me.</li>
+        <li>Bidirectional in many cases; Feb 2026 release expanded ecommerce integration depth.</li>
+      </ul>
     </div>
   </div>
 
@@ -761,7 +1166,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Email Links menu with <code>{{unsubscribe}}</code> / <code>{{update_preferences}}</code> / <code>{{view_in_browser}}</code></span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">First-class compliance link types in a menu — no code, no merge-tag syntax to learn.</span></div>
@@ -770,9 +1175,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">"Update preferences" enables recipient-driven self-segmentation — the highest-quality personalization signal possible.</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Canva carries the legal burden so a non-technical user can ship a CAN-SPAM/GDPR-compliant email.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Native compliance merge tags baked in: <code>*|UNSUB|*</code>, <code>*|UPDATE_PROFILE|*</code>, <code>*|ARCHIVE|*</code>, <code>*|HTML:LIST_ADDRESS_HTML|*</code>.</li>
+        <li>Mailchimp owns the unsubscribe / preference-center / campaign-page backend — not just placeholder text.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Auto-conversion of compliance tags to destination ESP syntax</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Same tags work across Mailchimp, Klaviyo, Constant Contact — no per-platform syntax to learn.</span></div>
@@ -781,9 +1196,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Cross-ESP consistency built by the platform itself is a major trust signal.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No conversion needed — Mailchimp IS the destination. Native merge tags work everywhere.</li>
+        <li>No cross-ESP problem because email lives in one platform end-to-end.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Compliance links pre-placed in default templates</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Default templates ship with compliance links already in header + footer — no manual additions.</span></div>
@@ -792,9 +1217,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">A non-technical user can ship a legally compliant marketing email without reading a regulation.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Every template ships with a compliance footer that pulls required sender info + unsubscribe link from audience settings.</li>
+        <li>Mailchimp <em>auto-enforces</em> the footer — adds a default one if required content is missing.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">"Link anything" (any element hyperlinkable)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Any text, image, button, or icon can be hyperlinked — no special-element rules.</span></div>
@@ -803,9 +1238,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>All block elements hyperlinkable in the new builder.</li>
+        <li>Automatic click tracking on every link, with per-link analytics in reports.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">In-editor Gmail warning (compliance won't function if sent via Gmail)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -814,9 +1259,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Canva proactively warns the user before a non-compliant send — prevents a costly mistake.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Pre-send checks: link checker, merge tag checker, subject line best practices, loading speed, image-blocking detection.</li>
+        <li>Sender authentication + deliverability checks built in.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Shield (enterprise AI governance)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -824,6 +1279,16 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Permissions, safety/privacy controls, and indemnification claims — the procurement-grade trust layer for regulated industries.</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-half"></div>
+        <div><div class="mc-status">Half</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Premium plan: SSO, audit logs, multi-user accounts, role-based access.</li>
+        <li>AI-specific indemnification and governance less explicit than Canva Shield.</li>
+      </ul>
     </div>
   </div>
 
@@ -839,7 +1304,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Desktop / mobile preview toggle</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Mobile + desktop check on one screen — no device swap.</span></div>
@@ -848,9 +1313,20 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Visual confirmation before send reassures users about real-world rendering.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable (exceeds Canva)</div></div>
+      </div>
+      <ul>
+        <li>Native desktop + mobile preview toggle.</li>
+        <li><strong>Plus Inbox Preview (Litmus-powered)</strong> across 100+ email clients — Canva has no equivalent.</li>
+        <li>Color blind view + accessibility checks included.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">"Send test email" (from no-reply@preview.canva.email, to login address only)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Test inbox-render with one click — no separate testing tool.</span></div>
@@ -859,9 +1335,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Named sender domain + login-address-only guardrail proves Canva is thinking about security.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Test send to multiple recipients (including team members and shared addresses).</li>
+        <li>More flexible than Canva's "only-your-login-email" guardrail.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Comments with formatting + filters + @-mentions</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Element-level structured feedback inline — no screenshot-email chains.</span></div>
@@ -870,9 +1356,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Premium plan: collaborative editing, active-user visibility, comments, replies, resolved threads, test-email feedback.</li>
+        <li>Premium-gated but comprehensive when available.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Approval workflow (reviewer + due date + lock-until-approved)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -881,9 +1377,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Lock-until-approved gives legal/brand sign-off teams a codified governance path.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Premium plan: campaign approvals with multi-user sign-off.</li>
+        <li>Less visually rich than Canva but functionally complete for governance.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Multiple approvers (Enterprise)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -892,9 +1398,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Multi-approver routing fits regulated mid-market / enterprise governance models.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Premium plan supports multi-user approvals + role-based permissions.</li>
+        <li>Account roles allow granular control over who can edit, approve, or send.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">@Canva AI in comments (AI-applied fix from a comment)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Reviewer requests fixes ("tighten CTA") and AI applies in-place — no manual edit handoff.</span></div>
@@ -903,9 +1419,18 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>AI suggestions not tied to comments — Intuit Assist invoked separately from the toolbar.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Design-aware AI chat (refine by conversation, element-level)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Iterate by conversation — element-level edits preserve the rest of the design.</span></div>
@@ -913,6 +1438,16 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Write with AI does block-level conversational refinement (lengthen, shorten, change tone).</li>
+        <li>Not whole-design conversational chat with element preservation.</li>
+      </ul>
     </div>
   </div>
 
@@ -928,7 +1463,7 @@ footer a:hover{text-decoration:underline}
     </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Direct integrations: Mailchimp, Klaviyo, Constant Contact, Flodesk, Gmail, Outlook</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">All major ESPs and inbox providers built into the Share menu — no copy-paste-format gymnastics.</span></div>
@@ -937,9 +1472,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text">Designs land in the ESP's flows/automations ready for runtime personalization (Klaviyo product blocks, etc.).</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Recognizable enterprise-grade ESP partners give procurement and finance confidence Canva fits the stack.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Mailchimp IS the destination — sends natively without an "integrate to ESP" step.</li>
+        <li>Plus a Canva-side Mailchimp integration handles the inverse design-in handoff.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Compliance merge tags auto-converted per destination ESP</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Same Canva design works across every supported ESP without manual rework.</span></div>
@@ -948,9 +1493,18 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Cross-ESP consistency built into the platform — a quiet but strong trust signal.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Native merge tags work everywhere in Mailchimp — no conversion problem.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Apps SDK Content Publisher intent (any ESP can build a publish target)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Documented extension surface lets any ESP build a destination — long-tail partner ecosystem.</span></div>
@@ -959,9 +1513,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Documented developer surface lets mid-market IT vet the integration.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-half"></div>
+        <div><div class="mc-status">Half</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Mailchimp Marketplace + Apps content block let external services publish content INTO Mailchimp.</li>
+        <li>Same outcome from the other side of the relationship; different SDK shape.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Connect APIs (<code>html_bundle</code> + <code>html_standalone</code> email-specific exports)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Developers can create/sync assets, designs, and comments programmatically.</span></div>
@@ -970,9 +1534,20 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Email-specific developer surface gives mid-market dev teams a clean integration path.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Comprehensive Marketing API (REST, OAuth 2) for campaigns, templates, audiences, automations.</li>
+        <li>Webhooks for real-time sync (campaign sent, bounces, subscribes).</li>
+        <li>Less granular than Canva's email-specific HTML export bundles but covers most use cases.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Code (prompt-built interactive landing experiences)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Prompt-built calculators, quizzes, mini-games linkable from email CTAs — no coding.</span></div>
@@ -981,9 +1556,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-partial"></div>
+        <div><div class="mc-status">Partial</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Mailchimp has Code blocks (custom HTML) but <strong>JavaScript is stripped</strong> because email clients block it.</li>
+        <li>Mailchimp has separate Landing Pages, but interactive Canva-Code-style content in email is moot for both platforms.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">Canva Code 2.0 + HTML import</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">External HTML or AI-generated HTML can be brought in and edited in Canva.</span></div>
@@ -992,9 +1577,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No prompt-to-responsive-interactive-experience capability.</li>
+        <li>Mailchimp Landing Pages are template-driven, not AI-generated from prompt.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="fr-name-text">Canva Forms (responses → Canva Sheets)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Drag-and-drop forms inside designs/websites — no third-party form tool.</span></div>
@@ -1003,9 +1598,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-full"></div>
+        <div><div class="mc-status">Full</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Signup forms feed audiences directly; Survey content blocks for in-email feedback.</li>
+        <li>Forms trigger automations/journeys; reCAPTCHA + opt-in method baked in per audience.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai2">AI 2.0</span><span class="fr-name-text">ChatGPT &amp; Claude integration (MCP)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text">Design creation/editing from inside ChatGPT or Claude — start in chat, refine in Canva.</span></div>
@@ -1014,9 +1619,19 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text">Named AI partners (OpenAI, Anthropic) + Claude for Small Business HubSpot staging is procurement-grade integration depth.</span></div>
     </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-none"></div>
+        <div><div class="mc-status">None</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>No external MCP integration documented.</li>
+        <li>Intuit Assist is the only AI layer; no inbound from ChatGPT/Claude workflows.</li>
+      </ul>
+    </div>
   </div>
 
-  <div class="feature-row">
+  <div class="feature-row with-mc">
     <div class="fr-name"><span class="lyr lyr-ai">AI</span><span class="fr-name-text">Canva Grow (AI ad creative engine, publishes to Meta)</span></div>
     <div class="fr-values">
       <div class="fv-line"><span class="fv-label f"><span class="swatch">F</span>Friction</span><span class="fv-text na">N/A</span></div>
@@ -1024,6 +1639,17 @@ footer a:hover{text-decoration:underline}
       <div class="fv-line"><span class="fv-label r"><span class="swatch">R</span>Revenue</span><span class="fv-text">Paid social variants of the same email campaign amplify reach and revenue beyond email alone.</span></div>
       <div class="fv-line"><span class="fv-label p"><span class="swatch">P</span>Personal.</span><span class="fv-text na">N/A</span></div>
       <div class="fv-line"><span class="fv-label c"><span class="swatch">C</span>Trust</span><span class="fv-text na">N/A</span></div>
+    </div>
+    <div class="fr-mc">
+      <div class="fr-mc-header">
+        <div class="harvey hv-mostly"></div>
+        <div><div class="mc-status">Mostly</div><div class="mc-status-sub">Mailchimp comparable</div></div>
+      </div>
+      <ul>
+        <li>Native Facebook + Instagram ads built in with audience/lookalike targeting + Meta Lead Ads sync.</li>
+        <li><strong>No native Google Ads integration</strong> (Canva Grow includes Google).</li>
+        <li>Performance tracking and ROI reporting built into Mailchimp reports.</li>
+      </ul>
     </div>
   </div>
 </div>
