@@ -100,8 +100,11 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .step-section-header.s7 .num{background:#0891B2}
 .step-section-header .step-title{font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--text);margin:0 0 3px;line-height:1.2}
 .step-section-header .step-desc{font-size:13px;color:var(--text-2);margin:0;line-height:1.45}
-.feature-row{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;display:grid;grid-template-columns:300px 1fr;overflow:hidden}
-@media(max-width:880px){.feature-row{grid-template-columns:1fr}}
+.feature-row{background:var(--surface);border:1px solid var(--line);border-radius:10px;margin-bottom:10px;display:grid;grid-template-columns:260px 1fr;overflow:hidden}
+.feature-row.with-mc{grid-template-columns:240px 1fr 290px}
+@media(max-width:1100px){.feature-row.with-mc{grid-template-columns:240px 1fr}}
+@media(max-width:1100px){.feature-row.with-mc .fr-mc{grid-column:1 / -1;border-left:none;border-top:1px solid var(--line)}}
+@media(max-width:880px){.feature-row,.feature-row.with-mc{grid-template-columns:1fr}}
 .feature-row .fr-name{padding:18px 18px;background:var(--surface-2);border-right:1px solid var(--line);display:flex;flex-direction:column;justify-content:flex-start;gap:8px}
 @media(max-width:880px){.feature-row .fr-name{border-right:none;border-bottom:1px solid var(--line)}}
 .feature-row .fr-name .fr-name-text{font-weight:700;font-size:14px;color:var(--text);line-height:1.4}
@@ -118,6 +121,23 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .fv-label.c .swatch{background:var(--trust)}
 .fv-text{color:var(--text)}
 .fv-text.na{color:var(--text-3);font-style:italic;font-size:12px}
+
+/* Mailchimp comparison column with Harvey ball */
+.fr-mc{padding:14px 16px;background:#fafafb;border-left:1px solid var(--line);display:flex;flex-direction:column;gap:8px}
+.fr-mc-header{display:flex;align-items:center;gap:10px;padding-bottom:8px;border-bottom:1px dashed var(--line)}
+.harvey{width:18px;height:18px;border-radius:50%;border:1.5px solid #0f172a;flex-shrink:0;background:#fff;position:relative}
+.harvey.hv-full{background:#0f172a}
+.harvey.hv-mostly{background:conic-gradient(#0f172a 0deg 270deg,#fff 270deg 360deg)}
+.harvey.hv-half{background:conic-gradient(#0f172a 0deg 180deg,#fff 180deg 360deg)}
+.harvey.hv-partial{background:conic-gradient(#0f172a 0deg 90deg,#fff 90deg 360deg)}
+.harvey.hv-none{background:#fff}
+.mc-status{font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:var(--text);line-height:1.2}
+.mc-status-sub{font-size:10px;font-weight:500;color:var(--text-3);text-transform:none;letter-spacing:0;margin-top:1px}
+.fr-mc ul{margin:0;padding-left:14px;font-size:12px;line-height:1.5;color:var(--text)}
+.fr-mc ul li{margin-bottom:5px}
+.fr-mc ul li:last-child{margin-bottom:0}
+.mc-col-header{display:none}
+@media(max-width:1100px){.mc-col-header{display:flex;align-items:center;gap:8px;font-size:11px;font-weight:700;color:var(--text-2);text-transform:uppercase;letter-spacing:.06em;margin-bottom:6px}}
 
 .workflow-table{width:100%;border-collapse:separate;border-spacing:0;background:var(--surface);border:1px solid var(--line);border-radius:12px;overflow:hidden;table-layout:fixed}
 .workflow-table thead th{background:var(--surface-2);border-bottom:1px solid var(--line);padding:14px 14px;text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--text-2);vertical-align:bottom}
