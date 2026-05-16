@@ -469,6 +469,111 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .wf-scope.read{color:#1e40af;border-color:#bfdbfe;background:#eff6ff}
 .wf-scope.write{color:#9a3412;border-color:#fed7aa;background:#fff7ed}
 
+/* === Ongoing-usage primitives (dashboard, decision queue, asset library) === */
+
+/* Dashboard card grid */
+.wf-dash-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:8px}
+.wf-dash-card{padding:10px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:7px;display:flex;flex-direction:column;gap:5px;font-size:11px;cursor:default;transition:border-color .12s}
+.wf-dash-card:hover{border-color:#7C3AED}
+.wf-dash-card .wf-dc-eyebrow{font-size:8.5px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.06em;display:flex;justify-content:space-between;align-items:center}
+.wf-dash-card .wf-dc-title{font-size:12px;font-weight:700;color:#1e293b;line-height:1.3}
+.wf-dash-card .wf-dc-meta{font-size:10px;color:#64748b;display:flex;flex-wrap:wrap;gap:6px}
+.wf-dash-card .wf-dc-meta strong{color:#1e293b}
+.wf-dash-card .wf-dc-bar{width:100%;height:3px;background:#e2e8f0;border-radius:99px;overflow:hidden;position:relative;margin-top:2px}
+.wf-dash-card .wf-dc-bar::after{content:"";position:absolute;left:0;top:0;height:100%;border-radius:99px;background:#7C3AED}
+.wf-dash-card.draft{border-left:3px solid #94a3b8}
+.wf-dash-card.live{border-left:3px solid #16a34a}
+.wf-dash-card.scheduled{border-left:3px solid #2563eb}
+.wf-dash-card.ai-suggested{border-left:3px solid #EC4899;background:linear-gradient(180deg,#fff,#fdf2f8)}
+.wf-dash-card.at-risk{border-left:3px solid #facc15}
+.wf-dash-card.exceeding{border-left:3px solid #16a34a;background:linear-gradient(180deg,#fff,#f0fdf4)}
+
+/* Decision queue */
+.wf-decision-queue{display:flex;flex-direction:column;gap:6px}
+.wf-dq-item{padding:9px 12px;background:#fff;border:1px solid #e2e8f0;border-left:3px solid #7C3AED;border-radius:6px;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.wf-dq-item.auto{border-left-color:#94a3b8;background:#fafbfc;opacity:.85}
+.wf-dq-item.high{border-left-color:#dc2626;background:#fef2f2}
+.wf-dq-item .wf-dq-text{font-size:11px;color:#1e293b;line-height:1.4}
+.wf-dq-item .wf-dq-text strong{font-weight:700}
+.wf-dq-item .wf-dq-meta{font-size:9.5px;color:#64748b;margin-top:3px;display:flex;gap:8px;flex-wrap:wrap}
+.wf-dq-actions{display:flex;gap:4px;flex-shrink:0}
+.wf-dq-actions .wf-btn{font-size:10px;padding:3px 8px}
+
+/* Progress bar variants */
+.wf-progress{display:inline-block;width:100%;height:5px;background:#e2e8f0;border-radius:99px;overflow:hidden;position:relative}
+.wf-progress::after{content:"";position:absolute;left:0;top:0;height:100%;background:#7C3AED;border-radius:99px}
+.wf-progress.p15::after{width:15%}
+.wf-progress.p30::after{width:30%}
+.wf-progress.p45::after{width:45%}
+.wf-progress.p60::after{width:60%}
+.wf-progress.p75::after{width:75%}
+.wf-progress.p90::after{width:90%}
+.wf-progress.p100::after{width:100%;background:#16a34a}
+.wf-progress.over::after{width:100%;background:linear-gradient(90deg,#16a34a 70%,#facc15)}
+.wf-progress.risk::after{background:#facc15}
+
+/* Asset library grid */
+.wf-asset-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+.wf-asset{aspect-ratio:1;border-radius:5px;position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);font-size:9px;border:1px solid #e2e8f0;overflow:hidden;font-weight:600}
+.wf-asset .wf-asset-meta{position:absolute;bottom:3px;left:3px;right:3px;font-size:7.5px;background:rgba(255,255,255,.92);color:#475569;padding:1px 4px;border-radius:3px;line-height:1.2;font-weight:700;display:flex;justify-content:space-between}
+.wf-asset.gradient{background:linear-gradient(135deg,#fbbf24,#f87171)}
+.wf-asset.purple{background:linear-gradient(135deg,#7C3AED,#EC4899)}
+.wf-asset.green{background:linear-gradient(135deg,#10b981,#3b82f6)}
+.wf-asset.blue{background:linear-gradient(135deg,#3b82f6,#0891b2)}
+.wf-asset.dark{background:linear-gradient(135deg,#1e293b,#7c3aed)}
+.wf-asset.warm{background:linear-gradient(135deg,#dc2626,#f59e0b)}
+.wf-asset.sticker{background:#fff;border:1px dashed #cbd5e1;color:#94a3b8;font-size:11px}
+
+/* Log entry / audit row */
+.wf-log-entry{padding:7px 10px;font-size:10.5px;border-bottom:1px solid #e2e8f0;display:grid;grid-template-columns:90px 1fr auto;gap:10px;align-items:center;line-height:1.4}
+.wf-log-entry:last-child{border-bottom:none}
+.wf-log-time{font-size:9px;color:#94a3b8;font-family:'JetBrains Mono',ui-monospace,monospace}
+.wf-log-actor{font-size:9px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.04em;margin-right:6px}
+.wf-log-actor.human{color:#16a34a}
+
+/* Performance row */
+.wf-perf-row{display:flex;align-items:center;gap:10px;padding:8px 12px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:11px}
+.wf-perf-row strong{color:#1e293b;font-weight:700}
+.wf-perf-row .wf-perf-name{flex:1;font-weight:600;color:#1e293b}
+.wf-perf-row .wf-perf-metric{font-size:10px;color:#64748b;display:flex;gap:8px}
+.wf-perf-row .wf-perf-spark{margin-left:auto}
+
+/* Table */
+.wf-table{width:100%;border-collapse:collapse;font-size:10.5px}
+.wf-table th{text-align:left;padding:7px 10px;font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em;background:#fafbfc;border-bottom:1px solid #e2e8f0}
+.wf-table td{padding:7px 10px;border-bottom:1px solid #e2e8f0;color:#1e293b;font-size:10.5px}
+.wf-table td strong{font-weight:700}
+.wf-table tr:last-child td{border-bottom:none}
+.wf-table tr:hover td{background:#fafbfc}
+
+/* Goal-portfolio big KPI card */
+.wf-goal-card{padding:14px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;display:flex;flex-direction:column;gap:6px;position:relative}
+.wf-goal-card.ontrack{border-left:4px solid #16a34a}
+.wf-goal-card.atrisk{border-left:4px solid #facc15}
+.wf-goal-card.exceeding{border-left:4px solid #16a34a;background:linear-gradient(180deg,#fff,#f0fdf4)}
+.wf-goal-card .wf-goal-title{font-size:13px;font-weight:700;color:#1e293b;line-height:1.3}
+.wf-goal-card .wf-goal-kpi{display:flex;align-items:baseline;gap:6px}
+.wf-goal-card .wf-goal-current{font-size:20px;font-weight:800;color:#1e293b;letter-spacing:-.02em;line-height:1}
+.wf-goal-card .wf-goal-target{font-size:10.5px;color:#64748b}
+.wf-goal-card .wf-goal-meta{display:flex;gap:8px;flex-wrap:wrap;font-size:9.5px;color:#64748b}
+.wf-goal-card .wf-goal-meta strong{color:#1e293b}
+
+/* Notification banner */
+.wf-banner{padding:10px 14px;border-radius:8px;display:flex;align-items:center;gap:10px;font-size:11px;line-height:1.5}
+.wf-banner.info{background:#eff6ff;border:1px solid #bfdbfe;color:#1e3a8a}
+.wf-banner.warn{background:#fef3c7;border:1px solid #fde68a;color:#78350f}
+.wf-banner.success{background:#dcfce7;border:1px solid #86efac;color:#166534}
+.wf-banner strong{font-weight:700}
+
+/* Filter / chip row */
+.wf-filter-row{display:flex;gap:6px;flex-wrap:wrap;align-items:center;padding-bottom:8px;border-bottom:1px solid #e2e8f0;margin-bottom:6px}
+.wf-filter{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;background:#fff;border:1px solid #e2e8f0;border-radius:99px;font-size:10px;color:#475569;font-weight:600}
+.wf-filter.active{background:#1e293b;color:#fff;border-color:#1e293b}
+
+/* Action shelf (sticky bottom) */
+.wf-shelf{padding:8px 12px;background:#fafbfc;border-top:1px solid #e2e8f0;display:flex;gap:6px;align-items:center;flex-wrap:wrap;font-size:10.5px;color:#64748b}
+.wf-shelf strong{color:#1e293b;font-weight:700}
+
 /* New step-section + feature-row layout (replaces wide table) */
 .step-section{margin-bottom:40px}
 .step-section-header{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--canva-1);border-radius:12px;margin-bottom:14px}
@@ -628,8 +733,10 @@ footer a:hover{text-decoration:underline}
   <button class="tab-btn" data-tab="whatsapp" role="tab"><span class="channel-dot"></span>WhatsApp Campaigns</button>
   <button class="tab-btn" data-tab="roadmap" role="tab" style="margin-left:auto"><span class="channel-dot" style="background:linear-gradient(90deg,#D97706,#7C3AED)"></span>Mailchimp Roadmap</button>
   <button class="tab-btn" data-tab="klaviyo" role="tab"><span class="channel-dot" style="background:#ef4444"></span>vs. Klaviyo</button>
-  <button class="tab-btn" data-tab="wireframes" role="tab"><span class="channel-dot" style="background:#D97706"></span>Phase 1 UX Flow</button>
-  <button class="tab-btn" data-tab="wireframes2" role="tab"><span class="channel-dot" style="background:linear-gradient(90deg,#7C3AED,#EC4899)"></span>Phase 2 UX Flow</button>
+  <button class="tab-btn" data-tab="wireframes" role="tab"><span class="channel-dot" style="background:#D97706"></span>P1 · Zero State</button>
+  <button class="tab-btn" data-tab="ongoing1" role="tab"><span class="channel-dot" style="background:#D97706"></span>P1 · Ongoing</button>
+  <button class="tab-btn" data-tab="wireframes2" role="tab"><span class="channel-dot" style="background:linear-gradient(90deg,#7C3AED,#EC4899)"></span>P2 · Zero State</button>
+  <button class="tab-btn" data-tab="ongoing2" role="tab"><span class="channel-dot" style="background:linear-gradient(90deg,#7C3AED,#EC4899)"></span>P2 · Ongoing</button>
 </nav>
 
 <!-- =================================== EMAIL TAB =================================== -->
@@ -5364,6 +5471,826 @@ footer a:hover{text-decoration:underline}
     <p>By the end of Phase 2, Mailchimp shifts from <strong>"react to a creative prompt"</strong> (Phase 1) to <strong>"plan from a business outcome"</strong> (Phase 2). The marketer enters a goal; AI orchestrates audiences + creative + compliance + interactive surfaces + governance + send + optimization continuously. The loop becomes <strong>create + send + learn + adjust + extend</strong> — all in one platform, with external AI agents able to plug in via MCP.</p>
     <p>Every Phase 2 stage requires capabilities <strong>Canva structurally cannot build</strong>: audience data (Stage 2-3), send infrastructure (Stage 7), regulatory compliance knowledge (Stage 4), enterprise governance (Stage 6), customer-journey wiring (Stage 5). This is where Mailchimp's moat shows — the integrated platform delivers what point-creative tools cannot.</p>
     <p><strong>Bottom line:</strong> Phase 1 stops the Canva bleed. Phase 2 builds the moat. Combined, Mailchimp moves from "email tool with AI features" to "<strong>the AI-powered marketing platform</strong>" — outcomes-first, audience-aware, compliance-built-in, governance-ready, optimization-native.</p>
+  </div>
+
+</section>
+
+<!-- =================================== PHASE 1 ONGOING TAB =================================== -->
+<section class="tab-pane" id="tab-ongoing1" role="tabpanel">
+
+  <div class="wf-hero">
+    <h2>Phase 1 · Ongoing usage — the daily-driver email editor</h2>
+    <p>What the AI-first builder looks like for a returning customer who's already onboarded — brand kit set up, voice profile saved, Living Memory accumulated, asset library growing. The experience shifts from <em>discovery</em> to <em>velocity</em>: resume drafts, clone winners, hot-swap content in live sends, propagate brand changes, iterate on what worked.</p>
+    <div class="wf-legend">
+      <span class="wf-feat-pill">Living Memory · always active</span>
+      <span class="wf-feat-pill">Conversational Design Editing</span>
+      <span class="wf-feat-pill">Asset Library reuse</span>
+      <span class="wf-feat-pill">Brand Intelligence propagation</span>
+      <span class="wf-feat-pill">Magic Edit · in-place</span>
+      <span class="wf-feat-pill">AI Sticker / GIF library</span>
+      <span class="wf-feat-pill">Performance-driven iteration</span>
+    </div>
+  </div>
+
+  <!-- STAGE 1: RETURN DASHBOARD -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">1</span><span class="wf-stage-title">Return dashboard — campaigns in flight, drafts waiting, AI suggesting</span>
+      <p class="wf-stage-desc">Returning marketer's home. Active campaigns, drafts, AI-suggested campaigns based on past performance, and recent activity — all surfaced as actionable cards. No "create from scratch" friction.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Living Memory</span><span class="wf-active-pill">Magic Design (AI suggestions)</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span class="active">Home</span><span>Campaigns</span><span>Audiences</span><span>Reports</span><span>Library</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">All synced</span>
+            <span class="wf-icon-btn" title="Notifications">🔔</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner info"><strong>Welcome back, Sarah.</strong> 3 campaigns in flight · 4 drafts · 2 AI-suggested campaigns ready to review · last sent yesterday 6:14 PM</div>
+          <h3 class="wf-h3">In flight · 3 campaigns</h3>
+          <div class="wf-dash-grid">
+            <div class="wf-dash-card live"><div class="wf-dc-eyebrow">Live · 47% sent <span class="wf-status live">on track</span></div><div class="wf-dc-title">VIP Win-back · BFCM</div><div class="wf-dc-meta"><span>Open <strong>38.2%</strong></span><span>Rev <strong>$18.4k</strong></span><span>+22% vs forecast</span></div><div class="wf-dc-bar" style="--p:47%"></div></div>
+            <div class="wf-dash-card live"><div class="wf-dc-eyebrow">Live · 91% sent <span class="wf-status live">on track</span></div><div class="wf-dc-title">Holiday Gift Guide drop 2</div><div class="wf-dc-meta"><span>Open <strong>31.8%</strong></span><span>Rev <strong>$24.7k</strong></span><span>on target</span></div></div>
+            <div class="wf-dash-card scheduled"><div class="wf-dc-eyebrow">Scheduled · Mon Nov 24</div><div class="wf-dc-title">Cyber Monday flash</div><div class="wf-dc-meta"><span>Audience <strong>12.4k</strong></span><span>Send-Time Opt. on</span></div></div>
+          </div>
+          <h3 class="wf-h3">Drafts · 4 in progress</h3>
+          <div class="wf-dash-grid">
+            <div class="wf-dash-card draft"><div class="wf-dc-eyebrow">Draft · edited 18h ago</div><div class="wf-dc-title">Q4 Loyalty re-engagement</div><div class="wf-dc-meta"><span>4 blocks · 2 chat turns left</span></div></div>
+            <div class="wf-dash-card draft"><div class="wf-dc-eyebrow">Draft · edited 2d ago</div><div class="wf-dc-title">New product launch · Jan</div><div class="wf-dc-meta"><span>Hero pending review</span></div></div>
+            <div class="wf-dash-card draft"><div class="wf-dc-eyebrow">Draft · edited 4d ago</div><div class="wf-dc-title">Welcome series · v4</div><div class="wf-dc-meta"><span>Awaiting Legal sign-off</span></div></div>
+            <div class="wf-dash-card draft"><div class="wf-dc-eyebrow">Draft · paused</div><div class="wf-dc-title">Black Friday teaser</div><div class="wf-dc-meta"><span>Brand v3.1 → v3.2 pending</span></div></div>
+          </div>
+          <h3 class="wf-h3">AI suggested · 2 ready to review <span class="wf-hint">i</span></h3>
+          <div class="wf-dash-grid">
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">AI suggested · based on memory</div><div class="wf-dc-title">"Holiday version of BFCM #4"</div><div class="wf-dc-meta"><span>Predicted open <strong>~36%</strong></span><span>Reuse top 3 winners</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">AI suggested · based on trend</div><div class="wf-dc-title">"Gift-finder quiz · Q4"</div><div class="wf-dc-meta"><span>Interactive Inbox ready</span><span>3 days to launch</span></div></div>
+          </div>
+        </div>
+        <div class="wf-shelf"><strong>Quick start:</strong> <span class="wf-btn">+ New campaign</span> <span class="wf-btn">Clone winner</span> <span class="wf-btn">Update brand across all</span> <span style="margin-left:auto;color:#94a3b8;font-size:10px">3 in flight · auto-saving</span></div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Living Memory</span><strong>Returning user = velocity</strong>Home page is the marketer's workbench, not a marketing site. Active work front and center.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">AI suggestions</span><strong>Proactive, not reactive</strong>AI watches past performance and proposes new campaigns. The marketer can accept, modify, or ignore — never starts cold.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2: RESUME DRAFT -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">2</span><span class="wf-stage-title">Resume draft — pick up exactly where you left off</span>
+      <p class="wf-stage-desc">Click a draft card → land back inside the editor with the full state restored: blocks, AI chat history, brand kit version applied, last hover position. No re-orienting.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Living Memory · session state</span><span class="wf-active-pill">Conversational Design Editing</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Home</span><span class="active">Q4 Loyalty re-engagement</span><span class="wf-breadcrumb"><span class="wf-bc-sep">·</span>draft</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · just now</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo">↷</span>
+          </div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner info"><strong>Picking up where you left off.</strong> Last edited yesterday 4:32 PM · v8 of 12 versions · Brand Kit v3.2 applied · 2 AI chat turns from yesterday restored</div>
+          <div class="wf-grid-3col">
+            <div class="wf-sidebar">
+              <h4>Version history</h4>
+              <div class="wf-sb-item active">v8 · yesterday 4:32 PM</div>
+              <div class="wf-sb-item">v7 · yesterday 3:15 PM</div>
+              <div class="wf-sb-item">v6 · yesterday 2:48 PM</div>
+              <div class="wf-sb-item">v5 · Tue 5:01 PM</div>
+              <h4 style="margin-top:6px">AI suggested next</h4>
+              <div class="wf-sb-item">⚡ Refresh hero</div>
+              <div class="wf-sb-item">⚡ Try a winning subject</div>
+              <div class="wf-sb-item">⚡ Add stickers from library</div>
+            </div>
+            <div class="wf-email-preview">
+              <div class="wf-hero-img" style="background:linear-gradient(135deg,#fbbf24,#dc2626)">Hero · "We miss you · 20% off"</div>
+              <h2 class="wf-h2">It's been a while · here's 20% off</h2>
+              <div class="wf-skel w-80"></div>
+              <div class="wf-skel w-60"></div>
+              <span class="wf-btn brand" style="align-self:flex-start">Reclaim 20% →</span>
+              <div class="wf-skel w-40"></div>
+            </div>
+            <div class="wf-chat-panel">
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:10px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em">Yesterday · resumed</span><span class="wf-status live">v8</span></div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Mailchimp AI · 4:31 PM yesterday</span>Hero updated to warmer tones. Want me to try a more urgent variant?</div>
+              <div class="wf-msg user">Keep this for now. Saving.</div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Today · resumed</span>Welcome back. Continue where we left off — or want a fresh take on the hero?</div>
+              <div class="wf-input" style="padding:7px 10px;margin-top:auto"><span class="wf-muted">Continue refining...</span></div>
+            </div>
+          </div>
+        </div>
+        <div class="wf-shelf"><span class="wf-btn primary">Continue editing</span><span class="wf-btn">Regenerate with latest brief</span><span class="wf-btn">Compare to v5 (last sent)</span><span style="margin-left:auto" class="wf-status live">Brand v3.2 · current</span></div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Session restore</span><strong>Full state, not just files</strong>Blocks, chat history, version, brand version, hover state — all restored. No "where was I?" overhead.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Version history</span><strong>Granular rollback</strong>Every AI edit creates a version. Compare any two, revert to any. Brand kit version travels with the campaign.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3: CLONE WINNER -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">3</span><span class="wf-stage-title">Clone a winner — AI re-purposes a top performer for a new context</span>
+      <p class="wf-stage-desc">Browse your highest-performing past campaigns. Pick one. AI asks "what's different this time?" and clones the structure + winning patterns into a new context (new season, audience, offer).</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Living Memory</span><span class="wf-active-pill">Magic Design</span><span class="wf-active-pill">Conversational Editing</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Home</span><span class="active">Clone winner</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">Saved</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">Your top performers · sorted by revenue impact</h2>
+          <table class="wf-table">
+            <thead><tr><th>Campaign</th><th>Open</th><th>Click</th><th>Revenue</th><th>vs avg</th><th></th></tr></thead>
+            <tbody>
+              <tr style="background:#faf5ff"><td><strong>BFCM 2025 · Lapsed VIP #4 ✓ selected</strong></td><td>41.2%</td><td>9.8%</td><td>$87.4k</td><td><strong style="color:#16a34a">+41%</strong></td><td><span class="wf-btn">Selected</span></td></tr>
+              <tr><td>Mother's Day Premium Re-engagement</td><td>38.7%</td><td>8.4%</td><td>$62.1k</td><td><strong style="color:#16a34a">+28%</strong></td><td><span class="wf-btn">Clone</span></td></tr>
+              <tr><td>Welcome Series · v3 · onboarded</td><td>52.1%</td><td>12.6%</td><td>$48.9k</td><td><strong style="color:#16a34a">+22%</strong></td><td><span class="wf-btn">Clone</span></td></tr>
+              <tr><td>Spring Sale · Tiered Discount</td><td>34.2%</td><td>7.1%</td><td>$41.2k</td><td><strong style="color:#16a34a">+19%</strong></td><td><span class="wf-btn">Clone</span></td></tr>
+              <tr><td>Free Shipping Day</td><td>29.8%</td><td>6.4%</td><td>$32.8k</td><td><strong style="color:#16a34a">+11%</strong></td><td><span class="wf-btn">Clone</span></td></tr>
+            </tbody>
+          </table>
+          <div class="wf-banner info"><strong>Selected:</strong> BFCM 2025 · Lapsed VIP #4 · what made it work: urgent hero + 20% offer + scarcity badge + 24h send window + Send-Time Optimization on.</div>
+          <h3 class="wf-h3">What's different this time?</h3>
+          <div class="wf-input"><span><strong>"Holiday version for Bronze tier — softer urgency, gift-focused, 15% off, two-week window"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Clone &amp; adapt ⚡</span></div>
+          <h3 class="wf-h3">AI will reuse</h3>
+          <div class="wf-chip-row">
+            <span class="wf-chip live">Hero composition pattern</span>
+            <span class="wf-chip live">Subject-line structure</span>
+            <span class="wf-chip live">Send-Time Optimization</span>
+            <span class="wf-chip">Reframe: urgency → gift</span>
+            <span class="wf-chip">Reframe: 20% → 15%</span>
+            <span class="wf-chip">New audience: Bronze (12,408)</span>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Living Memory · winners table</span><strong>Top performers as inventory</strong>The most-used starting point for daily work. Not "templates" — your own proven winners, indexed by revenue impact.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">AI re-purposing</span><strong>Reuse the structure, reframe the context</strong>AI preserves what worked (composition, structure, timing) and reframes what's different (offer, tone, audience).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 4: ASSET LIBRARY -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">4</span><span class="wf-stage-title">Asset Library — your AI-generated content, organized + reusable</span>
+      <p class="wf-stage-desc">Every Dream Lab image, AI sticker, generated GIF, saved block, and Magic Layered remix accumulates in a searchable library. Usage stats + performance scores per asset help the marketer reuse what works.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Dream Lab library</span><span class="wf-active-pill">AI Sticker library</span><span class="wf-active-pill">Magic Layers history</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Home</span><span>Campaigns</span><span class="active">Library</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">Synced</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-filter-row">
+            <span class="wf-filter active">All · 247</span>
+            <span class="wf-filter">Images · 142</span>
+            <span class="wf-filter">Stickers · 38</span>
+            <span class="wf-filter">GIFs · 12</span>
+            <span class="wf-filter">Saved blocks · 23</span>
+            <span class="wf-filter">Brand assets · 32</span>
+            <span style="margin-left:auto;display:flex;gap:6px;align-items:center"><span class="wf-input" style="padding:4px 9px;font-size:10px;min-width:160px"><span class="wf-muted">Search assets...</span></span><span class="wf-btn ai" style="font-size:10px;padding:4px 9px">+ Generate new</span></span>
+          </div>
+          <div class="wf-asset-grid">
+            <div class="wf-asset gradient">Hero · BFCM<div class="wf-asset-meta"><span>used 8×</span><span>★ 4.9</span></div></div>
+            <div class="wf-asset purple">Loyalty hero<div class="wf-asset-meta"><span>used 5×</span><span>★ 4.7</span></div></div>
+            <div class="wf-asset green">Spring product<div class="wf-asset-meta"><span>used 3×</span><span>★ 4.3</span></div></div>
+            <div class="wf-asset warm">Cart abandon<div class="wf-asset-meta"><span>used 11×</span><span>★ 4.9</span></div></div>
+            <div class="wf-asset blue">Welcome hero<div class="wf-asset-meta"><span>used 12×</span><span>★ 5.0</span></div></div>
+            <div class="wf-asset dark">Premium black<div class="wf-asset-meta"><span>used 2×</span><span>★ 4.2</span></div></div>
+            <div class="wf-asset sticker">🎉<div class="wf-asset-meta"><span>used 18×</span></div></div>
+            <div class="wf-asset sticker">⏰<div class="wf-asset-meta"><span>used 14×</span></div></div>
+            <div class="wf-asset sticker">🎁<div class="wf-asset-meta"><span>used 9×</span></div></div>
+            <div class="wf-asset sticker">★</div>
+            <div class="wf-asset sticker">%</div>
+            <div class="wf-asset sticker">✦</div>
+            <div class="wf-asset gradient">Holiday gradient</div>
+            <div class="wf-asset purple">Brand-purple v3.2</div>
+            <div class="wf-asset green">Spring fresh</div>
+            <div class="wf-asset blue">Sky soft</div>
+            <div class="wf-asset warm">Sunset urgent</div>
+            <div class="wf-asset dark">Premium dark</div>
+          </div>
+          <div class="wf-shelf"><strong>Selected:</strong> 1 asset · <span class="wf-btn">Reuse in current draft</span><span class="wf-btn">Generate variation</span><span class="wf-btn">Magic Layers · remix</span><span class="wf-btn">Archive</span><span style="margin-left:auto;color:#94a3b8">12 newly-generated this week</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Asset accumulation</span><strong>AI outputs become inventory</strong>Generated images don't vanish. Usage count + star rating + brand-kit version travels with each asset. Reuse > regenerate.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Magic Layers remix</span><strong>Reuse with variation</strong>"Remix" surfaces the editable layered version (from Magic Layers) — change one element, save as new variant.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 5: INLINE QUICK EDITS -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">5</span><span class="wf-stage-title">Inline quick edits — hot-swap content in a live campaign</span>
+      <p class="wf-stage-desc">Campaign already mid-send. Marketer notices a competitor dropped a deal. They open the live campaign and prompt: "Update CTA to 'Last 24 hours'." AI shows before/after diff and the remaining-recipient impact, then hot-swaps for the next batch.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Conversational Design Editing</span><span class="wf-active-pill">Magic Edit · in-place</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Home</span><span>Campaigns</span><span class="active">VIP Win-back · live</span></div>
+          <div class="wf-app-state"><span class="wf-status live">Live · sending</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-mini-row">
+            <div class="wf-mini"><span class="wf-mini-label">Sent</span><span class="wf-mini-value">4,217</span><span class="wf-mini-delta">/ 12,408</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Open</span><span class="wf-mini-value">38.2%</span><span class="wf-mini-delta">+6.4</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Click</span><span class="wf-mini-value">9.1%</span><span class="wf-mini-delta">+2.1</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Revenue</span><span class="wf-mini-value">$18.4k</span><span class="wf-mini-delta">pacing +22%</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Remaining</span><span class="wf-mini-value">8,191</span><span class="wf-mini-delta" style="color:#7C3AED">eligible for edit</span></div>
+          </div>
+          <h3 class="wf-h3">Quick edit · prompt</h3>
+          <div class="wf-input"><span><strong>"Update CTA to 'Last 24 hours' and bump the urgency on the subject"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Preview change ⚡</span></div>
+          <h3 class="wf-h3">Before → after diff</h3>
+          <div class="wf-diff">
+            <div class="wf-diff-side before"><h5>Currently sending</h5>CTA: <strong>"Reclaim my 30%"</strong><br>Subject: <strong>"Come back · 30% off, just for you"</strong></div>
+            <div class="wf-diff-arrow">→</div>
+            <div class="wf-diff-side after"><h5>New version (for next batch)</h5>CTA: <strong>"Last 24 hours · 30%"</strong><br>Subject: <strong>"Last day · 30% off, just for you"</strong></div>
+          </div>
+          <div class="wf-banner warn"><strong>Safeguards engaged.</strong> Change applies to 8,191 remaining sends (66% of audience). Already-sent recipients (4,217) unchanged. <span class="wf-chip">A/B compare on/off</span> <span class="wf-chip">Auto-revert if open rate drops &gt;5%</span></div>
+          <div class="wf-btn-row"><span class="wf-btn primary">Apply to remaining 8,191</span><span class="wf-btn">A/B with current version</span><span class="wf-btn">Save for future · don't apply</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Hot-swap during live send</span><strong>Edit in-flight, safely</strong>Already-sent recipients can't be unsent — but the remaining audience can receive an updated version. Safeguards (auto-revert on performance drop, A/B option) protect the change.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Conversational Editing on live</span><strong>Same chat surface, higher stakes</strong>The same chat-driven UX from drafts applies to live campaigns — with explicit guardrails because the consequences are real.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 6: CROSS-CAMPAIGN BRAND UPDATE -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">6</span><span class="wf-stage-title">Cross-campaign brand update — propagate Brand Kit changes safely</span>
+      <p class="wf-stage-desc">Brand team updates the logo or color palette. Brand Intelligence immediately scans all campaigns and shows the impact: which drafts, scheduled sends, and live campaigns are affected, with previews of each change. Marketer chooses bulk-apply with safeguards.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Brand Intelligence · propagation</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Home</span><span class="active">Brand Kit</span><span class="wf-breadcrumb"><span class="wf-bc-sep">·</span>v3.2 published</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">v3.2 published 12m ago</span><span class="wf-icon-btn">↶</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner warn"><strong>Brand Kit v3.2 published 12 min ago.</strong> Brand Intelligence found 16 campaigns affected · review impact before propagating</div>
+          <div class="wf-mini-row">
+            <div class="wf-mini"><span class="wf-mini-label">Drafts</span><span class="wf-mini-value">9</span><span class="wf-mini-delta">safe to apply</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Scheduled</span><span class="wf-mini-value">4</span><span class="wf-mini-delta" style="color:#facc15">requires approval</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">In flight</span><span class="wf-mini-value">3</span><span class="wf-mini-delta" style="color:#dc2626">skip · don't disrupt</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Templates</span><span class="wf-mini-value">28</span><span class="wf-mini-delta">refresh on next use</span></div>
+          </div>
+          <h3 class="wf-h3">Per-campaign impact</h3>
+          <table class="wf-table">
+            <thead><tr><th>Campaign</th><th>Status</th><th>What changes</th><th>Risk</th><th></th></tr></thead>
+            <tbody>
+              <tr><td>Q4 Loyalty re-engagement</td><td><span class="wf-status queued">draft</span></td><td>Logo · 2 colors · CTA font</td><td>Low</td><td><span class="wf-btn">Apply</span></td></tr>
+              <tr><td>New product launch · Jan</td><td><span class="wf-status queued">draft</span></td><td>Logo · header font</td><td>Low</td><td><span class="wf-btn">Apply</span></td></tr>
+              <tr><td>Cyber Monday flash</td><td><span class="wf-status warn">scheduled Mon</span></td><td>Logo · tagline</td><td>Med · re-approve</td><td><span class="wf-btn">Review</span></td></tr>
+              <tr><td>Holiday Gift Guide drop 2</td><td><span class="wf-status live">live</span></td><td>Would affect 6,108 remaining sends</td><td>High · in flight</td><td><span class="wf-btn">Skip</span></td></tr>
+              <tr><td>VIP Win-back · BFCM</td><td><span class="wf-status live">live</span></td><td>Would affect 8,191 remaining sends</td><td>High · in flight</td><td><span class="wf-btn">Skip</span></td></tr>
+            </tbody>
+          </table>
+          <div class="wf-banner info"><strong>Default policy:</strong> Apply to drafts, hold scheduled for re-approval, skip live campaigns. Override per campaign as needed.</div>
+          <div class="wf-btn-row"><span class="wf-btn primary">Apply to 9 drafts now</span><span class="wf-btn">Schedule scheduled for off-hours</span><span class="wf-btn">Notify owners</span><span class="wf-btn danger">Force apply to all (incl. live)</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Brand Intelligence · propagation</span><strong>Brand evolution at scale</strong>Brand updates flow into all campaigns automatically — but with risk-tiered policies. Drafts get updated quietly; scheduled require re-approval; live campaigns are skipped by default.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Risk-tiered bulk action</span><strong>One control, many safeguards</strong>The default policy protects in-flight revenue. Override is available with a danger-level confirmation.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 7: PERFORMANCE + ITERATE -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">7</span><span class="wf-stage-title">Performance + iterate — closing the create-send-learn loop</span>
+      <p class="wf-stage-desc">Campaign ended. The post-send report shows results vs target plus an AI-generated explanation of what worked. AI proposes 3 next-iteration variants — different angles, different audiences — each with predicted lift. One click to spawn the next campaign.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Living Memory · pattern learning</span><span class="wf-active-pill">Magic Design · next-iteration</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Home</span><span class="active">VIP Win-back · ended</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">Final · archived</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner success"><strong>Campaign ended 6h ago · won by +18% vs target.</strong> $87.4k revenue · 4,217 / 12,408 opened · 412 conversions</div>
+          <div class="wf-mini-row">
+            <div class="wf-mini"><span class="wf-mini-label">Open rate</span><span class="wf-mini-value">38.2%</span><span class="wf-mini-delta">+6.4 vs avg</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">CTR</span><span class="wf-mini-value">9.1%</span><span class="wf-mini-delta">+2.1 vs avg</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Revenue</span><span class="wf-mini-value">$87.4k</span><span class="wf-mini-delta">+18% vs target</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">CAC payback</span><span class="wf-mini-value">11d</span><span class="wf-mini-delta">vs 42d avg</span></div>
+          </div>
+          <div class="wf-callout">
+            <strong><span class="wf-ico">M</span>Living Memory explains what worked</strong>
+            "Three things drove the lift: <strong>(1)</strong> the 'limited time' sticker added at v11 lifted CTR by ~7 points among high-LTV; <strong>(2)</strong> subject variant A outperformed B by 4.2pp — AI auto-switched at minute 35 and saved ~412 lower-performance opens; <strong>(3)</strong> Send-Time Optimization moved sends from 10am to 11:42am for 23% of contacts, gaining ~8% opens on that cohort. <span style="text-decoration:underline;color:#7C3AED">View decision log →</span>"
+          </div>
+          <h3 class="wf-h3">AI proposes 3 next iterations</h3>
+          <div class="wf-dash-grid">
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Next iteration · v2</div><div class="wf-dc-title">"Same playbook · Bronze tier (12,408)"</div><div class="wf-dc-meta"><span>Predicted lift <strong>+11%</strong></span><span>Audience &gt;3× larger</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Variant · A/B test</div><div class="wf-dc-title">"Same audience · gift framing instead of urgency"</div><div class="wf-dc-meta"><span>Test risk: low</span><span>Reuse: hero, CTA</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Adjacent goal</div><div class="wf-dc-title">"Use winners → cart recovery flow"</div><div class="wf-dc-meta"><span>Reapplied to recovery journey</span><span>+predicted CTR</span></div></div>
+          </div>
+          <div class="wf-btn-row"><span class="wf-btn primary">Generate v2 from winner</span><span class="wf-btn">Export full report</span><span class="wf-btn">Share to Slack</span><span class="wf-btn">Add to winners library</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Living Memory · learning</span><strong>"What worked" auto-explained</strong>Post-send report isn't just numbers — AI articulates the causal mechanics (sticker added at v11, subject switch at min 35, send-time optimization gains). Marketer learns what's repeatable.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Next-iteration suggestions</span><strong>Loop closure</strong>The winner becomes the inventory for the next campaign — same playbook, larger audience; A/B variant on the same audience; or applied to an adjacent journey. One click to spawn.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="kl-bottom-line" style="background:linear-gradient(135deg,#78350f 0%,#92400e 100%)">
+    <h3>The ongoing Phase 1 experience</h3>
+    <p>The marketer's daily work is <strong>resume, iterate, propagate, learn</strong> — not "start from zero." Every prior campaign feeds the next via Living Memory. Generated assets accumulate into a library. Brand updates flow safely across all work. Live campaigns can be edited mid-send with guardrails. Wins explain themselves and seed next iterations. <strong>The compounding effect: each campaign makes the next one smarter, faster, and better.</strong></p>
+  </div>
+
+</section>
+
+<!-- =================================== PHASE 2 ONGOING TAB =================================== -->
+<section class="tab-pane wf-phase2" id="tab-ongoing2" role="tabpanel">
+
+  <div class="wf-hero">
+    <h2>Phase 2 · Ongoing usage — operating an agentic marketing portfolio</h2>
+    <p>What the Phase 2 platform looks like in steady-state operation. The marketer doesn't <em>create campaigns</em> anymore — they <strong>operate a portfolio of goals</strong> that the AI executes. The job becomes: set goals, review the AI's decision queue, monitor live optimization across campaigns, govern AI behavior, and read the outcomes. This is what "AI-powered marketing platform" actually feels like.</p>
+    <div class="wf-legend">
+      <span class="wf-feat-pill">Goal Portfolio</span>
+      <span class="wf-feat-pill">Campaign Manager</span>
+      <span class="wf-feat-pill">Agent Decision Queue</span>
+      <span class="wf-feat-pill">Multi-campaign Live Optimization</span>
+      <span class="wf-feat-pill">Audience + Creative Lab</span>
+      <span class="wf-feat-pill">Governance Console</span>
+      <span class="wf-feat-pill">Outcomes Report + Next-Quarter Goals</span>
+    </div>
+  </div>
+
+  <!-- STAGE 1: GOAL PORTFOLIO -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">1</span><span class="wf-stage-title">Goal portfolio — every active outcome at a glance</span>
+      <p class="wf-stage-desc">Home base for the operator. Each business goal is a card with current vs target, days remaining, AI confidence, and status. Marketer sees what's on track, at risk, or exceeding — and where AI needs human input.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Agentic Campaign Orchestrator</span><span class="wf-active-pill">Cross-Domain Agent</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span class="active">Goals</span><span>Campaigns</span><span>Inbox</span><span>Live</span><span>Reports</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">All synced</span><span class="wf-icon-btn">🔔 3</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner info"><strong>Q4 FY26 portfolio · 5 active goals · 73 days remaining</strong> · 1 exceeding · 3 on track · 1 at risk · estimated quarter revenue $1.4M (+12% vs Q3)</div>
+          <div class="wf-dash-grid" style="grid-template-columns:repeat(auto-fill,minmax(250px,1fr))">
+            <div class="wf-goal-card exceeding">
+              <div style="display:flex;justify-content:space-between"><span class="wf-status live">Exceeding · 124%</span><span class="wf-status queued">17d left</span></div>
+              <span class="wf-goal-title">Win back lapsed VIPs</span>
+              <div class="wf-goal-kpi"><span class="wf-goal-current">+18.6%</span><span class="wf-goal-target">/ +15% target</span></div>
+              <span class="wf-progress p100"></span>
+              <span class="wf-goal-meta"><span>3 campaigns · 4,217 → 12,408</span><span><strong>$87k</strong> revenue</span></div>
+            </div>
+            <div class="wf-goal-card ontrack">
+              <div style="display:flex;justify-content:space-between"><span class="wf-status live">On track · 73%</span><span class="wf-status queued">73d left</span></div>
+              <span class="wf-goal-title">Bronze tier repeat purchase</span>
+              <div class="wf-goal-kpi"><span class="wf-goal-current">+10.9%</span><span class="wf-goal-target">/ +15% target</span></div>
+              <span class="wf-progress p75"></span>
+              <span class="wf-goal-meta"><span>5 segments · 12,408 contacts</span><span>$34k of $48k forecast</span></span>
+            </div>
+            <div class="wf-goal-card ontrack">
+              <div style="display:flex;justify-content:space-between"><span class="wf-status live">On track · 68%</span><span class="wf-status queued">42d left</span></div>
+              <span class="wf-goal-title">First-purchase conversion</span>
+              <div class="wf-goal-kpi"><span class="wf-goal-current">8.4%</span><span class="wf-goal-target">/ 12% target</span></div>
+              <span class="wf-progress p60"></span>
+              <span class="wf-goal-meta"><span>Welcome series v4 · onboarded</span><span>1,108 conversions</span></span>
+            </div>
+            <div class="wf-goal-card atrisk">
+              <div style="display:flex;justify-content:space-between"><span class="wf-status warn">At risk · 42%</span><span class="wf-status warn">31d left</span></div>
+              <span class="wf-goal-title">New customer acquisition</span>
+              <div class="wf-goal-kpi"><span class="wf-goal-current">2,341</span><span class="wf-goal-target">/ 5,500 target</span></div>
+              <span class="wf-progress risk p45"></span>
+              <span class="wf-goal-meta"><span class="wf-status warn">AI recommends: increase budget +$3k</span></span>
+            </div>
+            <div class="wf-goal-card ontrack">
+              <div style="display:flex;justify-content:space-between"><span class="wf-status live">On track · 81%</span><span class="wf-status queued">28d left</span></div>
+              <span class="wf-goal-title">Holiday gift category lift</span>
+              <div class="wf-goal-kpi"><span class="wf-goal-current">+22%</span><span class="wf-goal-target">/ +28% target</span></div>
+              <span class="wf-progress p75"></span>
+              <span class="wf-goal-meta"><span>Cross-channel · Email + SMS + IG</span></span>
+            </div>
+            <div class="wf-goal-card ai-suggested">
+              <div class="wf-dc-eyebrow">AI suggested · Q1</div>
+              <span class="wf-goal-title">+ Add: SMS-list growth target?</span>
+              <span class="wf-goal-meta">Based on your Q4 winning playbook</span>
+              <span class="wf-btn ai" style="font-size:10px;padding:4px 9px;align-self:flex-start">Plan this goal ⚡</span>
+            </div>
+          </div>
+        </div>
+        <div class="wf-shelf"><strong>Quick actions:</strong> <span class="wf-btn">+ New goal</span><span class="wf-btn">View campaign manager</span><span class="wf-btn">Open inbox · 8 pending</span><span style="margin-left:auto" class="wf-status warn">1 goal needs input</span></div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Goal Portfolio</span><strong>Outcomes, not campaigns</strong>The marketer operates at the goal layer. Campaigns are AI's implementation detail. Status tells the operator where to focus attention.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">AI recommendations</span><strong>Where the AI needs you</strong>"At risk" goals surface AI's recommendation (e.g., increase budget +$3k). Operator approves or declines — not "what to do" but "do this?"</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2: CAMPAIGN MANAGER -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">2</span><span class="wf-stage-title">Campaign manager — every campaign across every goal</span>
+      <p class="wf-stage-desc">When the operator needs to drill below the goal layer. Filterable table of all campaigns across all goals: status, channels, performance, owner. Bulk actions: pause, accelerate, reassign owner, increase budget.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Agentic Audience + Creative Bundle</span><span class="wf-active-pill">Cross-Channel Asset Studio</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span class="active">Campaigns</span><span>Inbox</span><span>Live</span><span>Reports</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">Synced</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-filter-row">
+            <span class="wf-filter active">All · 23</span>
+            <span class="wf-filter">Live · 6</span>
+            <span class="wf-filter">Scheduled · 4</span>
+            <span class="wf-filter">Drafts · 9</span>
+            <span class="wf-filter">Completed · 4</span>
+            <span class="wf-filter">Email</span>
+            <span class="wf-filter">SMS</span>
+            <span class="wf-filter">WhatsApp</span>
+            <span class="wf-filter">Goal: Bronze repeat ▾</span>
+          </div>
+          <table class="wf-table">
+            <thead><tr><th>Campaign</th><th>Goal</th><th>Channels</th><th>Status</th><th>Performance</th><th>Owner</th></tr></thead>
+            <tbody>
+              <tr><td><strong>VIP Win-back · BFCM</strong></td><td>VIP win-back</td><td>Email · SMS</td><td><span class="wf-status live">Live · 47% sent</span></td><td><strong style="color:#16a34a">+22%</strong> vs forecast</td><td>Sarah K.</td></tr>
+              <tr><td><strong>Holiday Gift Guide drop 2</strong></td><td>Holiday gift</td><td>Email · IG</td><td><span class="wf-status live">Live · 91% sent</span></td><td><strong style="color:#16a34a">+8%</strong> vs forecast</td><td>Sarah K.</td></tr>
+              <tr><td><strong>Bronze · premium win-back</strong></td><td>Bronze repeat</td><td>Email · SMS</td><td><span class="wf-status live">Live · 32% sent</span></td><td><strong style="color:#facc15">flat</strong> vs forecast</td><td>Jay M.</td></tr>
+              <tr><td><strong>Bronze · cart recovery</strong></td><td>Bronze repeat</td><td>Email · WhatsApp</td><td><span class="wf-status live">Live · 67% sent</span></td><td><strong style="color:#16a34a">+11%</strong></td><td>Jay M.</td></tr>
+              <tr><td><strong>Bronze · viewed-not-bought</strong></td><td>Bronze repeat</td><td>Email · Meta Ad</td><td><span class="wf-status warn">Scheduled Mon</span></td><td>—</td><td>Jay M.</td></tr>
+              <tr><td><strong>Bronze · price-sensitive A/B</strong></td><td>Bronze repeat</td><td>Email · SMS</td><td><span class="wf-status queued">Drafting</span></td><td>AI: ready for approval</td><td>Jay M.</td></tr>
+              <tr><td><strong>First-purchase incentive</strong></td><td>Bronze repeat</td><td>Email · LP</td><td><span class="wf-status queued">Drafting</span></td><td>AI: 78% complete</td><td>Jay M.</td></tr>
+              <tr><td><strong>Cyber Monday flash</strong></td><td>Holiday gift</td><td>Email · SMS · IG</td><td><span class="wf-status warn">Scheduled Mon 10:00</span></td><td>—</td><td>Sarah K.</td></tr>
+              <tr><td><strong>Welcome v4 · onboarded</strong></td><td>First-purchase</td><td>Email · 3-step</td><td><span class="wf-status live">Always-on</span></td><td><strong style="color:#16a34a">+5%</strong> conv</td><td>Alex T.</td></tr>
+            </tbody>
+          </table>
+          <div class="wf-shelf"><span class="wf-btn">Bulk: pause</span><span class="wf-btn">Bulk: accelerate</span><span class="wf-btn">Reassign owner</span><span class="wf-btn primary">+ New campaign · from goal</span><span style="margin-left:auto;color:#94a3b8">23 total · 9 owned by you</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Operational view</span><strong>Below the goal, above the editor</strong>Operator's working surface when something specific needs attention. Filters across status × channel × goal × owner.</div>
+        <div class="wf-anno"><strong>AI-generated drafts visible</strong>Campaigns marked "AI: 78% complete" or "AI: ready for approval" are AI-generated and waiting for operator review. Click → goes to the Approval stage.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3: AGENT INBOX -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">3</span><span class="wf-stage-title">Agent inbox — review the AI's decision queue</span>
+      <p class="wf-stage-desc">The single most important daily surface. AI proposes actions; operator approves, modifies, or rejects. High-confidence decisions auto-execute (shown grayed). High-impact or low-confidence decisions await operator review.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Mailchimp Shield</span><span class="wf-active-pill">Real-Time Performance Loop</span><span class="wf-active-pill">Cross-Domain Agent</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Campaigns</span><span class="active">Inbox · 8 pending</span><span>Live</span><span>Reports</span></div>
+          <div class="wf-app-state"><span class="wf-status warn">3 high-priority</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-filter-row">
+            <span class="wf-filter active">Pending review · 8</span>
+            <span class="wf-filter">High-impact · 3</span>
+            <span class="wf-filter">Budget · 2</span>
+            <span class="wf-filter">Creative · 2</span>
+            <span class="wf-filter">Audience · 1</span>
+            <span style="margin-left:auto;display:flex;gap:6px;align-items:center"><span class="wf-status live">Auto-executed today · 47</span></span>
+          </div>
+          <h3 class="wf-h3">High-impact · requires your decision</h3>
+          <div class="wf-decision-queue">
+            <div class="wf-dq-item high"><div><div class="wf-dq-text">Increase budget for <strong>"New customer acquisition"</strong> by <strong>$3,000</strong> to hit Q4 target (currently 42%, 31 days left).</div><div class="wf-dq-meta"><span>Expected lift: <strong>+2,200 new customers</strong></span><span>Confidence: 81%</span><span>Source: forecast model + historical CAC</span></div></div><div class="wf-dq-actions"><span class="wf-btn primary">Approve</span><span class="wf-btn">Modify</span><span class="wf-btn">Reject</span></div></div>
+            <div class="wf-dq-item high"><div><div class="wf-dq-text">Pause <strong>"Bronze price-sensitive"</strong> A/B test — variant B materially underperforming variant A (confidence 92%).</div><div class="wf-dq-meta"><span>Variant A: 14.1% open · Variant B: 8.2% open</span><span>Remaining sends: 2,891 contacts</span></div></div><div class="wf-dq-actions"><span class="wf-btn primary">Pause B</span><span class="wf-btn">Keep running</span></div></div>
+            <div class="wf-dq-item high"><div><div class="wf-dq-text">Reassign <strong>"Bronze · viewed-not-bought"</strong> ownership — Jay M. has 4 campaigns on the same goal; AI recommends spreading.</div><div class="wf-dq-meta"><span>Suggested owner: Alex T. (current load: 1 campaign)</span></div></div><div class="wf-dq-actions"><span class="wf-btn primary">Reassign</span><span class="wf-btn">Keep</span></div></div>
+          </div>
+          <h3 class="wf-h3">Standard · auto-approved if no review in 24h</h3>
+          <div class="wf-decision-queue">
+            <div class="wf-dq-item"><div><div class="wf-dq-text">Switch send-time for Bronze cart-recovery from 9:00 to 11:30 (Personalized Send Time recommends).</div><div class="wf-dq-meta"><span>Confidence: 86%</span><span>Auto-approves in 22h</span></div></div><div class="wf-dq-actions"><span class="wf-btn">Approve</span></div></div>
+            <div class="wf-dq-item"><div><div class="wf-dq-text">Regenerate hero image on Bronze viewed-not-bought to test new style reference.</div><div class="wf-dq-meta"><span>Auto-approves in 18h</span><span>Cost: 1 Dream Lab credit</span></div></div><div class="wf-dq-actions"><span class="wf-btn">Approve</span></div></div>
+          </div>
+          <h3 class="wf-h3">Auto-executed · last 24h</h3>
+          <div class="wf-decision-queue">
+            <div class="wf-dq-item auto"><div><div class="wf-dq-text">Subject variant A switched to 68% of VIP Win-back remaining sends (B underperforming).</div><div class="wf-dq-meta"><span>2h ago</span><span>Confidence: 94%</span><span>Outcome: +6.4pp open rate</span></div></div></div>
+            <div class="wf-dq-item auto"><div><div class="wf-dq-text">Hero image C → image E on premium-win-back segment (early CTR data).</div><div class="wf-dq-meta"><span>4h ago</span><span>Confidence: 91%</span><span>Outcome: +18% CTR</span></div></div></div>
+            <div class="wf-dq-item auto"><div><div class="wf-dq-text">312 contacts switched from email → SMS (channel affinity).</div><div class="wf-dq-meta"><span>6h ago</span><span>Confidence: 88%</span></div></div></div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Decision queue</span><strong>The operator's daily surface</strong>Replaces "look at every campaign and decide what to do." AI brings the decisions to you — high-impact ones for review, standard ones for batch approval, low-stakes ones auto-executed with a visible log.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Confidence-tiered routing</span><strong>Auto-action threshold</strong>The 85% confidence threshold (set in Governance) controls what auto-executes. High-impact actions stay manual even at high confidence.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 4: LIVE OPTIMIZATION DASHBOARD -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">4</span><span class="wf-stage-title">Live optimization — every active campaign, real-time AI decisions</span>
+      <p class="wf-stage-desc">Multi-campaign command center. Aggregate KPIs at top. Each live campaign shows its own mini-dashboard + most recent AI decisions. Emergency pause-all available; per-campaign controls inline.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Real-Time Performance Loop</span><span class="wf-active-pill">Send-Time AI Personalization (1:1)</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Campaigns</span><span>Inbox</span><span class="active">Live · 6 campaigns</span><span>Reports</span></div>
+          <div class="wf-app-state"><span class="wf-status live">All systems · auto-decisions ON</span><span class="wf-btn danger" style="font-size:9.5px;padding:3px 9px">Pause all</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-live-stats">
+            <div class="wf-live-stat"><span class="wf-stat-label">Live campaigns</span><span class="wf-stat-value">6</span><span class="wf-stat-delta">all healthy</span></div>
+            <div class="wf-live-stat"><span class="wf-stat-label">Total sent today</span><span class="wf-stat-value">18.4k</span><span class="wf-stat-delta">▲ pacing +9%</span></div>
+            <div class="wf-live-stat"><span class="wf-stat-label">Revenue today</span><span class="wf-stat-value">$34.2k</span><span class="wf-stat-delta">▲ +14% vs avg</span></div>
+            <div class="wf-live-stat"><span class="wf-stat-label">AI decisions · 24h</span><span class="wf-stat-value">47</span><span class="wf-stat-delta">8 pending review</span></div>
+          </div>
+          <h3 class="wf-h3">Per-campaign live view</h3>
+          <div style="display:flex;flex-direction:column;gap:6px">
+            <div class="wf-perf-row">
+              <span class="wf-perf-name">VIP Win-back · BFCM</span>
+              <span class="wf-status live">47% sent</span>
+              <span class="wf-perf-metric"><span>Open <strong>38.2%</strong></span><span>Rev <strong>$18.4k</strong></span><span style="color:#16a34a">▲ +22%</span></span>
+              <span class="wf-spark wf-perf-spark"><span style="height:30%"></span><span style="height:55%"></span><span style="height:42%"></span><span style="height:78%"></span><span style="height:65%"></span><span style="height:88%"></span></span>
+              <span class="wf-btn" style="font-size:10px;padding:3px 8px">View</span>
+            </div>
+            <div class="wf-perf-row">
+              <span class="wf-perf-name">Holiday Gift Guide · drop 2</span>
+              <span class="wf-status live">91% sent</span>
+              <span class="wf-perf-metric"><span>Open <strong>31.8%</strong></span><span>Rev <strong>$24.7k</strong></span><span style="color:#16a34a">▲ +8%</span></span>
+              <span class="wf-spark wf-perf-spark"><span style="height:50%"></span><span style="height:60%"></span><span style="height:70%"></span><span style="height:75%"></span><span style="height:72%"></span><span style="height:80%"></span></span>
+              <span class="wf-btn" style="font-size:10px;padding:3px 8px">View</span>
+            </div>
+            <div class="wf-perf-row">
+              <span class="wf-perf-name">Bronze · premium win-back</span>
+              <span class="wf-status live">32% sent</span>
+              <span class="wf-perf-metric"><span>Open <strong>22.4%</strong></span><span>Rev <strong>$4.1k</strong></span><span style="color:#facc15">flat</span></span>
+              <span class="wf-spark wf-perf-spark"><span style="height:40%"></span><span style="height:35%"></span><span style="height:45%"></span><span style="height:42%"></span><span style="height:38%"></span><span style="height:44%"></span></span>
+              <span class="wf-btn" style="font-size:10px;padding:3px 8px">View</span>
+            </div>
+            <div class="wf-perf-row">
+              <span class="wf-perf-name">Bronze · cart recovery</span>
+              <span class="wf-status live">67% sent</span>
+              <span class="wf-perf-metric"><span>Open <strong>29.6%</strong></span><span>Rev <strong>$6.4k</strong></span><span style="color:#16a34a">▲ +11%</span></span>
+              <span class="wf-spark wf-perf-spark"><span style="height:35%"></span><span style="height:50%"></span><span style="height:58%"></span><span style="height:62%"></span><span style="height:70%"></span><span style="height:65%"></span></span>
+              <span class="wf-btn" style="font-size:10px;padding:3px 8px">View</span>
+            </div>
+            <div class="wf-perf-row">
+              <span class="wf-perf-name">Welcome v4 · onboarded (always-on)</span>
+              <span class="wf-status live">streaming</span>
+              <span class="wf-perf-metric"><span>Conv <strong>8.4%</strong></span><span>This week <strong>$2.1k</strong></span><span style="color:#16a34a">▲ +5%</span></span>
+              <span class="wf-spark wf-perf-spark"><span style="height:55%"></span><span style="height:55%"></span><span style="height:60%"></span><span style="height:55%"></span><span style="height:60%"></span><span style="height:62%"></span></span>
+              <span class="wf-btn" style="font-size:10px;padding:3px 8px">View</span>
+            </div>
+            <div class="wf-perf-row">
+              <span class="wf-perf-name">First-purchase incentive · LP</span>
+              <span class="wf-status live">streaming</span>
+              <span class="wf-perf-metric"><span>Conv <strong>3.2%</strong></span><span>This week <strong>$1.2k</strong></span><span style="color:#16a34a">▲ +3%</span></span>
+              <span class="wf-spark wf-perf-spark"><span style="height:25%"></span><span style="height:30%"></span><span style="height:35%"></span><span style="height:32%"></span><span style="height:38%"></span><span style="height:40%"></span></span>
+              <span class="wf-btn" style="font-size:10px;padding:3px 8px">View</span>
+            </div>
+          </div>
+          <h3 class="wf-h3">Most recent AI decisions across all campaigns</h3>
+          <div class="wf-decision-log">
+            <div class="wf-decision"><span class="wf-decision-time">2m ago · VIP Win-back</span><span class="wf-decision-text">Switched 68% of remaining sends to <strong>subject variant A</strong>.</span></div>
+            <div class="wf-decision"><span class="wf-decision-time">8m ago · Bronze cart-recovery</span><span class="wf-decision-text">312 contacts switched from email → SMS (channel affinity).</span></div>
+            <div class="wf-decision"><span class="wf-decision-time">14m ago · Welcome v4</span><span class="wf-decision-text">Personalized Send Time moved 47 contacts to 11:42am.</span></div>
+            <div class="wf-decision"><span class="wf-decision-time">22m ago · Bronze premium-win-back</span><span class="wf-decision-text">Hero image C → E for high-LTV cohort (early CTR +18%).</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Multi-campaign command</span><strong>Portfolio operations</strong>Operator monitors the whole portfolio at once. Each campaign rolls up; AI decisions stream live across the whole surface.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Emergency controls</span><strong>Pause all · always one click</strong>Top-right "Pause all" is always visible. Per-campaign view button drills into the live campaign detail (Stage 7 of Zero State flow).</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 5: AUDIENCE + CREATIVE LAB -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">5</span><span class="wf-stage-title">Audience + Creative Lab — explore, generate, save</span>
+      <p class="wf-stage-desc">The "what-if" space. Marketer explores audience segments visually, generates AI creative for any segment, runs hypothetical tests, and saves winning bundles to the library. Output of the lab feeds future campaigns directly.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Agentic Audience + Creative Bundle</span><span class="wf-active-pill">Cross-Channel Asset Studio</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Campaigns</span><span>Inbox</span><span>Live</span><span class="active">Lab</span><span>Reports</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">Synced</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner info"><strong>Lab mode.</strong> Generate creative, test on simulated audiences, save winners to library. Nothing sends from the lab.</div>
+          <h3 class="wf-h3">Audience explorer · pick segments</h3>
+          <div class="wf-dash-grid">
+            <div class="wf-dash-card"><div class="wf-dc-eyebrow">Predicted CLV ▾</div><div class="wf-dc-title">High-LTV · lapsed 60-90d</div><div class="wf-dc-meta"><span><strong>2,341</strong> contacts</span><span>Avg LTV <strong>$284</strong></span></div></div>
+            <div class="wf-dash-card"><div class="wf-dc-eyebrow">Cart behavior ▾</div><div class="wf-dc-title">Abandoned in last 14d</div><div class="wf-dc-meta"><span><strong>1,847</strong></span><span>Avg cart <strong>$67</strong></span></div></div>
+            <div class="wf-dash-card"><div class="wf-dc-eyebrow">Browse behavior ▾</div><div class="wf-dc-title">Viewed but no purchase</div><div class="wf-dc-meta"><span><strong>3,102</strong></span><span>30d window</span></div></div>
+            <div class="wf-dash-card"><div class="wf-dc-eyebrow">Channel preference ▾</div><div class="wf-dc-title">SMS-first responders</div><div class="wf-dc-meta"><span><strong>892</strong></span><span>9.4× SMS engagement</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">AI suggested · new segment</div><div class="wf-dc-title">"Pre-churn high-LTV"</div><div class="wf-dc-meta"><span><strong>418</strong> contacts</span><span>Churn risk &gt; 60%</span></div></div>
+          </div>
+          <h3 class="wf-h3">Generate creative for selected segment · "High-LTV lapsed"</h3>
+          <div class="wf-grid-2col">
+            <div class="wf-sidebar">
+              <h4>Generate</h4>
+              <div class="wf-sb-item">⚡ Email subject</div>
+              <div class="wf-sb-item active">⚡ Hero + body</div>
+              <div class="wf-sb-item">⚡ SMS / MMS variant</div>
+              <div class="wf-sb-item">⚡ WhatsApp variant</div>
+              <div class="wf-sb-item">⚡ Meta ad creative</div>
+              <h4 style="margin-top:6px">Style reference</h4>
+              <div class="wf-sb-item">Premium · v3</div>
+              <div class="wf-sb-item">Editorial · v2</div>
+              <div class="wf-sb-item">Bold · v4</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div class="wf-input"><span><strong>"Premium win-back tone · light urgency · gift framing"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai" style="font-size:10px;padding:4px 9px">Generate 3 variants</span></div>
+              <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:6px">
+                <div style="padding:8px;border:1px solid #e2e8f0;border-radius:6px;background:#fff"><div class="wf-hero-img" style="background:linear-gradient(135deg,#1e293b,#7c3aed);aspect-ratio:1.5">Variant A</div><span style="font-size:10px;font-weight:700;color:#1e293b">"You're missed · 20% on your favorites"</span><div style="font-size:9px;color:#64748b;margin-top:2px">Predicted CTR · 11.2%</div></div>
+                <div style="padding:8px;border:1px solid #7C3AED;border-radius:6px;background:#faf5ff"><div class="wf-hero-img" style="background:linear-gradient(135deg,#fbbf24,#dc2626);aspect-ratio:1.5">Variant B ★</div><span style="font-size:10px;font-weight:700;color:#1e293b">"Last chance · curated for you"</span><div style="font-size:9px;color:#7C3AED;margin-top:2px;font-weight:700">Predicted CTR · 13.8%</div></div>
+                <div style="padding:8px;border:1px solid #e2e8f0;border-radius:6px;background:#fff"><div class="wf-hero-img" style="background:linear-gradient(135deg,#10b981,#3b82f6);aspect-ratio:1.5">Variant C</div><span style="font-size:10px;font-weight:700;color:#1e293b">"A gift, just for you · 20% off"</span><div style="font-size:9px;color:#64748b;margin-top:2px">Predicted CTR · 10.4%</div></div>
+              </div>
+            </div>
+          </div>
+          <div class="wf-shelf"><span class="wf-btn primary">★ Save variant B to library</span><span class="wf-btn">Compare predicted lift</span><span class="wf-btn">Schedule into campaign</span><span style="margin-left:auto;color:#94a3b8">Lab credits used today · 4 / 50</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Safe exploration</span><strong>Nothing sends from the lab</strong>The lab is a sandbox. Generate, predict, compare, save — but no real audience receives anything until the bundle is promoted to a campaign.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Predicted CTR per variant</span><strong>Pick the winner before send</strong>Each variant carries a predicted CTR sourced from your historical performance + cross-tenant benchmarks. Pick the highest, save to library, deploy.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 6: GOVERNANCE CONSOLE -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">6</span><span class="wf-stage-title">Governance console — audit trail, rules, escalations</span>
+      <p class="wf-stage-desc">The Trust admin's primary surface. Audit log of every AI decision. Editable governance rules (auto-action threshold, approval routing, compliance constraints). Per-region compliance status. Indemnification + export controls for regulated industries.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Mailchimp Shield</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Live</span><span class="active">Governance</span><span>Reports</span></div>
+          <div class="wf-app-state"><span class="wf-status live">All systems compliant</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h3 class="wf-h3">Governance rules · editable</h3>
+          <div class="wf-grid-2col">
+            <div class="wf-sidebar">
+              <h4>Rule</h4>
+              <div class="wf-sb-item active">Auto-action threshold</div>
+              <div class="wf-sb-item">Approval routing</div>
+              <div class="wf-sb-item">Compliance constraints</div>
+              <div class="wf-sb-item">Budget guardrails</div>
+              <div class="wf-sb-item">Channel restrictions</div>
+              <div class="wf-sb-item">Indemnification scope</div>
+            </div>
+            <div style="display:flex;flex-direction:column;gap:6px">
+              <div style="padding:10px 12px;border:1px solid #e2e8f0;border-radius:7px;background:#fff;font-size:11px">
+                <div style="font-weight:700;color:#1e293b">Auto-action confidence threshold</div>
+                <div style="margin-top:4px;color:#475569">AI decisions with confidence &ge; <strong style="color:#7C3AED">85%</strong> auto-execute. Below threshold → routed to Inbox for review.</div>
+                <div style="margin-top:8px;display:flex;align-items:center;gap:6px"><span style="color:#94a3b8">60%</span><div style="flex:1;height:5px;background:#e2e8f0;border-radius:99px;position:relative"><div style="position:absolute;left:0;top:0;height:100%;width:75%;background:#7C3AED;border-radius:99px"></div><div style="position:absolute;left:75%;top:-3px;width:11px;height:11px;background:#fff;border:2px solid #7C3AED;border-radius:50%"></div></div><span style="color:#94a3b8">99%</span></div>
+                <div style="margin-top:6px;display:flex;gap:4px;flex-wrap:wrap;font-size:9.5px"><span class="wf-chip">High-impact actions: always manual</span><span class="wf-chip">Budget changes &gt; $1k: always manual</span><span class="wf-chip">Compliance-affecting: always manual</span></div>
+              </div>
+            </div>
+          </div>
+          <h3 class="wf-h3">AI decision audit log · last 24h</h3>
+          <div style="background:#fff;border:1px solid #e2e8f0;border-radius:6px;overflow:hidden">
+            <div class="wf-log-entry"><span class="wf-log-time">14:47</span><span><span class="wf-log-actor">AUTO</span>Subject variant A switched for 68% of VIP Win-back remaining · <strong>confidence 94%</strong></span><span class="wf-status live">success</span></div>
+            <div class="wf-log-entry"><span class="wf-log-time">14:32</span><span><span class="wf-log-actor">AUTO</span>Hero image C → E for premium-win-back (early CTR +18%) · <strong>conf 91%</strong></span><span class="wf-status live">success</span></div>
+            <div class="wf-log-entry"><span class="wf-log-time">13:18</span><span><span class="wf-log-actor human">HUMAN</span>Sarah K. approved: increase budget +$3k for New Customer Acquisition · audit ID gov_a4f2</span><span class="wf-status live">success</span></div>
+            <div class="wf-log-entry"><span class="wf-log-time">11:08</span><span><span class="wf-log-actor">AUTO</span>312 contacts switched email → SMS (channel affinity) · <strong>conf 88%</strong></span><span class="wf-status live">success</span></div>
+            <div class="wf-log-entry"><span class="wf-log-time">10:42</span><span><span class="wf-log-actor human">HUMAN</span>Priya N. (Legal) approved Q4 compliance for EU/UK/DE/FR/ES localizations</span><span class="wf-status live">success</span></div>
+            <div class="wf-log-entry"><span class="wf-log-time">09:31</span><span><span class="wf-log-actor">AUTO</span>Personalized Send Time moved 47 Welcome v4 contacts to 11:42am · <strong>conf 87%</strong></span><span class="wf-status live">success</span></div>
+            <div class="wf-log-entry"><span class="wf-log-time">08:14</span><span><span class="wf-log-actor">AUTO</span>Bronze price-sensitive variant B paused (underperforming 5.9pp) · <strong>conf 92%</strong></span><span class="wf-status warn">flagged for review</span></div>
+          </div>
+          <h3 class="wf-h3">Per-region compliance posture</h3>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10px">
+            <span class="wf-gauge great"><span class="wf-gauge-label">US</span><span class="wf-gauge-track"></span><strong>CAN-SPAM ✓</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">EU/UK</span><span class="wf-gauge-track"></span><strong>GDPR ✓</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">Canada</span><span class="wf-gauge-track"></span><strong>CASL ✓</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">India</span><span class="wf-gauge-track"></span><strong>DPDP ✓</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">Brazil</span><span class="wf-gauge-track"></span><strong>LGPD ✓</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">California</span><span class="wf-gauge-track"></span><strong>CCPA ✓</strong></span>
+            <span class="wf-gauge good"><span class="wf-gauge-label">EU AI Act</span><span class="wf-gauge-track"></span><strong>disclosure on</strong></span>
+            <span class="wf-gauge good"><span class="wf-gauge-label">Indemnification</span><span class="wf-gauge-track"></span><strong>active</strong></span>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Governance Console</span><strong>Trust admin's primary surface</strong>Editable rules (auto-action threshold, approval routing) + full audit log + per-region compliance status. Procurement-ready for regulated industries.</div>
+        <div class="wf-anno"><strong>Auditable, exportable, indemnified</strong>Every AI decision is logged with confidence, source data, model version, and outcome. Exportable for audits. Mailchimp's indemnification policy covers AI-generated outputs.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 7: OUTCOMES REPORT -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">7</span><span class="wf-stage-title">Outcomes report — did we hit the goal, and what's next?</span>
+      <p class="wf-stage-desc">End-of-quarter retrospective. For each goal: result vs target, AI's explanation of what worked (segments, channels, creative angles), and AI-proposed Q1 goals informed by Q4 learnings. One-click to convert proposed goals into the new portfolio.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 2 active:</span><span class="wf-active-pill">Cross-Domain Conversational Agent</span><span class="wf-active-pill">Living Memory · multi-quarter</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Goals</span><span>Live</span><span>Governance</span><span class="active">Q4 outcomes</span></div>
+          <div class="wf-app-state"><span class="wf-save-state">Q4 FY26 · finalized</span><span class="wf-kbd">⌘K</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-banner success"><strong>Q4 FY26 outcomes · 4 of 5 goals hit · 1 exceeded target · 1 at risk converted to "achieved" with mid-quarter budget bump.</strong> Total quarter revenue: <strong>$1.42M (+14% vs Q3)</strong></div>
+          <h3 class="wf-h3">Per-goal result</h3>
+          <table class="wf-table">
+            <thead><tr><th>Goal</th><th>Target</th><th>Result</th><th>Hit?</th><th>What worked</th></tr></thead>
+            <tbody>
+              <tr><td><strong>Win back lapsed VIPs</strong></td><td>+15%</td><td>+18.6%</td><td><span class="wf-status live">Exceeded</span></td><td>Urgency hero + send-time + scarcity sticker</td></tr>
+              <tr><td><strong>Bronze tier repeat purchase</strong></td><td>+15%</td><td>+14.2%</td><td><span class="wf-status live">Near hit</span></td><td>Premium win-back angle · email + SMS</td></tr>
+              <tr><td><strong>First-purchase conversion</strong></td><td>12%</td><td>11.4%</td><td><span class="wf-status warn">Just shy</span></td><td>Welcome v4 · 3-step · review next quarter</td></tr>
+              <tr><td><strong>New customer acquisition</strong></td><td>5,500</td><td>5,712</td><td><span class="wf-status live">Hit (+$3k bump worked)</span></td><td>Budget increase mid-quarter rescued the goal</td></tr>
+              <tr><td><strong>Holiday gift category lift</strong></td><td>+28%</td><td>+27.8%</td><td><span class="wf-status live">Hit</span></td><td>Cross-channel email + SMS + IG · gift framing</td></tr>
+            </tbody>
+          </table>
+          <h3 class="wf-h3">AI explains the quarter</h3>
+          <div class="wf-callout">
+            <strong><span class="wf-ico">M</span>Living Memory · multi-quarter</strong>
+            "Three patterns drove Q4 wins: <strong>(1)</strong> Scarcity-based subject lines outperformed gift-framing by 4.1pp on average for high-LTV cohorts — but reversed for first-time buyers. <strong>(2)</strong> Personalized Send Time delivered 9% lift on email but only 2% on SMS — consider channel-specific send-time models in Q1. <strong>(3)</strong> Mid-quarter budget rescue on New Customer Acquisition worked; we caught the at-risk signal at week 6 of 13 — if we'd waited until week 10, target would've been missed."
+          </div>
+          <h3 class="wf-h3">AI-proposed Q1 FY27 goals · based on Q4 learnings</h3>
+          <div class="wf-dash-grid">
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Proposed · based on Q4 winners</div><div class="wf-dc-title">VIP win-back · +18% target</div><div class="wf-dc-meta"><span>Build on Q4 playbook</span><span>Expected: confident</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Proposed · new</div><div class="wf-dc-title">Convert at-risk VIP before churn · 400 accounts</div><div class="wf-dc-meta"><span>Pre-churn high-LTV segment</span><span>Source: lab analysis</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Proposed · fix Q4 miss</div><div class="wf-dc-title">First-purchase conversion · 13% target</div><div class="wf-dc-meta"><span>Welcome v5 + interactive inbox</span><span>+1pp vs Q4</span></div></div>
+            <div class="wf-dash-card ai-suggested"><div class="wf-dc-eyebrow">Proposed · expand winner</div><div class="wf-dc-title">SMS list growth · 8,000 opt-ins</div><div class="wf-dc-meta"><span>Q4 SMS engagement justifies</span><span>Cross-channel play</span></div></div>
+          </div>
+          <div class="wf-shelf"><span class="wf-btn primary">Approve all 4 goals for Q1</span><span class="wf-btn">Edit a proposal</span><span class="wf-btn">Add my own goal</span><span class="wf-btn">Export full Q4 report</span><span class="wf-btn">Share with leadership</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Outcomes-first reporting</span><strong>Did we hit the goal?</strong>The report leads with goal attainment, not vanity metrics. Operators answer to outcomes, and the report mirrors that.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">AI proposes next quarter</span><strong>Multi-quarter Living Memory</strong>Q4 learnings inform Q1 goals automatically. AI suggests building on winners, fixing misses, and expanding winning patterns into new channels. One click to seed the next portfolio.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="kl-bottom-line">
+    <h3>The ongoing Phase 2 experience</h3>
+    <p>The Phase 2 operator's daily work is <strong>set goals, review the AI's decisions, monitor live optimization, govern, read outcomes</strong>. Campaigns are AI's implementation detail. Creative is reused from the library. Optimization happens continuously and transparently. Audit logs make AI behavior accountable. Outcomes reports close the quarterly loop and seed the next.</p>
+    <p><strong>The shift:</strong> from "marketer who runs campaigns" to <strong>"operator of an AI-powered marketing portfolio"</strong>. Klaviyo doesn't offer this surface — their AI is agent-by-agent (Marketing Agent, Customer Agent), not a single portfolio-level operator console. Canva doesn't even play in this space — they're upstream of the send. Mailchimp's integrated platform is what makes this possible.</p>
   </div>
 
 </section>
