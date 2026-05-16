@@ -201,6 +201,123 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .kl-bottom-line ol li{margin-bottom:5px}
 .kl-bottom-line ol li strong{color:#fde68a}
 
+/* Phase 1 UX Wireframes tab */
+.wf-hero{padding:28px 32px;background:linear-gradient(135deg,#fff7ed 0%,#fef3c7 100%);border:1px solid #fde68a;border-radius:14px;margin-bottom:28px}
+.wf-hero h2{margin:0 0 8px;font-size:22px;font-weight:800;letter-spacing:-.015em;color:#78350f}
+.wf-hero p{margin:0;font-size:14px;line-height:1.6;color:#92400e;max-width:920px}
+.wf-hero .wf-legend{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
+.wf-hero .wf-feat-pill{background:#fff;border:1px solid #fde68a;color:#78350f;font-size:11px;font-weight:600;padding:5px 11px;border-radius:999px;letter-spacing:.02em}
+
+.wf-stage{margin-bottom:32px;background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.wf-stage-meta{padding:22px 26px 18px;border-bottom:1px solid var(--line);background:var(--surface-2)}
+.wf-stage-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:7px;background:linear-gradient(135deg,#D97706 0%,#F59E0B 100%);color:#fff;font-weight:800;font-size:14px;margin-right:12px;vertical-align:middle}
+.wf-stage-title{display:inline-block;font-size:18px;font-weight:700;letter-spacing:-.01em;color:var(--text);vertical-align:middle}
+.wf-stage-desc{margin:8px 0 12px 44px;font-size:13px;line-height:1.55;color:var(--text-2);max-width:780px}
+.wf-active{margin-left:44px;display:flex;flex-wrap:wrap;gap:6px}
+.wf-active-label{font-size:10px;font-weight:700;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;align-self:center;margin-right:4px}
+.wf-active-pill{background:#fef3c7;color:#92400e;border:1px solid #fde68a;font-size:10.5px;font-weight:700;padding:3px 9px;border-radius:5px;letter-spacing:.02em}
+
+.wf-canvas{padding:24px 26px;background:#f8fafc;display:grid;grid-template-columns:1fr 280px;gap:20px;min-height:380px}
+@media(max-width:880px){.wf-canvas{grid-template-columns:1fr}}
+
+/* The wireframe mockup itself */
+.wf-app{background:#fff;border:1px solid #cbd5e1;border-radius:10px;box-shadow:0 1px 3px rgba(0,0,0,.04);overflow:hidden;display:flex;flex-direction:column}
+.wf-topbar{display:flex;align-items:center;gap:12px;padding:10px 14px;border-bottom:1px solid #e2e8f0;background:#fafbfc}
+.wf-logo{width:22px;height:22px;border-radius:5px;background:#ffe01b;flex-shrink:0;font-weight:800;font-size:12px;color:#1e293b;display:inline-flex;align-items:center;justify-content:center}
+.wf-nav{display:flex;gap:14px;font-size:10.5px;color:#94a3b8;flex:1}
+.wf-nav span{padding:2px 0}
+.wf-nav span.active{color:#1e293b;font-weight:600;border-bottom:1.5px solid #1e293b;padding-bottom:1px}
+.wf-avatar{width:22px;height:22px;border-radius:50%;background:#cbd5e1;flex-shrink:0}
+
+.wf-body{padding:18px 20px;flex:1;display:flex;flex-direction:column;gap:14px}
+.wf-h1{font-size:18px;font-weight:700;color:#1e293b;margin:0;letter-spacing:-.01em}
+.wf-h2{font-size:14px;font-weight:700;color:#1e293b;margin:0;letter-spacing:-.005em}
+.wf-h3{font-size:11px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.08em;margin:0}
+.wf-p{font-size:11.5px;color:#475569;line-height:1.5;margin:0}
+.wf-muted{color:#94a3b8}
+
+.wf-input{border:1.5px solid #cbd5e1;background:#fff;border-radius:7px;padding:12px 14px;font-size:11.5px;color:#94a3b8;display:flex;justify-content:space-between;align-items:center}
+.wf-input.tall{padding:18px 14px;min-height:48px}
+.wf-input strong{color:#1e293b;font-weight:500}
+.wf-input .wf-cursor{display:inline-block;width:1.5px;height:11px;background:#1e293b;margin-left:1px;vertical-align:middle;animation:wfblink 1.2s infinite}
+@keyframes wfblink{0%,49%{opacity:1}50%,100%{opacity:0}}
+
+.wf-btn{display:inline-flex;align-items:center;gap:6px;padding:7px 12px;border-radius:6px;font-size:11px;font-weight:600;border:1px solid #cbd5e1;background:#fff;color:#475569;cursor:default}
+.wf-btn.primary{background:#1e293b;border-color:#1e293b;color:#fff}
+.wf-btn.brand{background:#ffe01b;border-color:#facc15;color:#1e293b;font-weight:700}
+.wf-btn.ai{background:linear-gradient(90deg,#7C3AED 0%,#EC4899 100%);border:none;color:#fff}
+.wf-btn .icn{display:inline-block;width:9px;height:9px;border-radius:2px;background:currentColor;opacity:.7}
+.wf-btn-row{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+
+.wf-chip{display:inline-flex;align-items:center;gap:5px;padding:4px 9px;border-radius:99px;font-size:10.5px;background:#f1f5f9;color:#475569;border:1px solid #e2e8f0;line-height:1.3}
+.wf-chip.ai-chip{background:#f5f3ff;color:#6d28d9;border-color:#ddd6fe;font-weight:600}
+.wf-chip.live{background:#dcfce7;color:#166534;border-color:#86efac;font-weight:600}
+.wf-chip-row{display:flex;gap:6px;flex-wrap:wrap}
+
+.wf-callout{padding:12px 14px;background:#fffbeb;border:1px solid #fde68a;border-left:3px solid #d97706;border-radius:7px;font-size:11.5px;color:#78350f;line-height:1.5}
+.wf-callout strong{color:#78350f;font-weight:700}
+.wf-callout .wf-ico{display:inline-block;width:14px;height:14px;border-radius:50%;background:#d97706;margin-right:5px;vertical-align:-2px;color:#fff;font-size:9px;font-weight:800;text-align:center;line-height:14px;font-family:sans-serif}
+
+.wf-card-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.wf-card{padding:8px;border:1px solid #e2e8f0;border-radius:6px;background:#fff;display:flex;flex-direction:column;gap:4px;font-size:9.5px;color:#64748b}
+.wf-card .wf-thumb{width:100%;aspect-ratio:1.3;background:#e2e8f0;border-radius:4px;display:flex;align-items:center;justify-content:center;color:#94a3b8;font-size:9px}
+.wf-card .wf-label{font-weight:600;color:#1e293b;font-size:9.5px}
+.wf-card .wf-meta-line{display:flex;justify-content:space-between;align-items:center}
+.wf-card.gen .wf-thumb{background:linear-gradient(135deg,#f3e8ff,#fce7f3,#fef3c7);position:relative}
+.wf-card.gen .wf-thumb::after{content:"⟳ generating";color:#7C3AED;font-size:9px;font-weight:600}
+
+.wf-grid-2col{display:grid;grid-template-columns:140px 1fr;gap:12px}
+.wf-grid-3col{display:grid;grid-template-columns:130px 1fr 200px;gap:12px}
+@media(max-width:760px){.wf-grid-3col{grid-template-columns:1fr}}
+.wf-sidebar{background:#f8fafc;border:1px solid #e2e8f0;border-radius:7px;padding:10px 12px;display:flex;flex-direction:column;gap:8px}
+.wf-sidebar h4{margin:0 0 4px;font-size:10px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.06em}
+.wf-sidebar .wf-sb-item{font-size:11px;color:#475569;display:flex;align-items:center;gap:6px;padding:4px 0;cursor:default}
+.wf-sidebar .wf-sb-item.active{color:#7C3AED;font-weight:600}
+.wf-sidebar .wf-sb-item::before{content:"";width:4px;height:4px;border-radius:50%;background:#cbd5e1;flex-shrink:0}
+.wf-sidebar .wf-sb-item.active::before{background:#7C3AED}
+
+.wf-email-preview{background:#fff;border:2px dashed #cbd5e1;border-radius:8px;padding:16px;display:flex;flex-direction:column;gap:10px;min-height:180px}
+.wf-hero-img{width:100%;aspect-ratio:2.2;background:linear-gradient(135deg,#fbbf24,#f87171);border-radius:6px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.7);font-size:11px;font-weight:600}
+.wf-skel{height:8px;background:#e2e8f0;border-radius:3px}
+.wf-skel.w-80{width:80%}
+.wf-skel.w-60{width:60%}
+.wf-skel.w-40{width:40%}
+
+.wf-chat-panel{background:#f8fafc;border:1px solid #e2e8f0;border-radius:7px;padding:10px;display:flex;flex-direction:column;gap:8px;font-size:11px;min-height:240px}
+.wf-msg{padding:8px 10px;border-radius:7px;font-size:11px;line-height:1.4;max-width:90%}
+.wf-msg.user{background:#1e293b;color:#fff;align-self:flex-end;font-size:10.5px}
+.wf-msg.ai{background:#fff;border:1px solid #e2e8f0;color:#1e293b;font-size:10.5px}
+.wf-msg.ai .wf-msg-label{font-size:9px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px;display:block}
+
+.wf-annotations{display:flex;flex-direction:column;gap:10px}
+.wf-anno{background:#fff;border:1px solid var(--line);border-left:3px solid #7C3AED;border-radius:7px;padding:11px 13px;font-size:11.5px;line-height:1.5;color:var(--text)}
+.wf-anno strong{color:var(--text);font-weight:700;display:block;margin-bottom:2px;font-size:11px}
+.wf-anno .wf-anno-tag{font-size:9px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em;margin-bottom:5px;display:block}
+
+.wf-progress-list{list-style:none;padding:0;margin:0}
+.wf-progress-list li{font-size:11px;color:#475569;padding:5px 0;display:flex;align-items:center;gap:8px;border-bottom:1px dotted #e2e8f0}
+.wf-progress-list li:last-child{border-bottom:none}
+.wf-progress-list li.done::before{content:"✓";color:#16a34a;font-weight:800;font-size:11px}
+.wf-progress-list li.running::before{content:"⟳";color:#7C3AED;font-weight:800;font-size:11px}
+.wf-progress-list li.pending::before{content:"○";color:#cbd5e1;font-weight:800;font-size:11px}
+
+.wf-checklist{display:flex;flex-direction:column;gap:5px}
+.wf-checklist .wf-ck{display:flex;align-items:center;gap:8px;font-size:11px;color:#475569;padding:5px 8px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:5px}
+.wf-checklist .wf-ck.checked{color:#1e293b}
+.wf-checklist .wf-ck::before{content:"";width:14px;height:14px;border:1.5px solid #cbd5e1;border-radius:3px;display:inline-block;flex-shrink:0;background:#fff}
+.wf-checklist .wf-ck.checked::before{background:#1e293b;border-color:#1e293b;content:"✓";color:#fff;font-size:10px;font-weight:800;line-height:11px;text-align:center}
+
+.wf-tab-row{display:flex;gap:0;border-bottom:1px solid #e2e8f0;font-size:11px}
+.wf-tab{padding:7px 12px;color:#94a3b8;border-bottom:2px solid transparent;margin-bottom:-1px;cursor:default}
+.wf-tab.active{color:#1e293b;font-weight:600;border-bottom-color:#1e293b}
+
+.wf-bridge-card{padding:14px;background:#fff;border:1px solid #e2e8f0;border-radius:8px;display:flex;flex-direction:column;gap:8px;align-items:flex-start}
+.wf-bridge-card .wf-bridge-logo{width:32px;height:32px;border-radius:7px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:13px;color:#fff}
+.wf-bridge-card .wf-bridge-name{font-size:12px;font-weight:700;color:#1e293b}
+.wf-bridge-card .wf-bridge-cta{font-size:10px;color:#7C3AED;font-weight:600}
+
+.wf-arrow{position:relative;text-align:center;padding:8px 0;color:#cbd5e1;font-size:18px}
+
 /* New step-section + feature-row layout (replaces wide table) */
 .step-section{margin-bottom:40px}
 .step-section-header{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--canva-1);border-radius:12px;margin-bottom:14px}
@@ -360,6 +477,7 @@ footer a:hover{text-decoration:underline}
   <button class="tab-btn" data-tab="whatsapp" role="tab"><span class="channel-dot"></span>WhatsApp Campaigns</button>
   <button class="tab-btn" data-tab="roadmap" role="tab" style="margin-left:auto"><span class="channel-dot" style="background:linear-gradient(90deg,#D97706,#7C3AED)"></span>Mailchimp Roadmap</button>
   <button class="tab-btn" data-tab="klaviyo" role="tab"><span class="channel-dot" style="background:#ef4444"></span>vs. Klaviyo</button>
+  <button class="tab-btn" data-tab="wireframes" role="tab"><span class="channel-dot" style="background:#D97706"></span>Phase 1 UX Flow</button>
 </nav>
 
 <!-- =================================== EMAIL TAB =================================== -->
@@ -4121,6 +4239,401 @@ footer a:hover{text-decoration:underline}
       <li><strong>Stake claim to the new ground</strong> Klaviyo hasn't reached yet (Real-Time Mid-Send Optimization, Interactive Inbox / AMP-for-Email, Compliance-Aware Localization, Voice-of-Customer AI, Predictive Inventory)</li>
     </ol>
     <p style="margin-top:14px"><strong>The win condition isn't "match Klaviyo."</strong> It's reposition Mailchimp as <strong>the AI-powered marketing platform for the long tail of business</strong> — broader, more governed, ecosystem-integrated, and scale-advantaged. Klaviyo wins B2C ecommerce; Mailchimp wins everywhere else, and ties or beats them in their home turf.</p>
+  </div>
+
+</section>
+
+<!-- =================================== PHASE 1 WIREFRAMES TAB =================================== -->
+<section class="tab-pane" id="tab-wireframes" role="tabpanel">
+
+  <div class="wf-hero">
+    <h2>Phase 1 UX Flow — wireframes of the AI-first campaign builder</h2>
+    <p>Visual walkthrough of the customer journey from zero state through send, showing exactly which Phase 1 features are active at each stage. These are the experiences we'll build to close the gap with Canva. Each stage highlights the AI capabilities introduced and how they replace today's friction.</p>
+    <div class="wf-legend">
+      <span class="wf-feat-pill">Conversational Start</span>
+      <span class="wf-feat-pill">Magic Design</span>
+      <span class="wf-feat-pill">Live-Context Connectors</span>
+      <span class="wf-feat-pill">Web Research</span>
+      <span class="wf-feat-pill">Living Memory</span>
+      <span class="wf-feat-pill">Dream Lab</span>
+      <span class="wf-feat-pill">Magic Edit / Grab / Expand / Morph</span>
+      <span class="wf-feat-pill">AI Sticker / GIF / Animate</span>
+      <span class="wf-feat-pill">Magic Layers</span>
+      <span class="wf-feat-pill">Brand Voice 2.0 + Brand Intelligence</span>
+      <span class="wf-feat-pill">Conversational Design Editing</span>
+      <span class="wf-feat-pill">ChatGPT &amp; Claude MCP Bridge</span>
+    </div>
+  </div>
+
+  <!-- STAGE 1: ZERO STATE / WELCOME -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">1</span><span class="wf-stage-title">Zero State — first impression as creative partner</span>
+      <p class="wf-stage-desc">Customer lands in the campaign builder. Instead of a blank dashboard or a template grid, they're greeted with a conversational AI canvas. Living Memory recognizes returning users and proactively suggests campaigns based on prior performance.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Conversational Start</span><span class="wf-active-pill">Living Memory</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span class="active">Create</span><span>Audiences</span><span>Reports</span><span>Integrations</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h1">What do you want to create today, Sarah?</h2>
+          <p class="wf-p">Describe your campaign idea, or pick up where you left off.</p>
+          <div class="wf-input tall"><span><strong>"Black Friday sale for lapsed VIP customers"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Generate ⚡</span></div>
+          <div class="wf-btn-row">
+            <span class="wf-btn">Start from template</span>
+            <span class="wf-btn">Reuse a recent send</span>
+            <span class="wf-btn">Upload existing HTML</span>
+          </div>
+          <div class="wf-callout">
+            <strong><span class="wf-ico">M</span>Living Memory says</strong>
+            "Welcome back. Your last Memorial Day campaign hit a 34% open rate. Want me to draft this year's BFCM with the same playbook?" &nbsp;<span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Yes, draft it</span> <span class="wf-btn" style="font-size:10px;padding:3px 9px">Show trends first</span>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Conversational Start</span><strong>Single prompt → campaign</strong>Free-text input replaces the template grid as the primary entry point. The model interprets goal, audience, channel, and offer from one sentence.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Living Memory</span><strong>Welcome back, contextually</strong>The AI recalls prior campaigns + performance and offers a warm restart. New users see a "What kind of business?" pre-flight instead.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2: BRIEF + CONTEXT -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">2</span><span class="wf-stage-title">Brief refinement — pull live context from everywhere</span>
+      <p class="wf-stage-desc">AI parses the prompt and surfaces extracted intent. Users can pull live context from Slack/Drive/HubSpot/Zoom/Notion, toggle web research for current trends, and apply Living Memory patterns from top-performing past campaigns.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Live-Context Connectors</span><span class="wf-active-pill">Web Research</span><span class="wf-active-pill">Living Memory</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Create</span><span class="active">Brief</span><span>Design</span><span>Send</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h3 class="wf-h3">Your prompt</h3>
+          <div class="wf-input"><strong>"Black Friday sale for lapsed VIP customers"</strong><span class="wf-btn" style="font-size:10px;padding:3px 8px">Edit</span></div>
+          <h3 class="wf-h3">AI extracted intent</h3>
+          <div class="wf-checklist">
+            <div class="wf-ck checked">Goal: re-engage VIP customers who haven't ordered in 90+ days</div>
+            <div class="wf-ck checked">Audience: 4,217 contacts in "VIP / Lapsed" segment</div>
+            <div class="wf-ck checked">Offer: BFCM 30% off, expires Nov 30</div>
+            <div class="wf-ck checked">Tone: urgent but warm (matches your brand voice)</div>
+          </div>
+          <h3 class="wf-h3">Pull additional context</h3>
+          <div class="wf-chip-row">
+            <span class="wf-chip live">● HubSpot · VIP segment definitions</span>
+            <span class="wf-chip live">● Slack · #marketing-bfcm thread</span>
+            <span class="wf-chip">+ Google Drive</span>
+            <span class="wf-chip">+ Notion</span>
+            <span class="wf-chip">+ Zoom transcripts</span>
+          </div>
+          <div class="wf-checklist">
+            <div class="wf-ck checked">Web Research: include 2026 BFCM industry trends + benchmarks</div>
+            <div class="wf-ck checked">Living Memory: apply patterns from your top 3 BFCM campaigns (avg 41% open rate)</div>
+          </div>
+          <div class="wf-btn-row" style="justify-content:flex-end"><span class="wf-btn primary">Continue to generation →</span></div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Connectors</span><strong>Live data, not exports</strong>One-click connect to existing tools. HubSpot segment definitions, Slack discussions, Drive briefs, Notion docs, Zoom transcripts — all available as AI context.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Web Research</span><strong>Industry-grounded brief</strong>AI searches live web for current BFCM trends and benchmark data, bringing structured insights directly into the brief.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Living Memory</span><strong>Patterns from your wins</strong>The system surfaces patterns from your historically best-performing campaigns and offers to apply them — no manual lookup required.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3: GENERATION -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">3</span><span class="wf-stage-title">AI generation — multi-asset campaign in seconds</span>
+      <p class="wf-stage-desc">AI runs in parallel: drafts copy, generates the hero image via Dream Lab with style references, creates social/SMS companion variants, generates branded stickers. User watches progress in real-time and sees a preview tray populate.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Magic Design</span><span class="wf-active-pill">Dream Lab</span><span class="wf-active-pill">AI Sticker / GIF / Animate</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Generating...</span><span>Send</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">⚡ Generating your campaign · 12s remaining</h2>
+          <ul class="wf-progress-list">
+            <li class="done">Pulled VIP segment from HubSpot · 4,217 contacts</li>
+            <li class="done">Researched 2026 BFCM industry trends · 38 sources</li>
+            <li class="done">Drafted 3 subject line variants</li>
+            <li class="done">Drafted email body in brand voice</li>
+            <li class="running">Generating hero image with Dream Lab + brand style reference</li>
+            <li class="running">Creating SMS companion + IG Story variant</li>
+            <li class="pending">Generating branded stickers for CTA emphasis</li>
+            <li class="pending">Compose final layout with Brand Kit</li>
+          </ul>
+          <h3 class="wf-h3">Companion assets being generated</h3>
+          <div class="wf-card-grid">
+            <div class="wf-card">
+              <div class="wf-thumb" style="background:linear-gradient(135deg,#fbbf24,#f87171)">Email</div>
+              <span class="wf-label">Email · ready</span>
+              <span class="wf-chip live" style="font-size:9px;padding:2px 6px">Generated</span>
+            </div>
+            <div class="wf-card gen">
+              <div class="wf-thumb"></div>
+              <span class="wf-label">SMS / MMS</span>
+              <span class="wf-chip ai-chip" style="font-size:9px;padding:2px 6px">Generating</span>
+            </div>
+            <div class="wf-card gen">
+              <div class="wf-thumb"></div>
+              <span class="wf-label">IG Story</span>
+              <span class="wf-chip ai-chip" style="font-size:9px;padding:2px 6px">Generating</span>
+            </div>
+            <div class="wf-card gen">
+              <div class="wf-thumb"></div>
+              <span class="wf-label">Sticker pack</span>
+              <span class="wf-chip ai-chip" style="font-size:9px;padding:2px 6px">Generating</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Magic Design</span><strong>Full first-draft email</strong>Subject lines, body, CTAs, and layout all generated together — not just copy. Replaces 15+ minutes of manual block-by-block work.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Dream Lab</span><strong>Hero image with style refs</strong>Generates the hero image from prompt + user-uploaded style reference, in correct aspect ratio. No stock search or photoshoot.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">AI Sticker / GIF</span><strong>Cross-channel companion assets</strong>SMS/MMS, Story, sticker pack all generated in parallel — user gets the omnichannel bundle from one prompt.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 4: VISUAL EDITOR WITH AI -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">4</span><span class="wf-stage-title">Visual editor — AI tools inline + chat panel</span>
+      <p class="wf-stage-desc">Generated draft loads in the editor. Familiar block-based UX, but every element has AI manipulation handles (Edit / Grab / Expand / Morph). Right-side chat panel drives whole-design refinement conversationally.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Conversational Design Editing</span><span class="wf-active-pill">Magic Edit / Grab / Expand / Morph</span><span class="wf-active-pill">Dream Lab</span><span class="wf-active-pill">AI Sticker</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Design</span><span>Send</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body" style="padding:14px">
+          <div class="wf-grid-3col">
+            <!-- LEFT: Blocks/AI sidebar -->
+            <div class="wf-sidebar">
+              <h4>Add block</h4>
+              <div class="wf-sb-item">Heading</div>
+              <div class="wf-sb-item">Paragraph</div>
+              <div class="wf-sb-item">Image</div>
+              <div class="wf-sb-item">Button</div>
+              <div class="wf-sb-item">Product</div>
+              <h4 style="margin-top:8px">AI tools</h4>
+              <div class="wf-sb-item active">⚡ Magic Edit</div>
+              <div class="wf-sb-item">⚡ Magic Grab</div>
+              <div class="wf-sb-item">⚡ Magic Expand</div>
+              <div class="wf-sb-item">⚡ Magic Morph</div>
+              <div class="wf-sb-item">⚡ Dream Lab</div>
+              <div class="wf-sb-item">⚡ AI Sticker</div>
+            </div>
+            <!-- CENTER: Email preview -->
+            <div class="wf-email-preview">
+              <div class="wf-hero-img">Hero image (selected)</div>
+              <div style="display:flex;gap:4px;flex-wrap:wrap;margin:-4px 0 0">
+                <span class="wf-chip ai-chip" style="font-size:9px">⚡ Magic Edit</span>
+                <span class="wf-chip ai-chip" style="font-size:9px">⚡ Magic Grab</span>
+                <span class="wf-chip ai-chip" style="font-size:9px">⚡ Expand</span>
+                <span class="wf-chip ai-chip" style="font-size:9px">⚡ Regenerate</span>
+              </div>
+              <h2 class="wf-h2" style="margin-top:6px">Come back for 30% off, just for you</h2>
+              <div class="wf-skel w-80"></div>
+              <div class="wf-skel w-60"></div>
+              <div class="wf-skel w-40"></div>
+              <span class="wf-btn brand" style="align-self:flex-start;margin-top:4px">Reclaim my 30% →</span>
+            </div>
+            <!-- RIGHT: AI chat panel -->
+            <div class="wf-chat-panel">
+              <div style="font-size:10px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em">AI assistant · live</div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Mailchimp AI</span>Draft loaded. Want me to refine anything?</div>
+              <div class="wf-msg user">Make the hero more dramatic — add motion blur</div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Applied · Magic Edit</span>Done. Want to try 2 variations?</div>
+              <div class="wf-msg user">Add a "limited time" sticker to the CTA</div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Applied · AI Sticker</span>Generated 4 sticker options. Inserted top match.</div>
+              <div class="wf-input" style="padding:7px 10px;margin-top:auto"><span class="wf-muted">Ask anything...</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Conversational Editing</span><strong>Chat-driven design</strong>The right panel is always-present. Users type natural language requests; AI applies edits with element-level precision. Replaces panel-click-panel-click cycles.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Magic Edit / Grab / Expand / Morph</span><strong>In-canvas AI image manipulation</strong>Hover any image → AI handles appear inline. Brush-replace, subject-extract, frame-extend, themed effects — all without leaving Mailchimp.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">AI Sticker</span><strong>On-demand branded stickers</strong>"Add a limited-time sticker" generates 4 options in seconds, on-brand by default.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 5: BRAND APPLICATION -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">5</span><span class="wf-stage-title">Brand application — auto-corrected, always on-brand</span>
+      <p class="wf-stage-desc">Brand Voice 2.0 reads the saved tone profile and ensures all AI copy reads like the brand. Brand Intelligence scans the design and flags inconsistencies (old logo, font drift, outdated tagline) with one-click auto-fix. Living Memory suggests urgency-tuning based on past campaign performance.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Brand Voice 2.0</span><span class="wf-active-pill">Brand Intelligence</span><span class="wf-active-pill">Living Memory</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Brand check</span><span>Send</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">● Brand Kit applied · Brand Intelligence found 3 issues</h2>
+          <div class="wf-grid-2col">
+            <div>
+              <h3 class="wf-h3">Applied automatically</h3>
+              <div class="wf-checklist">
+                <div class="wf-ck checked">Logo · latest v3.2</div>
+                <div class="wf-ck checked">Primary &amp; secondary colors</div>
+                <div class="wf-ck checked">Heading + body fonts</div>
+                <div class="wf-ck checked">Brand voice · friendly + conversational</div>
+                <div class="wf-ck checked">Compliance footer + unsubscribe</div>
+              </div>
+            </div>
+            <div>
+              <h3 class="wf-h3">⚠ Inconsistencies found</h3>
+              <div class="wf-callout" style="margin-bottom:6px"><strong>Old logo on hero block</strong>Auto-update to v3.2 across this email and 12 other recent templates? <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Auto-fix all</span></div>
+              <div class="wf-callout" style="margin-bottom:6px"><strong>Heading font drift</strong>3 headings use Inter instead of brand's Söhne. <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Auto-fix</span></div>
+              <div class="wf-callout"><strong>Outdated tagline in footer</strong>"Premium goods, delivered" → "Crafted for you" (Q4 update). <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Update</span></div>
+            </div>
+          </div>
+          <div class="wf-callout" style="background:#f5f3ff;border-color:#ddd6fe;border-left-color:#7C3AED;color:#5b21b6">
+            <strong><span class="wf-ico" style="background:#7C3AED">M</span>Living Memory suggests</strong>
+            "Your last 3 BFCM emails used a sense of urgency in the hero ('only 24 hours left'). The current draft is softer. Want me to dial up urgency, keep it as-is, or test both?"
+            <div class="wf-btn-row" style="margin-top:8px"><span class="wf-btn">Dial up</span><span class="wf-btn">Keep</span><span class="wf-btn primary">Test both (A/B)</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Brand Voice 2.0</span><strong>Saved tone profile</strong>The saved brand voice profile is applied to every AI text generation across the campaign. No more "regenerate to match our tone."</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Brand Intelligence</span><strong>Auto-scan + auto-fix</strong>AI scans the design for logo, font, and tagline drift — and offers one-click fixes across all current and past templates. Closes the brand-debt loop.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Living Memory</span><strong>Performance-aware suggestions</strong>Memory references your top-performing campaigns and proactively suggests what worked. The marketer can take it, leave it, or A/B test.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 6: PREVIEW & REFINE -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">6</span><span class="wf-stage-title">Preview &amp; refine — cross-device + chat polish</span>
+      <p class="wf-stage-desc">Cross-device preview (Desktop / Mobile / Dark mode / Inbox). Final refinement happens via the same chat panel — the marketer can drop a flat asset (PDF, image, screenshot) and Magic Layers reconstructs it as editable layered blocks.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">Conversational Design Editing</span><span class="wf-active-pill">Magic Layers</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Preview</span><span>Send</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <div class="wf-tab-row">
+            <span class="wf-tab active">Desktop</span>
+            <span class="wf-tab">Mobile</span>
+            <span class="wf-tab">Dark mode</span>
+            <span class="wf-tab">Inbox · Gmail</span>
+            <span class="wf-tab">Inbox · Outlook</span>
+          </div>
+          <div class="wf-email-preview">
+            <div class="wf-hero-img" style="background:linear-gradient(135deg,#1e293b,#7c3aed)">Final hero · ✓ on brand</div>
+            <h2 class="wf-h2" style="margin-top:6px">Come back for 30% off, just for you</h2>
+            <div class="wf-skel w-80"></div>
+            <div class="wf-skel w-60"></div>
+            <span class="wf-btn brand" style="align-self:flex-start">Reclaim my 30% →</span>
+            <div class="wf-skel w-40"></div>
+          </div>
+          <div class="wf-callout" style="background:#f5f3ff;border-color:#ddd6fe;border-left-color:#7C3AED;color:#5b21b6">
+            <strong><span class="wf-ico" style="background:#7C3AED">L</span>Magic Layers · drop zone</strong>
+            Have a flat creative from an agency or a Canva export? Drop the image or PDF here and we'll reconstruct it as editable blocks.
+            <div style="margin-top:8px;padding:14px;border:2px dashed #ddd6fe;border-radius:6px;text-align:center;color:#7C3AED;font-size:11px;font-weight:600">↓ Drop file to make editable</div>
+          </div>
+          <div class="wf-input"><span><strong>Make the CTA say "Reclaim my 30%"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Apply</span></div>
+          <div class="wf-btn-row">
+            <span class="wf-btn">Send test email</span>
+            <span class="wf-btn">A/B set up</span>
+            <span class="wf-btn primary">Approve &amp; schedule send</span>
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">Conversational Editing</span><strong>Always-available refinement</strong>Same chat input persists through preview. "Make the CTA say X" applies in seconds. No mode-switching between edit and preview.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Magic Layers</span><strong>Flat → editable drop zone</strong>Receive a creative from an agency or Canva export? Drop it. AI reconstructs the layers, restores editable text boxes, separates objects. Remix without redesigning.</div>
+        <div class="wf-anno"><strong>Cross-device + inbox preview</strong>Native + Inbox-rendering preview (Gmail / Outlook). Beats Canva's single mobile preview; matches Klaviyo's preview parity.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 7: EXTERNAL AI BRIDGE -->
+  <div class="wf-stage">
+    <div class="wf-stage-meta">
+      <span class="wf-stage-num">7</span><span class="wf-stage-title">External AI bridge — continue anywhere via MCP</span>
+      <p class="wf-stage-desc">Throughout the workflow, the user can hand off to ChatGPT, Claude, or any MCP-compatible AI tool. The Mailchimp MCP server exposes the campaign state, audiences, and analytics so external AI agents can read + write. Two-way sync: edits in any tool flow back to Mailchimp.</p>
+      <div class="wf-active"><span class="wf-active-label">Phase 1 active:</span><span class="wf-active-pill">ChatGPT &amp; Claude MCP Bridge</span></div>
+    </div>
+    <div class="wf-canvas">
+      <div class="wf-app">
+        <div class="wf-topbar">
+          <span class="wf-logo">M</span>
+          <div class="wf-nav"><span>Create</span><span>Brief</span><span>Design</span><span class="active">Open in external AI</span></div>
+          <span class="wf-avatar"></span>
+        </div>
+        <div class="wf-body">
+          <h2 class="wf-h2">Continue this campaign in your preferred AI tool</h2>
+          <p class="wf-p">Available throughout the workflow. Edits sync back to Mailchimp automatically.</p>
+          <div class="wf-card-grid">
+            <div class="wf-bridge-card">
+              <div class="wf-bridge-logo" style="background:#19c37d">C</div>
+              <span class="wf-bridge-name">ChatGPT</span>
+              <span class="wf-bridge-cta">Open campaign →</span>
+            </div>
+            <div class="wf-bridge-card">
+              <div class="wf-bridge-logo" style="background:#cc7a47">A</div>
+              <span class="wf-bridge-name">Claude</span>
+              <span class="wf-bridge-cta">Open campaign →</span>
+            </div>
+            <div class="wf-bridge-card">
+              <div class="wf-bridge-logo" style="background:#0a0a0a">⌘</div>
+              <span class="wf-bridge-name">Cursor</span>
+              <span class="wf-bridge-cta">Open campaign →</span>
+            </div>
+            <div class="wf-bridge-card">
+              <div class="wf-bridge-logo" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">+</div>
+              <span class="wf-bridge-name">Other MCP client</span>
+              <span class="wf-bridge-cta">Copy connection →</span>
+            </div>
+          </div>
+          <h3 class="wf-h3" style="margin-top:6px">MCP Server endpoint</h3>
+          <div class="wf-input" style="font-family:'JetBrains Mono',ui-monospace,monospace;font-size:11px"><strong>mcp.mailchimp.com/v1/campaigns/cmp_4uXp7vQ</strong><span class="wf-btn" style="font-size:10px;padding:3px 8px">Copy</span></div>
+          <div class="wf-callout" style="background:#ecfdf5;border-color:#a7f3d0;border-left-color:#10b981;color:#065f46">
+            <strong>● Two-way sync active</strong>Your campaign state, brand kit, audiences, and analytics are accessible to any MCP-compatible AI tool. Edits made in ChatGPT/Claude flow back to Mailchimp in real time, with full audit log.
+          </div>
+        </div>
+      </div>
+      <div class="wf-annotations">
+        <div class="wf-anno"><span class="wf-anno-tag">ChatGPT &amp; Claude MCP</span><strong>Meet users where they already are</strong>Distribution play. Many marketers already work in ChatGPT/Claude. By exposing Mailchimp as an MCP destination, we catch campaign-creation intent before it lands elsewhere.</div>
+        <div class="wf-anno"><span class="wf-anno-tag">Two-way sync</span><strong>Bidirectional, not export-only</strong>Edits in external tools flow back to Mailchimp. Brand voice + memory + audiences all available read/write via MCP. Full audit log so governance is preserved.</div>
+        <div class="wf-anno"><strong>Closes the Klaviyo gap</strong>Klaviyo has MCP + Claude app + ChatGPT app already shipped. This stage matches their distribution surface.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Summary -->
+  <div class="kl-bottom-line" style="background:linear-gradient(135deg,#78350f 0%,#92400e 100%)">
+    <h3>What the 7-stage flow accomplishes</h3>
+    <p>By the end of Phase 1, a Mailchimp customer can go from <strong>"I have a campaign idea in my head"</strong> to <strong>"send-ready, on-brand, personalized, omnichannel campaign"</strong> in under 3 minutes — without ever leaving Mailchimp for Canva or another AI tool. Every step removes a friction that today drives users to external tools. The 10 Phase 1 features map cleanly across the 7 stages, with several features active concurrently (e.g., Living Memory is felt at Stages 1, 2, and 5; Conversational Editing at Stages 4 and 6).</p>
+    <p><strong>What still needs Phase 2 (and Klaviyo additions):</strong> the Send stage (Stage 7+) is shown as "approve &amp; schedule." Phase 2 layers on real-time mid-send AI optimization, per-recipient multi-variate selection, predictive inventory, and the Customer Agent for post-send support — bringing the loop from "create" to "create + send + learn + adjust + serve."</p>
   </div>
 
 </section>
