@@ -80,6 +80,63 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .ai-caveat{margin:0 0 18px;padding:11px 14px;background:#fef3c7;border:1px solid #fde68a;border-left:3px solid #d97706;border-radius:8px;font-size:12px;color:#78350f;line-height:1.5}
 .ai-caveat strong{color:#78350f;font-weight:700}
 
+/* Roadmap tab styling */
+.roadmap-hero{padding:32px 36px;background:linear-gradient(135deg,#fffbeb 0%,#fef3c7 100%);border:1px solid #fde68a;border-radius:14px;margin-bottom:32px}
+.roadmap-hero h2{margin:0 0 12px;font-size:24px;font-weight:800;letter-spacing:-.02em;color:#78350f}
+.roadmap-hero p{margin:0;font-size:15px;line-height:1.6;color:#78350f;max-width:920px}
+.roadmap-hero .obj-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}
+.roadmap-hero .obj-pill{background:#fff;border:1px solid #d97706;color:#78350f;font-size:11px;font-weight:700;padding:5px 10px;border-radius:999px;letter-spacing:.04em}
+
+.phase-section{margin-bottom:48px}
+.phase-header{display:grid;grid-template-columns:120px 1fr;gap:24px;align-items:start;padding:24px 28px;background:var(--surface);border:1px solid var(--line);border-radius:14px;margin-bottom:18px}
+.phase-section.p1 .phase-header{border-left:6px solid #D97706}
+.phase-section.p2 .phase-header{border-left:6px solid #7C3AED}
+@media(max-width:760px){.phase-header{grid-template-columns:1fr}}
+.phase-num{font-size:64px;font-weight:800;letter-spacing:-.04em;line-height:1;background:linear-gradient(135deg,#D97706 0%,#F59E0B 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.phase-section.p2 .phase-num{background:linear-gradient(135deg,#7C3AED 0%,#EC4899 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.phase-title{font-size:24px;font-weight:800;letter-spacing:-.015em;margin:0 0 6px;color:var(--text)}
+.phase-subtitle{font-size:13px;font-weight:600;color:var(--text-3);text-transform:uppercase;letter-spacing:.08em;margin:0 0 12px}
+.phase-objective{font-size:14px;line-height:1.55;color:var(--text-2);margin:0 0 14px;max-width:760px}
+.win-condition{display:flex;gap:10px;padding:12px 14px;background:var(--surface-2);border-left:3px solid var(--canva-2);border-radius:8px;font-size:13px;line-height:1.5;color:var(--text)}
+.phase-section.p1 .win-condition{border-left-color:#D97706}
+.phase-section.p2 .win-condition{border-left-color:#7C3AED}
+.win-condition strong{font-weight:700;color:var(--text)}
+.win-condition::before{content:"WIN";font-size:9px;font-weight:800;letter-spacing:.1em;color:var(--text-3);padding:2px 8px;border-radius:4px;background:var(--surface);border:1px solid var(--line);align-self:flex-start;flex-shrink:0;line-height:1.3;margin-top:1px}
+
+.feature-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:14px;margin-top:14px}
+.phase-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:18px 18px;display:flex;flex-direction:column;gap:10px;position:relative;overflow:hidden}
+.phase-card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px}
+.phase-section.p1 .phase-card::before{background:linear-gradient(90deg,#D97706 0%,#F59E0B 100%)}
+.phase-section.p2 .phase-card::before{background:linear-gradient(90deg,#7C3AED 0%,#EC4899 100%)}
+.phase-card .pc-num{font-size:11px;font-weight:800;color:var(--text-3);letter-spacing:.08em;margin-top:4px}
+.phase-card h4{margin:0;font-size:15px;font-weight:700;line-height:1.3;letter-spacing:-.01em;color:var(--text)}
+.phase-card .pc-gap{display:inline-flex;align-items:center;gap:6px;background:var(--gap-bg);border:1px solid var(--line-2);border-radius:6px;padding:4px 9px;font-size:10.5px;font-weight:600;color:var(--text-2);align-self:flex-start;line-height:1.3}
+.phase-card .pc-gap strong{color:var(--text);font-weight:700}
+.phase-card .pc-section{display:flex;flex-direction:column;gap:3px;font-size:12.5px;line-height:1.5}
+.phase-card .pc-label{font-size:9px;font-weight:800;color:var(--text-3);letter-spacing:.08em;text-transform:uppercase}
+.phase-card .pc-text{color:var(--text)}
+.phase-card .pc-text.win{color:var(--text);font-weight:500;background:linear-gradient(180deg,transparent 60%,rgba(124,58,237,.08) 60%);padding:0 2px}
+.phase-section.p1 .phase-card .pc-text.win{background:linear-gradient(180deg,transparent 60%,rgba(217,119,6,.10) 60%)}
+.phase-card .dim-chips{display:flex;gap:4px;flex-wrap:wrap;margin-top:2px}
+.phase-card .dim-chip{width:18px;height:18px;border-radius:4px;color:#fff;font-weight:800;font-size:10px;display:inline-flex;align-items:center;justify-content:center;cursor:help;line-height:1}
+.dim-chip.dc-f{background:var(--friction)}
+.dim-chip.dc-t{background:var(--time)}
+.dim-chip.dc-r{background:var(--money)}
+.dim-chip.dc-p{background:var(--personal)}
+.dim-chip.dc-c{background:var(--trust)}
+
+.principle-bridge{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:22px 26px;margin:28px 0 28px;display:grid;grid-template-columns:160px 1fr;gap:20px;align-items:start}
+@media(max-width:760px){.principle-bridge{grid-template-columns:1fr}}
+.principle-bridge .pb-label{font-size:11px;font-weight:800;color:var(--text-3);letter-spacing:.1em;text-transform:uppercase;padding-top:4px}
+.principle-bridge ul{margin:0;padding-left:18px;font-size:13.5px;line-height:1.6;color:var(--text)}
+.principle-bridge ul li{margin-bottom:6px}
+.principle-bridge ul li strong{font-weight:700}
+
+.roadmap-summary{margin-top:36px;padding:22px 26px;background:linear-gradient(135deg,#1e1b4b 0%,#312e81 100%);color:#fff;border-radius:14px}
+.roadmap-summary h3{margin:0 0 8px;font-size:18px;font-weight:700}
+.roadmap-summary p{margin:0;font-size:14px;line-height:1.65;color:#e0e7ff;max-width:880px}
+.roadmap-summary strong{color:#fff;font-weight:700}
+
 /* New step-section + feature-row layout (replaces wide table) */
 .step-section{margin-bottom:40px}
 .step-section-header{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--canva-1);border-radius:12px;margin-bottom:14px}
@@ -237,6 +294,7 @@ footer a:hover{text-decoration:underline}
   <button class="tab-btn active" data-tab="email" role="tab"><span class="channel-dot"></span>Email Campaigns</button>
   <button class="tab-btn" data-tab="sms" role="tab"><span class="channel-dot"></span>SMS Campaigns</button>
   <button class="tab-btn" data-tab="whatsapp" role="tab"><span class="channel-dot"></span>WhatsApp Campaigns</button>
+  <button class="tab-btn" data-tab="roadmap" role="tab" style="margin-left:auto"><span class="channel-dot" style="background:linear-gradient(90deg,#D97706,#7C3AED)"></span>Mailchimp Roadmap</button>
 </nav>
 
 <!-- =================================== EMAIL TAB =================================== -->
@@ -3397,6 +3455,253 @@ footer a:hover{text-decoration:underline}
       <p class="vc-body">Native doctypes guarantee correct rendering; Brand Kit enforces consistency; OS share-sheet leverages WhatsApp's own trust pathway; Canva Apps SDK gives BSPs a clean integration path that procurement-vets cleanly.</p>
     </div>
   </div>
+</section>
+
+<!-- =================================== ROADMAP TAB =================================== -->
+<section class="tab-pane" id="tab-roadmap" role="tabpanel">
+
+  <div class="roadmap-hero">
+    <h2>How Mailchimp closes the gap with Canva — and beats it</h2>
+    <p>A two-phase product roadmap to establish Mailchimp as <strong>the best-in-class, AI-powered, omnichannel marketing campaign builder</strong>: frictionless creative generation, time-saving automation, hyper-personalization per recipient, measurable revenue lift, and procurement-grade trust. Phase 1 closes the creative-AI gap with Canva. Phase 2 leverages Mailchimp's unique audience-data-and-send-infrastructure moat to deliver features Canva structurally cannot.</p>
+    <div class="obj-pills">
+      <span class="obj-pill">Frictionless creation</span>
+      <span class="obj-pill">Time saved</span>
+      <span class="obj-pill">Hyper-personalization</span>
+      <span class="obj-pill">Revenue + engagement</span>
+      <span class="obj-pill">Trust + confidence</span>
+    </div>
+  </div>
+
+  <!-- ====== PHASE 1 ====== -->
+  <div class="phase-section p1">
+    <div class="phase-header">
+      <div class="phase-num">01</div>
+      <div>
+        <p class="phase-subtitle">2–3 quarters · catch up on creative AI</p>
+        <h3 class="phase-title">Close the creative-AI gap — match Canva on the features marketers use daily</h3>
+        <p class="phase-objective">Phase 1 targets the 25 Email features where Mailchimp scored Half / Partial / None against Canva. Every feature here addresses a real user pain that <em>today</em> drives marketers to leave Mailchimp and use Canva for the creative part of their workflow. Build these, and the round-trip stops.</p>
+        <div class="win-condition"><span><strong>Win condition:</strong> A marketer can complete the entire creative workflow — from blank brief to send-ready, brand-perfect, hyper-personalized email — without leaving Mailchimp.</span></div>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 01</div>
+        <h4>AI Image Manipulation Suite</h4>
+        <span class="pc-gap">Closes gap: <strong>Magic Edit + Grab + Expand + Morph</strong> · was ○ None</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">In-editor brush-replace, subject-extract, frame-extend, themed text/shape effects on any image. Native to the new builder.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Image edits are the #1 reason marketers leave Mailchimp for Canva. Plug this gap and the round-trip stops.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 02</div>
+        <h4>Dream Lab — AI image gen with style references</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva Dream Lab</strong> · was ◔ Partial</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">High-fidelity AI image generation from prompt + uploaded brand-style reference + aspect-ratio control. Available beyond just ecommerce campaigns.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Premium hero imagery is critical for email/MMS/social conversion; today Mailchimp only generates ecommerce product imagery.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 03</div>
+        <h4>Conversational Design Editing</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva AI 2.0 conversational design</strong> · was ◔ Partial</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Single chat panel drives the whole builder: "make it more professional," "swap the hero," "shorten body 30%" — applied with element-level precision across the email.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">This <em>is</em> the AI 2.0 UX paradigm. Chat beats panel-clicking for both speed and accessibility. Today Mailchimp only does block-level edits.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 04</div>
+        <h4>Magic Layers — flat to editable</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva AI 2.0 Magic Layers</strong> · was ○ None</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Reconstruct editable layered blocks from any flat image, PDF, or HTML upload — restore text boxes, separate objects, make remixable.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Marketers receive static creative from agencies, Canva exports, and stock libraries. Let them remix without redesigning from scratch.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 05</div>
+        <h4>Brand Voice 2.0 + Brand Intelligence</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva Brand Voice + Brand Intelligence</strong> · was ◕ + ◑</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Explicit "save brand voice profile" UI; one-click "update all old templates to latest brand"; AI auto-applies brand rules to every generation.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Brand-tone-correct AI is table stakes. Updating old work to the new brand is a felt pain that drives users to manual rework.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-p" title="Personalization">P</span><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 06</div>
+        <h4>Mailchimp Memory — Living Memory</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva Memory Library</strong> · was ◔ Partial</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Persistent AI memory learns the team's style and preferences across recurring campaigns; each cycle inherits prior context automatically.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Seasonal/recurring campaigns are the highest-volume Mailchimp use case. Making them smarter each cycle is high-leverage.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-p" title="Personalization">P</span><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 07</div>
+        <h4>Live-Context Connectors</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva AI 2.0 Connectors</strong> · was ◔ Partial</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Slack / Drive / Notion / Zoom / Calendar integrations feed live context into AI campaign generation — "turn this Zoom transcript into a customer email."</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Customer context lives outside Mailchimp; AI bridges it without manual gathering. Combines with Mailchimp's existing 300+ integrations.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 08</div>
+        <h4>AI Sticker / GIF / Animation Generator</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva AI Sticker Gen + Magic Animate</strong> · was ○ None</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Branded sticker pack generation + one-click animation for hero blocks. Output usable across email, SMS/MMS, and social (Mailchimp Ads).</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Stickers drive WhatsApp/SMS engagement; animated heroes lift email CTR. Both feed Mailchimp Ads + Customer Journey Builder.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 09</div>
+        <h4>Web Research Integration</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva AI 2.0 Web research</strong> · was ○ None</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">AI searches the web and brings structured competitive, seasonal, and trend insights directly into the campaign brief and creative.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Timely market relevance is a measurable conversion lever (e.g., reacting to news cycles, holidays, competitor moves). Today this happens in 8 disconnected tabs.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 1 · FEATURE 10</div>
+        <h4>ChatGPT &amp; Claude MCP Bridge</h4>
+        <span class="pc-gap">Closes gap: <strong>Canva ChatGPT &amp; Claude (MCP)</strong> · was ○ None</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Expose Mailchimp campaign creation as an MCP server. Users can start in ChatGPT/Claude/Cursor and refine in Mailchimp — automatic cross-tool handoff.</span></div>
+        <div class="pc-section"><span class="pc-label">Why now</span><span class="pc-text">Distribution play. Meet marketers where they already work with AI; capture campaign-creation intent before it lands in Canva or another tool.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====== BRIDGE: STRATEGIC PRINCIPLES ====== -->
+  <div class="principle-bridge">
+    <div class="pb-label">The pivot<br>between phases</div>
+    <ul>
+      <li><strong>Phase 1 stops the bleed.</strong> Canva poaches Mailchimp users in the creative step. Closing creative-AI gaps eliminates the reason to leave.</li>
+      <li><strong>Phase 2 is where Mailchimp wins permanently.</strong> Every Phase 2 feature is something Canva structurally <em>cannot</em> build without becoming an ESP — because each one requires audience data + send infrastructure + analytics + AI all in the same product.</li>
+      <li><strong>The new category:</strong> Don't position Mailchimp as "the email tool." Position it as "the AI-powered marketing platform" — where creative, audience, send, and learning happen in one place.</li>
+    </ul>
+  </div>
+
+  <!-- ====== PHASE 2 ====== -->
+  <div class="phase-section p2">
+    <div class="phase-header">
+      <div class="phase-num">02</div>
+      <div>
+        <p class="phase-subtitle">4–6 quarters · build a moat Canva can't cross</p>
+        <h3 class="phase-title">Beat Canva by leveraging Mailchimp's audience + send + data moat</h3>
+        <p class="phase-objective">Phase 2 builds capabilities <strong>only Mailchimp can deliver</strong> — features that require the customer-data, send-infrastructure, analytics, and AI to all live together. Canva would need to become an ESP to match these. They're the foundation of a new category: AI-powered marketing platform, not email tool.</p>
+        <div class="win-condition"><span><strong>Win condition:</strong> Mailchimp is the platform marketers reach for when they think "AI-powered campaign" — across email, SMS, WhatsApp, ads, journeys, and analytics. Canva becomes one creative tool that plugs in, not the destination.</span></div>
+      </div>
+    </div>
+
+    <div class="feature-grid">
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 01</div>
+        <h4>Agentic Campaign Orchestrator</h4>
+        <span class="pc-gap">Beats: <strong>Canva AI 2.0 conversational campaign start</strong></span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Goal-based campaign creation: "Increase repeat purchase from Bronze tier" → AI generates the full multi-channel campaign (email + SMS + ads + landing) with targeting, content, send schedule, and success metrics.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Combines customer data + send infrastructure + AI in one product. Canva can only do the creative step; <strong>Mailchimp can do the whole campaign</strong>.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 02</div>
+        <h4>Real-Time Campaign Performance Loop</h4>
+        <span class="pc-gap">Beats: anything Canva offers (Canva ends at design)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">AI monitors live campaign performance and auto-deploys winning variants mid-send: "20% open rate after 1 hour — switching to subject variant B for remaining recipients."</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Canva has no send infrastructure. Only Mailchimp can close the <strong>create → send → learn → adjust</strong> loop continuously, during the live campaign.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 03</div>
+        <h4>Send-Time AI Personalization (1:1)</h4>
+        <span class="pc-gap">Beats: <strong>Canva Bulk Create</strong> (design-time variants only)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Per-recipient AI picks best subject / image / CTA / send-time from a pool of variants at the moment of send, based on individual behavioral history.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Requires deep behavioral history per contact + send infrastructure + AI ranking models. Canva can generate variants but doesn't have the data or send context. <strong>True 1:1 personalization at scale.</strong></span></div>
+        <div class="dim-chips"><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 04</div>
+        <h4>Agentic Audience + Creative Bundle</h4>
+        <span class="pc-gap">Beats: <strong>Canva Magic Studio at scale</strong> (audience-blind variants)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">AI generates customer segments + matching creative in one workflow: "Find me 5 customer segments that haven't bought in 90 days and create a win-back campaign for each."</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Combines AI audience segmentation + AI creative generation in one product. Canva generates variants <em>blind to the audience</em>; <strong>Mailchimp generates audience-aware creative</strong>.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 05</div>
+        <h4>Mailchimp as MCP Server</h4>
+        <span class="pc-gap">Beats: Canva MCP (only the creative tool)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Expose audiences, campaigns, analytics, journeys, ads, and reports as MCP for ChatGPT / Claude / Cursor / other AI agents to query and act on.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Mailchimp becomes the <strong>marketing data/send layer for the AI stack</strong>. AI agents <em>use</em> Mailchimp; Canva is one creative tool an agent might call along the way.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 06</div>
+        <h4>Cross-Channel Asset Studio (Audience-Aware)</h4>
+        <span class="pc-gap">Beats: <strong>Canva Magic Resize</strong> (channel-only)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">One AI brief → email + SMS + WhatsApp + ad + landing variants, each personalized to the audience segment they target — not just resized to channel format.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Knowing the audience makes variant generation smarter than channel-blind Magic Resize. <strong>Variants tuned to actual customer data</strong>, not just channel format.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 07</div>
+        <h4>Compliance-Aware AI Localization</h4>
+        <span class="pc-gap">Beats: <strong>Canva Magic Translate</strong> (copy only)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">One creative → translated + locale-tuned + per-region compliance applied (CASL, GDPR, India DPDP, Brazil LGPD, etc.). AI handles regulatory plumbing per locale.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Canva can translate copy but doesn't know per-region compliance rules; Mailchimp does because it's the ESP that <strong>actually sends the email</strong>.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 08</div>
+        <h4>AI Code 2.0 — Interactive Inbox</h4>
+        <span class="pc-gap">Beats: <strong>Canva Code 2.0</strong> (landing pages only)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Prompt-built AMP-for-Email interactive content (forms, surveys, quizzes, calculators) tied directly to Customer Journey Builder triggers.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Canva Code 2.0 builds landing pages; <strong>Mailchimp puts interactive content inside the email itself</strong> and wires it to journeys. Email is the higher-engagement surface.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 09</div>
+        <h4>Mailchimp Shield — AI Governance Suite</h4>
+        <span class="pc-gap">Beats: <strong>Canva Shield</strong> (creative-only)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Permission management, audit logs, AI usage policies, indemnification, brand-controlled AI templates — all integrated with existing Mailchimp roles, audiences, and send authentication.</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Mid-market + enterprise already trust Mailchimp's compliance posture. <strong>AI governance extends naturally</strong> from existing send-side compliance, unlocking regulated industries (finance, healthcare, insurance).</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-c" title="Trust">C</span></div>
+      </div>
+
+      <div class="phase-card">
+        <div class="pc-num">PHASE 2 · FEATURE 10</div>
+        <h4>Cross-Domain Conversational Agent</h4>
+        <span class="pc-gap">Beats: <strong>Canva AI 2.0 chat</strong> (design-only)</span>
+        <div class="pc-section"><span class="pc-label">What</span><span class="pc-text">Single chat interface that operates across audiences, campaigns, automations, reports, ads, and journeys: "Which segment converts best on Tuesdays? Build me a Tuesday campaign for them."</span></div>
+        <div class="pc-section"><span class="pc-label">Why Mailchimp wins</span><span class="pc-text win">Canva's chat agent only touches creative. <strong>Mailchimp's agent spans the whole martech surface</strong> — marketer thinks about the goal, agent navigates audiences + creative + send + analytics.</span></div>
+        <div class="dim-chips"><span class="dim-chip dc-f" title="Eliminates friction">F</span><span class="dim-chip dc-t" title="Saves time">T</span><span class="dim-chip dc-r" title="Drives revenue">R</span><span class="dim-chip dc-p" title="Personalization">P</span></div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ====== SUMMARY ====== -->
+  <div class="roadmap-summary">
+    <h3>The strategic position after Phase 2</h3>
+    <p>By the end of Phase 2, Mailchimp is no longer "the email tool" — it's <strong>the AI-powered marketing platform</strong>. Canva's creative AI is matched in Phase 1 (so users stop leaving). Phase 2 features are unbuildable by Canva without becoming an ESP. The category moves from "email service provider" to "agentic marketing platform" — and Mailchimp owns the new category because creative + audience + send + analytics + AI all live in one product. Canva becomes a tool that plugs into Mailchimp, not a tool that replaces it.</p>
+  </div>
+
 </section>
 
 <footer>
