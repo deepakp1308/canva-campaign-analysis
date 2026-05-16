@@ -383,6 +383,92 @@ h1 .accent{background:linear-gradient(90deg,var(--canva-1) 0%,var(--canva-3) 50%
 .wf-decision .wf-decision-text{font-size:10.5px;color:#1e293b}
 .wf-decision .wf-decision-text strong{color:#7C3AED}
 
+/* === Tightening primitives (LLM-as-judge improvements) === */
+
+/* App shell — persistent state across all stages */
+.wf-topbar{position:relative}
+.wf-topbar .wf-app-state{display:inline-flex;align-items:center;gap:10px;margin-left:auto;margin-right:10px;font-size:10px}
+.wf-save-state{display:inline-flex;align-items:center;gap:4px;color:#16a34a;font-size:9.5px;font-weight:600}
+.wf-save-state::before{content:"";width:5px;height:5px;border-radius:50%;background:#16a34a}
+.wf-save-state.saving{color:#7C3AED}
+.wf-save-state.saving::before{background:#7C3AED;animation:wfblink 1.2s infinite}
+.wf-icon-btn{display:inline-flex;align-items:center;justify-content:center;width:20px;height:20px;border:1px solid #e2e8f0;background:#fff;border-radius:4px;font-size:10px;color:#64748b;cursor:default;font-family:ui-sans-serif,system-ui}
+.wf-icon-btn.disabled{opacity:.4}
+.wf-kbd{font-family:'JetBrains Mono',ui-monospace,monospace;font-size:8.5px;color:#64748b;background:#f1f5f9;border:1px solid #e2e8f0;border-radius:3px;padding:0 4px;line-height:1.5;font-weight:600}
+.wf-breadcrumb{font-size:9.5px;color:#94a3b8;display:inline-flex;align-items:center;gap:5px;margin-left:4px}
+.wf-breadcrumb .wf-bc-sep{color:#cbd5e1}
+.wf-breadcrumb .wf-bc-cur{color:#1e293b;font-weight:600}
+
+/* Spinner */
+.wf-spinner{display:inline-block;width:10px;height:10px;border:1.5px solid #e2e8f0;border-top-color:#7C3AED;border-radius:50%;animation:wfspin .8s linear infinite;vertical-align:-1px}
+@keyframes wfspin{to{transform:rotate(360deg)}}
+
+/* Audience / context chip */
+.wf-aud-chip{display:inline-flex;align-items:center;gap:5px;padding:2px 7px;background:#eff6ff;border:1px solid #bfdbfe;border-radius:5px;font-size:9.5px;color:#1e3a8a;font-weight:600;letter-spacing:.02em;line-height:1.4}
+.wf-aud-chip::before{content:"";width:4px;height:4px;border-radius:50%;background:#3b82f6;flex-shrink:0}
+
+/* Live/status pills */
+.wf-status{display:inline-flex;align-items:center;gap:4px;padding:1px 7px;border-radius:99px;font-size:9px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;line-height:1.5}
+.wf-status.live{background:#dcfce7;color:#166534;border:1px solid #86efac}
+.wf-status.live::before{content:"";width:4px;height:4px;border-radius:50%;background:#16a34a;animation:wfblink 1.5s ease-in-out infinite}
+.wf-status.warn{background:#fef3c7;color:#854d0e;border:1px solid #fde68a}
+.wf-status.error{background:#fee2e2;color:#991b1b;border:1px solid #fca5a5}
+.wf-status.queued{background:#f1f5f9;color:#475569;border:1px solid #e2e8f0}
+
+/* Gauges */
+.wf-gauge{display:inline-flex;align-items:center;gap:8px;padding:5px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:10px;color:#475569;line-height:1.3}
+.wf-gauge .wf-gauge-label{font-size:9px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em}
+.wf-gauge .wf-gauge-track{display:inline-block;width:54px;height:4px;background:#e2e8f0;border-radius:2px;position:relative;overflow:hidden}
+.wf-gauge .wf-gauge-track::after{content:"";position:absolute;left:0;top:0;height:100%;border-radius:2px}
+.wf-gauge.good .wf-gauge-track::after{width:88%;background:#16a34a}
+.wf-gauge.great .wf-gauge-track::after{width:96%;background:#16a34a}
+.wf-gauge.ok .wf-gauge-track::after{width:65%;background:#facc15}
+.wf-gauge.bad .wf-gauge-track::after{width:22%;background:#dc2626}
+.wf-gauge strong{color:#1e293b;font-weight:700;font-size:10.5px}
+
+/* Sparkline (simple CSS bars) */
+.wf-spark{display:inline-flex;align-items:flex-end;gap:1.5px;height:14px;vertical-align:-3px}
+.wf-spark span{width:2.5px;background:#7C3AED;border-radius:1px;display:inline-block}
+
+/* Schedule picker */
+.wf-schedule{display:inline-flex;align-items:center;gap:8px;padding:6px 10px;background:#fff;border:1px solid #e2e8f0;border-radius:6px;font-size:10.5px;color:#1e293b}
+.wf-schedule .wf-sched-label{font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.06em}
+.wf-schedule strong{color:#1e293b;font-weight:600}
+
+/* Hint icon */
+.wf-hint{display:inline-flex;align-items:center;justify-content:center;width:13px;height:13px;border-radius:50%;background:#e2e8f0;color:#64748b;font-size:8px;font-weight:800;cursor:help;vertical-align:-1px;font-family:ui-sans-serif}
+
+/* Mini KPI block */
+.wf-mini{display:flex;flex-direction:column;gap:2px;padding:6px 10px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:6px;min-width:80px}
+.wf-mini .wf-mini-label{font-size:8.5px;font-weight:700;color:#94a3b8;text-transform:uppercase;letter-spacing:.05em}
+.wf-mini .wf-mini-value{font-size:14px;font-weight:800;color:#1e293b;letter-spacing:-.02em;line-height:1.1}
+.wf-mini .wf-mini-delta{font-size:9px;font-weight:600;color:#16a34a}
+.wf-mini-row{display:flex;gap:6px;flex-wrap:wrap}
+
+/* Danger / emergency button */
+.wf-btn.danger{background:#fff;border:1px solid #fecaca;color:#dc2626;font-weight:700}
+.wf-btn.danger::before{content:"■ ";font-size:9px;color:#dc2626}
+
+/* Diff side-by-side */
+.wf-diff{display:grid;grid-template-columns:1fr 14px 1fr;gap:0;font-size:10px;align-items:center}
+.wf-diff-side{padding:8px 10px;border:1px solid #e2e8f0;border-radius:5px}
+.wf-diff-side.before{border-color:#fde68a;background:#fffbeb}
+.wf-diff-side.after{border-color:#a7f3d0;background:#ecfdf5}
+.wf-diff-side h5{margin:0 0 4px;font-size:8.5px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+.wf-diff-side.before h5{color:#92400e}
+.wf-diff-side.after h5{color:#065f46}
+.wf-diff-arrow{text-align:center;color:#cbd5e1;font-size:12px}
+
+/* Connection status dot */
+.wf-conn{display:inline-flex;align-items:center;gap:5px;font-size:10px;color:#475569}
+.wf-conn::before{content:"";width:6px;height:6px;border-radius:50%;background:#16a34a;animation:wfblink 2s ease-in-out infinite}
+.wf-conn.offline::before{background:#94a3b8;animation:none}
+
+/* Scope chip */
+.wf-scope{display:inline-flex;align-items:center;gap:3px;padding:2px 6px;background:#f8fafc;border:1px solid #e2e8f0;border-radius:4px;font-size:9px;color:#475569;font-family:ui-monospace,'JetBrains Mono',monospace;font-weight:600}
+.wf-scope.read{color:#1e40af;border-color:#bfdbfe;background:#eff6ff}
+.wf-scope.write{color:#9a3412;border-color:#fed7aa;background:#fff7ed}
+
 /* New step-section + feature-row layout (replaces wide table) */
 .step-section{margin-bottom:40px}
 .step-section-header{display:flex;align-items:center;gap:16px;padding:18px 22px;background:var(--surface);border:1px solid var(--line);border-left:4px solid var(--canva-1);border-radius:12px;margin-bottom:14px}
@@ -4343,11 +4429,20 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span class="active">Create</span><span>Audiences</span><span>Reports</span><span>Integrations</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
-          <h2 class="wf-h1">What do you want to create today, Sarah?</h2>
-          <p class="wf-p">Describe your campaign idea, or pick up where you left off.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+            <h2 class="wf-h1">What do you want to create today, Sarah?</h2>
+            <span class="wf-aud-chip">Active audience · Acme Co · 47,318 contacts</span>
+          </div>
+          <p class="wf-p">Describe your campaign idea, or pick up where you left off. <span class="wf-kbd">⌘K</span> to focus.</p>
           <div class="wf-input tall"><span><strong>"Black Friday sale for lapsed VIP customers"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Generate ⚡</span></div>
           <div class="wf-btn-row">
             <span class="wf-btn">Start from template</span>
@@ -4379,6 +4474,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Create</span><span class="active">Brief</span><span>Design</span><span>Send</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4391,13 +4492,12 @@ footer a:hover{text-decoration:underline}
             <div class="wf-ck checked">Offer: BFCM 30% off, expires Nov 30</div>
             <div class="wf-ck checked">Tone: urgent but warm (matches your brand voice)</div>
           </div>
-          <h3 class="wf-h3">Pull additional context</h3>
-          <div class="wf-chip-row">
-            <span class="wf-chip live">● HubSpot · VIP segment definitions</span>
-            <span class="wf-chip live">● Slack · #marketing-bfcm thread</span>
-            <span class="wf-chip">+ Google Drive</span>
-            <span class="wf-chip">+ Notion</span>
-            <span class="wf-chip">+ Zoom transcripts</span>
+          <h3 class="wf-h3">Pull additional context · live data</h3>
+          <div style="display:grid;grid-template-columns:repeat(2,1fr);gap:6px">
+            <div style="padding:8px 10px;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;font-size:10.5px"><strong style="color:#166534">● HubSpot · VIP segment</strong><br><span style="color:#475569">4,217 contacts · synced 2m ago</span></div>
+            <div style="padding:8px 10px;background:#f0fdf4;border:1px solid #86efac;border-radius:6px;font-size:10.5px"><strong style="color:#166534">● Slack · #marketing-bfcm</strong><br><span style="color:#475569">38 messages · last 7 days</span></div>
+            <div style="padding:8px 10px;background:#fff;border:1px dashed #cbd5e1;border-radius:6px;font-size:10.5px"><strong style="color:#475569">+ Google Drive</strong><br><span style="color:#94a3b8">Connect to pull Q3 retention strategy</span></div>
+            <div style="padding:8px 10px;background:#fff;border:1px dashed #cbd5e1;border-radius:6px;font-size:10.5px"><strong style="color:#475569">+ Notion · Zoom · Linear</strong><br><span style="color:#94a3b8">3 more available</span></div>
           </div>
           <div class="wf-checklist">
             <div class="wf-ck checked">Web Research: include 2026 BFCM industry trends + benchmarks</div>
@@ -4426,19 +4526,32 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Generating...</span><span>Send</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
-          <h2 class="wf-h2">⚡ Generating your campaign · 12s remaining</h2>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <h2 class="wf-h2">⚡ Generating your campaign</h2>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span class="wf-status live">Live · cloud</span>
+              <span style="font-size:10.5px;color:#64748b">12s remaining</span>
+              <span class="wf-btn danger" style="font-size:10px;padding:4px 10px">Interrupt</span>
+            </div>
+          </div>
           <ul class="wf-progress-list">
-            <li class="done">Pulled VIP segment from HubSpot · 4,217 contacts</li>
-            <li class="done">Researched 2026 BFCM industry trends · 38 sources</li>
-            <li class="done">Drafted 3 subject line variants</li>
-            <li class="done">Drafted email body in brand voice</li>
-            <li class="running">Generating hero image with Dream Lab + brand style reference</li>
-            <li class="running">Creating SMS companion + IG Story variant</li>
-            <li class="pending">Generating branded stickers for CTA emphasis</li>
-            <li class="pending">Compose final layout with Brand Kit</li>
+            <li class="done">Pulled VIP segment from HubSpot · 4,217 contacts <span style="color:#94a3b8;font-size:9px;float:right">1.2s</span></li>
+            <li class="done">Researched 2026 BFCM industry trends · 38 sources <span style="color:#94a3b8;font-size:9px;float:right">3.8s</span></li>
+            <li class="done">Drafted 3 subject line variants · GPT-5 <span style="color:#94a3b8;font-size:9px;float:right">0.9s</span></li>
+            <li class="done">Drafted email body in brand voice <span style="color:#94a3b8;font-size:9px;float:right">2.1s</span></li>
+            <li class="running">Generating hero image with Dream Lab + brand style ref <span class="wf-spinner" style="float:right;margin-top:1px"></span></li>
+            <li class="running">Creating SMS + IG Story companion variants <span class="wf-spinner" style="float:right;margin-top:1px"></span></li>
+            <li class="pending">Generating branded stickers for CTA emphasis <span style="color:#cbd5e1;font-size:9px;float:right">queued</span></li>
+            <li class="pending">Compose final layout with Brand Kit <span style="color:#cbd5e1;font-size:9px;float:right">queued</span></li>
           </ul>
           <h3 class="wf-h3">Companion assets being generated</h3>
           <div class="wf-card-grid">
@@ -4485,25 +4598,33 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Design</span><span>Send</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body" style="padding:14px">
           <div class="wf-grid-3col">
             <!-- LEFT: Blocks/AI sidebar -->
             <div class="wf-sidebar">
-              <h4>Add block</h4>
-              <div class="wf-sb-item">Heading</div>
-              <div class="wf-sb-item">Paragraph</div>
-              <div class="wf-sb-item">Image</div>
-              <div class="wf-sb-item">Button</div>
+              <h4>Content blocks</h4>
+              <div class="wf-sb-item">Heading <span class="wf-kbd" style="margin-left:auto">H</span></div>
+              <div class="wf-sb-item">Paragraph <span class="wf-kbd" style="margin-left:auto">P</span></div>
+              <div class="wf-sb-item">Image <span class="wf-kbd" style="margin-left:auto">I</span></div>
+              <div class="wf-sb-item">Button <span class="wf-kbd" style="margin-left:auto">B</span></div>
               <div class="wf-sb-item">Product</div>
-              <h4 style="margin-top:8px">AI tools</h4>
+              <h4 style="margin-top:8px">AI · Image manipulation</h4>
               <div class="wf-sb-item active">⚡ Magic Edit</div>
               <div class="wf-sb-item">⚡ Magic Grab</div>
               <div class="wf-sb-item">⚡ Magic Expand</div>
               <div class="wf-sb-item">⚡ Magic Morph</div>
-              <div class="wf-sb-item">⚡ Dream Lab</div>
-              <div class="wf-sb-item">⚡ AI Sticker</div>
+              <h4 style="margin-top:8px">AI · Generate</h4>
+              <div class="wf-sb-item">⚡ Dream Lab (image)</div>
+              <div class="wf-sb-item">⚡ AI Sticker / GIF</div>
+              <div class="wf-sb-item">⚡ Magic Layers (flatten →)</div>
             </div>
             <!-- CENTER: Email preview -->
             <div class="wf-email-preview">
@@ -4522,13 +4643,13 @@ footer a:hover{text-decoration:underline}
             </div>
             <!-- RIGHT: AI chat panel -->
             <div class="wf-chat-panel">
-              <div style="font-size:10px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em">AI assistant · live</div>
-              <div class="wf-msg ai"><span class="wf-msg-label">Mailchimp AI</span>Draft loaded. Want me to refine anything?</div>
-              <div class="wf-msg user">Make the hero more dramatic — add motion blur</div>
-              <div class="wf-msg ai"><span class="wf-msg-label">Applied · Magic Edit</span>Done. Want to try 2 variations?</div>
-              <div class="wf-msg user">Add a "limited time" sticker to the CTA</div>
-              <div class="wf-msg ai"><span class="wf-msg-label">Applied · AI Sticker</span>Generated 4 sticker options. Inserted top match.</div>
-              <div class="wf-input" style="padding:7px 10px;margin-top:auto"><span class="wf-muted">Ask anything...</span></div>
+              <div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:10px;font-weight:700;color:#7C3AED;text-transform:uppercase;letter-spacing:.06em">AI assistant · live</span><span class="wf-status live">v12</span></div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Mailchimp AI</span>Draft loaded · v8 → v10 ↶ revert</div>
+              <div class="wf-msg user">Make hero more dramatic — add motion blur</div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Applied · Magic Edit · v11</span>Done. Try 2 variations? <span style="text-decoration:underline;color:#7C3AED">A</span> · <span style="text-decoration:underline;color:#7C3AED">B</span></div>
+              <div class="wf-msg user">Add "limited time" sticker to CTA</div>
+              <div class="wf-msg ai"><span class="wf-msg-label">Applied · AI Sticker · v12</span>Generated 4 options · inserted top match · <span style="text-decoration:underline;color:#7C3AED">see all 4</span></div>
+              <div class="wf-input" style="padding:7px 10px;margin-top:auto"><span class="wf-muted">Ask anything... ⌘↵ to send</span></div>
             </div>
           </div>
         </div>
@@ -4553,10 +4674,19 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Brand check</span><span>Send</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
-          <h2 class="wf-h2">● Brand Kit applied · Brand Intelligence found 3 issues</h2>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px">
+            <h2 class="wf-h2">● Brand Kit applied · 3 issues found</h2>
+            <div style="display:flex;align-items:center;gap:6px"><span class="wf-chip live" style="font-size:9.5px">Brand Kit v3.2 · current</span><span class="wf-chip" style="font-size:9.5px">v3.1 · 12 templates</span></div>
+          </div>
           <div class="wf-grid-2col">
             <div>
               <h3 class="wf-h3">Applied automatically</h3>
@@ -4570,7 +4700,15 @@ footer a:hover{text-decoration:underline}
             </div>
             <div>
               <h3 class="wf-h3">⚠ Inconsistencies found</h3>
-              <div class="wf-callout" style="margin-bottom:6px"><strong>Old logo on hero block</strong>Auto-update to v3.2 across this email and 12 other recent templates? <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Auto-fix all</span></div>
+              <div class="wf-callout" style="margin-bottom:6px">
+                <strong>Old logo on hero block</strong>
+                <div class="wf-diff" style="margin:6px 0">
+                  <div class="wf-diff-side before"><h5>Before · v3.1</h5>● 2024 logo</div>
+                  <div class="wf-diff-arrow">→</div>
+                  <div class="wf-diff-side after"><h5>After · v3.2</h5>● 2026 logo</div>
+                </div>
+                Update across this email + <strong>12 other templates</strong>? <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-top:4px">Auto-fix all</span> <span class="wf-btn" style="font-size:10px;padding:3px 9px">Just this one</span>
+              </div>
               <div class="wf-callout" style="margin-bottom:6px"><strong>Heading font drift</strong>3 headings use Inter instead of brand's Söhne. <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Auto-fix</span></div>
               <div class="wf-callout"><strong>Outdated tagline in footer</strong>"Premium goods, delivered" → "Crafted for you" (Q4 update). <span class="wf-btn primary" style="font-size:10px;padding:3px 9px;margin-left:4px">Update</span></div>
             </div>
@@ -4602,6 +4740,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Create</span><span>Brief</span><span class="active">Preview</span><span>Send</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4626,10 +4770,31 @@ footer a:hover{text-decoration:underline}
             <div style="margin-top:8px;padding:14px;border:2px dashed #ddd6fe;border-radius:6px;text-align:center;color:#7C3AED;font-size:11px;font-weight:600">↓ Drop file to make editable</div>
           </div>
           <div class="wf-input"><span><strong>Make the CTA say "Reclaim my 30%"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Apply</span></div>
-          <div class="wf-btn-row">
-            <span class="wf-btn">Send test email</span>
-            <span class="wf-btn">A/B set up</span>
+          <h3 class="wf-h3">Pre-send checks</h3>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <span class="wf-gauge great"><span class="wf-gauge-label">Spam</span><span class="wf-gauge-track"></span><strong>0.4 / 10</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">Deliverability</span><span class="wf-gauge-track"></span><strong>96%</strong></span>
+            <span class="wf-gauge good"><span class="wf-gauge-label">Load time</span><span class="wf-gauge-track"></span><strong>1.8s</strong></span>
+            <span class="wf-gauge good"><span class="wf-gauge-label">Accessibility</span><span class="wf-gauge-track"></span><strong>WCAG AA</strong></span>
+          </div>
+          <h3 class="wf-h3">Send to</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center">
+            <span class="wf-aud-chip">VIP · Lapsed 90d+ · 4,217 contacts</span>
+            <span class="wf-chip">- 12 unsubscribed (excluded)</span>
+            <span class="wf-chip">- 8 hard-bounced (excluded)</span>
+            <span class="wf-status live">4,197 deliverable</span>
+          </div>
+          <h3 class="wf-h3">When to send</h3>
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <span class="wf-schedule"><span class="wf-sched-label">Date</span><strong>Mon, Nov 24</strong></span>
+            <span class="wf-schedule"><span class="wf-sched-label">Time</span><strong>10:00 AM</strong> <span style="color:#94a3b8">recipient's TZ</span></span>
+            <span class="wf-schedule"><span class="wf-sched-label">Mode</span><strong>Send-Time Opt.</strong> <span class="wf-hint">i</span></span>
+          </div>
+          <div class="wf-btn-row" style="margin-top:6px">
+            <span class="wf-btn">Send test to sarah@acme.com</span>
+            <span class="wf-btn">A/B subject (3 variants)</span>
             <span class="wf-btn primary">Approve &amp; schedule send</span>
+            <span class="wf-btn">Save draft</span>
           </div>
         </div>
       </div>
@@ -4653,6 +4818,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Create</span><span>Brief</span><span>Design</span><span class="active">Open in external AI</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4660,24 +4831,32 @@ footer a:hover{text-decoration:underline}
           <p class="wf-p">Available throughout the workflow. Edits sync back to Mailchimp automatically.</p>
           <div class="wf-card-grid">
             <div class="wf-bridge-card">
-              <div class="wf-bridge-logo" style="background:#19c37d">C</div>
+              <div style="display:flex;justify-content:space-between;width:100%;align-items:center"><div class="wf-bridge-logo" style="background:#19c37d">C</div><span class="wf-conn">Connected</span></div>
               <span class="wf-bridge-name">ChatGPT</span>
+              <div style="display:flex;gap:3px"><span class="wf-scope read">campaigns:r</span><span class="wf-scope write">campaigns:w</span></div>
+              <span style="font-size:9px;color:#94a3b8">Last sync · 12s ago</span>
               <span class="wf-bridge-cta">Open campaign →</span>
             </div>
             <div class="wf-bridge-card">
-              <div class="wf-bridge-logo" style="background:#cc7a47">A</div>
+              <div style="display:flex;justify-content:space-between;width:100%;align-items:center"><div class="wf-bridge-logo" style="background:#cc7a47">A</div><span class="wf-conn">Connected</span></div>
               <span class="wf-bridge-name">Claude</span>
+              <div style="display:flex;gap:3px"><span class="wf-scope read">campaigns:r</span><span class="wf-scope write">campaigns:w</span><span class="wf-scope read">audiences:r</span></div>
+              <span style="font-size:9px;color:#94a3b8">Last sync · 3s ago</span>
               <span class="wf-bridge-cta">Open campaign →</span>
             </div>
             <div class="wf-bridge-card">
-              <div class="wf-bridge-logo" style="background:#0a0a0a">⌘</div>
+              <div style="display:flex;justify-content:space-between;width:100%;align-items:center"><div class="wf-bridge-logo" style="background:#0a0a0a">⌘</div><span class="wf-conn offline">Not connected</span></div>
               <span class="wf-bridge-name">Cursor</span>
-              <span class="wf-bridge-cta">Open campaign →</span>
+              <div style="display:flex;gap:3px"><span class="wf-scope">Authorize required</span></div>
+              <span style="font-size:9px;color:#94a3b8">—</span>
+              <span class="wf-bridge-cta">Connect →</span>
             </div>
             <div class="wf-bridge-card">
-              <div class="wf-bridge-logo" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">+</div>
-              <span class="wf-bridge-name">Other MCP client</span>
-              <span class="wf-bridge-cta">Copy connection →</span>
+              <div style="display:flex;justify-content:space-between;width:100%;align-items:center"><div class="wf-bridge-logo" style="background:linear-gradient(135deg,#7C3AED,#EC4899)">+</div><span class="wf-conn offline">Ready</span></div>
+              <span class="wf-bridge-name">Custom MCP</span>
+              <div style="display:flex;gap:3px"><span class="wf-scope">Generate token</span></div>
+              <span style="font-size:9px;color:#94a3b8">—</span>
+              <span class="wf-bridge-cta">Copy endpoint →</span>
             </div>
           </div>
           <h3 class="wf-h3" style="margin-top:6px">MCP Server endpoint</h3>
@@ -4736,12 +4915,26 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span class="active">Goals</span><span>Plans</span><span>Live</span><span>Reports</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
-          <h2 class="wf-h1">What outcome are you driving?</h2>
-          <p class="wf-p">Describe your goal in business terms. The agent will plan the campaign, audiences, channels, and timing.</p>
+          <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px">
+            <h2 class="wf-h1">What outcome are you driving?</h2>
+            <span class="wf-aud-chip">Q4 FY26 · 73 days remaining</span>
+          </div>
+          <p class="wf-p">Describe your goal in business terms. The agent will plan the campaign, audiences, channels, timing, and budget.</p>
           <div class="wf-input tall"><span><strong>"Increase repeat purchase from Bronze tier by 15% this quarter"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Plan campaign ⚡</span></div>
+          <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px">
+            <div style="padding:8px 10px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:6px"><div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em">Primary KPI</div><div style="font-size:13px;font-weight:700;color:#1e293b;margin-top:2px">Repeat purchase rate</div><div style="font-size:10px;color:#64748b">Target: <strong style="color:#7C3AED">+15%</strong> · current 8.4%</div></div>
+            <div style="padding:8px 10px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:6px"><div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em">Time horizon</div><div style="font-size:13px;font-weight:700;color:#1e293b;margin-top:2px">Nov 1 – Dec 31</div><div style="font-size:10px;color:#64748b">73 days · auto-end on goal hit</div></div>
+            <div style="padding:8px 10px;background:#fafbfc;border:1px solid #e2e8f0;border-radius:6px"><div style="font-size:9px;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.05em">Budget cap</div><div style="font-size:13px;font-weight:700;color:#1e293b;margin-top:2px">$12,000</div><div style="font-size:10px;color:#64748b">incl. SMS sends + ads <span class="wf-hint">i</span></div></div>
+          </div>
           <div class="wf-btn-row">
             <span class="wf-btn">Recent goals</span>
             <span class="wf-btn">Suggested goals (from your analytics)</span>
@@ -4780,6 +4973,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Goals</span><span class="active">Plans</span><span>Live</span><span>Reports</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4787,9 +4986,10 @@ footer a:hover{text-decoration:underline}
           <p class="wf-p">Each bundle pairs an audience segment with a creative angle proven for that profile. Total reach: 12,408 contacts. Estimated combined lift: +18.4%.</p>
           <div style="display:flex;flex-direction:column;gap:8px">
             <div class="wf-plan-card recommended">
-              <span class="wf-plan-label">Recommended · highest predicted impact</span>
+              <div style="display:flex;justify-content:space-between;align-items:center;width:100%"><span class="wf-plan-label">Recommended · highest predicted impact</span><span class="wf-status live">conf. 89%</span></div>
               <span class="wf-plan-title">High-LTV Bronze who lapsed 60-90 days</span>
-              <span class="wf-plan-meta"><span><strong>2,341</strong> contacts</span><span>Creative angle: <strong>premium win-back</strong></span><span>Channels: <strong>Email + SMS</strong></span><span>Est. lift: <strong>+24%</strong></span></span>
+              <span class="wf-plan-meta"><span><strong>2,341</strong> contacts</span><span>Creative angle: <strong>premium win-back</strong></span><span>Channels: <strong>Email + SMS</strong></span></span>
+              <div style="display:flex;align-items:center;gap:14px;font-size:10.5px;color:#475569;padding-top:6px;border-top:1px dashed #e2e8f0"><span>Est. lift: <strong style="color:#7C3AED">+24%</strong> <span style="color:#94a3b8">(±3% · 95% CI)</span></span><span class="wf-spark"><span style="height:30%"></span><span style="height:55%"></span><span style="height:42%"></span><span style="height:78%"></span><span style="height:65%"></span><span style="height:88%"></span></span><span>Based on <strong>3 prior similar campaigns</strong> · <span style="text-decoration:underline;color:#7C3AED;cursor:pointer">see why ▾</span></span></div>
             </div>
             <div class="wf-plan-card">
               <span class="wf-plan-label">Recommended</span>
@@ -4834,6 +5034,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Goals</span><span class="active">Assets</span><span>Live</span><span>Reports</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4847,8 +5053,8 @@ footer a:hover{text-decoration:underline}
             <div class="wf-matrix-header">Meta Ad</div>
             <div class="wf-matrix-header">Landing</div>
 
-            <div class="wf-matrix-row-label">High-LTV<br>premium win-back</div>
-            <div class="wf-matrix-cell"><div class="wf-matrix-thumb">elegant</div></div>
+            <div class="wf-matrix-row-label">High-LTV<br>premium win-back <span class="wf-icon-btn" title="Regenerate row" style="margin-left:auto">↻</span></div>
+            <div class="wf-matrix-cell wf-selected"><div class="wf-matrix-thumb">elegant</div><span style="font-size:8.5px;color:#7C3AED;font-weight:600">↻ regen · ✎ refine · ✕ exclude</span></div>
             <div class="wf-matrix-cell"><div class="wf-matrix-thumb">personal</div></div>
             <div class="wf-matrix-cell"><div class="wf-matrix-thumb">curated</div></div>
             <div class="wf-matrix-cell"><div class="wf-matrix-thumb">aspirational</div></div>
@@ -4904,6 +5110,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Goals</span><span>Assets</span><span class="active">Localize</span><span>Live</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4926,7 +5138,20 @@ footer a:hover{text-decoration:underline}
             <div class="wf-ck checked">California · CCPA "Do Not Sell My Info" link in footer</div>
             <div class="wf-ck checked">All regions · physical address formatted per local convention</div>
           </div>
-          <div class="wf-callout"><strong><span class="wf-ico">L</span>Localization summary</strong>5 languages × 7 regulatory frameworks · all applied automatically. Review per-region preview before approval. Mailchimp's ESP-side knowledge of compliance is what makes this possible.</div>
+          <h3 class="wf-h3">Per-region timezone-aware schedule</h3>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10px">
+            <span class="wf-schedule"><span class="wf-sched-label">US/CA</span><strong>10:00 ET</strong></span>
+            <span class="wf-schedule"><span class="wf-sched-label">UK/EU</span><strong>10:00 local</strong></span>
+            <span class="wf-schedule"><span class="wf-sched-label">India</span><strong>11:00 IST</strong></span>
+            <span class="wf-schedule"><span class="wf-sched-label">Brazil</span><strong>10:00 BRT</strong></span>
+          </div>
+          <h3 class="wf-h3">Fallback languages</h3>
+          <div style="display:flex;gap:6px;flex-wrap:wrap;font-size:10.5px;color:#475569">
+            <span class="wf-chip">EU contacts w/ no lang → <strong style="color:#1e293b">English</strong></span>
+            <span class="wf-chip">India contacts w/ no lang → <strong style="color:#1e293b">English</strong></span>
+            <span class="wf-chip live">Translation confidence: <strong>96% avg</strong></span>
+          </div>
+          <div class="wf-callout"><strong><span class="wf-ico">L</span>Localization summary</strong>5 languages × 7 regulatory frameworks · 4 timezones · fallback per region. Mailchimp's ESP-side knowledge of compliance is what makes this possible.</div>
         </div>
       </div>
       <div class="wf-annotations">
@@ -4948,6 +5173,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Goals</span><span>Assets</span><span class="active">Interactive</span><span>Live</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -4979,7 +5210,20 @@ footer a:hover{text-decoration:underline}
           </div>
           <h3 class="wf-h3">AI Code 2.0 prompt</h3>
           <div class="wf-input"><span><strong>"Add a 3-product carousel showing items from their browse history; on Add → trigger 'Cart recovery' journey"</strong><span class="wf-cursor"></span></span><span class="wf-btn ai">Generate ⚡</span></div>
-          <div class="wf-callout"><strong><span class="wf-ico">J</span>Wired to journey</strong>"Add to cart" actions inside this email automatically trigger the <strong>Cart Recovery</strong> flow with the selected product as context. No separate landing page required.</div>
+          <h3 class="wf-h3">Client support · render preview</h3>
+          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:6px;font-size:10px">
+            <span class="wf-gauge great"><span class="wf-gauge-label">Gmail · AMP</span><strong>Interactive</strong></span>
+            <span class="wf-gauge great"><span class="wf-gauge-label">Yahoo</span><strong>Interactive</strong></span>
+            <span class="wf-gauge ok"><span class="wf-gauge-label">Outlook</span><strong>Static fallback</strong></span>
+            <span class="wf-gauge ok"><span class="wf-gauge-label">Apple Mail</span><strong>Static fallback</strong></span>
+          </div>
+          <h3 class="wf-h3">Predicted interaction lift vs static</h3>
+          <div style="display:flex;gap:6px;flex-wrap:wrap">
+            <div class="wf-mini"><span class="wf-mini-label">CTR</span><span class="wf-mini-value">+34%</span><span class="wf-mini-delta">vs static</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Cart adds</span><span class="wf-mini-value">+62%</span><span class="wf-mini-delta">in-email</span></div>
+            <div class="wf-mini"><span class="wf-mini-label">Reach</span><span class="wf-mini-value">61%</span><span class="wf-mini-delta" style="color:#94a3b8">AMP-capable</span></div>
+          </div>
+          <div class="wf-callout"><strong><span class="wf-ico">J</span>Wired to journey</strong>"Add to cart" actions inside this email trigger <strong>Cart Recovery</strong> flow with the selected product as context. Non-AMP clients see static thumbnail + link to web equivalent.</div>
         </div>
       </div>
       <div class="wf-annotations">
@@ -5002,6 +5246,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Goals</span><span>Assets</span><span class="active">Approval</span><span>Live</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -5011,9 +5261,15 @@ footer a:hover{text-decoration:underline}
             <span class="wf-approval-arrow">→</span>
             <div class="wf-approver done"><span class="wf-approver-role">Brand</span><span class="wf-approver-name">Jay M.</span><span class="wf-approver-status">✓ Approved · 1h ago</span></div>
             <span class="wf-approval-arrow">→</span>
-            <div class="wf-approver current"><span class="wf-approver-role">Legal</span><span class="wf-approver-name">Priya N.</span><span class="wf-approver-status">Reviewing now</span></div>
+            <div class="wf-approver current"><span class="wf-approver-role">Legal</span><span class="wf-approver-name">Priya N.</span><span class="wf-approver-status">Reviewing · 1h 12m</span></div>
             <span class="wf-approval-arrow">→</span>
             <div class="wf-approver pending"><span class="wf-approver-role">Send Lead</span><span class="wf-approver-name">Alex T.</span><span class="wf-approver-status">Pending</span></div>
+          </div>
+          <div style="display:flex;gap:8px;flex-wrap:wrap;font-size:10px;color:#475569;margin-top:6px">
+            <span class="wf-status warn">Approval expires Mon Nov 24 · 18h</span>
+            <span class="wf-chip">↩ Kick back to: <strong style="color:#1e293b">any prior stage</strong></span>
+            <span class="wf-chip">↑ Escalate to: <strong style="color:#1e293b">CMO</strong> after 24h</span>
+            <span class="wf-chip">⚐ Compliance officer · auto-CC'd</span>
           </div>
           <h3 class="wf-h3" style="margin-top:6px">AI provenance · per generated asset</h3>
           <div class="wf-provenance">
@@ -5054,6 +5310,12 @@ footer a:hover{text-decoration:underline}
         <div class="wf-topbar">
           <span class="wf-logo">M</span>
           <div class="wf-nav"><span>Goals</span><span>Assets</span><span>Approval</span><span class="active">Live · 47 min in</span></div>
+          <div class="wf-app-state">
+            <span class="wf-save-state">Saved · 2m ago</span>
+            <span class="wf-icon-btn" title="Undo (⌘Z)">↶</span>
+            <span class="wf-icon-btn" title="Redo (⌘⇧Z)">↷</span>
+            <span class="wf-kbd">⌘K</span>
+          </div>
           <span class="wf-avatar"></span>
         </div>
         <div class="wf-body">
@@ -5063,7 +5325,15 @@ footer a:hover{text-decoration:underline}
             <div class="wf-live-stat"><span class="wf-stat-label">Clicks</span><span class="wf-stat-value">9.1%</span><span class="wf-stat-delta">▲ +2.1 vs avg</span></div>
             <div class="wf-live-stat"><span class="wf-stat-label">Revenue</span><span class="wf-stat-value">$18.4k</span><span class="wf-stat-delta">▲ pacing 22% over target</span></div>
           </div>
-          <h3 class="wf-h3" style="margin-top:6px">Real-time AI decision log</h3>
+          <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;margin-top:6px">
+            <h3 class="wf-h3" style="margin:0">Real-time AI decision log</h3>
+            <div style="display:flex;gap:6px;align-items:center">
+              <span class="wf-status live">Auto-decisions: ON</span>
+              <span class="wf-chip">Threshold: confidence > 85%</span>
+              <span class="wf-btn danger" style="font-size:9.5px;padding:4px 9px">Pause campaign</span>
+              <span class="wf-btn" style="font-size:9.5px;padding:4px 9px">Full audit log ↗</span>
+            </div>
+          </div>
           <div class="wf-decision-log">
             <div class="wf-decision"><span class="wf-decision-time">47 min ago · t+0</span><span class="wf-decision-text">Campaign started. AI began per-recipient subject/image/CTA selection from <strong>6 variant pool</strong>.</span></div>
             <div class="wf-decision"><span class="wf-decision-time">35 min ago · t+12</span><span class="wf-decision-text">AI detected <strong>subject variant B underperforming</strong> (8.2% open vs 14.1% on variant A). <strong>Auto-switched 68% of remaining sends to variant A pattern.</strong></span></div>
